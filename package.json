@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "fetch-data": "npx tsx scripts/fetch-data.ts",
-    "fetch-data:midnight": "npx tsx scripts/fetch-data.ts --expansion midnight"
+    "fetch-data:all": "npx tsx scripts/fetch-data.ts --all"
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.1",

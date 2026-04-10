@@ -55,17 +55,30 @@ async function authenticate(): Promise<void> {
   console.log('Authenticated with Blizzard API');
 }
 
-async function apiGet<T>(endpoint: string): Promise<T> {
+async function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function apiGet<T>(endpoint: string, retries = 3): Promise<T> {
   const separator = endpoint.includes('?') ? '&' : '?';
   const url = `${API_BASE}${endpoint}${separator}namespace=${NAMESPACE}&locale=${LOCALE}`;
 
-  const response = await fetch(url, {
-    headers: { Authorization: `Bearer ${accessToken}` },
-  });
-  if (!response.ok) {
-    throw new Error(`API request failed: ${response.status} ${url}`);
+  for (let attempt = 0; attempt < retries; attempt++) {
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+    if (response.status === 429) {
+      const wait = Math.pow(2, attempt + 1) * 1000;
+      console.warn(`    Rate limited, waiting ${wait / 1000}s...`);
+      await sleep(wait);
+      continue;
+    }
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status} ${url}`);
+    }
+    return response.json() as Promise<T>;
   }
-  return response.json() as Promise<T>;
+  throw new Error(`API request failed after ${retries} retries: ${url}`);
 }
 
 async function fetchMedia(endpoint: string): Promise<string | undefined> {
@@ -353,10 +366,22 @@ async function fetchEncounter(encounterId: number, instanceSlug: string) {
   };
 }
 
-// Parse --expansion flag from CLI args (e.g., --expansion midnight)
+// Extra instances to fetch beyond the expansion filter (e.g. legacy M+ season dungeons).
+// These are fetched by name from the full journal-instance index.
+const EXTRA_INSTANCE_NAMES = [
+  'Pit of Saron',
+  'Skyreach',
+  'The Seat of the Triumvirate',
+  'Seat of the Triumvirate',
+  "Algeth'ar Academy",
+];
+
+// Parse CLI args: defaults to "midnight", use --all to fetch everything,
+// or --expansion <name> to pick a specific one.
 const EXPANSION_FILTER = (() => {
+  if (process.argv.includes('--all')) return null;
   const idx = process.argv.indexOf('--expansion');
-  return idx !== -1 && process.argv[idx + 1] ? process.argv[idx + 1].toLowerCase() : null;
+  return idx !== -1 && process.argv[idx + 1] ? process.argv[idx + 1].toLowerCase() : 'midnight';
 })();
 
 async function main() {
@@ -398,13 +423,36 @@ async function main() {
   );
   console.log(`Wrote ${expansions.length} expansions`);
 
-  // 2. Fetch instances
+  // 2. Resolve extra instance IDs from the journal-instance index
+  const extraInstanceIds = new Set<number>();
+  if (EXTRA_INSTANCE_NAMES.length > 0 && EXPANSION_FILTER) {
+    console.log('\nResolving extra instances from journal index...');
+    try {
+      const instanceIndex = await apiGet<{
+        instances: Array<{ id: number; name: string }>;
+      }>('/data/wow/journal-instance/index');
+      const nameSet = new Set(EXTRA_INSTANCE_NAMES.map((n) => n.toLowerCase()));
+      for (const entry of instanceIndex.instances) {
+        if (nameSet.has(entry.name.toLowerCase())) {
+          console.log(`  Found extra instance: ${entry.name} (${entry.id})`);
+          extraInstanceIds.add(entry.id);
+        }
+      }
+    } catch (err) {
+      console.warn(`  Failed to fetch instance index: ${err}`);
+    }
+  }
+
+  // 3. Fetch instances
   const allInstances = [];
   const allInstanceIds = new Set<number>();
   for (const exp of expansions) {
     for (const ref of [...exp.raids, ...exp.dungeons]) {
       allInstanceIds.add(ref.id);
     }
+  }
+  for (const id of extraInstanceIds) {
+    allInstanceIds.add(id);
   }
 
   console.log(`\nFetching ${allInstanceIds.size} instances...`);
@@ -424,7 +472,7 @@ async function main() {
   );
   console.log(`Wrote ${allInstances.length} instances`);
 
-  // 3. Fetch all encounters
+  // 4. Fetch all encounters
   const allEncounters = [];
   for (const instance of allInstances) {
     console.log(`\nFetching encounters for ${instance.name}...`);

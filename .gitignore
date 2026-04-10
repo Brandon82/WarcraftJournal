@@ -24,3 +24,5 @@ src/data/generated/
 *.njsproj
 *.sln
 *.sw?
+/.claude
+CLAUDE.md

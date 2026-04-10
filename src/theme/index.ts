@@ -1,1 +1,1 @@
-export { warcraftTheme } from './tokens';
+export { darkTheme, lightTheme } from './tokens';

@@ -1,43 +1,83 @@
 import { theme } from 'antd';
 import type { ThemeConfig } from 'antd';
 
-export const warcraftTheme: ThemeConfig = {
+const sharedTokens = {
+  borderRadius: 10,
+  fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, sans-serif',
+  colorSuccess: '#22c55e',
+  colorWarning: '#f59e0b',
+  colorError: '#ef4444',
+  colorInfo: '#3b82f6',
+};
+
+export const darkTheme: ThemeConfig = {
   algorithm: theme.darkAlgorithm,
   token: {
-    colorPrimary: '#c79c6e',
-    colorBgBase: '#1a1a2e',
-    colorBgContainer: '#16213e',
-    colorBgElevated: '#1e2a4a',
-    colorBgLayout: '#0f0f1a',
-    colorText: '#e0d8c8',
-    colorTextSecondary: '#a09882',
-    colorBorder: '#2a2a4a',
-    colorBorderSecondary: '#1e1e3a',
-    colorLink: '#ffd100',
-    colorLinkHover: '#ffe44d',
-    borderRadius: 4,
-    fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, sans-serif',
-    colorSuccess: '#1eff00',
-    colorWarning: '#ff8000',
-    colorError: '#ff3333',
-    colorInfo: '#0070dd',
+    ...sharedTokens,
+    colorPrimary: '#d4a843',
+    colorBgBase: '#09090b',
+    colorBgContainer: '#18181b',
+    colorBgElevated: '#1c1c1f',
+    colorBgLayout: '#09090b',
+    colorText: '#fafafa',
+    colorTextSecondary: '#a1a1aa',
+    colorBorder: '#27272a',
+    colorBorderSecondary: '#1c1c1f',
+    colorLink: '#d4a843',
+    colorLinkHover: '#e0b854',
   },
   components: {
     Menu: {
-      darkItemBg: '#0f0f1a',
-      darkSubMenuItemBg: '#0a0a15',
-      darkItemSelectedBg: '#2a2a4a',
-      darkItemColor: '#a09882',
-      darkItemSelectedColor: '#ffd100',
+      darkItemBg: '#09090b',
+      darkSubMenuItemBg: '#09090b',
+      darkItemSelectedBg: '#27272a',
+      darkItemColor: '#a1a1aa',
+      darkItemSelectedColor: '#d4a843',
     },
     Tabs: {
-      inkBarColor: '#c79c6e',
-      itemSelectedColor: '#ffd100',
-      itemColor: '#a09882',
+      inkBarColor: '#d4a843',
+      itemSelectedColor: '#d4a843',
+      itemColor: '#a1a1aa',
     },
     Segmented: {
-      itemSelectedBg: '#c79c6e',
-      itemSelectedColor: '#0f0f1a',
+      itemSelectedBg: '#d4a843',
+      itemSelectedColor: '#09090b',
+    },
+  },
+};
+
+export const lightTheme: ThemeConfig = {
+  algorithm: theme.defaultAlgorithm,
+  token: {
+    ...sharedTokens,
+    colorPrimary: '#a07d2e',
+    colorBgBase: '#fafafa',
+    colorBgContainer: '#ffffff',
+    colorBgElevated: '#ffffff',
+    colorBgLayout: '#fafafa',
+    colorText: '#09090b',
+    colorTextSecondary: '#71717a',
+    colorBorder: '#e4e4e7',
+    colorBorderSecondary: '#f4f4f5',
+    colorLink: '#a07d2e',
+    colorLinkHover: '#8b6c28',
+  },
+  components: {
+    Menu: {
+      itemBg: '#fafafa',
+      subMenuItemBg: '#fafafa',
+      itemSelectedBg: '#f4f4f5',
+      itemColor: '#71717a',
+      itemSelectedColor: '#a07d2e',
+    },
+    Tabs: {
+      inkBarColor: '#a07d2e',
+      itemSelectedColor: '#a07d2e',
+      itemColor: '#71717a',
+    },
+    Segmented: {
+      itemSelectedBg: '#a07d2e',
+      itemSelectedColor: '#ffffff',
     },
   },
 };

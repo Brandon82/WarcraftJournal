@@ -1,25 +1,76 @@
 @import "tailwindcss";
 
+/* Dark mode (default) */
+:root,
+.dark {
+  --color-wow-bg-base: #09090b;
+  --color-wow-bg-surface: #18181b;
+  --color-wow-bg-elevated: #1c1c1f;
+  --color-wow-bg-raised: #27272a;
+  --color-wow-bg-hover: #3f3f46;
+
+  --color-wow-border: #27272a;
+  --color-wow-border-subtle: #1c1c1f;
+
+  --color-wow-gold: #d4a843;
+  --color-wow-gold-muted: #b8923a;
+  --color-wow-gold-hover: #e0b854;
+
+  --color-wow-text: #fafafa;
+  --color-wow-text-secondary: #a1a1aa;
+  --color-wow-text-dim: #71717a;
+
+  --wow-card-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --wow-card-shadow-hover: 0 4px 12px 0 rgb(0 0 0 / 0.4);
+
+  color-scheme: dark;
+}
+
+/* Light mode */
+.light {
+  --color-wow-bg-base: #fafafa;
+  --color-wow-bg-surface: #ffffff;
+  --color-wow-bg-elevated: #f4f4f5;
+  --color-wow-bg-raised: #e4e4e7;
+  --color-wow-bg-hover: #d4d4d8;
+
+  --color-wow-border: #e4e4e7;
+  --color-wow-border-subtle: #f4f4f5;
+
+  --color-wow-gold: #a07d2e;
+  --color-wow-gold-muted: #8b6c28;
+  --color-wow-gold-hover: #b8923a;
+
+  --color-wow-text: #09090b;
+  --color-wow-text-secondary: #71717a;
+  --color-wow-text-dim: #a1a1aa;
+
+  --wow-card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --wow-card-shadow-hover: 0 4px 12px 0 rgb(0 0 0 / 0.08);
+
+  color-scheme: light;
+}
+
 @theme {
-  /* WoW Dark Palette */
-  --color-wow-bg-base: #0f0f1a;
-  --color-wow-bg-surface: #1a1a2e;
-  --color-wow-bg-elevated: #16213e;
-  --color-wow-bg-raised: #1e2a4a;
-  --color-wow-bg-hover: #242850;
+  /* Reactive Tailwind tokens — reference the CSS variables above */
+  --color-wow-bg-base: var(--color-wow-bg-base);
+  --color-wow-bg-surface: var(--color-wow-bg-surface);
+  --color-wow-bg-elevated: var(--color-wow-bg-elevated);
+  --color-wow-bg-raised: var(--color-wow-bg-raised);
+  --color-wow-bg-hover: var(--color-wow-bg-hover);
 
-  --color-wow-border: #2a2a4a;
-  --color-wow-border-subtle: #1e1e3a;
+  --color-wow-border: var(--color-wow-border);
+  --color-wow-border-subtle: var(--color-wow-border-subtle);
 
-  --color-wow-gold: #ffd100;
-  --color-wow-gold-muted: #c79c6e;
-  --color-wow-gold-hover: #ffe44d;
+  --color-wow-gold: var(--color-wow-gold);
+  --color-wow-gold-muted: var(--color-wow-gold-muted);
+  --color-wow-gold-hover: var(--color-wow-gold-hover);
 
-  --color-wow-text: #e0d8c8;
-  --color-wow-text-secondary: #a09882;
-  --color-wow-text-dim: #6b6355;
+  --color-wow-text: var(--color-wow-text);
+  --color-wow-text-secondary: var(--color-wow-text-secondary);
+  --color-wow-text-dim: var(--color-wow-text-dim);
 
-  /* Item quality colors */
+  /* Item quality colors (WoW canonical — unchanged) */
   --color-quality-poor: #9d9d9d;
   --color-quality-common: #ffffff;
   --color-quality-uncommon: #1eff00;
@@ -28,9 +79,9 @@
   --color-quality-legendary: #ff8000;
 
   /* Role colors */
-  --color-role-tank: #1677ff;
-  --color-role-healer: #52c41a;
-  --color-role-dps: #ff4d4f;
+  --color-role-tank: #3b82f6;
+  --color-role-healer: #22c55e;
+  --color-role-dps: #ef4444;
 
   /* Font */
   --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -42,6 +93,7 @@ body {
   background-color: var(--color-wow-bg-base);
   color: var(--color-wow-text);
   font-family: var(--font-sans);
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 /* Custom scrollbar */
@@ -59,10 +111,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a5a;
+  background: var(--color-wow-bg-hover);
 }
 
-/* Ant Design overrides for kept components */
+/* Ant Design overrides */
 .ant-menu {
   border-inline-end: none !important;
 }

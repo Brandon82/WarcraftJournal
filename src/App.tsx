@@ -1,12 +1,22 @@
 import { ConfigProvider } from 'antd';
 import { RouterProvider } from 'react-router';
-import { warcraftTheme } from './theme';
+import { darkTheme, lightTheme } from './theme';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { router } from './router';
+
+function AppInner() {
+  const { theme } = useTheme();
+  return (
+    <ConfigProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <RouterProvider router={router} />
+    </ConfigProvider>
+  );
+}
 
 export default function App() {
   return (
-    <ConfigProvider theme={warcraftTheme}>
-      <RouterProvider router={router} />
-    </ConfigProvider>
+    <ThemeProvider>
+      <AppInner />
+    </ThemeProvider>
   );
 }

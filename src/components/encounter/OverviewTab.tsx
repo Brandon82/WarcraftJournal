@@ -10,24 +10,18 @@ interface OverviewTabProps {
   description: string;
 }
 
-const ROLE_CONFIG: Record<string, { icon: React.ReactNode; color: string; borderClass: string; textClass: string }> = {
+const ROLE_CONFIG: Record<string, { icon: React.ReactNode; color: string }> = {
   Tank: {
     icon: <SafetyOutlined />,
-    color: '#1677ff',
-    borderClass: 'border-l-role-tank',
-    textClass: 'text-role-tank',
+    color: '#3b82f6',
   },
   Healer: {
     icon: <MedicineBoxOutlined />,
-    color: '#52c41a',
-    borderClass: 'border-l-role-healer',
-    textClass: 'text-role-healer',
+    color: '#22c55e',
   },
   'Damage Dealer': {
     icon: <ThunderboltOutlined />,
-    color: '#ff4d4f',
-    borderClass: 'border-l-role-dps',
-    textClass: 'text-role-dps',
+    color: '#ef4444',
   },
 };
 
@@ -55,10 +49,11 @@ export default function OverviewTab({ overviewSection, description }: OverviewTa
             return (
               <div
                 key={alert.id}
-                className={`rounded-lg border border-wow-border bg-wow-bg-elevated p-4 border-l-4 ${config?.borderClass ?? ''}`}
+                className="rounded-xl border border-wow-border bg-wow-bg-surface p-4"
+                style={{ borderLeftWidth: '4px', borderLeftColor: config?.color }}
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <span className={config?.textClass ?? 'text-wow-text'}>
+                  <span style={{ color: config?.color }}>
                     {config?.icon}
                   </span>
                   <h4 className="text-wow-text font-medium m-0 text-sm">

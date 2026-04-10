@@ -1,9 +1,14 @@
-import { useParams, Link } from 'react-router';
+import { useParams, useLocation } from 'react-router';
+import { useState } from 'react';
 import { useInstance } from '../hooks/useInstance';
+import EncounterCard from '../components/cards/EncounterCard';
 
 export default function InstancePage() {
   const { expansionSlug, instanceSlug } = useParams();
+  const isSeason = useLocation().pathname.startsWith('/season');
+  const routePrefix = isSeason ? 'season' : (expansionSlug ?? '');
   const instance = useInstance(instanceSlug);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   if (!instance) {
     return (
@@ -13,40 +18,77 @@ export default function InstancePage() {
     );
   }
 
+  const hasHero = !!instance.backgroundImage;
+
   return (
     <div>
-      <div className="mb-6">
-        <span
-          className={`inline-block px-3 py-1 rounded-md text-xs font-medium uppercase tracking-wider border ${
-            instance.category === 'raid'
-              ? 'bg-wow-bg-raised text-orange-400 border-orange-400/30'
-              : 'bg-wow-bg-raised text-blue-400 border-blue-400/30'
-          }`}
-        >
-          {instance.category === 'raid' ? 'Raid' : 'Dungeon'}
-        </span>
-        <h2 className="text-2xl font-semibold text-wow-gold mt-3 mb-2 tracking-wide">
-          {instance.name}
-        </h2>
-        {instance.description && (
-          <p className="text-wow-text-secondary leading-relaxed max-w-[700px] m-0">
-            {instance.description}
-          </p>
-        )}
-      </div>
+      {/* Hero banner */}
+      {hasHero && (
+        <div className="relative overflow-hidden rounded-xl mb-8 -mt-2" style={{ height: '200px' }}>
+          {!heroLoaded && (
+            <div className="absolute inset-0 bg-wow-bg-raised animate-pulse rounded-xl" />
+          )}
+          <img
+            src={instance.backgroundImage}
+            alt=""
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${heroLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setHeroLoaded(true)}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 p-6">
+            <span
+              className={`inline-block px-2.5 py-1 rounded-lg text-[10px] font-semibold uppercase tracking-wider mb-2 ${
+                instance.category === 'raid'
+                  ? 'bg-orange-500/25 text-orange-300 border border-orange-400/30'
+                  : 'bg-blue-500/25 text-blue-300 border border-blue-400/30'
+              }`}
+            >
+              {instance.category === 'raid' ? 'Raid' : 'Dungeon'}
+            </span>
+            <h2 className="text-2xl font-semibold text-white m-0 tracking-wide drop-shadow-lg">
+              {instance.name}
+            </h2>
+            {instance.description && (
+              <p className="text-zinc-300 text-sm mt-1.5 m-0 max-w-[600px] leading-relaxed line-clamp-2">
+                {instance.description}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {/* Fallback header when no hero image */}
+      {!hasHero && (
+        <div className="mb-6">
+          <span
+            className={`inline-block px-3 py-1 rounded-lg text-xs font-medium uppercase tracking-wider border ${
+              instance.category === 'raid'
+                ? 'bg-wow-bg-raised text-orange-400 border-orange-400/30'
+                : 'bg-wow-bg-raised text-blue-400 border-blue-400/30'
+            }`}
+          >
+            {instance.category === 'raid' ? 'Raid' : 'Dungeon'}
+          </span>
+          <h2 className="text-xl sm:text-2xl font-semibold text-wow-gold mt-3 mb-2 tracking-wide">
+            {instance.name}
+          </h2>
+          {instance.description && (
+            <p className="text-wow-text-secondary leading-relaxed max-w-[700px] m-0">
+              {instance.description}
+            </p>
+          )}
+        </div>
+      )}
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {instance.encounters.map((enc, index) => (
-          <Link key={enc.id} to={`/${expansionSlug}/${instanceSlug}/${enc.slug}`} className="no-underline">
-            <div className="bg-wow-bg-elevated border border-wow-border rounded-lg p-6 text-center hover:border-wow-gold-muted hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-wow-border to-wow-bg-raised border-2 border-wow-gold-muted flex items-center justify-center mx-auto mb-4 text-2xl text-wow-gold-muted font-bold">
-                {index + 1}
-              </div>
-              <span className="text-wow-text text-sm block">
-                {enc.name}
-              </span>
-            </div>
-          </Link>
+          <EncounterCard
+            key={enc.id}
+            encounterRef={enc}
+            index={index}
+            expansionSlug={routePrefix}
+            instanceSlug={instanceSlug ?? ''}
+          />
         ))}
       </div>
     </div>

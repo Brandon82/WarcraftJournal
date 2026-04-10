@@ -1,3 +1,4 @@
+import { InboxOutlined } from '@ant-design/icons';
 import type { JournalSection } from '../../types';
 import SectionTree from '../sections/SectionTree';
 
@@ -12,8 +13,11 @@ export default function AbilitiesTab({ sections }: AbilitiesTabProps) {
 
   if (abilitySections.length === 0) {
     return (
-      <div className="text-center py-16 text-wow-text-secondary">
-        No ability data available
+      <div className="text-center py-16">
+        <InboxOutlined className="text-3xl text-wow-text-dim/40 mb-3" />
+        <p className="text-wow-text-secondary text-sm m-0">
+          No ability data available for this encounter
+        </p>
       </div>
     );
   }

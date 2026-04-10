@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  /* WoW Dark Palette */
+  --color-wow-bg-base: #0f0f1a;
+  --color-wow-bg-surface: #1a1a2e;
+  --color-wow-bg-elevated: #16213e;
+  --color-wow-bg-raised: #1e2a4a;
+  --color-wow-bg-hover: #242850;
+
+  --color-wow-border: #2a2a4a;
+  --color-wow-border-subtle: #1e1e3a;
+
+  --color-wow-gold: #ffd100;
+  --color-wow-gold-muted: #c79c6e;
+  --color-wow-gold-hover: #ffe44d;
+
+  --color-wow-text: #e0d8c8;
+  --color-wow-text-secondary: #a09882;
+  --color-wow-text-dim: #6b6355;
+
+  /* Item quality colors */
+  --color-quality-poor: #9d9d9d;
+  --color-quality-common: #ffffff;
+  --color-quality-uncommon: #1eff00;
+  --color-quality-rare: #0070dd;
+  --color-quality-epic: #a335ee;
+  --color-quality-legendary: #ff8000;
+
+  /* Role colors */
+  --color-role-tank: #1677ff;
+  --color-role-healer: #52c41a;
+  --color-role-dps: #ff4d4f;
+
+  /* Font */
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Global base styles */
+body {
+  margin: 0;
+  background-color: var(--color-wow-bg-base);
+  color: var(--color-wow-text);
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-wow-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-wow-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a5a;
+}
+
+/* Ant Design overrides for kept components */
+.ant-menu {
+  border-inline-end: none !important;
+}

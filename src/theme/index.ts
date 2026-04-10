@@ -1,0 +1,1 @@
+export { warcraftTheme } from './tokens';

@@ -1,13 +1,19 @@
 import { Menu } from 'antd';
 import { useNavigate, useParams } from 'react-router';
 import { expansions, instanceBySlug } from '../../data';
+import { useTheme } from '../../context/ThemeContext';
 import type { MenuProps } from 'antd';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-export default function ExpansionMenu() {
+interface ExpansionMenuProps {
+  onNavigate?: () => void;
+}
+
+export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
   const navigate = useNavigate();
   const { expansionSlug, instanceSlug, bossSlug } = useParams();
+  const { theme } = useTheme();
 
   const items: MenuItem[] = expansions.map((exp) => ({
     key: exp.slug,
@@ -64,12 +70,13 @@ export default function ExpansionMenu() {
 
   const handleClick: MenuProps['onClick'] = (info) => {
     navigate(`/${info.key}`);
+    onNavigate?.();
   };
 
   return (
     <Menu
       mode="inline"
-      theme="dark"
+      theme={theme === 'dark' ? 'dark' : 'light'}
       items={items}
       selectedKeys={[selectedKey]}
       defaultOpenKeys={expansionSlug ? [expansionSlug] : []}

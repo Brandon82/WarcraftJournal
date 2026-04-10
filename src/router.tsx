@@ -5,6 +5,7 @@ import ExpansionPage from './pages/ExpansionPage';
 import InstancePage from './pages/InstancePage';
 import EncounterPage from './pages/EncounterPage';
 import NotFoundPage from './pages/NotFoundPage';
+import SeasonPage from './pages/SeasonPage';
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,9 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: 'season', element: <SeasonPage /> },
+      { path: 'season/:instanceSlug', element: <InstancePage /> },
+      { path: 'season/:instanceSlug/:bossSlug', element: <EncounterPage /> },
       { path: ':expansionSlug', element: <ExpansionPage /> },
       { path: ':expansionSlug/:instanceSlug', element: <InstancePage /> },
       { path: ':expansionSlug/:instanceSlug/:bossSlug', element: <EncounterPage /> },

@@ -46,12 +46,20 @@ function SpellRow({ spell }: { spell: ZoneSpell }) {
       )}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm font-semibold text-wow-gold">{spell.name}</span>
+          <a
+            href={`https://www.wowhead.com/spell=${spell.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-wow-gold hover:text-wow-gold-bright hover:underline transition-colors"
+          >
+            {spell.name}
+          </a>
           {schoolTag && (
             <span className={`px-2 py-0.5 text-xs rounded-md font-medium ${schoolTag.style}`}>
               {schoolTag.label}
             </span>
           )}
+          <span className="text-xs text-wow-text-secondary font-mono">({spell.id})</span>
         </div>
         {spell.description && (
           <p className="text-wow-text-secondary text-[13px] leading-relaxed m-0 mt-0.5">

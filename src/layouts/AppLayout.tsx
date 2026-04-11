@@ -134,8 +134,10 @@ export default function AppLayout() {
             </button>
           </header>
 
-          <main className="flex-1 p-4 sm:p-8">
-            <Outlet />
+          <main className="flex-1 py-4 px-6 sm:py-8 sm:px-16 lg:px-24 xl:px-32">
+            <div className="max-w-6xl mx-auto">
+              <Outlet />
+            </div>
           </main>
         </div>
 

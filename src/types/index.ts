@@ -4,3 +4,4 @@ export * from './instance';
 export * from './encounter';
 export * from './section';
 export * from './item';
+export * from './zoneSpell';

@@ -366,12 +366,212 @@ async function fetchEncounter(encounterId: number, instanceSlug: string) {
   };
 }
 
+// Mapping of Blizzard journal instance ID → Wowhead zone info for dungeon trash spells.
+// Zone IDs and slugs are from wowhead.com/zone=XXXXX/slug URLs.
+const INSTANCE_TO_WOWHEAD_ZONE: Record<number, { id: number; slug: string }> = {
+  1299: { id: 15808, slug: 'windrunner-spire' },
+  1300: { id: 15829, slug: 'magisters-terrace' },
+  1304: { id: 16091, slug: 'murder-row' },
+  1309: { id: 16359, slug: 'the-blinding-vale' },
+  1311: { id: 16368, slug: 'den-of-nalorakk' },
+  1313: { id: 16425, slug: 'voidscar-arena' },
+  1315: { id: 16395, slug: 'maisara-caverns' },
+  1316: { id: 16573, slug: 'nexus-point-xenas' },
+};
+
+async function fetchWowheadPage(url: string, retries = 5): Promise<string> {
+  for (let attempt = 0; attempt < retries; attempt++) {
+    if (attempt > 0) {
+      const wait = Math.pow(2, attempt) * 5000;
+      console.warn(`    Wowhead returned error, retrying in ${wait / 1000}s...`);
+      await sleep(wait);
+    }
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Upgrade-Insecure-Requests': '1',
+      },
+    });
+    if (response.status === 403 || response.status === 429) continue;
+    if (!response.ok) {
+      throw new Error(`Wowhead fetch failed: ${response.status} ${url}`);
+    }
+    return response.text();
+  }
+  throw new Error(`Wowhead fetch failed after ${retries} retries (403): ${url}`);
+}
+
+function extractListviewData(html: string, template: string, id: string): unknown[] {
+  // Match: new Listview({template: 'npc', id: 'npcs', ... data: [...]})
+  // The data array can be very large, so we use a greedy match up to the closing of the Listview
+  const pattern = new RegExp(
+    `new Listview\\(\\{[^}]*template:\\s*'${template}'[^}]*id:\\s*'${id}'[^]*?data:\\s*(\\[[\\s\\S]*?\\])\\s*\\}\\)`,
+  );
+  const match = html.match(pattern);
+  if (!match?.[1]) return [];
+  try {
+    // Wowhead data arrays use JS object notation which may have trailing commas or unquoted keys
+    // Use Function constructor to safely evaluate as JS (not JSON)
+    const fn = new Function(`return ${match[1]}`);
+    return fn() as unknown[];
+  } catch {
+    return [];
+  }
+}
+
+interface WowheadNpc {
+  id: number;
+  name: string;
+  classification: number;
+  react: number[];
+}
+
+interface WowheadSpell {
+  id: number;
+  name: string;
+  schools: number;
+}
+
+async function fetchZoneNpcs(wowheadZoneId: number, wowheadZoneSlug: string): Promise<WowheadNpc[]> {
+  // Use the /npcs subpage which is more reliable than the main zone page
+  const html = await fetchWowheadPage(`https://www.wowhead.com/zone=${wowheadZoneId}/${wowheadZoneSlug}/npcs`);
+  const data = extractListviewData(html, 'npc', 'npcs') as WowheadNpc[];
+  return data.filter((npc) => npc.id && npc.name);
+}
+
+async function fetchNpcAbilities(npcId: number): Promise<WowheadSpell[]> {
+  const html = await fetchWowheadPage(`https://www.wowhead.com/npc=${npcId}`);
+  const data = extractListviewData(html, 'spell', 'abilities') as WowheadSpell[];
+  return data.filter((spell) => spell.id && spell.name);
+}
+
+async function fetchZoneSpellsForInstance(
+  instance: { id: number; slug: string },
+) {
+  const wowheadZone = INSTANCE_TO_WOWHEAD_ZONE[instance.id];
+  if (!wowheadZone) return null;
+
+  console.log(`\nFetching zone spells for ${instance.slug} (zone ${wowheadZone.id})...`);
+
+  // Fetch all NPCs in the zone
+  let npcs: WowheadNpc[];
+  try {
+    npcs = await fetchZoneNpcs(wowheadZone.id, wowheadZone.slug);
+  } catch (err) {
+    console.warn(`  Failed to fetch zone NPCs: ${err}`);
+    return null;
+  }
+  console.log(`  Found ${npcs.length} NPCs in zone`);
+
+  // NPCs that appear in zone data but aren't actual dungeon mobs (warlock pets, story NPCs, etc.)
+  const IGNORED_NPC_NAMES = new Set(['Dreadstalker', 'Wild Imp', "Xal'atath"]);
+
+  // Filter: hostile/elite NPCs (bosses + trash)
+  // classification: 0=normal, 1=elite, 2=rare-elite, 3=boss, 4=rare
+  // react: [alliance, horde] — negative = hostile, missing = assume hostile for elites
+  const dungeonNpcs = npcs.filter((npc) => {
+    if (npc.classification < 1) return false;
+    if (IGNORED_NPC_NAMES.has(npc.name)) return false;
+    // If react data exists, check hostility; if missing, assume hostile for elite+ mobs
+    const isFriendly = npc.react && npc.react[0] > 0 && npc.react[1] > 0;
+    return !isFriendly;
+  });
+  console.log(`  Filtered to ${dungeonNpcs.length} dungeon NPCs`);
+
+  // Fetch abilities for each trash NPC
+  const uniqueSpellIds = new Set<number>();
+  const npcResults = [];
+
+  for (const npc of dungeonNpcs) {
+    await sleep(1000);
+    try {
+      const abilities = await fetchNpcAbilities(npc.id);
+      if (abilities.length === 0) continue;
+
+      const spells = abilities.map((a) => {
+        uniqueSpellIds.add(a.id);
+        return {
+          id: a.id,
+          name: a.name,
+          schools: a.schools ?? 1,
+        };
+      });
+
+      npcResults.push({
+        id: npc.id,
+        name: npc.name,
+        classification: npc.classification,
+        spells,
+      });
+      console.log(`    ${npc.name}: ${spells.length} abilities`);
+    } catch (err) {
+      console.warn(`    Failed to fetch abilities for ${npc.name}: ${err}`);
+    }
+  }
+
+  // Fetch spell icons and tooltips for all unique spells
+  console.log(`  Fetching icons/tooltips for ${uniqueSpellIds.size} unique spells...`);
+  const spellIcons = new Map<number, string>();
+  const spellDescriptions = new Map<number, string>();
+
+  for (const spellId of uniqueSpellIds) {
+    const [icon, tooltip] = await Promise.all([
+      fetchMedia(`/data/wow/media/spell/${spellId}`),
+      fetchSpellTooltip(spellId),
+    ]);
+    if (icon) spellIcons.set(spellId, icon);
+    if (tooltip) spellDescriptions.set(spellId, tooltip);
+  }
+
+  // Enrich spells with icons and descriptions
+  for (const npc of npcResults) {
+    for (const spell of npc.spells) {
+      const icon = spellIcons.get(spell.id);
+      const desc = spellDescriptions.get(spell.id);
+      if (icon) (spell as Record<string, unknown>).spellIcon = icon;
+      if (desc) (spell as Record<string, unknown>).description = desc;
+    }
+  }
+
+  return {
+    instanceId: instance.id,
+    instanceSlug: instance.slug,
+    fetchedAt: new Date().toISOString(),
+    npcs: npcResults,
+  };
+}
+
+const ZONE_SPELLS_MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+function loadCachedZoneSpells(): Map<string, { data: Record<string, unknown>; fresh: boolean }> {
+  const cache = new Map<string, { data: Record<string, unknown>; fresh: boolean }>();
+  const filePath = path.join(OUTPUT_DIR, 'zone-spells.json');
+  if (!fs.existsSync(filePath)) return cache;
+  try {
+    const existing = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Array<Record<string, unknown>>;
+    const now = Date.now();
+    for (const entry of existing) {
+      const slug = entry.instanceSlug as string;
+      const fetchedAt = entry.fetchedAt as string | undefined;
+      const age = fetchedAt ? now - new Date(fetchedAt).getTime() : Infinity;
+      cache.set(slug, { data: entry, fresh: age < ZONE_SPELLS_MAX_AGE_MS });
+    }
+  } catch { /* ignore corrupt file */ }
+  return cache;
+}
+
 // Extra instances to fetch beyond the expansion filter (e.g. legacy M+ season dungeons).
 // These are fetched by name from the full journal-instance index.
 const EXTRA_INSTANCE_NAMES = [
   'Pit of Saron',
   'Skyreach',
-  'The Seat of the Triumvirate',
   'Seat of the Triumvirate',
   "Algeth'ar Academy",
 ];
@@ -384,6 +584,58 @@ const EXPANSION_FILTER = (() => {
   return idx !== -1 && process.argv[idx + 1] ? process.argv[idx + 1].toLowerCase() : 'midnight';
 })();
 
+async function fetchZoneSpellsFromDisk() {
+  console.log('Fetching zone spells only (using existing generated data)...');
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+
+  const instancesPath = path.join(OUTPUT_DIR, 'instances.json');
+  if (!fs.existsSync(instancesPath)) {
+    console.error('Missing instances.json. Run fetch-data first without --only-zone-spells.');
+    process.exit(1);
+  }
+
+  const allInstances = JSON.parse(fs.readFileSync(instancesPath, 'utf-8'));
+  const cache = loadCachedZoneSpells();
+  const forceRefresh = process.argv.includes('--force');
+
+  const dungeonInstances = allInstances.filter(
+    (i: Record<string, unknown>) => i.category === 'dungeon' && INSTANCE_TO_WOWHEAD_ZONE[i.id as number],
+  );
+  const allZoneSpells: Record<string, unknown>[] = [];
+
+  for (const inst of dungeonInstances) {
+    const cached = cache.get(inst.slug);
+    if (cached?.fresh && !forceRefresh) {
+      console.log(`\nSkipping ${inst.slug} (fetched ${cached.data.fetchedAt}, still fresh)`);
+      allZoneSpells.push(cached.data);
+      continue;
+    }
+    try {
+      const result = await fetchZoneSpellsForInstance(inst);
+      if (result && result.npcs.length > 0) {
+        allZoneSpells.push(result);
+      } else if (cached) {
+        // Keep stale data if fetch returned nothing (e.g. Wowhead 403)
+        console.log(`  Keeping stale cached data for ${inst.slug}`);
+        allZoneSpells.push(cached.data);
+      }
+    } catch (err) {
+      console.warn(`  Failed to fetch zone spells for ${inst.name}: ${err}`);
+      if (cached) {
+        console.log(`  Keeping stale cached data for ${inst.slug}`);
+        allZoneSpells.push(cached.data);
+      }
+    }
+  }
+
+  fs.writeFileSync(
+    path.join(OUTPUT_DIR, 'zone-spells.json'),
+    JSON.stringify(allZoneSpells, null, 2),
+  );
+  console.log(`\nWrote zone spells for ${allZoneSpells.length} dungeons`);
+  console.log('\nDone!');
+}
+
 async function main() {
   // Load .env manually
   const envPath = path.resolve(__dirname, '../.env');
@@ -395,6 +647,11 @@ async function main() {
         process.env[match[1].trim()] = match[2].trim();
       }
     }
+  }
+
+  // --only-zone-spells: skip Blizzard API, read existing data from disk
+  if (process.argv.includes('--only-zone-spells')) {
+    return fetchZoneSpellsFromDisk();
   }
 
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -492,6 +749,47 @@ async function main() {
     JSON.stringify(allEncounters, null, 2),
   );
   console.log(`\nWrote ${allEncounters.length} encounters`);
+
+  // 5. Fetch zone spells for dungeons (trash mob abilities from Wowhead)
+  if (!process.argv.includes('--skip-zone-spells')) {
+    const cache = loadCachedZoneSpells();
+    const forceRefresh = process.argv.includes('--force');
+    const dungeonInstances = allInstances.filter(
+      (i: Record<string, unknown>) => i.category === 'dungeon' && INSTANCE_TO_WOWHEAD_ZONE[i.id as number],
+    );
+    const allZoneSpells: Record<string, unknown>[] = [];
+
+    for (const inst of dungeonInstances) {
+      const cached = cache.get(inst.slug);
+      if (cached?.fresh && !forceRefresh) {
+        console.log(`\nSkipping ${inst.slug} (fetched ${cached.data.fetchedAt}, still fresh)`);
+        allZoneSpells.push(cached.data);
+        continue;
+      }
+      try {
+        const result = await fetchZoneSpellsForInstance(inst);
+        if (result && result.npcs.length > 0) {
+          allZoneSpells.push(result);
+        } else if (cached) {
+          console.log(`  Keeping stale cached data for ${inst.slug}`);
+          allZoneSpells.push(cached.data);
+        }
+      } catch (err) {
+        console.warn(`  Failed to fetch zone spells for ${inst.name}: ${err}`);
+        if (cached) {
+          console.log(`  Keeping stale cached data for ${inst.slug}`);
+          allZoneSpells.push(cached.data);
+        }
+      }
+    }
+
+    fs.writeFileSync(
+      path.join(OUTPUT_DIR, 'zone-spells.json'),
+      JSON.stringify(allZoneSpells, null, 2),
+    );
+    console.log(`\nWrote zone spells for ${allZoneSpells.length} dungeons`);
+  }
+
   console.log('\nDone! Data written to src/data/generated/');
 }
 

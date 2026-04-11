@@ -1,14 +1,24 @@
 import { useParams, useLocation } from 'react-router';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useInstance } from '../hooks/useInstance';
+import { useZoneSpells } from '../hooks/useZoneSpells';
+import { getEncountersForInstance } from '../data';
 import EncounterCard from '../components/cards/EncounterCard';
+import ZoneSpellSection from '../components/zone-spells/ZoneSpellSection';
 
 export default function InstancePage() {
   const { expansionSlug, instanceSlug } = useParams();
   const isSeason = useLocation().pathname.startsWith('/season');
   const routePrefix = isSeason ? 'season' : (expansionSlug ?? '');
   const instance = useInstance(instanceSlug);
+  const zoneSpells = useZoneSpells(instanceSlug);
   const [heroLoaded, setHeroLoaded] = useState(false);
+
+  const bossNames = useMemo(() => {
+    if (!instanceSlug) return new Set<string>();
+    const encounters = getEncountersForInstance(instanceSlug);
+    return new Set(encounters.flatMap((e) => e.creatures.map((c) => c.name)));
+  }, [instanceSlug]);
 
   if (!instance) {
     return (
@@ -91,6 +101,10 @@ export default function InstancePage() {
           />
         ))}
       </div>
+
+      {instance.category === 'dungeon' && zoneSpells && zoneSpells.npcs.length > 0 && (
+        <ZoneSpellSection npcs={zoneSpells.npcs} bossNames={bossNames} />
+      )}
     </div>
   );
 }

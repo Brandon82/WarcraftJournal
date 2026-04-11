@@ -55,13 +55,13 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
       {/* Header */}
       <div
         onClick={isCollapsible ? () => setExpanded(!expanded) : undefined}
-        className={`px-4 py-3 select-none flex items-center gap-3 ${
+        className={`px-4 py-2 select-none flex items-start gap-3 ${
           isCollapsible ? 'cursor-pointer hover:bg-wow-bg-hover/30 transition-colors duration-150' : ''
-        } ${isTopLevel ? 'rounded-t-xl' : ''}`}
+        } ${isTopLevel ? 'rounded-t-xl py-3' : ''}`}
       >
         {isCollapsible && (
           <span
-            className="text-wow-text-secondary text-[10px] w-3 shrink-0 inline-flex transition-transform duration-200"
+            className="text-wow-text-secondary text-[10px] w-3 shrink-0 inline-flex transition-transform duration-200 mt-1.5"
             style={{ transform: expanded ? 'rotate(0deg)' : 'rotate(-90deg)' }}
           >
             <DownOutlined />
@@ -73,11 +73,11 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
             src={section.spellIcon}
             alt={section.title}
             title={section.title}
-            className="w-9 h-9 rounded-lg object-cover border border-wow-border shrink-0"
+            className="w-8 h-8 rounded-lg object-cover border border-wow-border shrink-0 mt-0.5"
           />
         ) : isTopLevel ? (
-          <div className="w-9 h-9 rounded-lg bg-wow-bg-raised text-wow-gold-muted flex items-center justify-center shrink-0">
-            <ThunderboltOutlined />
+          <div className="w-8 h-8 rounded-lg bg-wow-bg-raised text-wow-gold-muted flex items-center justify-center shrink-0 mt-0.5">
+            <ThunderboltOutlined className="text-xs" />
           </div>
         ) : null}
 
@@ -98,37 +98,40 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
               </span>
             )}
           </div>
+          {!isCollapsible && section.bodyText && (
+            <p className="text-wow-text-secondary text-[13px] leading-relaxed m-0 mt-0.5">
+              {section.bodyText}
+            </p>
+          )}
         </div>
       </div>
 
       {/* Animated body */}
-      <div
-        ref={contentRef}
-        className="grid transition-[grid-template-rows] duration-200 ease-in-out"
-        style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
-      >
-        <div className="overflow-hidden min-h-0">
-          <div className="px-4 pb-3">
-            {section.bodyText && (
-              <p
-                className={`text-wow-text-secondary text-[13px] leading-relaxed m-0 ${
-                  isCollapsible ? 'ml-6' : ''
-                }`}
-              >
-                {section.bodyText}
-              </p>
-            )}
+      {isCollapsible && (
+        <div
+          ref={contentRef}
+          className="grid transition-[grid-template-rows] duration-200 ease-in-out"
+          style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
+        >
+          <div className="overflow-hidden min-h-0">
+            <div className="pb-2">
+              {section.bodyText && (
+                <p className="text-wow-text-secondary text-[13px] leading-relaxed m-0 px-4 ml-3">
+                  {section.bodyText}
+                </p>
+              )}
 
-            {hasChildren && (
-              <div className="mt-2">
-                {section.sections!.map((child) => (
-                  <SectionNode key={child.id} section={child} depth={depth + 1} />
-                ))}
-              </div>
-            )}
+              {hasChildren && (
+                <div className="mt-2">
+                  {section.sections!.map((child) => (
+                    <SectionNode key={child.id} section={child} depth={depth + 1} />
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

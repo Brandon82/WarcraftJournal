@@ -73,19 +73,6 @@ export default function HomePage() {
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {midnight && (
-          <BackgroundCard to={`/${midnight.slug}`} bgUrls={midnightBgCandidates}>
-            <h3 className="text-lg font-semibold m-0 text-wow-gold">
-              {midnight.name}
-            </h3>
-            <p className="text-sm mt-1.5 m-0 text-wow-text-secondary">
-              {midnight.raids.length} {midnight.raids.length === 1 ? 'Raid' : 'Raids'}
-              {midnight.dungeons.length > 0 &&
-                ` · ${midnight.dungeons.length} ${midnight.dungeons.length === 1 ? 'Dungeon' : 'Dungeons'}`}
-            </p>
-          </BackgroundCard>
-        )}
-
         {currentSeason && (
           <BackgroundCard to="/season" bgUrls={seasonBgCandidates}>
             <div className="flex items-center gap-2 mb-1">
@@ -104,6 +91,19 @@ export default function HomePage() {
               {currentSeason.raids.length} {currentSeason.raids.length === 1 ? 'Raid' : 'Raids'}
               {' · '}
               {currentSeason.dungeons.length + currentSeason.legacyDungeons.length} Dungeons
+            </p>
+          </BackgroundCard>
+        )}
+
+        {midnight && (
+          <BackgroundCard to={`/${midnight.slug}`} bgUrls={midnightBgCandidates}>
+            <h3 className="text-lg font-semibold m-0 text-wow-gold">
+              {midnight.name}
+            </h3>
+            <p className="text-sm mt-1.5 m-0 text-wow-text-secondary">
+              {midnight.raids.length} {midnight.raids.length === 1 ? 'Raid' : 'Raids'}
+              {midnight.dungeons.length > 0 &&
+                ` · ${midnight.dungeons.length} ${midnight.dungeons.length === 1 ? 'Dungeon' : 'Dungeons'}`}
             </p>
           </BackgroundCard>
         )}

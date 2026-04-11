@@ -29,7 +29,6 @@ const CURRENT_SEASON_DUNGEON_SLUGS = [
   // Legacy dungeons (fetched via EXTRA_INSTANCE_NAMES in fetch-data.ts)
   'pit-of-saron',
   'skyreach',
-  'the-seat-of-the-triumvirate',
   'seat-of-the-triumvirate',
   'algethar-academy',
 ];
@@ -38,7 +37,7 @@ const CURRENT_SEASON_DUNGEON_SLUGS = [
 const LEGACY_DUNGEON_FALLBACKS: LegacyDungeon[] = [
   { name: 'Pit of Saron', origin: 'Wrath of the Lich King' },
   { name: 'Skyreach', origin: 'Warlords of Draenor' },
-  { name: 'The Seat of the Triumvirate', origin: 'Legion' },
+  { name: 'Seat of the Triumvirate', origin: 'Legion' },
   { name: "Algeth'ar Academy", origin: 'Dragonflight' },
 ];
 

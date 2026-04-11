@@ -1,9 +1,9 @@
 import { useParams } from 'react-router';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Tabs } from 'antd';
 import { useEncounter } from '../hooks/useEncounter';
 import { useJournal } from '../context/JournalContext';
-import { instanceBySlug } from '../data';
+import { instanceBySlug, filterSectionsByDifficulty } from '../data';
 import DifficultySelector from '../components/encounter/DifficultySelector';
 import OverviewTab from '../components/encounter/OverviewTab';
 import AbilitiesTab from '../components/encounter/AbilitiesTab';
@@ -12,7 +12,7 @@ import LootTab from '../components/encounter/LootTab';
 export default function EncounterPage() {
   const { bossSlug, instanceSlug } = useParams();
   const encounter = useEncounter(bossSlug);
-  const { activeTab, setActiveTab } = useJournal();
+  const { difficulty, activeTab, setActiveTab } = useJournal();
   const [imgLoaded, setImgLoaded] = useState(false);
 
   if (!encounter) {
@@ -24,11 +24,19 @@ export default function EncounterPage() {
   }
 
   const instance = instanceSlug ? instanceBySlug.get(instanceSlug) : undefined;
-  const overviewSection = encounter.sections.find(
+
+  const filteredSections = useMemo(
+    () => filterSectionsByDifficulty(encounter.sections, difficulty, encounter.modes),
+    [encounter.sections, difficulty, encounter.modes],
+  );
+
+  const overviewSection = filteredSections.find(
     (s) => s.title.toLowerCase() === 'overview',
   );
 
   const creatureImage = encounter.creatures[0]?.creatureDisplayMedia;
+
+  const supportedModes = encounter.modes.map((m) => m.type.toLowerCase());
 
   const tabItems = [
     {
@@ -44,7 +52,7 @@ export default function EncounterPage() {
     {
       key: 'abilities',
       label: 'Abilities',
-      children: <AbilitiesTab sections={encounter.sections} />,
+      children: <AbilitiesTab sections={filteredSections} modes={encounter.modes} />,
     },
     {
       key: 'loot',
@@ -106,7 +114,7 @@ export default function EncounterPage() {
       </div>
 
       <div className="mb-6">
-        <DifficultySelector />
+        <DifficultySelector supportedModes={supportedModes} />
       </div>
 
       <Tabs

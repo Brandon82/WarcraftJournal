@@ -14,7 +14,7 @@ const JournalContext = createContext<JournalContextValue | null>(null);
 export function JournalProvider({ children }: { children: ReactNode }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const difficulty = (searchParams.get('difficulty') as Difficulty) || Difficulty.Normal;
+  const difficulty = (searchParams.get('difficulty') as Difficulty) || Difficulty.Mythic;
   const activeTab = searchParams.get('tab') || 'overview';
 
   const setDifficulty = useCallback(

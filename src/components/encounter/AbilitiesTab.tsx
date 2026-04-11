@@ -4,9 +4,10 @@ import SectionTree from '../sections/SectionTree';
 
 interface AbilitiesTabProps {
   sections: JournalSection[];
+  modes: Array<{ name: string; type: string }>;
 }
 
-export default function AbilitiesTab({ sections }: AbilitiesTabProps) {
+export default function AbilitiesTab({ sections, modes }: AbilitiesTabProps) {
   const abilitySections = sections.filter(
     (s) => s.title.toLowerCase() !== 'overview',
   );
@@ -22,5 +23,5 @@ export default function AbilitiesTab({ sections }: AbilitiesTabProps) {
     );
   }
 
-  return <SectionTree sections={abilitySections} />;
+  return <SectionTree sections={abilitySections} modes={modes} />;
 }

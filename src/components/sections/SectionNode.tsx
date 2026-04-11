@@ -5,6 +5,44 @@ import type { JournalSection } from '../../types';
 interface SectionNodeProps {
   section: JournalSection;
   depth: number;
+  modes?: Array<{ name: string; type: string }>;
+}
+
+const MODE_TYPE_RANK: Record<string, number> = {
+  LFR: 0,
+  NORMAL: 1,
+  HEROIC: 2,
+  MYTHIC: 3,
+  MYTHIC_KEYSTONE: 3,
+};
+
+/**
+ * Compute a difficulty tag if this section doesn't appear on all encounter modes.
+ * Returns 'heroic' or 'mythic' if the section is restricted to those difficulties, null otherwise.
+ */
+function getDifficultyTag(
+  difficultyMask: number | undefined,
+  modes: Array<{ type: string }> | undefined,
+): 'heroic' | 'mythic' | null {
+  if (!modes || modes.length === 0) return null;
+  if (difficultyMask == null || difficultyMask <= 0) return null;
+
+  // Check if section appears on all modes
+  const allModesMask = (1 << modes.length) - 1;
+  if ((difficultyMask & allModesMask) === allModesMask) return null;
+
+  // Find the minimum difficulty rank this section appears on
+  let minRank = Infinity;
+  for (let i = 0; i < modes.length; i++) {
+    if (difficultyMask & (1 << i)) {
+      const rank = MODE_TYPE_RANK[modes[i].type] ?? 1;
+      if (rank < minRank) minRank = rank;
+    }
+  }
+
+  if (minRank >= 3) return 'mythic';
+  if (minRank >= 2) return 'heroic';
+  return null;
 }
 
 const TAG_STYLES: Record<string, string> = {
@@ -39,12 +77,13 @@ const TAG_LABELS: Record<string, string> = {
   deadly: 'Deadly',
 };
 
-export default function SectionNode({ section, depth }: SectionNodeProps) {
+export default function SectionNode({ section, depth, modes }: SectionNodeProps) {
   const hasChildren = section.sections && section.sections.length > 0;
   const isTopLevel = depth === 0;
   const isCollapsible = hasChildren || !!section.bodyText;
   const [expanded, setExpanded] = useState(isTopLevel);
   const contentRef = useRef<HTMLDivElement>(null);
+  const difficultyTag = getDifficultyTag(section.difficultyMask, modes);
 
   return (
     <div
@@ -68,7 +107,28 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
           </span>
         )}
 
-        {section.spellIcon ? (
+        {section.spellId ? (
+          <a
+            href={`https://www.wowhead.com/spell=${section.spellId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="shrink-0 mt-0.5 hover:brightness-125 transition-all"
+          >
+            {section.spellIcon ? (
+              <img
+                src={section.spellIcon}
+                alt={section.title}
+                title={section.title}
+                className="w-8 h-8 rounded-lg object-cover border border-wow-border"
+              />
+            ) : isTopLevel ? (
+              <div className="w-8 h-8 rounded-lg bg-wow-bg-raised text-wow-gold-muted flex items-center justify-center">
+                <ThunderboltOutlined className="text-xs" />
+              </div>
+            ) : null}
+          </a>
+        ) : section.spellIcon ? (
           <img
             src={section.spellIcon}
             alt={section.title}
@@ -84,9 +144,7 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span
-              className={`font-semibold ${
-                section.spellId ? 'text-wow-gold' : 'text-wow-text'
-              } ${isTopLevel ? 'text-[15px]' : 'text-sm'}`}
+              className={`font-semibold text-wow-text ${isTopLevel ? 'text-[15px]' : 'text-sm'}`}
             >
               {section.title}
             </span>
@@ -96,6 +154,16 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
               >
                 {TAG_LABELS[section.headerIcon]}
               </span>
+            )}
+            {difficultyTag && difficultyTag !== section.headerIcon && (
+              <span
+                className={`px-2 py-0.5 text-xs rounded-md font-medium ${TAG_STYLES[difficultyTag]}`}
+              >
+                {TAG_LABELS[difficultyTag]}
+              </span>
+            )}
+            {section.spellId && (
+              <span className="text-xs text-wow-text-secondary font-mono">({section.spellId})</span>
             )}
           </div>
           {!isCollapsible && section.bodyText && (
@@ -124,7 +192,7 @@ export default function SectionNode({ section, depth }: SectionNodeProps) {
               {hasChildren && (
                 <div className="mt-2">
                   {section.sections!.map((child) => (
-                    <SectionNode key={child.id} section={child} depth={depth + 1} />
+                    <SectionNode key={child.id} section={child} depth={depth + 1} modes={modes} />
                   ))}
                 </div>
               )}

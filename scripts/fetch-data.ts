@@ -875,6 +875,45 @@ function removeSharedSpells(allZoneSpells: Record<string, unknown>[]): void {
   }
 }
 
+// Remove NPCs that appear in more than one instance — they're generic summons/pets, not
+// instance-specific trash. Mutates the array in place.
+function removeSharedNpcs(allZoneSpells: Record<string, unknown>[]): void {
+  // Build a map of npcId → set of instanceSlugs it appears in
+  const npcInstances = new Map<number, Set<string>>();
+  for (const entry of allZoneSpells) {
+    const slug = entry.instanceSlug as string;
+    const npcs = entry.npcs as Array<{ id: number; name: string }>;
+    for (const npc of npcs) {
+      let slugs = npcInstances.get(npc.id);
+      if (!slugs) {
+        slugs = new Set();
+        npcInstances.set(npc.id, slugs);
+      }
+      slugs.add(slug);
+    }
+  }
+
+  const sharedNpcIds = new Set<number>();
+  for (const [id, slugs] of npcInstances) {
+    if (slugs.size > 1) sharedNpcIds.add(id);
+  }
+
+  if (sharedNpcIds.size > 0) {
+    // Log names for readability
+    const names: string[] = [];
+    for (const entry of allZoneSpells) {
+      for (const npc of entry.npcs as Array<{ id: number; name: string }>) {
+        if (sharedNpcIds.has(npc.id) && !names.includes(npc.name)) names.push(npc.name);
+      }
+    }
+    console.log(`Removing ${sharedNpcIds.size} NPCs shared across multiple instances: ${names.join(', ')}`);
+  }
+
+  for (const entry of allZoneSpells) {
+    entry.npcs = (entry.npcs as Array<{ id: number }>).filter((npc) => !sharedNpcIds.has(npc.id));
+  }
+}
+
 const ZONE_SPELLS_MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 function loadCachedZoneSpells(): Map<string, { data: Record<string, unknown>; fresh: boolean }> {
@@ -956,6 +995,7 @@ async function fetchZoneSpellsFromDisk() {
   }
 
   removeSharedSpells(allZoneSpells);
+  removeSharedNpcs(allZoneSpells);
 
   fs.writeFileSync(
     path.join(OUTPUT_DIR, 'zone-spells.json'),

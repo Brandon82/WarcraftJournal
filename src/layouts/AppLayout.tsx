@@ -66,7 +66,7 @@ export default function AppLayout() {
         {!isMobile && (
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="bg-transparent border-none cursor-pointer text-wow-text-dim text-base p-1 flex items-center hover:text-wow-text transition-colors duration-150 rounded"
+            className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"
           >
             <MenuFoldOutlined />
           </button>
@@ -134,7 +134,7 @@ export default function AppLayout() {
             {(isMobile || collapsed) && (
               <button
                 onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(false)}
-                className="bg-transparent border-none cursor-pointer text-wow-text-secondary text-lg p-0 flex items-center hover:text-wow-text transition-colors duration-150"
+                className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"
               >
                 <MenuUnfoldOutlined />
               </button>

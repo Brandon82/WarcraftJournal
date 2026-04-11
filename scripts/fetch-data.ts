@@ -493,6 +493,57 @@ const INSTANCE_TO_WOWHEAD_ZONE: Record<number, { id: number; slug: string }> = {
   1314: { id: 16531, slug: 'the-dreamrift' },
 };
 
+interface WowheadNpc {
+  id: number;
+  name: string;
+  classification: number;
+  react: number[];
+}
+
+// Override NPCs that Wowhead doesn't tag for a zone yet.
+// These are merged into the zone's NPC list before deduplication and ability fetching.
+// Format: instanceId → array of { id (Wowhead NPC ID), name, classification }
+// classification: 1=elite, 2=rare-elite, 3=boss, 4=rare
+const ZONE_NPC_OVERRIDES: Record<number, WowheadNpc[]> = {
+  // Windrunner Spire
+  1299: [
+    { id: 232119, name: 'Swiftshot Archer', classification: 1, react: [-1, -1] },
+    { id: 232447, name: 'Spectral Axethrower', classification: 1, react: [-1, -1] },
+    { id: 232232, name: 'Zealous Reaver', classification: 1, react: [-1, -1] },
+    { id: 232171, name: 'Ardent Cutthroat', classification: 1, react: [-1, -1] },
+    { id: 232116, name: 'Windrunner Soldier', classification: 1, react: [-1, -1] },
+    { id: 232173, name: 'Fervent Apothecary', classification: 1, react: [-1, -1] },
+    { id: 232070, name: 'Restless Steward', classification: 1, react: [-1, -1] },
+    { id: 258868, name: 'Haunting Grunt', classification: 1, react: [-1, -1] },
+    { id: 232121, name: 'Phalanx Breaker', classification: 1, react: [-1, -1] },
+    { id: 232283, name: 'Loyal Worg', classification: 1, react: [-1, -1] },
+    { id: 232067, name: 'Creeping Spindleweb', classification: 1, react: [-1, -1] },
+    { id: 232147, name: 'Lingering Marauder', classification: 1, react: [-1, -1] },
+    { id: 238049, name: 'Scouting Trapper', classification: 1, react: [-1, -1] },
+    { id: 234061, name: 'Phantasmal Mystic', classification: 1, react: [-1, -1] },
+    { id: 232063, name: 'Apex Lynx', classification: 1, react: [-1, -1] },
+    { id: 232176, name: 'Flesh Behemoth', classification: 1, react: [-1, -1] },
+    { id: 236894, name: 'Bloated Lasher', classification: 1, react: [-1, -1] },
+    { id: 232113, name: 'Spellguard Magus', classification: 1, react: [-1, -1] },
+    { id: 232175, name: 'Devoted Woebringer', classification: 1, react: [-1, -1] },
+    { id: 232056, name: 'Territorial Dragonhawk', classification: 1, react: [-1, -1] },
+  ],
+  // Nexus-point Xenas
+  1316: [
+    { id: 241644, name: 'Corewright Arcanist', classification: 1, react: [-1, -1] },
+    { id: 241642, name: 'Lingering Image', classification: 1, react: [-1, -1] },
+    { id: 248502, name: 'Null Sentinel', classification: 1, react: [-1, -1] },
+    { id: 254932, name: 'Radiant Swarm', classification: 1, react: [-1, -1] },
+    { id: 241647, name: 'Flux Engineer', classification: 1, react: [-1, -1] },
+    { id: 241660, name: 'Duskfright Herald', classification: 1, react: [-1, -1] },
+    { id: 241645, name: 'Hollowsoul Scrounger', classification: 1, react: [-1, -1] },
+    { id: 248706, name: 'Cursed Voidcaller', classification: 1, react: [-1, -1] },
+    { id: 254926, name: 'Lightwrought', classification: 1, react: [-1, -1] },
+    { id: 248373, name: 'Circuit Seer', classification: 1, react: [-1, -1] },
+    { id: 248708, name: 'Nexus Adept', classification: 1, react: [-1, -1] },
+  ],
+};
+
 async function fetchWowheadPage(url: string, retries = 5): Promise<string> {
   for (let attempt = 0; attempt < retries; attempt++) {
     if (attempt > 0) {
@@ -538,13 +589,6 @@ function extractListviewData(html: string, template: string, id: string): unknow
   } catch {
     return [];
   }
-}
-
-interface WowheadNpc {
-  id: number;
-  name: string;
-  classification: number;
-  react: number[];
 }
 
 interface WowheadSpell {
@@ -598,10 +642,17 @@ async function fetchZoneSpellsForInstance(
     return !isFriendly;
   });
 
+  // Merge in override NPCs (skip hostility filter since they're manually curated)
+  const overrides = ZONE_NPC_OVERRIDES[instance.id] ?? [];
+  if (overrides.length > 0) {
+    console.log(`  Adding ${overrides.length} override NPCs`);
+  }
+  const allNpcs = [...filteredNpcs, ...overrides];
+
   // Deduplicate NPCs by name — Wowhead often lists multiple IDs for the same mob.
   // Keep the one with the highest classification, breaking ties by highest ID (newest).
   const npcByName = new Map<string, WowheadNpc>();
-  for (const npc of filteredNpcs) {
+  for (const npc of allNpcs) {
     const existing = npcByName.get(npc.name);
     if (!existing || npc.classification > existing.classification || (npc.classification === existing.classification && npc.id > existing.id)) {
       npcByName.set(npc.name, npc);

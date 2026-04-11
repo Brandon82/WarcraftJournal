@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { useInstance } from '../hooks/useInstance';
 import { useZoneSpells } from '../hooks/useZoneSpells';
 import { getEncountersForInstance } from '../data';
+import { getWarcraftLogsUrl } from '../data/warcraftlogs';
 import EncounterCard from '../components/cards/EncounterCard';
 import ZoneSpellSection from '../components/zone-spells/ZoneSpellSection';
 
@@ -28,6 +29,7 @@ export default function InstancePage() {
     );
   }
 
+  const warcraftLogsUrl = getWarcraftLogsUrl(instance.slug);
   const hasHero = !!instance.backgroundImage;
 
   return (
@@ -55,9 +57,23 @@ export default function InstancePage() {
             >
               {instance.category === 'raid' ? 'Raid' : 'Dungeon'}
             </span>
-            <h2 className="text-2xl font-semibold text-white m-0 tracking-wide drop-shadow-lg">
-              {instance.name}
-            </h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-2xl font-semibold text-white m-0 tracking-wide drop-shadow-lg">
+                {instance.name}
+              </h2>
+              {warcraftLogsUrl && (
+                <a
+                  href={warcraftLogsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-150 text-zinc-200 hover:text-white no-underline text-xs font-medium"
+                  title="View on Warcraft Logs"
+                >
+                  <img src="/logos/warcraftlogs.png" alt="" className="w-4 h-4 rounded object-contain" />
+                  Logs
+                </a>
+              )}
+            </div>
             {instance.description && (
               <p className="text-zinc-300 text-sm mt-1.5 m-0 max-w-[600px] leading-relaxed line-clamp-2">
                 {instance.description}
@@ -79,9 +95,23 @@ export default function InstancePage() {
           >
             {instance.category === 'raid' ? 'Raid' : 'Dungeon'}
           </span>
-          <h2 className="text-xl sm:text-2xl font-semibold text-wow-gold mt-3 mb-2 tracking-wide">
-            {instance.name}
-          </h2>
+          <div className="flex items-center gap-3 mt-3 mb-2">
+            <h2 className="text-xl sm:text-2xl font-semibold text-wow-gold m-0 tracking-wide">
+              {instance.name}
+            </h2>
+            {warcraftLogsUrl && (
+              <a
+                href={warcraftLogsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-wow-bg-raised hover:bg-wow-bg-surface border border-wow-border hover:border-wow-gold-muted transition-colors duration-150 text-wow-text-secondary hover:text-wow-gold no-underline text-xs font-medium"
+                title="View on Warcraft Logs"
+              >
+                <img src="/logos/warcraftlogs.png" alt="" className="w-4 h-4 rounded object-contain" />
+                Logs
+              </a>
+            )}
+          </div>
           {instance.description && (
             <p className="text-wow-text-secondary leading-relaxed max-w-[700px] m-0">
               {instance.description}

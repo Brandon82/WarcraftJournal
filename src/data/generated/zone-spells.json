@@ -1,0 +1,2774 @@
+[
+  {
+    "instanceId": 1311,
+    "instanceSlug": "den-of-nalorakk",
+    "fetchedAt": "2026-04-10T23:37:36.314Z",
+    "npcs": [
+      {
+        "id": 244584,
+        "name": "Rotten Mushroom",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1234846,
+            "name": "Toxic Spores",
+            "schools": 8,
+            "description": "Rotten Mushrooms apply a noxious cloud, inflicting 5085 Nature damage every 2 sec for 12 sec. This effect stacks."
+          },
+          {
+            "id": 1245593,
+            "name": "Putrid Burst",
+            "schools": 8,
+            "description": "After 12 sec the mushroom bursts, inflicting 76268 Nature damage, applying Toxic Spores to all players."
+          }
+        ]
+      },
+      {
+        "id": 244759,
+        "name": "Fractured Shivercore",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1234314,
+            "name": "Snowdrift",
+            "schools": 1,
+            "description": "Upon defeat, the Fractured Shivercore forms a pile of deep snow at its location. Players standing within have their movement speed reduced by 40% and are immune to forced movement effects."
+          },
+          {
+            "id": 1235548,
+            "name": "Glacial Torment",
+            "schools": 1,
+            "description": "The Sentinel of Winter assaults players with freezing temperatures, inflicting 40676 Frost damage every 2 sec for 16 sec."
+          },
+          {
+            "id": 1235623,
+            "name": "Raging Squall",
+            "schools": 1,
+            "description": "The Sentinel of Winter creates Raging Squall s, inflicting 177958 Frost damage to players within 2 yards of the impact location. These squalls wander the arena for 1.5 min, inflicting 61014 Frost damage every 1 sec to players within 0 yards."
+          },
+          {
+            "id": 1235656,
+            "name": "Eternal Winter",
+            "schools": 16,
+            "description": "The Sentinel of Winter manifests a massive storm, surrounding itself in a frozen veil absorbing damage equal to 13% of max health. Until broken, this storm inflicts 30507 Frost damage to all players every 1 sec, pushing them away."
+          },
+          {
+            "id": 1235783,
+            "name": "Shattering Frostspike",
+            "schools": 1,
+            "description": "The Sentinel of Winter slams the ice, forming 2 icicles which splinter, inflicting 203380 Frost damage to players within 4 yards of targeted locations, revealing a Fractured Shivercore."
+          },
+          {
+            "id": 1235829,
+            "name": "Winter's Shroud",
+            "schools": 16,
+            "description": "The Fractured Shivercore blankets players with the chill of Winter, inflicting 50845 Frost damage to all players, increasing their Frost damage taken by 10% for 20 sec. This effect stacks."
+          },
+          {
+            "id": 1263590,
+            "name": "Rimeshatter",
+            "schools": 16,
+            "description": "The Fractured Shivercore bursts releasing ice shards that impact 6 sec later inflicting 30507 Frost damage to players within 5 yards. If no players are struck the shard fragments cause a Rime Detonation ."
+          },
+          {
+            "id": 1263597,
+            "name": "Rime Detonation",
+            "schools": 16,
+            "description": "Inflicts 40676 Frost damage to all players and roots them in place for 4 sec."
+          }
+        ]
+      },
+      {
+        "id": 248710,
+        "name": "The Hoardmonger",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1234021,
+            "name": "Earthshatter Slam",
+            "schools": 8,
+            "description": "The Hoardmonger slams the ground, inflicting 254225 Nature damage to players in a frontal cone."
+          },
+          {
+            "id": 1234233,
+            "name": "Spoiled Supplies",
+            "schools": 1,
+            "description": "The Hoardmonger reaches into his sack and tosses rotten food over 7 sec, impacting targeted players for 50845 Nature damage or littering Rotten Mushroom s around the arena."
+          },
+          {
+            "id": 1234681,
+            "name": "Ravenous Bellow",
+            "schools": 1,
+            "description": "The Hoardmonger lets out a mighty roar, inflicting 86437 Physical damage to all players. Ignores armor."
+          },
+          {
+            "id": 1235072,
+            "name": "Resourceful Measures",
+            "schools": 1,
+            "description": "The Hoardmonger gathers from the nearest pile of resources, replacing one of his abilities with a new one.[][He can only retain one ability at a time.]"
+          },
+          {
+            "id": 1235105,
+            "name": "Overflowing Supplies",
+            "schools": 1,
+            "description": "Gathering from his pile of mushrooms, the Hoardmonger gains Overflowing Supplies . This effect increases the amount of Rotten Mushroom s thrown during Spoiled Supplies ."
+          },
+          {
+            "id": 1235125,
+            "name": "Hearty Bellow",
+            "schools": 1,
+            "description": "Gathering from his pile of meat, the Hoardmonger unlocks Hearty Bellow . The Hoardmonger lets out a mighty roar, inflicting 86437 Physical damage to all players and an additional 15254 Physical damage every 1 sec for 8 sec. Ignores armor."
+          },
+          {
+            "id": 1235129,
+            "name": "Bonespike Slam",
+            "schools": 8,
+            "description": "Gathering from his pile of bones, the Hoardmonger unlocks Bonespike Slam . The Hoardmonger slams the ground, inflicting 254225 Nature damage to players in a frontal cone. This additionally creates bone spikes for 45 sec which apply Bonespiked upon contact."
+          },
+          {
+            "id": 1235405,
+            "name": "Bonespiked",
+            "schools": 1,
+            "description": "Broken bones litter the ground, inflicting 10169 Physical damage every 0.5 sec and reducing movement speed by 50%."
+          }
+        ]
+      },
+      {
+        "id": 258877,
+        "name": "Nalorakk",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1242860,
+            "name": "Echoing Maul",
+            "schools": 1,
+            "description": "Nalorakk marks players for 4 sec, then sends an Echo of Nalorakk to their position. All Echoes of Nalorakk immediately inflict 101690 Nature damage to players within 8 yards."
+          },
+          {
+            "id": 1243002,
+            "name": "Fury of the War God",
+            "schools": 8,
+            "description": "Nalorakk headbutts Zul'jarra into a Concussive Shock , then commands the Echoes of Nalorakk to charge her position. These collide with the first target encountered casting Echoing Fury . Any Echo of Nalorakk that reaches Zul'jarra triggers Demoralizing Scream . Each Echo remains for one additional Fury of the War God , then vanishes."
+          },
+          {
+            "id": 1243063,
+            "name": "Concussive Shock",
+            "schools": 1,
+            "description": "Nalorakk disables Zul'jarra with a hefty blow. Unable to defend herself, she stands vulnerable to Nalorakk's echoes."
+          },
+          {
+            "id": 1243408,
+            "name": "Echoing Fury",
+            "schools": 8,
+            "description": "The charging Echo of Nalorakk ravages the first target in their path, inflicting 50845 Nature damage."
+          },
+          {
+            "id": 1243585,
+            "name": "Overwhelming Onslaught",
+            "schools": 1,
+            "description": "Nalorakk swipes repeatedly, obliterating his primary target for 4 sec, inflicting 203380 Physical damage every 1 sec and increasing Overwhelming Onslaught damage taken by 50% for 5 sec. This effect stacks."
+          },
+          {
+            "id": 1255385,
+            "name": "Forceful Roar",
+            "schools": 1,
+            "description": "Nalorakk's shout resonates throughout the den, inflicting 91522 Physical damage and pushes away players for 3 sec. Ignores armor."
+          },
+          {
+            "id": 1261776,
+            "name": "Defensive Stance",
+            "schools": 1,
+            "description": "When Nalorakk casts Overwhelming Onslaught , Zul'jarra creates a protective barrier reducing damage taken from Overwhelming Onslaught by 50% to players behind her."
+          },
+          {
+            "id": 1262253,
+            "name": "Demoralizing Scream",
+            "schools": 1,
+            "description": "Zul'jarra cries out in pain from the undefended attack, inflicting 76268 Sonic damage to all players. Players feel the weight of her burden, increasing damage taken by 10% for 30 sec. This effect stacks."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1300,
+    "instanceSlug": "magisters-terrace",
+    "fetchedAt": "2026-04-10T23:38:09.755Z",
+    "npcs": [
+      {
+        "id": 231861,
+        "name": "Arcanotron Custos",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 474345,
+            "name": "Refueling Protocol",
+            "schools": 1,
+            "description": "Upon running out of energy Arcanotron Custos begins recharging, drawing Energy Orbs toward itself and increasing damage taken by 20% for 20 sec."
+          },
+          {
+            "id": 474407,
+            "name": "Arcane Empowerment",
+            "schools": 64,
+            "description": "An Energy Orb refueling Arcanotron Custos creates an arcane explosion inflicting 101690 Arcane damage to all players and increasing the damage inflicted by Arcanotron Custos by 20%."
+          },
+          {
+            "id": 474414,
+            "name": "Arcane Eruption",
+            "schools": 64,
+            "description": "An Energy Orb refueling Arcanotron Custos creates an arcane explosion inflicting 101690 Arcane damage to all players and increasing the damage inflicted by Arcanotron Custos by 20%."
+          },
+          {
+            "id": 474496,
+            "name": "Repulsing Slam",
+            "schools": 64,
+            "description": "Arcanotron Custos strikes it's current target with destructive force inflicting 152535 Arcane damage and knocking them back."
+          },
+          {
+            "id": 1214038,
+            "name": "Ethereal Shackles",
+            "schools": 64,
+            "description": "Arcanotron Custos suppresses the movement of several players, inflicting 45761 Arcane damage every 3 sec and rooting them for 15 sec."
+          },
+          {
+            "id": 1214081,
+            "name": "Arcane Expulsion",
+            "schools": 64,
+            "description": "Arcanotron Custos expels Arcane energy creating a pool of Arcane Residue at its feet, inflicting 76268 damage to all players and knocking them back."
+          },
+          {
+            "id": 1243905,
+            "name": "Unstable Energy",
+            "schools": 64,
+            "description": "Inflicts 25423 Arcane damage every 1 second for 3 sec. This effect stacks."
+          }
+        ]
+      },
+      {
+        "id": 231863,
+        "name": "Seranel Sunlash",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1224903,
+            "name": "Suppression Zone",
+            "schools": 64,
+            "description": "Seranel slams his shield into the ground, inflicting 203380 Arcane damage to players within 8 yards and conjuring a Suppression Zone at the impact area. The Suppression Zone silences and pacifies players standing within and purges magical effects."
+          },
+          {
+            "id": 1225015,
+            "name": "Suppression Zone",
+            "schools": 64,
+            "description": "Seranel slams his shield into the ground, inflicting 203380 Arcane damage to players within 8 yards and conjuring a Suppression Zone at the impact area. The Suppression Zone silences and pacifies players standing within and purges magical effects."
+          },
+          {
+            "id": 1225135,
+            "name": "Feedback",
+            "schools": 64,
+            "description": "The Suppression Zone consumes Runic Mark from the target, causing them to emit a barrage of arcane missiles. Each missile inflicts 152535 Arcane damage to players within 3 yards of the impact area, silencing and pacifying them for 3 sec."
+          },
+          {
+            "id": 1225193,
+            "name": "Wave of Silence",
+            "schools": 64,
+            "description": "Seranel readies a Wave of Silence , inflicting 76268 Arcane damage to all players and pacifying any player outside of the Suppression Zone for 8 sec."
+          },
+          {
+            "id": 1225201,
+            "name": "Wave of Silence",
+            "schools": 64,
+            "description": "Seranel readies a Wave of Silence , inflicting 76268 Arcane damage to all players and pacifying any player outside of the Suppression Zone for 8 sec."
+          },
+          {
+            "id": 1225792,
+            "name": "Runic Mark",
+            "schools": 64,
+            "description": "Seranel hurls an Arcane infused glaive at a target inflicting (5085 + 25423) Arcane damage and an additional 25423 Arcane damage every 1 sec to players within 4 yards. The glaive bounces to 1 nearby players."
+          },
+          {
+            "id": 1225796,
+            "name": "Runic Mark",
+            "schools": 64,
+            "description": "Seranel hurls an Arcane infused glaive at a target inflicting (5085 + 25423) Arcane damage and an additional 25423 Arcane damage every 1 sec to players within 4 yards. The glaive bounces to 1 nearby players."
+          },
+          {
+            "id": 1246446,
+            "name": "Null Reaction",
+            "schools": 64,
+            "description": "The Runic Mark violently reacts to the removal, inflicting 50845 Arcane damage to all players and reducing their movement speed by 25% for 3 sec. This effect stacks."
+          },
+          {
+            "id": 1248689,
+            "name": "Hastening Ward",
+            "schools": 1,
+            "description": "Seranel surrounds himself in a hastening ward, increasing his attack speed by 100% and his auto attacks to inflict an additional 25423 Arcane damage for 15 sec."
+          },
+          {
+            "id": 1271317,
+            "name": "Hastening Ward",
+            "schools": 64,
+            "description": "Seranel surrounds himself in a hastening ward, increasing his attack speed by 100% and his auto attacks to inflict an additional 25423 Arcane damage for 15 sec."
+          }
+        ]
+      },
+      {
+        "id": 231864,
+        "name": "Gemellus",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1223847,
+            "name": "Triplicate",
+            "schools": 1,
+            "description": "At the start of the encounter and upon reaching 50% remaining health Gemullus self replicates, creating 2 clones of itself."
+          },
+          {
+            "id": 1223936,
+            "name": "Synaptic Nexus",
+            "schools": 1,
+            "description": "All Gemellus function as a collective, sharing health."
+          },
+          {
+            "id": 1224100,
+            "name": "Void Secretions",
+            "schools": 1,
+            "description": "Cosmic Sting forms a pool of secretions, inflicting 76268 Shadow damage every 1 sec to players standing within."
+          },
+          {
+            "id": 1224299,
+            "name": "Astral Grasp",
+            "schools": 32,
+            "description": "Gemellus channels a shadowy tendril at a player, inflicting 20338 Shadow damage every 1 sec and pulling the player towards them for 8 sec."
+          },
+          {
+            "id": 1224401,
+            "name": "Cosmic Radiation",
+            "schools": 32,
+            "description": "Gemellus radiates players pulled within its grasp, inflicting 91521 Shadow damage every 1 sec."
+          },
+          {
+            "id": 1253707,
+            "name": "Neural Link",
+            "schools": 1,
+            "description": "Gemellus forms a neural link with a player, absorbing damage equal to 20% of its maximum health. The player they are linked to receives 20% more damage for 12 sec. Players who touch the Gemellus who linked with them before Neural Link expires disrupts the connection, removing Gemellus' damage absorb."
+          },
+          {
+            "id": 1253709,
+            "name": "Neural Link",
+            "schools": 1,
+            "description": "Gemellus forms a neural link with a player, absorbing damage equal to 20% of its maximum health. The player they are linked to receives 20% more damage for 12 sec. Players who touch the Gemellus who linked with them before Neural Link expires disrupts the connection, removing Gemellus' damage absorb."
+          },
+          {
+            "id": 1284954,
+            "name": "Cosmic Sting",
+            "schools": 32,
+            "description": "Gemellus stings a player with Cosmic Void, inflicting 61014 Shadow damage and creating a pool of Void Secretions at their location. Inflicts an additional 25423 Shadow damage every 1 sec for 6 sec."
+          },
+          {
+            "id": 1284958,
+            "name": "Cosmic Sting",
+            "schools": 32,
+            "description": "Gemellus stings a player with Cosmic Void, inflicting 61014 Shadow damage and creating a pool of Void Secretions at their location. Inflicts an additional 25423 Shadow damage every 1 sec for 6 sec."
+          }
+        ]
+      },
+      {
+        "id": 231865,
+        "name": "Degentrius",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1214714,
+            "name": "Void Torrent",
+            "schools": 32,
+            "description": "The Celestial Orrery's focusing lenses channel Void energy into Degentrius. Contact with a Void Torrent inflicts 152419 Shadow damage and stuns the player for 5 sec."
+          },
+          {
+            "id": 1215087,
+            "name": "Unstable Void Essence",
+            "schools": 1,
+            "description": "Degentrius launches unstable void energy that bounces to 4 locations, inflicting 50845 Shadow damage to any player at the point of impact. If no player is in the area the unstable void essence erupts in Void Destruction ."
+          },
+          {
+            "id": 1215161,
+            "name": "Void Destruction",
+            "schools": 32,
+            "description": "Void energy erupts upon impact with the ground inflicting 61014 Shadow damage to all players plus an additional 5085 Shadow damage every 0.5 sec for 40 sec. This effect stacks."
+          },
+          {
+            "id": 1215897,
+            "name": "Devouring Entropy",
+            "schools": 32,
+            "description": "Degentrius corrupts several players with Void energy, inflicting 15246 Shadow damage every 1 sec. Each afflicted player receives a different duration. Upon expiration, Entropy Orb s launch from the player's location."
+          },
+          {
+            "id": 1269631,
+            "name": "Entropy Orb",
+            "schools": 32,
+            "description": "Volatile masses inflict 76268 Shadow damage to players struck and additionaly reduce their movement speed by 70% for 5 sec."
+          },
+          {
+            "id": 1271066,
+            "name": "Entropy Blast",
+            "schools": 1,
+            "description": "Degentrius unleashes an Entropy Blast at its primary target inflicting Physical damage."
+          },
+          {
+            "id": 1280113,
+            "name": "Hulking Fragment",
+            "schools": 32,
+            "description": "Degentrius smashes a massive fragment into their current target, inflicting 177958 Shadow damage to players within 8 yards. The force of the impact knocks away other players within 8 yards of their target."
+          },
+          {
+            "id": 1280119,
+            "name": "Hulking Fragment",
+            "schools": 32,
+            "description": "Degentrius smashes a massive fragment into their current target, inflicting 177958 Shadow damage to players within 8 yards. The force of the impact knocks away other players within 8 yards of their target."
+          },
+          {
+            "id": 1284627,
+            "name": "Umbral Splinters",
+            "schools": 32,
+            "description": "Embedded splinters from Hulking Fragment inflict 20338 Shadow damage every 1 sec for 30 sec. This effect stacks. Upon removal, the splinters dissolve, leaving behind Stygian Ichor ."
+          },
+          {
+            "id": 1284628,
+            "name": "Stygian Ichor",
+            "schools": 32,
+            "description": "The dissolved splinters form a pool on the ground for 40 sec, inflicting 10169 Shadow damage every 0.5 sec to players within."
+          },
+          {
+            "id": 1284633,
+            "name": "Stygian Ichor",
+            "schools": 32,
+            "description": "The dissolved splinters form a pool on the ground for 40 sec, inflicting 10169 Shadow damage every 0.5 sec to players within."
+          }
+        ]
+      },
+      {
+        "id": 232369,
+        "name": "Arcane Magister",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 468962,
+            "name": "Arcane Bolt",
+            "schools": 64,
+            "description": "Inflicts Arcane damage to an enemy."
+          },
+          {
+            "id": 468966,
+            "name": "Polymorph",
+            "schools": 64,
+            "description": "Transforms the enemy into a helpless Mana Wyrm that cannot cast spells or attack and movement speed is reduced by 60% for up to 6 sec."
+          },
+          {
+            "id": 1245046,
+            "name": "Blink",
+            "schools": 1,
+            "description": "Teleports the mage forward."
+          }
+        ]
+      },
+      {
+        "id": 234062,
+        "name": "Arcane Sentry",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 473258,
+            "name": "Crowd Dispersal",
+            "schools": 64,
+            "description": "Arcane Sentry attempts to disperse the crowd inflicting 91521 Arcane damage and knocking back all players within 50 yds."
+          },
+          {
+            "id": 1282050,
+            "name": "Arcane Beam",
+            "schools": 64,
+            "description": "Inflicts 25423 Arcane damage to target enemy every 1 sec and leaves behind Arcane Residue at their location."
+          },
+          {
+            "id": 1282051,
+            "name": "Arcane Beam",
+            "schools": 64,
+            "description": "Inflicts 25423 Arcane damage to target enemy every 1 sec and leaves behind Arcane Residue at their location."
+          },
+          {
+            "id": 1282053,
+            "name": "Arcane Residue",
+            "schools": 64,
+            "description": "50845 Arcane damage inflicted every 1 sec."
+          },
+          {
+            "id": 1282055,
+            "name": "Ethereal Shackles",
+            "schools": 64,
+            "description": "Inflicts 45761 Arcane damage to target enemy every 3 sec for 15 sec and roots them in place."
+          }
+        ]
+      },
+      {
+        "id": 234064,
+        "name": "Dreadful Voidwalker",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1248327,
+            "name": "Shadow Bolt",
+            "schools": 32,
+            "description": "Inflicts 61014 Shadow damage to an enemy."
+          }
+        ]
+      },
+      {
+        "id": 234066,
+        "name": "Devouring Tyrant",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1248138,
+            "name": "Void Bomb",
+            "schools": 1,
+            "description": "Void Bomb explodes after 5 sec, inflicting 61014 Shadow damage to players within 4 yards. Every unit within 4 yards have their damage done increased by 15% and absorb the next 262182 healing."
+          },
+          {
+            "id": 1248219,
+            "name": "Void Bomb",
+            "schools": 32,
+            "description": "Void Bomb explodes after 5 sec, inflicting 61014 Shadow damage to players within 4 yards. Every unit within 4 yards have their damage done increased by 15% and absorb the next 262182 healing."
+          },
+          {
+            "id": 1248229,
+            "name": "Void Infusion",
+            "schools": 1,
+            "description": "Void Bomb explodes after 5 sec, inflicting 61014 Shadow damage to players within 4 yards. Every unit within 4 yards have their damage done increased by 15% and absorb the next 262182 healing."
+          },
+          {
+            "id": 1264687,
+            "name": "Devouring Strike",
+            "schools": 32,
+            "description": "Assaults the target with consuming void inflicting 101690 Shadow damage and absorbing 327728 incoming healing."
+          }
+        ]
+      },
+      {
+        "id": 234068,
+        "name": "Shadowrift Voidcaller",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1217087,
+            "name": "Consuming Shadows",
+            "schools": 32,
+            "description": "Requires level 10 Devouring Voidcaller inflicts 50845 Shadow damage to all players within line of sight and heals for 100% of the damage inflicted."
+          },
+          {
+            "id": 1255462,
+            "name": "Call of the Void",
+            "schools": 32,
+            "description": "Devouring Voidcaller sends a call to the void summoning a void beast nearby every 0.5 sec for 3 sec."
+          },
+          {
+            "id": 1265977,
+            "name": "Consuming Shadows",
+            "schools": 32,
+            "description": "Devouring Voidcaller inflicts 50845 Shadow damage to all players within line of sight and heals for 100% of the damage inflicted."
+          }
+        ]
+      },
+      {
+        "id": 234124,
+        "name": "Sunblade Enforcer",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1252910,
+            "name": "Arcane Blade",
+            "schools": 64,
+            "description": "The caster enchants their weapon, causing their melee attacks to inflict an additional 40676 Arcane damage to their target."
+          },
+          {
+            "id": 1253224,
+            "name": "Charge",
+            "schools": 1,
+            "description": "The caster charges to the target."
+          },
+          {
+            "id": 1265561,
+            "name": "Arcane Blade",
+            "schools": 64,
+            "description": "The caster enchants their weapon, causing their melee attacks to inflict an additional 40676 Arcane damage to their target. (1s cooldown)"
+          }
+        ]
+      },
+      {
+        "id": 234486,
+        "name": "Lightward Healer",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1254306,
+            "name": "Power Word: Shield",
+            "schools": 2,
+            "description": "Protects a nearby injured ally absorbing 20% of their health in damage."
+          },
+          {
+            "id": 1255187,
+            "name": "Holy Fire",
+            "schools": 2,
+            "description": "Sets a player ablaze in Holy Fire inflicting 25423 Holy damage and an additional 25423 Holy damage every 1 sec for 15 sec."
+          }
+        ]
+      },
+      {
+        "id": 239636,
+        "name": "Gemellus",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1223936,
+            "name": "Synaptic Nexus",
+            "schools": 1,
+            "description": "All Gemellus function as a collective, sharing health."
+          },
+          {
+            "id": 1224104,
+            "name": "Void Secretions",
+            "schools": 32,
+            "description": "Cosmic Sting forms a pool of secretions, inflicting 76268 Shadow damage every 1 sec to players standing within."
+          },
+          {
+            "id": 1224299,
+            "name": "Astral Grasp",
+            "schools": 32,
+            "description": "Gemellus channels a shadowy tendril at a player, inflicting 20338 Shadow damage every 1 sec and pulling the player towards them for 8 sec."
+          },
+          {
+            "id": 1224401,
+            "name": "Cosmic Radiation",
+            "schools": 32,
+            "description": "Gemellus radiates players pulled within its grasp, inflicting 91521 Shadow damage every 1 sec."
+          },
+          {
+            "id": 1253707,
+            "name": "Neural Link",
+            "schools": 1,
+            "description": "Gemellus forms a neural link with a player, absorbing damage equal to 20% of its maximum health. The player they are linked to receives 20% more damage for 12 sec. Players who touch the Gemellus who linked with them before Neural Link expires disrupts the connection, removing Gemellus' damage absorb."
+          },
+          {
+            "id": 1253709,
+            "name": "Neural Link",
+            "schools": 1,
+            "description": "Gemellus forms a neural link with a player, absorbing damage equal to 20% of its maximum health. The player they are linked to receives 20% more damage for 12 sec. Players who touch the Gemellus who linked with them before Neural Link expires disrupts the connection, removing Gemellus' damage absorb."
+          },
+          {
+            "id": 1284954,
+            "name": "Cosmic Sting",
+            "schools": 32,
+            "description": "Gemellus stings a player with Cosmic Void, inflicting 61014 Shadow damage and creating a pool of Void Secretions at their location. Inflicts an additional 25423 Shadow damage every 1 sec for 6 sec."
+          },
+          {
+            "id": 1284958,
+            "name": "Cosmic Sting",
+            "schools": 32,
+            "description": "Gemellus stings a player with Cosmic Void, inflicting 61014 Shadow damage and creating a pool of Void Secretions at their location. Inflicts an additional 25423 Shadow damage every 1 sec for 6 sec."
+          }
+        ]
+      },
+      {
+        "id": 240973,
+        "name": "Runed Spellbreaker",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1244907,
+            "name": "Runic Glaive",
+            "schools": 64,
+            "description": "Hurls an Arcane infused glaive at a target inflicting 35592 Arcane damage and an additional 20338 Arcane damage every 1 sec for 10 sec. The glaive bounces to 1 additional nearby player."
+          },
+          {
+            "id": 1283901,
+            "name": "Shield Slam",
+            "schools": 64,
+            "description": "Slams the shield on the ground, causing arcane explosions that inflicts 127113 Arcane damage to enemies hit."
+          }
+        ]
+      },
+      {
+        "id": 241397,
+        "name": "Celestial Drifter",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1248015,
+            "name": "Astral Scouting",
+            "schools": 1,
+            "description": "Scanning for threats."
+          }
+        ]
+      },
+      {
+        "id": 249086,
+        "name": "Void Terror",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1245068,
+            "name": "Consuming Void",
+            "schools": 32,
+            "description": "Void Infuser unleashes consuming void upon a random player inflicting 10169 Shadow damage every 0.5 sec for 15 sec."
+          },
+          {
+            "id": 1264693,
+            "name": "Terror Wave",
+            "schools": 32,
+            "description": "Unleashes a surge of void energy inflicting 0 Shadow damage to players within 50 yds causing them to flee in fear for 3 sec."
+          }
+        ]
+      },
+      {
+        "id": 251861,
+        "name": "Blazing Pyromancer",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1254294,
+            "name": "Pyroblast",
+            "schools": 4,
+            "description": "Inflicts 203380 Fire damage."
+          },
+          {
+            "id": 1254301,
+            "name": "Flamestrike",
+            "schools": 4,
+            "description": "Inflicts 177958 Fire damage and creates a patch of flame that inflicts 50845 Fire damage every 1 sec to players in the area."
+          },
+          {
+            "id": 1254336,
+            "name": "Ignition",
+            "schools": 4,
+            "description": "Sunblade Pyromancer engulfs herself in flames inflicting 15254 Fire damage every 1 sec to all players within 50 yds."
+          },
+          {
+            "id": 1254338,
+            "name": "Ignition",
+            "schools": 4,
+            "description": "Sunblade Pyromancer engulfs herself in flames inflicting 15254 Fire damage every 1 sec to all players within 50 yds."
+          }
+        ]
+      },
+      {
+        "id": 255376,
+        "name": "Unstable Voidling",
+        "spells": [
+          {
+            "id": 1264951,
+            "name": "Void Eruption",
+            "schools": 32,
+            "description": "Inflicts 7627 Shadow damage to all players within 50 yds."
+          }
+        ]
+      },
+      {
+        "id": 259387,
+        "name": "Spellwoven Familiar",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1279994,
+            "name": "Blink",
+            "schools": 64,
+            "description": "The caster teleports towards a nearby location and releases a surge of energy inflicting 30507 Arcane damage to players within 60 yards."
+          },
+          {
+            "id": 1279995,
+            "name": "Blink",
+            "schools": 64,
+            "description": "The caster teleports towards a nearby location and releases a surge of energy inflicting 30507 Arcane damage to players within 60 yards."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1315,
+    "instanceSlug": "maisara-caverns",
+    "fetchedAt": "2026-04-10T23:38:54.841Z",
+    "npcs": [
+      {
+        "id": 1531,
+        "name": "Lost Soul",
+        "classification": 4,
+        "spells": [
+          {
+            "id": 1254175,
+            "name": "Cries of the Fallen",
+            "schools": 32,
+            "description": "The soul cries out upon contacting a player, inflicting 25423 Shadow damage and rooting them for 3 sec."
+          }
+        ]
+      },
+      {
+        "id": 229537,
+        "name": "Voidbound Emissary",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 257069,
+            "name": "Watertight Shell",
+            "schools": 8,
+            "description": "The shell explodes, inflicting 123461 Nature damage to all enemies within 10 yards and stunning them for 4 sec."
+          },
+          {
+            "id": 288865,
+            "name": "Meerah's Jukebox",
+            "schools": 1,
+            "description": "Set up a rickety jukebox featuring Meerah's greatest hit!"
+          },
+          {
+            "id": 324859,
+            "name": "Bramblethorn Entanglement",
+            "schools": 8,
+            "description": "Unleashes a burst of anima, inflicting 0 Nature damage every 2 sec and Rooting all enemies within 30 yards for 8 sec"
+          },
+          {
+            "id": 427359,
+            "name": "Defend",
+            "schools": 1,
+            "description": "The caster raises their shield and focuses on protecting allies within 0 yards, reducing their damage taken by 50 % for up to 5 sec. Interrupting this effect shatters the caster's defenses, increasing their damage taken by 25 % for 10 sec."
+          },
+          {
+            "id": 454782,
+            "name": "Radiant Focus",
+            "schools": 1,
+            "description": "Your damaging spells and abilities have the chance to ignite your target with Radiant Focus for 15 sec. After dealing up to 95471 damage to the target, the focused energies ignite you with Radiance, granting between ( 11 * .5) to 11 of your highest Secondary stat based on damage dealt for 15 sec."
+          },
+          {
+            "id": 462508,
+            "name": "Dark Prayer",
+            "schools": 32,
+            "description": "The Void Emissary casts a dark prayer. When the cast completes, nearby creatures are granted Xal'atath's Gift , increasing their damage done by up to 50% and reducing their damage taken by up to 100% for 20 sec based on the amount of the Void Emissary's shield that remains. Defeating the Void Emissary empowers players, granting them 20% Versatility and 30% spell and ability cooldown rate for 30 sec."
+          },
+          {
+            "id": 462510,
+            "name": "Dark Prayer",
+            "schools": 32,
+            "description": "Empowered by the dark pray from the void, Reducing damage taken by 10%. This effect stacks."
+          },
+          {
+            "id": 462661,
+            "name": "Voidbinding",
+            "schools": 32,
+            "description": "Blessed by the void, increases Versatility by 20% and increases spell and ability cool down rate by 30% for 30 sec."
+          },
+          {
+            "id": 1221061,
+            "name": "Xal'atath's Gift",
+            "schools": 32,
+            "description": "The Void Emissary casts a dark prayer. When the cast completes, nearby creatures are granted Xal'atath's Gift , increasing their damage done by up to 50% and reducing their damage taken by up to 100% for 20 sec based on the amount of the Void Emissary's shield that remains. Defeating the Void Emissary empowers players, granting them 20% Versatility and 30% spell and ability cooldown rate for 30 sec."
+          }
+        ]
+      },
+      {
+        "id": 242964,
+        "name": "Keen Headhunter",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1255964,
+            "name": "Throw Spear",
+            "schools": 1,
+            "description": "Throws a weapon at an enemy, inflicting Physical damage."
+          },
+          {
+            "id": 1255966,
+            "name": "Regeneratin'",
+            "schools": 8,
+            "description": "The caster regenerates 2% of their maximum health every 5 sec."
+          },
+          {
+            "id": 1266381,
+            "name": "Hooked Snare",
+            "schools": 1,
+            "description": "The caster flings a net, rooting the target for 4 sec and inflicting 13982 Physical damage every 0.5 sec for 4 sec."
+          }
+        ]
+      },
+      {
+        "id": 247570,
+        "name": "Muro'jin",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1243741,
+            "name": "Freezing Trap",
+            "schools": 16,
+            "description": "Muro'jin throws traps at players which remain for 40 sec. Upon contact, these incapacitate the triggering player for 8 sec. Damage may break the effect."
+          },
+          {
+            "id": 1243751,
+            "name": "Icy Slick",
+            "schools": 1,
+            "description": "Triggered Freezing Trap s leave behind a frozen patch that inflicts 25423 Frost damage every 1 sec to players within and causes them to slide."
+          },
+          {
+            "id": 1249789,
+            "name": "Revive Pet",
+            "schools": 1,
+            "description": "Muro'jin revives Nekraxx, returning them to life with 35% of their health."
+          },
+          {
+            "id": 1260643,
+            "name": "Barrage",
+            "schools": 40,
+            "description": "Muro'jin fixes his aim on a player for 5 sec, firing a spray of venomous arrows in a frontal cone toward them every 0.5 sec. The volley inflicts 20338 Plague damage to players struck and applies Vilebranch Sting ."
+          },
+          {
+            "id": 1260648,
+            "name": "Barrage",
+            "schools": 40,
+            "description": "Muro'jin fixes his aim on a player for 5 sec, firing a spray of venomous arrows in a frontal cone toward them every 0.5 sec. The volley inflicts 20338 Plague damage to players struck and applies Vilebranch Sting ."
+          },
+          {
+            "id": 1260709,
+            "name": "Vilebranch Sting",
+            "schools": 40,
+            "description": "Muro'jin's venom-tipped arrows inhibit targets, reducing their movement speed by 5% for 10 sec. This effect stacks."
+          },
+          {
+            "id": 1260731,
+            "name": "Freezing Trap",
+            "schools": 1,
+            "description": "Muro'jin throws traps at players which remain for 40 sec. Upon contact, these incapacitate the triggering player for 8 sec. Damage may break the effect."
+          },
+          {
+            "id": 1266480,
+            "name": "Flanking Spear",
+            "schools": 1,
+            "description": "Muro'jin harpoons behind his current target and hurls a massive spear. The spear inflicts 305070 Physical damage and knocks the target away, applying Open Wound ."
+          },
+          {
+            "id": 1266485,
+            "name": "Flanking Spear",
+            "schools": 1,
+            "description": "Muro'jin harpoons behind his current target and hurls a massive spear. The spear inflicts 305070 Physical damage and knocks the target away, applying Open Wound ."
+          },
+          {
+            "id": 1266488,
+            "name": "Open Wound",
+            "schools": 1,
+            "description": "Muro'jin's Flanking Spear causes the target to bleed profusely, inflicting 40676 Physical damage every 1 sec for 10 sec."
+          }
+        ]
+      },
+      {
+        "id": 247572,
+        "name": "Nekraxx",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1243900,
+            "name": "Fetid Quillstorm",
+            "schools": 32,
+            "description": "Nekraxx soars to a location and releases a surge of dark energy, inflicting 127113 Shadow damage to players within 10 yards and flinging quills which inflict 127113 Shadow damage to players within 3 yards."
+          },
+          {
+            "id": 1246666,
+            "name": "Infected Pinions",
+            "schools": 40,
+            "description": "Nekraxx pierces all players with festering feathers, inflicting 12711 Plague damage every 1 sec for 30 sec."
+          },
+          {
+            "id": 1249479,
+            "name": "Carrion Swoop",
+            "schools": 1,
+            "description": "Nekraxx charges toward a marked player, inflicting 88979 Shadow damage to players in her path and knocking them upwards. If Nekraxx strikes a player incapacitated by Freezing Trap , the trap shatters instead, stunning Nekraxx for 5 sec."
+          },
+          {
+            "id": 1249769,
+            "name": "Coordinated Assault",
+            "schools": 1,
+            "description": "Muro'jin hurls an axe at players knocked up by Carrion Swoop , inflicting 254225 Physical damage and knocking them further upwards."
+          },
+          {
+            "id": 1249948,
+            "name": "Bestial Wrath",
+            "schools": 1,
+            "description": "Muro'jin's defeat sends Nekraxx into a frenzy, increasing her damage done by 20% every 4 sec. This effect stacks."
+          }
+        ]
+      },
+      {
+        "id": 248595,
+        "name": "Vordaza",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1250708,
+            "name": "Necrotic Convergence",
+            "schools": 1,
+            "description": "Vordaza protects herself with Deathshroud and unleashes waves of necrotic energy which inflict 22880 Shadow damage to all players every 2 sec for up to 1 min. This effect grows in intensity over time."
+          },
+          {
+            "id": 1251204,
+            "name": "Wrest Phantoms",
+            "schools": 1,
+            "description": "Vordaza wrests fresh sacrifices to do her bidding, manifesting Unstable Phantoms that seek out players."
+          },
+          {
+            "id": 1251554,
+            "name": "Drain Soul",
+            "schools": 32,
+            "description": "Vordaza siphons the life essence from her current target, inflicting 50845 Shadow damage and absorbing the next 26218 healing received every 1 sec for 4 sec."
+          },
+          {
+            "id": 1251567,
+            "name": "Drain Soul",
+            "schools": 32,
+            "description": "Vordaza siphons the life essence from her current target, inflicting 50845 Shadow damage and absorbing the next 26218 healing received every 1 sec for 4 sec."
+          },
+          {
+            "id": 1251568,
+            "name": "Drain Soul",
+            "schools": 32,
+            "description": "Vordaza siphons the life essence from her current target, inflicting 50845 Shadow damage and absorbing the next 26218 healing received every 1 sec for 4 sec."
+          },
+          {
+            "id": 1251598,
+            "name": "Deathshroud",
+            "schools": 32,
+            "description": "Vordaza wraps herself in a necrotic barrier, becoming immune to interrupt effects and absorbing the next 1009402 damage for 1 min."
+          },
+          {
+            "id": 1251813,
+            "name": "Lingering Dread",
+            "schools": 32,
+            "description": "The phantom screams when slain, inflicting 25423 Shadow damage to all players."
+          },
+          {
+            "id": 1251833,
+            "name": "Soulrot",
+            "schools": 32,
+            "description": "Upon defeat Unstable Phantoms leave behind a pool of necrotic residue for 20 sec, inflicting 50845 Shadow damage every 1.5 sec to players within."
+          },
+          {
+            "id": 1252054,
+            "name": "Unmake",
+            "schools": 1,
+            "description": "Vordaza unleashes a frontal surge of soulflaying force for 4.5 sec, inflicting 61014 Shadow damage every 0.5 sec to players caught in the blast and pushing them away."
+          },
+          {
+            "id": 1252130,
+            "name": "Unmake",
+            "schools": 32,
+            "description": "Vordaza unleashes a frontal surge of soulflaying force for 4.5 sec, inflicting 61014 Shadow damage every 0.5 sec to players caught in the blast and pushing them away."
+          },
+          {
+            "id": 1252611,
+            "name": "Coalesced Death",
+            "schools": 32,
+            "description": "Vordaza's ritual forms masses of soul ichor that flow across the dais, inflicting 127113 Shadow damage to players struck."
+          },
+          {
+            "id": 1263735,
+            "name": "Necrotic Convergence",
+            "schools": 32,
+            "description": "Vordaza protects herself with Deathshroud and unleashes waves of necrotic energy which inflict 22880 Shadow damage to all players every 2 sec for up to 1 min. This effect grows in intensity over time."
+          },
+          {
+            "id": 1264987,
+            "name": "Withering Miasma",
+            "schools": 1,
+            "description": "A withering miasma saturates the cavern, inflicting 13982 Shadow damage to all players every 2 sec."
+          },
+          {
+            "id": 1264989,
+            "name": "Withering Miasma",
+            "schools": 32,
+            "description": "A withering miasma saturates the cavern, inflicting 13982 Shadow damage to all players every 2 sec."
+          },
+          {
+            "id": 1277556,
+            "name": "Necrotic Convergence",
+            "schools": 1,
+            "description": "Vordaza protects herself with Deathshroud and unleashes waves of necrotic energy which inflict 22880 Shadow damage to all players every 2 sec for up to 1 min. This effect grows in intensity over time."
+          }
+        ]
+      },
+      {
+        "id": 248605,
+        "name": "Rak'tul",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1248863,
+            "name": "Deathgorged Vessel",
+            "schools": 1,
+            "description": "Rak'tul's engorged form releases soul energy every 6 sec, inflicting 54913 Shadow damage to all players and ejecting Volatile Essence s."
+          },
+          {
+            "id": 1248879,
+            "name": "Deathgorged Vessel",
+            "schools": 32,
+            "description": "Rak'tul's engorged form releases soul energy every 6 sec, inflicting 54913 Shadow damage to all players and ejecting Volatile Essence s."
+          },
+          {
+            "id": 1248980,
+            "name": "Volatile Essence",
+            "schools": 32,
+            "description": "Released soul energy bursts upon impact, inflicting 101690 Shadow damage to players within 2 yards."
+          },
+          {
+            "id": 1251023,
+            "name": "Spiritbreaker",
+            "schools": 1,
+            "description": "Rak'tul pummels his target twice, inflicting 177958 Physical damage with each strike. He then delivers a final empowered blow, inflicting 139824 Shadow damage and launching the target high into the air. The final blow leaves behind a patch of Spectral Decay ."
+          },
+          {
+            "id": 1251024,
+            "name": "Spiritbreaker",
+            "schools": 1,
+            "description": "Rak'tul pummels his target twice, inflicting 177958 Physical damage with each strike. He then delivers a final empowered blow, inflicting 139824 Shadow damage and launching the target high into the air. The final blow leaves behind a patch of Spectral Decay ."
+          },
+          {
+            "id": 1252675,
+            "name": "Crush Souls",
+            "schools": 1,
+            "description": "Rak'tul repeatedly leaps and slams down, inflicting 101690 Shadow damage to players within 5 yards. Each impact plants a Soulbind Totem."
+          },
+          {
+            "id": 1252676,
+            "name": "Crush Souls",
+            "schools": 1,
+            "description": "Rak'tul repeatedly leaps and slams down, inflicting 101690 Shadow damage to players within 5 yards. Each impact plants a Soulbind Totem."
+          },
+          {
+            "id": 1252704,
+            "name": "Crush Souls",
+            "schools": 32,
+            "description": "Rak'tul repeatedly leaps and slams down, inflicting 101690 Shadow damage to players within 5 yards. Each impact plants a Soulbind Totem."
+          },
+          {
+            "id": 1253765,
+            "name": "Spiritbreaker",
+            "schools": 32,
+            "description": "Rak'tul pummels his target twice, inflicting 177958 Physical damage with each strike. He then delivers a final empowered blow, inflicting 139824 Shadow damage and launching the target high into the air. The final blow leaves behind a patch of Spectral Decay ."
+          },
+          {
+            "id": 1253779,
+            "name": "Spectral Decay",
+            "schools": 32,
+            "description": "The pooling essence inflicts 30507 Shadow damage every 1 sec to players within and increases their damage taken by 30%."
+          },
+          {
+            "id": 1253788,
+            "name": "Soulrending Roar",
+            "schools": 1,
+            "description": "Rak'tul roars with tremendous force, awakening the Restless Masses and applying Withering Soul to all players. This affliction tears players' souls asunder, flinging them across the Echoing Span and severing them from the realm of the living. Soul Expulsion leaves Rak'tul momentarily in a trance."
+          },
+          {
+            "id": 1253844,
+            "name": "Withering Soul",
+            "schools": 32,
+            "description": "While in an incorporeal form, the target suffers 2542 Shadow damage every 1 sec. This effect stacks every 4 sec. Returning to the realm of the living removes this effect."
+          },
+          {
+            "id": 1253909,
+            "name": "Soul Expulsion",
+            "schools": 1,
+            "description": "Soulrending Roar sends Rak'tul into a stupor, stunning him for 45 sec. Souls periodically erupt from his form, inflicting 139824 Shadow damage to players within 4 yards of each impact."
+          },
+          {
+            "id": 1259810,
+            "name": "Shattered Totem",
+            "schools": 32,
+            "description": "Rak'tul's roar shatters each remaining Soulbind Totem, inflicting 127113 Shadow damage to all players for each totem shattered."
+          },
+          {
+            "id": 1266723,
+            "name": "Spectral Decay",
+            "schools": 32,
+            "description": "The pooling essence inflicts 30507 Shadow damage every 1 sec to players within and increases their damage taken by 30%."
+          }
+        ]
+      },
+      {
+        "id": 248684,
+        "name": "Frenzied Berserker",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1255765,
+            "name": "Blood Frenzy",
+            "schools": 1,
+            "description": "The caster enrages, increasing their damage done by 20% and increasing their attack speed by 30% for 20 sec."
+          },
+          {
+            "id": 1255966,
+            "name": "Regeneratin'",
+            "schools": 8,
+            "description": "The caster regenerates 2% of their maximum health every 5 sec."
+          }
+        ]
+      },
+      {
+        "id": 248685,
+        "name": "Ritual Hexxer",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1256008,
+            "name": "Hex",
+            "schools": 32,
+            "description": "The caster transforms a player into a frog, rendering it unable to attack or cast spells for 6 sec."
+          },
+          {
+            "id": 1256015,
+            "name": "Shadow Bolt",
+            "schools": 32,
+            "description": "Inflicts 61014 Shadow damage to an enemy."
+          }
+        ]
+      },
+      {
+        "id": 248686,
+        "name": "Dread Souleater",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1257088,
+            "name": "Necrotic Wave",
+            "schools": 32,
+            "description": "The caster unleashes a wave of necrotic energy which arcs between players, inflicting 25423 Shadow damage and absorbing the next 39000 healing received."
+          },
+          {
+            "id": 1257155,
+            "name": "Rain of Toads",
+            "schools": 1,
+            "description": "The caster causes a torrent of toads to rain down, inflicting 127113 Nature damage to players within 3 yards of each impact."
+          }
+        ]
+      },
+      {
+        "id": 248692,
+        "name": "Reanimated Warrior",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1257716,
+            "name": "Reanimation",
+            "schools": 32,
+            "description": "The caster begins to reanimate, reviving with 50% of their max health if the channel completes."
+          },
+          {
+            "id": 1257914,
+            "name": "Undying Resolve",
+            "schools": 1,
+            "description": "The caster increases their damage done by 5% for 30 sec. This effect stacks."
+          },
+          {
+            "id": 1257920,
+            "name": "Dread Slash",
+            "schools": 1,
+            "description": "The caster inflicts 101690 Physical damage to their current target and gains an application of Undying Resolve ."
+          }
+        ]
+      },
+      {
+        "id": 249020,
+        "name": "Hexbound Eagle",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1257780,
+            "name": "Shredding Talons",
+            "schools": 1,
+            "description": "The caster soars towards a player and unleashes a series of slashes with its talons, inflicting 55930 Physical damage to players in a frontal cone every 1 sec for 5 sec."
+          },
+          {
+            "id": 1257781,
+            "name": "Shredding Talons",
+            "schools": 1,
+            "description": "The caster soars towards a player and unleashes a series of slashes with its talons, inflicting 55930 Physical damage to players in a frontal cone every 1 sec for 5 sec."
+          },
+          {
+            "id": 1257782,
+            "name": "Shredding Talons",
+            "schools": 1,
+            "description": "The caster soars towards a player and unleashes a series of slashes with its talons, inflicting 55930 Physical damage to players in a frontal cone every 1 sec for 5 sec."
+          }
+        ]
+      },
+      {
+        "id": 249022,
+        "name": "Bramblemaw Bear",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1256561,
+            "name": "Crunch Armor",
+            "schools": 1,
+            "description": "The caster crushes their target's armor, inflicting 63556 Physical damage and increasing their damage taken by 10% for 10 sec."
+          }
+        ]
+      },
+      {
+        "id": 249024,
+        "name": "Hollow Soulrender",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1259677,
+            "name": "Rend Souls",
+            "schools": 32,
+            "description": "The caster channels on nearby spirits every 2 sec for 6 sec, lighting their soul aflame and causing them to burst inflicting 152535 Shadow damage to players within 8 yards."
+          },
+          {
+            "id": 1259683,
+            "name": "Rend Souls",
+            "schools": 1,
+            "description": "The caster channels on nearby spirits every 2 sec for 6 sec, lighting their soul aflame and causing them to burst inflicting 152535 Shadow damage to players within 8 yards."
+          },
+          {
+            "id": 1264327,
+            "name": "Shadowfrost Blast",
+            "schools": 48,
+            "description": "The caster inflicts 127113 Shadowfrost damage to their target."
+          },
+          {
+            "id": 1271623,
+            "name": "Frost Nova",
+            "schools": 16,
+            "description": "The caster blasts their target with a rime of frost, inflicting 81352 Frost damage to players within 8 yards and rooting them for 5 sec."
+          }
+        ]
+      },
+      {
+        "id": 249025,
+        "name": "Bound Defender",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1257546,
+            "name": "Vigilant Defense",
+            "schools": 1,
+            "description": "The caster raises a shield, deflecting all ranged attacks and spells and blocking all melee attacks from the front."
+          },
+          {
+            "id": 1259274,
+            "name": "Spectral Strikes",
+            "schools": 32,
+            "description": "The caster's melee attacks inflict an additional 10169 Shadow damage to players within 60 yards."
+          },
+          {
+            "id": 1259651,
+            "name": "Soulstorms",
+            "schools": 1,
+            "description": "The caster summons two whirling storms that inflict 76268 Shadow damage to players struck and knock them upwards."
+          },
+          {
+            "id": 1259664,
+            "name": "Soulstorms",
+            "schools": 32,
+            "description": "The caster summons two whirling storms that inflict 76268 Shadow damage to players struck and knock them upwards."
+          }
+        ]
+      },
+      {
+        "id": 249030,
+        "name": "Restless Gnarldin",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1257895,
+            "name": "Ancestral Crush",
+            "schools": 33,
+            "description": "The caster smashes the ground, inflicting 152535 Shadowstrike damage to players within 10 yards and forming an area of necrotic energy that inflicts 25423 Shadow damage every 0.5 sec to players within it for 45 sec."
+          },
+          {
+            "id": 1257898,
+            "name": "Ancestral Crush",
+            "schools": 32,
+            "description": "The caster smashes the ground, inflicting 152535 Shadowstrike damage to players within 10 yards and forming an area of necrotic energy that inflicts 25423 Shadow damage every 0.5 sec to players within it for 45 sec."
+          },
+          {
+            "id": 1259274,
+            "name": "Spectral Strikes",
+            "schools": 32,
+            "description": "The caster's melee attacks inflict an additional 10169 Shadow damage to players within 60 yards."
+          },
+          {
+            "id": 1259631,
+            "name": "Staggering Blow",
+            "schools": 1,
+            "description": "The caster strikes their target with a hefty blow, inflicting 254225 Physical damage and reducing the target's movement speed by 50% for 8 sec."
+          }
+        ]
+      },
+      {
+        "id": 249036,
+        "name": "Tormented Shade",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1259255,
+            "name": "Spirit Rend",
+            "schools": 32,
+            "description": "Inflicts 30507 Shadow damage to an enemy. Inflicts 8135 Shadow damage to an enemy every 1 sec for 8 sec."
+          }
+        ]
+      },
+      {
+        "id": 250443,
+        "name": "Unstable Phantom",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1251775,
+            "name": "Final Pursuit",
+            "schools": 1,
+            "description": "The phantom seeks out a player until defeated. When it reaches its target or collides with another Unstable Phantom, it bursts, inflicting 254225 Shadow damage to players within 3.5 yards."
+          },
+          {
+            "id": 1251797,
+            "name": "Final Pursuit",
+            "schools": 1,
+            "description": "The phantom seeks out a player until defeated. When it reaches its target or collides with another Unstable Phantom, it bursts, inflicting 254225 Shadow damage to players within 3.5 yards."
+          },
+          {
+            "id": 1251813,
+            "name": "Lingering Dread",
+            "schools": 32,
+            "description": "The phantom screams when slain, inflicting 25423 Shadow damage to all players."
+          },
+          {
+            "id": 1251833,
+            "name": "Soulrot",
+            "schools": 32,
+            "description": "Upon defeat Unstable Phantoms leave behind a pool of necrotic residue for 20 sec, inflicting 50845 Shadow damage every 1.5 sec to players within."
+          },
+          {
+            "id": 1264974,
+            "name": "Veiled Presence",
+            "schools": 32,
+            "description": "The phantom's incorporeal form reduces their damage taken by 99%, but causes them to lose 0% health every 1 sec."
+          },
+          {
+            "id": 1266706,
+            "name": "Haunting Remains",
+            "schools": 32,
+            "description": "Final Pursuit's burst haunts players struck, increasing their damage taken from Final Pursuit by 200% for 20 sec."
+          }
+        ]
+      },
+      {
+        "id": 251047,
+        "name": "Soulbind Totem",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1252777,
+            "name": "Soulbind",
+            "schools": 32,
+            "description": "The totem ensnares a player, inflicting 10169 Shadow damage every 1 sec and pulling them toward the totem."
+          },
+          {
+            "id": 1252816,
+            "name": "Chill of Death",
+            "schools": 32,
+            "description": "The totem inflicts 50845 Shadow damage every 0.5 sec to players within 0 yards."
+          }
+        ]
+      },
+      {
+        "id": 251674,
+        "name": "Malignant Soul",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1254010,
+            "name": "Eternal Suffering",
+            "schools": 32,
+            "description": "The soul radiates shadow magic, reducing the movement speed of players within 0 yards by 60%. Upon interruption, the soul dissipates, empowering all players with Spectral Residue ."
+          },
+          {
+            "id": 1254043,
+            "name": "Eternal Suffering",
+            "schools": 1,
+            "description": "The soul radiates shadow magic, reducing the movement speed of players within 0 yards by 60%. Upon interruption, the soul dissipates, empowering all players with Spectral Residue ."
+          },
+          {
+            "id": 1255629,
+            "name": "Spectral Residue",
+            "schools": 32,
+            "description": "Released essence empowers players, increasing their movement speed by 25% and increasing their damage, healing, and absorption effects by 25% for 25 sec. This effect stacks."
+          }
+        ]
+      },
+      {
+        "id": 253302,
+        "name": "Hex Guardian",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1258475,
+            "name": "Magma Surge",
+            "schools": 4,
+            "description": "The caster lets loose a surge of flame, inflicting 86437 Fire damage to players within a frontal line."
+          },
+          {
+            "id": 1258482,
+            "name": "Searing Presence",
+            "schools": 4,
+            "description": "The caster's presence sears all players within 60 yards, inflicting 10169 Fire damage every 1 sec for as long as the caster remains in combat."
+          },
+          {
+            "id": 1258806,
+            "name": "Ritual Firebrand",
+            "schools": 4,
+            "description": "The caster brands several players with a ritual mark, causing a gout of flame to erupt underneath them every 4 sec for 12 sec that inflicts 127113 Fire damage to players within 5 yards."
+          },
+          {
+            "id": 1262411,
+            "name": "Ritual Firebrand",
+            "schools": 4,
+            "description": "The caster brands several players with a ritual mark, causing a gout of flame to erupt underneath them every 4 sec for 12 sec that inflicts 127113 Fire damage to players within 5 yards."
+          }
+        ]
+      },
+      {
+        "id": 253458,
+        "name": "Zaib'yan",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1259882,
+            "name": "Ritual Drums",
+            "schools": 1,
+            "description": "Zil'jan furiously strikes ritual drums, sending lanes of explosions that inflict 0 Shadow damage to players struck and knock them away. Zil'jan's strikes inflict 50845 Sonic damage to players within 70 yards."
+          },
+          {
+            "id": 1259887,
+            "name": "Ritual Drums",
+            "schools": 32,
+            "description": "Zil'jan furiously strikes ritual drums, sending lanes of explosions that inflict 0 Shadow damage to players struck and knock them away. Zil'jan's strikes inflict 50845 Sonic damage to players within 70 yards."
+          },
+          {
+            "id": 1262900,
+            "name": "Ritual Drums",
+            "schools": 1,
+            "description": "Zil'jan furiously strikes ritual drums, sending lanes of explosions that inflict 0 Shadow damage to players struck and knock them away. Zil'jan's strikes inflict 50845 Sonic damage to players within 70 yards."
+          }
+        ]
+      },
+      {
+        "id": 253473,
+        "name": "Gloomwing Bat",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1259182,
+            "name": "Piercing Screech",
+            "schools": 1,
+            "description": "The caster screeches, releasing a pulse of Sonic energy that inflicts 76268 Physical damage to any players struck."
+          },
+          {
+            "id": 1259183,
+            "name": "Piercing Screech",
+            "schools": 1,
+            "description": "The caster screeches, releasing a pulse of Sonic energy that inflicts 76268 Physical damage to any players struck."
+          }
+        ]
+      },
+      {
+        "id": 253683,
+        "name": "Rokh'zal",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1259786,
+            "name": "Ritual Sacrifice",
+            "schools": 32,
+            "description": "The caster prepares a target for sacrifice, stunning them for 1 sec and placing them atop a sacrifical altar."
+          },
+          {
+            "id": 1259789,
+            "name": "Ritual Sacrifice",
+            "schools": 32,
+            "description": "The caster prepares a target for sacrifice, stunning them for 1 sec and placing them atop a sacrifical altar."
+          },
+          {
+            "id": 1262241,
+            "name": "Invoke Shadow",
+            "schools": 32,
+            "description": "The caster summons a shadow of themselves that casts Umbral Vortex ."
+          }
+        ]
+      },
+      {
+        "id": 254233,
+        "name": "Rokh'zal",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1259772,
+            "name": "Umbral Vortex",
+            "schools": 1,
+            "description": "The caster inflicts 35592 Shadow damage to players within 8 yards every 0.5 sec for 10 sec and pulls them towards their location."
+          },
+          {
+            "id": 1259777,
+            "name": "Umbral Vortex",
+            "schools": 32,
+            "description": "The caster inflicts 35592 Shadow damage to players within 8 yards every 0.5 sec for 10 sec and pulls them towards their location."
+          }
+        ]
+      },
+      {
+        "id": 254740,
+        "name": "Umbral Shadowbinder",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1263292,
+            "name": "Shrink",
+            "schools": 32,
+            "description": "The caster shrinks their target, inflicting 20338 Shadow damage for 0.5 sec for 8 sec and greatly reducing their size. If the target comes into contact with a full-sized player, the target is stunned for 4 sec."
+          },
+          {
+            "id": 1263336,
+            "name": "Shadow Burst",
+            "schools": 32,
+            "description": "The caster unleashes a burst of energy, inflicting 127113 Shadow damage to players within 8 yards of impact."
+          },
+          {
+            "id": 1265832,
+            "name": "Shadow Burst",
+            "schools": 32,
+            "description": "The caster unleashes a burst of energy, inflicting 127113 Shadow damage to players within 8 yards of impact."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1304,
+    "instanceSlug": "murder-row",
+    "fetchedAt": "2026-04-10T23:39:08.869Z",
+    "npcs": [
+      {
+        "id": 234647,
+        "name": "Xathuux the Annihilator",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 473898,
+            "name": "Legion Strike",
+            "schools": 1,
+            "description": "Xathuux the Annihilator performs a powerful swing with his axe that inflicts 279648 Physical damage and reduces healing received by 80% for 8 sec."
+          },
+          {
+            "id": 474197,
+            "name": "Demonic Rage",
+            "schools": 127,
+            "description": "Xathuux the Annihilator flies into a Demonic Rage, inflicting 101690 Chaos damage to all players. While this effect is active, Xathuux gains 75% attack speed, suffers 30% increased incoming damage, and gains Burning Steps for 15 sec."
+          },
+          {
+            "id": 474234,
+            "name": "Burning Steps",
+            "schools": 4,
+            "description": "Xathuux the Annihilator spreads fel magic across the ground from his feet inflicting 55930 Fire damage every 1 sec to any players standing in it."
+          },
+          {
+            "id": 1214650,
+            "name": "Fel Lightning",
+            "schools": 124,
+            "description": "Xathuux the Annihilator's axe channels beams of fel lightning at all players inflicting 2542 Chaos damage every 1 sec. This effect stacks."
+          },
+          {
+            "id": 1214663,
+            "name": "Axe Toss",
+            "schools": 124,
+            "description": "Xathuux the Annihilator throws his massive axe at the location of a random player inflicting 91521 Chaos damage and interrupting players within 10 yds of the impact. The axe remains on the ground emitting Fel Light until it is destroyed."
+          }
+        ]
+      },
+      {
+        "id": 234649,
+        "name": "Zaen Bladesorrow",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 474478,
+            "name": "Killing Spree",
+            "schools": 1,
+            "description": "Zaen unleashes a rapid barrage of gunfire, inflicting 20338 Physical damage to all players every 0.5 sec over 3 sec."
+          },
+          {
+            "id": 474515,
+            "name": "Heartstop Poison",
+            "schools": 8,
+            "description": "A lethal poison that reduces the target's maximum health by 30% and inflicts 533873 Nature damage over 15 sec."
+          },
+          {
+            "id": 474765,
+            "name": "Same-Day Delivery",
+            "schools": 1,
+            "description": "Zaen calls upon the warehouse workers above to throw Forbidden Freight at players, causing 203380 Fire damage on impact and knocking them away."
+          },
+          {
+            "id": 1214357,
+            "name": "Fire Bomb",
+            "schools": 1,
+            "description": "Zaen hurls a ticking bomb at a player. After 6 sec the bomb explodes, dealing 91521 Fire damage to players within 6 yards and destroying any Forbidden Freight caught in the blast."
+          },
+          {
+            "id": 1218347,
+            "name": "Murder in a Row",
+            "schools": 1,
+            "description": "Zaen takes a few precious moments to take aim at all players. When he is ready to fire, he shoots all players in his line of sight, inflicting 203380 Physical damage and an additional 457605 Bleed damage over 15 sec."
+          },
+          {
+            "id": 1222795,
+            "name": "Envenom",
+            "schools": 1,
+            "description": "Zaen drives a poisoned blade in deep at his current target, inflicting 228803 Physical damage and applying Heartstop Poison ."
+          }
+        ]
+      },
+      {
+        "id": 237415,
+        "name": "Lithiel Cinderfury",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 474375,
+            "name": "Chaos Bolt",
+            "schools": 124,
+            "description": "Lithiel Cinderfury unleashes a devastating blast inflicting 81352 Chaos damage."
+          },
+          {
+            "id": 474457,
+            "name": "Fingers of Gul'dan",
+            "schools": 36,
+            "description": "Lithiel Cinderfury calls down demonic magic to each nearby enemy inflicting 61014 Shadowflame damage to all enemies within 6 yds of each target. Wild Imps to burst from the impact sites and attack nearby targets."
+          },
+          {
+            "id": 1214675,
+            "name": "Demonic Gateway",
+            "schools": 1,
+            "description": "Lithiel Cinderfury creates a demonic gateway between two locations. Activating the gateway transports the user to the other gateway and prevents initial damage and Fire vulnerability from Malefic Wave ."
+          },
+          {
+            "id": 1216945,
+            "name": "Searing Fel Flame",
+            "schools": 4,
+            "description": "Lithiel Cinderfury engulfs herself in fel fire, radiating 15254 Fire damage to enemies every 1 sec."
+          },
+          {
+            "id": 1217384,
+            "name": "Malefic Wave",
+            "schools": 4,
+            "description": "Lithiel Cinderfury conjures a Felshield and then projects a wave of fel fire. Impacted players suffer 7627 Fire damage every 1 sec and take 50% additional fire damage for 1 min. This effect stacks. Demons struck by Malefic Wave are granted Malefic Empowerment ."
+          },
+          {
+            "id": 1217415,
+            "name": "Felshield",
+            "schools": 1,
+            "description": "Lithiel enshrouds herself in a fel barrier, reducing the damage she takes by 50% for 10 sec."
+          },
+          {
+            "id": 1226469,
+            "name": "Malefic Empowerment",
+            "schools": 127,
+            "description": "Empowered by Malefic Wave, increasing haste by 100%."
+          },
+          {
+            "id": 1231262,
+            "name": "Felfire Core",
+            "schools": 1,
+            "description": "Inflicts 30507 Fire damage to nearby enemies every 2 sec."
+          }
+        ]
+      },
+      {
+        "id": 252458,
+        "name": "Kystia Manaheart",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1217989,
+            "name": "Felshield",
+            "schools": 1,
+            "description": "Kystia enshrouds herself in a fel barrier, reducing the damage she takes by [abs(20 * 4)]%."
+          },
+          {
+            "id": 1223906,
+            "name": "Fel Nova",
+            "schools": 4,
+            "description": "Kystia teleports to a random player's location and sends out an explosive wave of destructive energy, inflicting 152535 Fire damage to nearby players and knocking them back."
+          },
+          {
+            "id": 1230289,
+            "name": "Illicit Infusion",
+            "schools": 4,
+            "description": "Kystia infuses Nibbles with fel magic, turning her hostile to players while she is above 20% health."
+          },
+          {
+            "id": 1230298,
+            "name": "Chaos Barrage",
+            "schools": 124,
+            "description": "Kystia unleashes a devastating blast of chaos at her current target, dealing 152535 Chaos damage and then jumping to nearby players at reduced effectiveness."
+          },
+          {
+            "id": 1264095,
+            "name": "Mirror Images",
+            "schools": 1,
+            "description": "Kystia creates copies of herself nearby, each of which cast Felstorm ."
+          },
+          {
+            "id": 1264106,
+            "name": "Felstorm",
+            "schools": 1,
+            "description": "Kystia's mirror image engulfs the arena in fel fire, inflicting 5085 Fire damage to all nearby players every 1 sec."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1316,
+    "instanceSlug": "nexus-point-xenas",
+    "fetchedAt": "2026-04-10T23:39:18.881Z",
+    "npcs": [
+      {
+        "id": 241546,
+        "name": "Lothraxion",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1253848,
+            "name": "Brilliant Dispersion",
+            "schools": 1,
+            "description": "Lothraxion unleashes radiant swarms toward several players, blasting players within 8 yards of the impact for 61014 Holy damage and searing an additional 20338 Holy damage every 1 sec for 6 sec. Fractured Images scatter, erupting with Mirrored Rend to enemies within 5 yards of their creation."
+          },
+          {
+            "id": 1253855,
+            "name": "Brilliant Dispersion",
+            "schools": 1,
+            "description": "Lothraxion unleashes radiant swarms toward several players, blasting players within 8 yards of the impact for 61014 Holy damage and searing an additional 20338 Holy damage every 1 sec for 6 sec. Fractured Images scatter, erupting with Mirrored Rend to enemies within 5 yards of their creation."
+          },
+          {
+            "id": 1253950,
+            "name": "Searing Rend",
+            "schools": 1,
+            "description": "Lothraxion lashes out with a precise, double-slash aimed at his current target, with each strike inflicting 127113 Physical damage and an additional 20338 Holy damage every 1 sec for 6 sec. Carves Radiant Scar s into the ground."
+          },
+          {
+            "id": 1255208,
+            "name": "Searing Rend",
+            "schools": 1,
+            "description": "Lothraxion lashes out with a precise, double-slash aimed at his current target, with each strike inflicting 127113 Physical damage and an additional 20338 Holy damage every 1 sec for 6 sec. Carves Radiant Scar s into the ground."
+          },
+          {
+            "id": 1255310,
+            "name": "Radiant Scar",
+            "schools": 2,
+            "description": "A jagged brand of divine energy inflicts 50845 Holy damage every 1 sec to players within the area."
+          },
+          {
+            "id": 1255335,
+            "name": "Searing Rend",
+            "schools": 2,
+            "description": "Lothraxion lashes out with a precise, double-slash aimed at his current target, with each strike inflicting 127113 Physical damage and an additional 20338 Holy damage every 1 sec for 6 sec. Carves Radiant Scar s into the ground."
+          },
+          {
+            "id": 1255389,
+            "name": "Radiant Scar",
+            "schools": 1,
+            "description": "A jagged brand of divine energy inflicts 50845 Holy damage every 1 sec to players within the area."
+          },
+          {
+            "id": 1255503,
+            "name": "Brilliant Dispersion",
+            "schools": 2,
+            "description": "Lothraxion unleashes radiant swarms toward several players, blasting players within 8 yards of the impact for 61014 Holy damage and searing an additional 20338 Holy damage every 1 sec for 6 sec. Fractured Images scatter, erupting with Mirrored Rend to enemies within 5 yards of their creation."
+          },
+          {
+            "id": 1257595,
+            "name": "Divine Guile",
+            "schools": 1,
+            "description": "Upon reaching 100 energy, Lothraxion disguises himself amongst his Fractured Images as they all channel light energy into the core, inflicting 35592 Holy damage every 2 sec until Lothraxion is interrupted."
+          },
+          {
+            "id": 1257613,
+            "name": "Divine Guile",
+            "schools": 2,
+            "description": "Upon reaching 100 energy, Lothraxion disguises himself amongst his Fractured Images as they all channel light energy into the core, inflicting 35592 Holy damage every 2 sec until Lothraxion is interrupted."
+          },
+          {
+            "id": 1271511,
+            "name": "Core Exposure",
+            "schools": 2,
+            "description": "Inflicts 76268 Holy damage to all players and increases Holy damage taken by 20% for 1 min."
+          }
+        ]
+      },
+      {
+        "id": 251024,
+        "name": "Dreadflail",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1282663,
+            "name": "Melee",
+            "schools": 32,
+            "description": "The caster's offhand strikes all enemies in a cone in front of the caster, inflicting 76268 Shadow damage."
+          },
+          {
+            "id": 1282664,
+            "name": "Melee",
+            "schools": 32,
+            "description": "The caster's mainhand strikes all enemies in a cone in front of the caster, inflicting 76268 Shadow damage."
+          },
+          {
+            "id": 1282665,
+            "name": "Void Lash",
+            "schools": 1,
+            "description": "The Dreadflail empowers its weapons, causing melee attacks to inflict 76268 Shadow damage in a cone in front of it for 8.3 sec."
+          },
+          {
+            "id": 1282679,
+            "name": "Flailstorm",
+            "schools": 1,
+            "description": "The Dreadflail fixates on a random enemy and spins their flails inflicting 15254 Shadow damage every 0.5 sec to enemies within 7 yards of the caster."
+          }
+        ]
+      },
+      {
+        "id": 251853,
+        "name": "Grand Nullifier",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1282722,
+            "name": "Nullify",
+            "schools": 32,
+            "description": "The Grand Nullifier conjures a blast of void energy at the target, inflicting 203380 Shadow damage."
+          },
+          {
+            "id": 1282723,
+            "name": "Dusk Frights",
+            "schools": 32,
+            "description": "The Grand Nullifier calls several frights to a void zone, fearing players within 5 yards of the impact for 5 sec."
+          }
+        ]
+      },
+      {
+        "id": 254227,
+        "name": "Corewarden Nysarra",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1247937,
+            "name": "Umbral Lash",
+            "schools": 1,
+            "description": "Nysarra leaps to her primary target and unleashes consecutive slashes on them, inflicting 76268 Shadow damage with every strike and causing Void Gash on the final one."
+          },
+          {
+            "id": 1247976,
+            "name": "Lightscar Flare",
+            "schools": 1,
+            "description": "A fractured image of Lothraxion strikes at Nysarra, causing her wound to flare and stunning her for 18 sec. Players caught in the image's blast suffer 76228 Holy damage and are disoriented for 5 sec. Standing in the wound's flare increases the target's healing done by 30% and damage dealt to Nysarra by 300% but inflicts 35592 Holy damage every 1 sec until she recovers."
+          },
+          {
+            "id": 1249014,
+            "name": "Eclipsing Step",
+            "schools": 1,
+            "description": "Nysarra slips into the shadows and strikes at random players, inflicting 61014 Shadow damage and additional 20338 Shadow damage every 1 sec for 8 sec to all players within 14 yards."
+          },
+          {
+            "id": 1252703,
+            "name": "Null Vanguard",
+            "schools": 1,
+            "description": "Remnants of Nysarra's shattered command rise to defend and suppress."
+          },
+          {
+            "id": 1252828,
+            "name": "Void Gash",
+            "schools": 32,
+            "description": "Gashes the player, knocking them back and increasing all damage taken by 50% for 10 sec."
+          },
+          {
+            "id": 1252883,
+            "name": "Devour the Unworthy",
+            "schools": 1,
+            "description": "Nyssara channels the void to consume any surviving subordinates, restoring her own strength every 0.5 sec for 5 sec and triggers a burst of void energy inflicting 76228 Shadow damage to all players."
+          },
+          {
+            "id": 1253965,
+            "name": "Lightscarred",
+            "schools": 1,
+            "description": "Wounded by Lothraxion, Nysarra begins the encounter at 60% health. Fractured Images periodically tear into the arena, causing Lightscar Flare ."
+          },
+          {
+            "id": 1261558,
+            "name": "Lightscar Flare",
+            "schools": 1,
+            "description": "A fractured image of Lothraxion strikes at Nysarra, causing her wound to flare and stunning her for 18 sec. Players caught in the image's blast suffer 76228 Holy damage and are disoriented for 5 sec. Standing in the wound's flare increases the target's healing done by 30% and damage dealt to Nysarra by 300% but inflicts 35592 Holy damage every 1 sec until she recovers."
+          },
+          {
+            "id": 1271388,
+            "name": "Umbral Lash",
+            "schools": 1,
+            "description": "Nysarra leaps to her primary target and unleashes consecutive slashes on them, inflicting 76268 Shadow damage with every strike and causing Void Gash on the final one."
+          }
+        ]
+      },
+      {
+        "id": 255133,
+        "name": "Fractured Image",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1255389,
+            "name": "Radiant Scar",
+            "schools": 1,
+            "description": "A jagged brand of divine energy inflicts 50845 Holy damage every 1 sec to players within the area."
+          },
+          {
+            "id": 1255531,
+            "name": "Flicker",
+            "schools": 1,
+            "description": "Fractured Images periodically flicker to new locations, inflicting 101690 Holy damage and knocking away players in its path."
+          },
+          {
+            "id": 1266713,
+            "name": "Mirrored Rend",
+            "schools": 1,
+            "description": "Coming in contact with a Fractured Image rends the target, knocking them away and inflicting 50845 Holy damage with an additional 10169 Holy damage every 1 sec. This effect stacks and leaves behind Radiant Scar s."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1309,
+    "instanceSlug": "the-blinding-vale",
+    "fetchedAt": "2026-04-10T23:39:33.991Z",
+    "npcs": [
+      {
+        "id": 243028,
+        "name": "Meittik",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1234753,
+            "name": "Bedrock Slam",
+            "schools": 1,
+            "description": "Meittik strikes their primary target with immense force, inflicting 101690 Nature damage and 254225 Physical damage. The force of the impact ruptures nearby topsoil, creating patches of Fertile Loam ."
+          },
+          {
+            "id": 1234782,
+            "name": "Fertile Loam",
+            "schools": 1,
+            "description": "Unearthed subsoil slows players standing within the effect by 50% and inflicts 40676 Nature damage every 1 sec."
+          },
+          {
+            "id": 1276586,
+            "name": "Bedrock Surge",
+            "schools": 8,
+            "description": "The impact of Bedrock Slam causes an aftershock that inflicts 20338 Nature damage to all players every 1 sec for 8 sec."
+          }
+        ]
+      },
+      {
+        "id": 243029,
+        "name": "Kezkitt",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1235564,
+            "name": "Lightblossom Beam",
+            "schools": 1,
+            "description": "Kezkitt channels a beam of light on each Lightblossom Seed, inflicting 40676 Holy damage every 2 sec to players standing in the effect. The powerful beam rapidly germinates the seed, applying stacks of Light-Gorged . After 10 sec, the blossom casts Lightbloom Overgrowth . Standing within the beam stifles the seed's growth and prevents applications of Light-Gorged ."
+          },
+          {
+            "id": 1235616,
+            "name": "Light Bolt",
+            "schools": 2,
+            "description": "Kezkitt inflicts 61014 Holy damage to a player."
+          }
+        ]
+      },
+      {
+        "id": 243030,
+        "name": "Lekshi",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1234850,
+            "name": "Lightsower Dash",
+            "schools": 1,
+            "description": "Lekshi dashes between patches of Fertile Loam , inflicting 101690 Holy damage to players in their path and sowing a Lightblossom at each destination."
+          },
+          {
+            "id": 1235640,
+            "name": "Thornblade",
+            "schools": 1,
+            "description": "Lekshi ambushes a player and backstabs them, inflicting 50845 Nature damage and causing them to bleed for 20338 Physical damage every 2 sec for 8 sec."
+          },
+          {
+            "id": 1253028,
+            "name": "Thicket's Trinity",
+            "schools": 1,
+            "description": "Meittik, Lekshi, and Kezkitt are bonded, causing them to share all damage taken."
+          },
+          {
+            "id": 1261011,
+            "name": "Fan Of Thorns",
+            "schools": 1,
+            "description": "Lekshi unleashes a flurry of thorns, inflicting 101690 Nature damage to players within 15 yards of their location every 1 sec for 3 sec."
+          }
+        ]
+      },
+      {
+        "id": 244887,
+        "name": "Ikuzz the Light Hunter",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1236658,
+            "name": "Bloodthorn Roots",
+            "schools": 8,
+            "description": "Roots entangle players, inflicting 30507 Nature damage and rooting them in place until destroyed."
+          },
+          {
+            "id": 1236709,
+            "name": "Thorncaller Roar",
+            "schools": 1,
+            "description": "Ikuzz roars, inflicting 50845 Nature damage to all players while Bloodthorn Roots erupt around it every 2 sec for 6 sec."
+          },
+          {
+            "id": 1236746,
+            "name": "Verdant Stomp",
+            "schools": 1,
+            "description": "Ikuzz stomps, inflicting 76268 Physical damage to all players and knocking them back. After 4 sec, Bloodthorn Roots emerge at players' locations."
+          },
+          {
+            "id": 1237073,
+            "name": "Lightcrazed Frenzy",
+            "schools": 1,
+            "description": "Ikuzz fully absorbs the power of the Lightbloom, increasing its movement speed by 20% and causing it to pulse 20338 Holy damage every 2 sec."
+          },
+          {
+            "id": 1237090,
+            "name": "Bloodthirsty Gaze",
+            "schools": 1,
+            "description": "Ikuzz fixates on a player, pursuing them for 10 sec. Upon reaching their target, Ikuzz will Incise them."
+          },
+          {
+            "id": 1237093,
+            "name": "Crushing Footfalls",
+            "schools": 8,
+            "description": "While fixating on a target, Ikuzz's massive footfalls inflict 30441 Nature damage to players and crush any Bloodthorn Roots within 7 yards every 1 sec."
+          },
+          {
+            "id": 1237166,
+            "name": "Incise",
+            "schools": 1,
+            "description": "Upon reaching its prey, Ikuzz chomps down on the player, causing them to bleed 101690 Physical damage every 1 sec for 3 sec."
+          },
+          {
+            "id": 1272290,
+            "name": "Crunched",
+            "schools": 1,
+            "description": "The player is stunned for 5 sec after being chewed up and spit out."
+          }
+        ]
+      },
+      {
+        "id": 245912,
+        "name": "Lightwarden Ruia",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1239821,
+            "name": "Warden's Wrath",
+            "schools": 8,
+            "description": "Ruia blasts his current target with a bolt of energy, inflicting 25423 Nature damage."
+          },
+          {
+            "id": 1239824,
+            "name": "Lightfire",
+            "schools": 1,
+            "description": "Ruia shoots a beam of energy at a player, burning them for 33049 Radiant damage every 1 sec for 6 sec. Upon expiration, Lightfire Beams emerge at the afflicted player's location."
+          },
+          {
+            "id": 1239830,
+            "name": "Lightfire Beams",
+            "schools": 1,
+            "description": "Standing within the beams inflicts 30507 Radiant damage every 1 sec and silences players for 6 sec."
+          },
+          {
+            "id": 1240098,
+            "name": "Lightfall",
+            "schools": 1,
+            "description": "Ruia calls down waves of falling Light energy, inflicting 152535 Holy damage to players within 4 yards of the impact."
+          },
+          {
+            "id": 1240210,
+            "name": "Pulverizing Strikes",
+            "schools": 1,
+            "description": "Ruia marks several targets and launches a wave of force toward each of them in a frontal cone every 2 sec for 6 sec. Each impact inflicts 76268 Physical damage to players within the effect and applies Pulverized ."
+          },
+          {
+            "id": 1241058,
+            "name": "Grievous Thrash",
+            "schools": 1,
+            "description": "Ruia thrashes about, inflicting 81352 Physical damage to players and causing them to bleed an additional 20338 Physical damage every 1 sec for 20 sec or until fully healed. This effect stacks."
+          },
+          {
+            "id": 1241067,
+            "name": "Spirits of the Vale",
+            "schools": 1,
+            "description": "Ruia calls upon the spirits, casting Lightfire , Lightfall , Pulverizing Strikes , and Grievous Thrash every 8 sec until he is defeated."
+          },
+          {
+            "id": 1257094,
+            "name": "Pulverized",
+            "schools": 1,
+            "description": "Upon being struck by Pulverizing Strikes , players take 100% increased damage from Pulverizing Strikes for 6 sec."
+          },
+          {
+            "id": 1272265,
+            "name": "Mangling Claws",
+            "schools": 1,
+            "description": "While in Bear form, Lightwarden Ruia's melee attacks inflict 100%1 increased damage."
+          }
+        ]
+      },
+      {
+        "id": 247755,
+        "name": "Lightspawn Lasher",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1246372,
+            "name": "Awaken the Lightbloom",
+            "schools": 1,
+            "description": "Ziekket sows Light energy into the soil, sprouting Lightspawn Lashers and reawakening any that are Dormant . Lashers reawaken with Vicious Regrowth ."
+          },
+          {
+            "id": 1246379,
+            "name": "Dormant",
+            "schools": 1,
+            "description": "Upon reaching 1% remaining health, Lightspawn Lashers submerge themselves back into the ground, becoming unable to move and immune to player effects."
+          },
+          {
+            "id": 1246607,
+            "name": "Concentrated Lightbeam",
+            "schools": 1,
+            "description": "Ziekket releases a powerful beam of Light energy, inflicting 25423 Holy damage every 0.5 sec to players within the effect. Any Dormant Lightspawn Lashers hit by the beam are instantly liquified into puddles of Lightsap ."
+          },
+          {
+            "id": 1246660,
+            "name": "Lightsap",
+            "schools": 1,
+            "description": "Viscous resin covers the ground, inflicting 81352 Holy damage every 2 sec to players standing within the effect and reducing their movement speed by 40%."
+          },
+          {
+            "id": 1246858,
+            "name": "Lightbloom's Essence",
+            "schools": 1,
+            "description": "Ziekket draws out globules of Lightbloom energy from the earth that move toward him, triggering a Fluorescent Outburst upon reaching him. The orbs instead burst when touched by players, granting that player Lightbloom's Might ."
+          },
+          {
+            "id": 1247039,
+            "name": "Fluorescent Outburst",
+            "schools": 2,
+            "description": "Ziekket absorbs the Lightbloom's Essence , triggering a powerful reaction that inflicts 50845 Holy damage to all players. This effect grants Ziekket a Fluorescent Shield ."
+          },
+          {
+            "id": 1247050,
+            "name": "Fluorescent Shield",
+            "schools": 1,
+            "description": "Ziekket becomes enveloped in Light energy, absorbing the next 52436 damage taken and increasing his damage done by 10%. This effect stacks."
+          },
+          {
+            "id": 1247052,
+            "name": "Lightbloom's Might",
+            "schools": 2,
+            "description": "Players briefly borrow the power of the Lightbloom, increasing damage and healing done by 10% while suffering 10169 Holy damage every 1 sec for 12 sec. This effect stacks."
+          },
+          {
+            "id": 1247377,
+            "name": "Oozing Xylem",
+            "schools": 2,
+            "description": "Ziekket gorges on Light energy, inflicting 30507 Holy damage to all players every 3 sec."
+          },
+          {
+            "id": 1247669,
+            "name": "Lightspore Shot",
+            "schools": 2,
+            "description": "The lasher spews at a player, inflicting 30507 Holy damage."
+          },
+          {
+            "id": 1247685,
+            "name": "Thornspike",
+            "schools": 2,
+            "description": "Ziekket impales the player with his spiked branch, inflicting 101690 Holy damage and knocking them back. The puncture wound causes the player to bleed an additional 30507 Physical damage every 1 sec for 10 sec."
+          },
+          {
+            "id": 1253320,
+            "name": "Vicious Regrowth",
+            "schools": 1,
+            "description": "Lightspawn Lashers reawaken with renewed power, increasing their haste and damage done by 30%. This effect also makes them immune to interrupts and crowd controlling effects."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1313,
+    "instanceSlug": "voidscar-arena",
+    "fetchedAt": "2026-04-10T23:39:45.188Z",
+    "npcs": [
+      {
+        "id": 238887,
+        "name": "Taz'Rah",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1222085,
+            "name": "Cosmic Spike",
+            "schools": 33,
+            "description": "Taz'Rah slashes his current target, inflicting 177958 Shadowstrike damage."
+          },
+          {
+            "id": 1222199,
+            "name": "Dark Rift",
+            "schools": 1,
+            "description": "Taz'Rah rips open a rift for 6 sec that pulls all players toward it, inflicting 29463 &nbsp;Shadow damage every 1 sec to them. Players who fall within the center of the rift suffer 91521 Shadow damage every 1 sec."
+          },
+          {
+            "id": 1222274,
+            "name": "Dark Rift",
+            "schools": 1,
+            "description": "Taz'Rah rips open a rift for 6 sec that pulls all players toward it, inflicting 29463 &nbsp;Shadow damage every 1 sec to them. Players who fall within the center of the rift suffer 91521 Shadow damage every 1 sec."
+          },
+          {
+            "id": 1222305,
+            "name": "Dark Rift",
+            "schools": 32,
+            "description": "Taz'Rah rips open a rift for 6 sec that pulls all players toward it, inflicting 29463 &nbsp;Shadow damage every 1 sec to them. Players who fall within the center of the rift suffer 91521 Shadow damage every 1 sec."
+          },
+          {
+            "id": 1225107,
+            "name": "Ethereal Shards",
+            "schools": 32,
+            "description": "Taz'Rah projects two shards toward a player. Each shard detonates on the first player it impacts inflicting 81352 Shadow damage. If both shards impact the player, that player suffers an additional 1016900 Shadow damage."
+          },
+          {
+            "id": 1262283,
+            "name": "Dark Rift",
+            "schools": 32,
+            "description": "Taz'Rah rips open a rift for 6 sec that pulls all players toward it, inflicting 29463 &nbsp;Shadow damage every 1 sec to them. Players who fall within the center of the rift suffer 91521 Shadow damage every 1 sec."
+          },
+          {
+            "id": 1262901,
+            "name": "Gather Shadows",
+            "schools": 1,
+            "description": "Taz'Rah teleports a short distance and summons Ethereal Shades to lash out at players."
+          },
+          {
+            "id": 1263593,
+            "name": "Gather Shadows",
+            "schools": 1,
+            "description": "Taz'Rah teleports a short distance and summons Ethereal Shades to lash out at players."
+          }
+        ]
+      },
+      {
+        "id": 239008,
+        "name": "Atroxus",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1222371,
+            "name": "Provoke Creeper",
+            "schools": 1,
+            "description": "Atroxus agitates the surrounding pools, causing a Toxic Creeper to emerge and attack players."
+          },
+          {
+            "id": 1222484,
+            "name": "Poison Pool",
+            "schools": 8,
+            "description": "Atroxus's acidic venom inflicts 40676 Nature damage every 1 sec to players standing within it."
+          },
+          {
+            "id": 1222642,
+            "name": "Hulking Claw",
+            "schools": 8,
+            "description": "Atroxus delivers a powerful blow to a player that inflicts 127113 Nature damage with an additional 35592 Nature damage every 1 sec for 10 sec."
+          },
+          {
+            "id": 1222692,
+            "name": "Toxic Aura",
+            "schools": 8,
+            "description": "The Toxic Creeper radiates a toxic cloud that inflicts 12711 Nature damage every 0.5 sec to players within 100 yards."
+          },
+          {
+            "id": 1222721,
+            "name": "Noxious Breath",
+            "schools": 8,
+            "description": "Atroxus breathes out Noxious Fumes in front of itself, inflicting 203380 Nature damage to players struck."
+          },
+          {
+            "id": 1222724,
+            "name": "Noxious Breath",
+            "schools": 8,
+            "description": "Atroxus breathes out Noxious Fumes in front of itself, inflicting 203380 Nature damage to players struck."
+          },
+          {
+            "id": 1226031,
+            "name": "Poison Splash",
+            "schools": 8,
+            "description": "Atroxus splashes poison around itself, inflicting 101690 Nature damage with an additional 30507 Nature damage every 1 sec for 5 sec to players struck. Each impact creates a poison pool for 1 min."
+          },
+          {
+            "id": 1226120,
+            "name": "Poison Splash",
+            "schools": 1,
+            "description": "Atroxus splashes poison around itself, inflicting 101690 Nature damage with an additional 30507 Nature damage every 1 sec for 5 sec to players struck. Each impact creates a poison pool for 1 min."
+          },
+          {
+            "id": 1262497,
+            "name": "Monstrous Stomp",
+            "schools": 1,
+            "description": "Atroxus inflicts 91521 &nbsp;Physical damage to all players, knocking them back."
+          },
+          {
+            "id": 1263971,
+            "name": "Lingering Poison",
+            "schools": 8,
+            "description": "Leaving a Poison Pool afflicts the player with a lingering poison, inflicting 25423 Nature damage every 1 sec for 5 sec."
+          },
+          {
+            "id": 1282892,
+            "name": "Sickening Bite",
+            "schools": 1,
+            "description": "The Toxic Creeper bites a player, causing them to suffer 10% increased Nature damage for 5 min. This effect stacks."
+          },
+          {
+            "id": 1283506,
+            "name": "Fixate",
+            "schools": 1,
+            "description": "The Toxic Creeper fixates upon a player."
+          }
+        ]
+      },
+      {
+        "id": 248015,
+        "name": "Charonus",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1222755,
+            "name": "Void Cascade",
+            "schools": 32,
+            "description": "Charonus projects condensed cosmic power toward nearby players. Players coming into contact with this energy suffer 152535 Shadow damage and are knocked away."
+          },
+          {
+            "id": 1223298,
+            "name": "Gravitic Orbs",
+            "schools": 1,
+            "description": "Charonus summons a seeking Gravitic Orb near each player. The orb afflicts target player with Condensed Mass every 1 sec. If the orb comes within 6 yards of an Unstable Singularity, its essence is torn apart and the orb is destroyed."
+          },
+          {
+            "id": 1227197,
+            "name": "Cosmic Blast",
+            "schools": 32,
+            "description": "Charonus releases a massive blast, knocking back all players and inflicting 81352 Shadow damage to them with an additional 7627 Shadow damage every 1 sec for 20 sec."
+          },
+          {
+            "id": 1248130,
+            "name": "Unstable Singularity",
+            "schools": 32,
+            "description": "Charonus marks players and creates a gravity well at their location after 5.5 sec. Players within 12 yards of the well suffer 10169 Shadow damage every 1 sec and are slowly pulled toward the center. Players within 6 yards suffer an additional 50845 &nbsp;Shadow damage every 1 sec and have their movement speed reduced by 50%."
+          },
+          {
+            "id": 1263983,
+            "name": "Condensed Mass",
+            "schools": 32,
+            "description": "Gravitic Orbs fixate a player, inflicting 2542 Shadow damage every 1 sec and reducing their movement speed by 3%. This effect stacks."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "instanceId": 1299,
+    "instanceSlug": "windrunner-spire",
+    "fetchedAt": "2026-04-10T23:39:59.591Z",
+    "npcs": [
+      {
+        "id": 231606,
+        "name": "Emberdawn",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 465904,
+            "name": "Burning Gale",
+            "schools": 1,
+            "description": "Emberdawn conjures a flaming windstorm that inflicts 20338 Fire damage every 1 sec to all players and pushes them for 16 sec."
+          },
+          {
+            "id": 466064,
+            "name": "Searing Beak",
+            "schools": 1,
+            "description": "Emberdawn pecks her current target, inflicting 279648 Physical damage and an additional 50845 Fire damage every 1 sec for 8 sec."
+          },
+          {
+            "id": 466556,
+            "name": "Flaming Updraft",
+            "schools": 1,
+            "description": "Emberdawn spits fire at a player, inflicting 25423 Fire damage every 1 sec for 6 sec. Upon expiration, the fire forms into a flaming patch that inflicts 76268 Fire damage every 1.5 sec to players within it. The patch's central updraft inflicts 127113 Fire damage to players who touch it, knocking them away."
+          },
+          {
+            "id": 467120,
+            "name": "Ignited Embers",
+            "schools": 1,
+            "description": "Fiery remains inflict 76268 Fire damage every 1.5 sec to players within. The patch's central updraft inflicts inflicts 127113 Fire damage to players who touch it, knocking them away."
+          },
+          {
+            "id": 469633,
+            "name": "Flaming Twisters",
+            "schools": 1,
+            "description": "Ignited Embers react to the winds from Burning Gale , ejecting fiery tornadoes that inflict 127113 Fire damage to players struck and stun players hit for 2 sec before tossing them away."
+          },
+          {
+            "id": 1217762,
+            "name": "Fire Breath",
+            "schools": 1,
+            "description": "Emberdawn breathes a cone of fire towards a player, inflicting 203380 Fire damage to players hit."
+          }
+        ]
+      },
+      {
+        "id": 231626,
+        "name": "Kalis",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 472724,
+            "name": "Shadow Bolt",
+            "schools": 32,
+            "description": "Kalis inflicts 61014 Shadow damage to a player."
+          },
+          {
+            "id": 472736,
+            "name": "Debilitating Shriek",
+            "schools": 32,
+            "description": "Kalis continually releases piercing shrieks, inflicting 25423 Shadow damage to all players every 2 sec and increasing their damage taken from Debilitating Shriek by 30% for 3 sec. This effect stacks. Latch's Heaving Yank interrupts this ability."
+          },
+          {
+            "id": 474105,
+            "name": "Curse of Darkness",
+            "schools": 32,
+            "description": "Kalis curses players, causing Dark Entities to fixate upon them for 12 sec."
+          },
+          {
+            "id": 1219551,
+            "name": "Broken Bond",
+            "schools": 1,
+            "description": "When either Kalis or Latch falls in battle, the other becomes incensed, increasing their damage done by 50% every 5 sec."
+          }
+        ]
+      },
+      {
+        "id": 231629,
+        "name": "Latch",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 472745,
+            "name": "Splattering Spew",
+            "schools": 8,
+            "description": "Latch spews bile onto players, inflicting 61014 Nature damage to players within 5 yards of each impact and applying Splattered . Gunk Splatter forms at the impact locations."
+          },
+          {
+            "id": 472777,
+            "name": "Gunk Splatter",
+            "schools": 8,
+            "description": "Latch's bile coats the ground, inflicting 76268 Nature damage every 1.5 sec to players within it and increasing their damage taken from Splattering Spew by 100%."
+          },
+          {
+            "id": 472795,
+            "name": "Heaving Yank",
+            "schools": 1,
+            "description": "Latch throws a hook towards a player, pulling the first target hit to his location. If a player is struck, Latch follows up with Heaving Chop ."
+          },
+          {
+            "id": 472888,
+            "name": "Bone Hack",
+            "schools": 1,
+            "description": "Latch chops his primary target, inflicting 203380 Physical damage every 0.75 sec for 3 sec."
+          },
+          {
+            "id": 474075,
+            "name": "Heaving Chop",
+            "schools": 1,
+            "description": "Latch strikes the hooked player, inflicting 101690 Physical damage and stunning them for 4 sec."
+          },
+          {
+            "id": 1282272,
+            "name": "Splattered",
+            "schools": 8,
+            "description": "Latch's bile inflicts 12711 Nature damage to players hit every 1 sec for 10 sec."
+          }
+        ]
+      },
+      {
+        "id": 231631,
+        "name": "Commander Kroluk",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 467620,
+            "name": "Rampage",
+            "schools": 1,
+            "description": "Commander Kroluk focuses his destructive urge on his current target, repeatedly thrashing them and inflicting 101690 Physical damage every 0.5 sec for 5 sec."
+          },
+          {
+            "id": 467815,
+            "name": "Intercepting Charge",
+            "schools": 1,
+            "description": "The Haunting Grunt charges toward their current target and inflicts 61014 Physical damage."
+          },
+          {
+            "id": 468070,
+            "name": "Rallying Bellow",
+            "schools": 1,
+            "description": "Commander Kroluk unleashes a bloodthirsty warcry, inflicting 88979 Physical damage to all players and summoning a warparty to fight alongside him."
+          },
+          {
+            "id": 470963,
+            "name": "Bladestorm",
+            "schools": 1,
+            "description": "Commander Kroluk enters a battle-trance, fixating on a player and inflicting 76268 Physical damage every 1 sec to players within 7 yards. Commander Kroluk continues to Bladestorm until his warparty is defeated."
+          },
+          {
+            "id": 472043,
+            "name": "Rallying Bellow",
+            "schools": 1,
+            "description": "Commander Kroluk unleashes a bloodthirsty warcry, inflicting 88979 Physical damage to all players and summoning a warparty to fight alongside him."
+          },
+          {
+            "id": 472081,
+            "name": "Reckless Leap",
+            "schools": 1,
+            "description": "Commander Kroluk recklessly leaps towards the furthest player, inflicting 76268 Physical damage and an additional 20338 Physical damage every 1 sec for 12 sec to players within 12 yards of the impact location. The force of the impact causes Falling Rubble ."
+          },
+          {
+            "id": 1217094,
+            "name": "Throw Axe",
+            "schools": 1,
+            "description": "The Spectral Axethrower throws an axe at a player, inflicting 40676 Physical damage and causing them to bleed for 15254 Physical damage every 1 sec for 6 sec."
+          },
+          {
+            "id": 1250851,
+            "name": "Shield Wall",
+            "schools": 1,
+            "description": "Commander Kroluk fortifies himself, reducing his damage taken by 99%."
+          },
+          {
+            "id": 1251981,
+            "name": "Chain Lightning",
+            "schools": 8,
+            "description": "The Phantasmal Mystic sends lightning into a player, inflicting 61014 Nature damage. The lightning then jumps to the closest other player."
+          },
+          {
+            "id": 1253026,
+            "name": "Intimidating Shout",
+            "schools": 32,
+            "description": "Commander Kroluk bellows an intimidating shout, causing players who stand alone to run in fear and suffer 50845 Shadow damage every 1 sec for 6 sec."
+          },
+          {
+            "id": 1270620,
+            "name": "Flame Nova",
+            "schools": 4,
+            "description": "The Phantasmal Mystic unleashes a nova of flame, inflicting 76268 Fire damage to all players."
+          },
+          {
+            "id": 1283357,
+            "name": "Falling Rubble",
+            "schools": 8,
+            "description": "Falling debris rains from the ceiling, inflicting 152535 Nature damage to players within 4 yards of each impact location."
+          }
+        ]
+      },
+      {
+        "id": 231636,
+        "name": "Restless Heart",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 468429,
+            "name": "Bullseye Windblast",
+            "schools": 8,
+            "description": "The Restless Heart fires an arrow at a location in its chamber, inflicting 203380 Nature damage to players within 20 yards of impact and forming Billowing Wind ."
+          },
+          {
+            "id": 468442,
+            "name": "Billowing Wind",
+            "schools": 8,
+            "description": "A ring of violent wind expands, inflicting 61014 Nature damage every 1 sec to players who touch it and stunning them for 4 sec."
+          },
+          {
+            "id": 472556,
+            "name": "Arrow Rain",
+            "schools": 8,
+            "description": "The Restless Heart shoots a rain of arrows, inflicting 127113 Nature damage to players within 3.5 yards of each impact and forming Turbulent Arrows ."
+          },
+          {
+            "id": 472662,
+            "name": "Tempest Slash",
+            "schools": 1,
+            "description": "The Restless Heart knocks away its primary target, inflicting 330493 Physical damage and increasing their Physical damage taken by 40% for 10 sec. Afterward, The Restless Heart fires a Gust Shot ."
+          },
+          {
+            "id": 474528,
+            "name": "Bolt Gale",
+            "schools": 8,
+            "description": "The Restless Heart fires a salvo of arrows towards a player for 5 sec, inflicting 20338 Nature damage every 0.5 sec to players in a frontal cone."
+          },
+          {
+            "id": 1216042,
+            "name": "Squall Leap",
+            "schools": 8,
+            "description": "Stormy energy lashes outward when the Restless Heart leaps, inflicting 45761 Nature damage to all players and an additional 11440 Nature damage every 1 sec. Contacting Turbulent Arrows removes this affliction."
+          },
+          {
+            "id": 1253977,
+            "name": "Turbulent Arrows",
+            "schools": 8,
+            "description": "The windy arrow detonates upon contact with a player, inflicting 12711 Nature damage and knocking them upwards. The detonation removes Squall Leap , forming a Storming Soulfont ."
+          },
+          {
+            "id": 1253986,
+            "name": "Gust Shot",
+            "schools": 8,
+            "description": "The Restless Heart marks players with wind-infused arrows. After 6 sec, the arrows unleash a wind gust, inflicting 45761 Nature damage to players within 8 yards and an additional 13982 Nature damage every 1 sec for 8 sec. The wind gust destroys any Storming Soulfont hit."
+          },
+          {
+            "id": 1282932,
+            "name": "Storming Soulfont",
+            "schools": 1,
+            "description": "A stormy spirit inflicts 76268 Nature damage to players standing within its storm pool every 1 sec. Gust Shot quells these spirits."
+          }
+        ]
+      }
+    ]
+  }
+]

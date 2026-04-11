@@ -1,0 +1,71 @@
+[
+  {
+    "id": 516,
+    "name": "Midnight",
+    "slug": "midnight",
+    "dungeons": [
+      {
+        "id": 1311,
+        "name": "Den of Nalorakk",
+        "slug": "den-of-nalorakk"
+      },
+      {
+        "id": 1300,
+        "name": "Magisters' Terrace",
+        "slug": "magisters-terrace"
+      },
+      {
+        "id": 1315,
+        "name": "Maisara Caverns",
+        "slug": "maisara-caverns"
+      },
+      {
+        "id": 1304,
+        "name": "Murder Row",
+        "slug": "murder-row"
+      },
+      {
+        "id": 1316,
+        "name": "Nexus-Point Xenas",
+        "slug": "nexus-point-xenas"
+      },
+      {
+        "id": 1309,
+        "name": "The Blinding Vale",
+        "slug": "the-blinding-vale"
+      },
+      {
+        "id": 1313,
+        "name": "Voidscar Arena",
+        "slug": "voidscar-arena"
+      },
+      {
+        "id": 1299,
+        "name": "Windrunner Spire",
+        "slug": "windrunner-spire"
+      }
+    ],
+    "raids": [
+      {
+        "id": 1312,
+        "name": "Midnight",
+        "slug": "midnight"
+      },
+      {
+        "id": 1314,
+        "name": "The Dreamrift",
+        "slug": "the-dreamrift"
+      },
+      {
+        "id": 1307,
+        "name": "The Voidspire",
+        "slug": "the-voidspire"
+      },
+      {
+        "id": 1308,
+        "name": "March on Quel'Danas",
+        "slug": "march-on-queldanas"
+      }
+    ]
+  }
+]

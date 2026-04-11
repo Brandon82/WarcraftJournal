@@ -689,8 +689,8 @@ async function fetchZoneSpellsForInstance(
   }
   console.log(`  Found ${npcs.length} NPCs in zone`);
 
-  // NPCs that appear in zone data but aren't actual dungeon mobs (warlock pets, story NPCs, etc.)
-  const IGNORED_NPC_NAMES = new Set(['Dreadstalker', 'Wild Imp', "Xal'atath"]);
+  // NPCs that appear in zone data but aren't actual dungeon mobs (warlock pets, story NPCs, multi-zone mobs, etc.)
+  const IGNORED_NPC_NAMES = new Set(['Dreadstalker', 'Wild Imp', "Xal'atath", 'Raest Magespear', 'Hand from Beyond', 'Spiteful Shade']);
 
   // Spells to exclude from all zone spell results (generic/irrelevant abilities)
   const BLACKLISTED_SPELL_IDS = new Set([209859, 228318, 240443]);
@@ -994,8 +994,8 @@ async function fetchZoneSpellsFromDisk() {
     }
   }
 
-  removeSharedSpells(allZoneSpells);
   removeSharedNpcs(allZoneSpells);
+  removeSharedSpells(allZoneSpells);
 
   fs.writeFileSync(
     path.join(OUTPUT_DIR, 'zone-spells.json'),
@@ -1157,6 +1157,7 @@ async function main() {
       }
     }
 
+    removeSharedNpcs(allZoneSpells);
     removeSharedSpells(allZoneSpells);
 
     fs.writeFileSync(

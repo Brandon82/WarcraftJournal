@@ -2,7 +2,7 @@
   {
     "instanceId": 1314,
     "instanceSlug": "the-dreamrift",
-    "fetchedAt": "2026-04-11T20:08:10.869Z",
+    "fetchedAt": "2026-04-11T20:37:47.055Z",
     "npcs": [
       {
         "id": 257691,
@@ -205,7 +205,7 @@
   {
     "instanceId": 1307,
     "instanceSlug": "the-voidspire",
-    "fetchedAt": "2026-04-11T20:09:32.921Z",
+    "fetchedAt": "2026-04-11T20:39:05.412Z",
     "npcs": [
       {
         "id": 219161,
@@ -1827,7 +1827,7 @@
   {
     "instanceId": 1308,
     "instanceSlug": "march-on-queldanas",
-    "fetchedAt": "2026-04-11T20:09:51.049Z",
+    "fetchedAt": "2026-04-11T20:39:22.989Z",
     "npcs": [
       {
         "id": 240391,
@@ -2289,7 +2289,7 @@
   {
     "instanceId": 1311,
     "instanceSlug": "den-of-nalorakk",
-    "fetchedAt": "2026-04-11T20:10:06.795Z",
+    "fetchedAt": "2026-04-11T20:39:39.544Z",
     "npcs": [
       {
         "id": 244584,
@@ -2506,7 +2506,7 @@
   {
     "instanceId": 1300,
     "instanceSlug": "magisters-terrace",
-    "fetchedAt": "2026-04-11T20:10:32.036Z",
+    "fetchedAt": "2026-04-11T20:40:05.079Z",
     "npcs": [
       {
         "id": 231861,
@@ -2988,7 +2988,7 @@
   {
     "instanceId": 1315,
     "instanceSlug": "maisara-caverns",
-    "fetchedAt": "2026-04-11T20:11:13.238Z",
+    "fetchedAt": "2026-04-11T20:40:44.594Z",
     "npcs": [
       {
         "id": 1531,
@@ -3667,7 +3667,7 @@
   {
     "instanceId": 1304,
     "instanceSlug": "murder-row",
-    "fetchedAt": "2026-04-11T20:11:28.795Z",
+    "fetchedAt": "2026-04-11T20:40:58.389Z",
     "npcs": [
       {
         "id": 234647,
@@ -3877,7 +3877,7 @@
   {
     "instanceId": 1316,
     "instanceSlug": "nexus-point-xenas",
-    "fetchedAt": "2026-04-11T20:11:53.677Z",
+    "fetchedAt": "2026-04-11T20:41:23.283Z",
     "npcs": [
       {
         "id": 241546,
@@ -4206,7 +4206,7 @@
   {
     "instanceId": 1309,
     "instanceSlug": "the-blinding-vale",
-    "fetchedAt": "2026-04-11T20:14:39.515Z",
+    "fetchedAt": "2026-04-11T20:44:09.558Z",
     "npcs": [
       {
         "id": 243028,
@@ -4521,7 +4521,7 @@
   {
     "instanceId": 1313,
     "instanceSlug": "voidscar-arena",
-    "fetchedAt": "2026-04-11T20:14:46.400Z",
+    "fetchedAt": "2026-04-11T20:44:14.747Z",
     "npcs": [
       {
         "id": 238887,
@@ -4682,7 +4682,7 @@
   {
     "instanceId": 1299,
     "instanceSlug": "windrunner-spire",
-    "fetchedAt": "2026-04-11T20:15:00.462Z",
+    "fetchedAt": "2026-04-11T20:44:27.028Z",
     "npcs": [
       {
         "id": 231606,
@@ -5340,7 +5340,7 @@
   {
     "instanceId": 278,
     "instanceSlug": "pit-of-saron",
-    "fetchedAt": "2026-04-11T20:16:39.865Z",
+    "fetchedAt": "2026-04-11T20:45:41.833Z",
     "npcs": [
       {
         "id": 31260,
@@ -6376,7 +6376,7 @@
   {
     "instanceId": 945,
     "instanceSlug": "seat-of-the-triumvirate",
-    "fetchedAt": "2026-04-11T20:17:38.254Z",
+    "fetchedAt": "2026-04-11T20:46:30.222Z",
     "npcs": [
       {
         "id": 124309,
@@ -7370,7 +7370,7 @@
   {
     "instanceId": 476,
     "instanceSlug": "skyreach",
-    "fetchedAt": "2026-04-11T20:18:39.528Z",
+    "fetchedAt": "2026-04-11T20:47:34.116Z",
     "npcs": [
       {
         "id": 75964,
@@ -8454,99 +8454,8 @@
   {
     "instanceId": 1201,
     "instanceSlug": "algethar-academy",
-    "fetchedAt": "2026-04-11T20:20:30.443Z",
+    "fetchedAt": "2026-04-11T20:50:40.471Z",
     "npcs": [
-      {
-        "id": 116409,
-        "name": "Raest Magespear",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 373852,
-            "name": "Shadow Bolt",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "description": "3 sec cast Hurls a bolt of dark magic at an enemy, inflicting Shadow damage."
-          },
-          {
-            "id": 26662,
-            "name": "Berserk",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg",
-            "description": "Increases the caster's attack and movement speeds by 150% and all damage it deals by 500%. &nbsp;Also grants immunity to Taunt effects."
-          },
-          {
-            "id": 91289,
-            "name": "Bone Shield",
-            "schools": 8,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_boneshield.jpg",
-            "description": "The caster is surrounded by 3 whirling bones. &nbsp;While at least 1 bone remains, he takes 20% less damage from all sources and deals 2% more damage with all attacks, spells and abilities. &nbsp;Each damaging attack that lands consumes 1 bone. &nbsp;Lasts 5 min. (2s cooldown)"
-          },
-          {
-            "id": 235089,
-            "name": "Ritual",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadesofdarkness.jpg",
-            "description": "Raest goes through a series of incantations in service of his demonic masters."
-          },
-          {
-            "id": 235317,
-            "name": "Dismiss",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_shadowegg.jpg",
-            "description": "Raest puts Karam in a state of Purgatory, stunning him and causing him to be healed every 4 sec."
-          }
-        ]
-      },
-      {
-        "id": 118698,
-        "name": "Hand from Beyond",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 235578,
-            "name": "Grasp from Beyond",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_disease_05.jpg",
-            "description": "A hand from beyond crushes the souls of all enemies, inflicting 1252278 Shadow damage."
-          }
-        ]
-      },
-      {
-        "id": 174773,
-        "name": "Spiteful Shade",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 258653,
-            "name": "Bulwark of Juju",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_shield_zandalari_c_02.jpg",
-            "description": "Calls upon the power of the loa charging the caster's shield causing all nearby allies to have their damage taken reduced by 90% for 5 sec."
-          },
-          {
-            "id": 264027,
-            "name": "Warding Candles",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_candle_02.jpg",
-            "description": "Place a series of enchanted candles around the caster, reducing damage taken by 50% for the caster and all their allies within the candles."
-          },
-          {
-            "id": 350163,
-            "name": "Melee",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_meleedamage.jpg",
-            "description": "Attack for Physical damage."
-          },
-          {
-            "id": 378065,
-            "name": "Mage Hunter's Fervor",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_shattershield.jpg",
-            "description": "Increases all damage dealt by 25%."
-          }
-        ]
-      },
       {
         "id": 190609,
         "name": "Echo of Doragosa",
@@ -8956,6 +8865,13 @@
         "name": "Overgrown Ancient",
         "classification": 1,
         "spells": [
+          {
+            "id": 288865,
+            "name": "Meerah's Jukebox",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_alpaca.jpg",
+            "description": "Set up a rickety jukebox featuring Meerah's greatest hit!"
+          },
           {
             "id": 344663,
             "name": "Shattered Psyche",

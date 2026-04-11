@@ -147,9 +147,92 @@ interface BlizzardSection {
   id: number;
   title: string;
   body_text?: string;
+  header_type?: number;
   sections?: BlizzardSection[];
   spell?: { id: number; name: string; key?: { href: string } };
   creature_display?: { id: number; key?: { href: string } };
+}
+
+// Blizzard in-game EJ section icon flags (from GetSectionIconFlags)
+const HEADER_TYPE_MAP: Record<number, string> = {
+  1: 'tank',
+  2: 'dps',
+  3: 'healer',
+  4: 'heroic',
+  5: 'mythic',
+  6: 'deadly',
+  7: 'important',
+  8: 'interruptible',
+  9: 'magic',
+  10: 'curse',
+  11: 'poison',
+  12: 'disease',
+  13: 'enrage',
+};
+
+// Icon flag bitmask values from JournalEncounterSection.IconFlags DB2 column
+const ICON_FLAG_MAP: Record<number, string> = {
+  1: 'tank',
+  2: 'dps',
+  4: 'healer',
+  8: 'heroic',
+  16: 'deadly',
+  32: 'important',
+  64: 'interruptible',
+  128: 'magic',
+  256: 'curse',
+  512: 'poison',
+  1024: 'disease',
+  2048: 'enrage',
+};
+
+function iconFlagsToHeaderIcon(flags: number): string | undefined {
+  // Return the most significant flag as the primary icon
+  // Priority: heroic/mythic > deadly > important > dispel types > role indicators
+  const priority = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 1, 2, 4];
+  for (const bit of priority) {
+    if (flags & bit) return ICON_FLAG_MAP[bit];
+  }
+  return undefined;
+}
+
+// Section metadata from wago.tools DB2 export
+let sectionMetadata: Map<number, { iconFlags: number; difficultyMask: number }> = new Map();
+
+async function fetchSectionMetadata(): Promise<void> {
+  console.log('Fetching section metadata from wago.tools...');
+  try {
+    const response = await fetch('https://wago.tools/db2/JournalEncounterSection/csv');
+    if (!response.ok) {
+      console.warn(`  Warning: Could not fetch section metadata (${response.status}), difficulty filtering will be limited`);
+      return;
+    }
+    const csvText = await response.text();
+    const lines = csvText.split('\n');
+    const header = lines[0].split(',');
+    const idIdx = header.indexOf('ID');
+    const iconFlagsIdx = header.indexOf('IconFlags');
+    const diffMaskIdx = header.indexOf('DifficultyMask');
+
+    if (idIdx === -1 || iconFlagsIdx === -1 || diffMaskIdx === -1) {
+      console.warn('  Warning: Unexpected CSV format from wago.tools');
+      return;
+    }
+
+    for (let i = 1; i < lines.length; i++) {
+      const cols = lines[i].split(',');
+      if (cols.length <= Math.max(idIdx, iconFlagsIdx, diffMaskIdx)) continue;
+      const id = parseInt(cols[idIdx], 10);
+      const iconFlags = parseInt(cols[iconFlagsIdx], 10);
+      const difficultyMask = parseInt(cols[diffMaskIdx], 10);
+      if (!isNaN(id)) {
+        sectionMetadata.set(id, { iconFlags: iconFlags || 0, difficultyMask });
+      }
+    }
+    console.log(`  Loaded metadata for ${sectionMetadata.size} sections`);
+  } catch (err) {
+    console.warn(`  Warning: Failed to fetch section metadata: ${err}`);
+  }
 }
 
 interface BlizzardItemDetail {
@@ -239,19 +322,22 @@ async function fetchInstance(instanceId: number) {
   };
 }
 
-async function fetchSpellTooltip(spellId: number): Promise<string | undefined> {
+async function fetchSpellTooltip(spellId: number): Promise<{ description?: string; icon?: string } | undefined> {
   try {
     const response = await fetch(`https://nether.wowhead.com/tooltip/spell/${spellId}`);
     if (!response.ok) return undefined;
     const data = await response.json();
-    if (!data.tooltip) return undefined;
+    const icon = data.icon
+      ? `https://wow.zamimg.com/images/wow/icons/large/${data.icon}.jpg`
+      : undefined;
+    if (!data.tooltip) return icon ? { icon } : undefined;
     // Extract description: strip HTML, then take text after the header table
     const plain = (data.tooltip as string)
       .replace(/<table>.*?<\/table>/s, '') // Remove the first header table (name, range, cast time)
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
-    return plain || undefined;
+    return { description: plain || undefined, icon };
   } catch {
     return undefined;
   }
@@ -272,8 +358,10 @@ async function processSection(section: BlizzardSection): Promise<Record<string, 
 
   // If no body_text from Blizzard API but has a spell, fetch description from Wowhead
   let bodyText = section.body_text;
-  if (!bodyText && section.spell?.id) {
-    bodyText = await fetchSpellTooltip(section.spell.id);
+  if (section.spell?.id) {
+    const tooltipResult = await fetchSpellTooltip(section.spell.id);
+    if (!bodyText && tooltipResult?.description) bodyText = tooltipResult.description;
+    if (!spellIcon && tooltipResult?.icon) spellIcon = tooltipResult.icon;
   }
 
   const children = [];
@@ -283,10 +371,25 @@ async function processSection(section: BlizzardSection): Promise<Record<string, 
     }
   }
 
+  // Resolve headerIcon and difficultyMask from wago.tools metadata or Blizzard header_type
+  const meta = sectionMetadata.get(section.id);
+  let headerIcon: string | undefined;
+  let difficultyMask: number | undefined;
+
+  if (meta) {
+    if (meta.iconFlags) headerIcon = iconFlagsToHeaderIcon(meta.iconFlags);
+    if (meta.difficultyMask !== -1) difficultyMask = meta.difficultyMask;
+  }
+  // Fallback to Blizzard API header_type if no wago data
+  if (!headerIcon && section.header_type != null) {
+    headerIcon = HEADER_TYPE_MAP[section.header_type];
+  }
+
   return {
     id: section.id,
     title: section.title,
     ...(bodyText ? { bodyText } : {}),
+    ...(difficultyMask != null ? { difficultyMask } : {}),
     ...(children.length > 0 ? { sections: children } : {}),
     ...(section.spell?.id ? { spellId: section.spell.id } : {}),
     ...(spellIcon ? { spellIcon } : {}),
@@ -294,6 +397,7 @@ async function processSection(section: BlizzardSection): Promise<Record<string, 
       ? { creatureDisplayId: section.creature_display.id }
       : {}),
     ...(creatureDisplayMedia ? { creatureDisplayMedia } : {}),
+    ...(headerIcon ? { headerIcon } : {}),
   };
 }
 
@@ -369,11 +473,17 @@ async function fetchEncounter(encounterId: number, instanceSlug: string) {
 // Mapping of Blizzard journal instance ID → Wowhead zone info for dungeon trash spells.
 // Zone IDs and slugs are from wowhead.com/zone=XXXXX/slug URLs.
 const INSTANCE_TO_WOWHEAD_ZONE: Record<number, { id: number; slug: string }> = {
+  // Midnight expansion dungeons
   1299: { id: 15808, slug: 'windrunner-spire' },
   1300: { id: 15829, slug: 'magisters-terrace' },
   1304: { id: 16091, slug: 'murder-row' },
   1309: { id: 16359, slug: 'the-blinding-vale' },
   1311: { id: 16368, slug: 'den-of-nalorakk' },
+  // Extra M+ season dungeons
+  278: { id: 4813, slug: 'pit-of-saron' },
+  476: { id: 6988, slug: 'skyreach' },
+  945: { id: 8910, slug: 'seat-of-the-triumvirate' },
+  1201: { id: 14032, slug: 'algethar-academy' },
   1313: { id: 16425, slug: 'voidscar-arena' },
   1315: { id: 16395, slug: 'maisara-caverns' },
   1316: { id: 16573, slug: 'nexus-point-xenas' },
@@ -476,14 +586,25 @@ async function fetchZoneSpellsForInstance(
   // Filter: hostile/elite NPCs (bosses + trash)
   // classification: 0=normal, 1=elite, 2=rare-elite, 3=boss, 4=rare
   // react: [alliance, horde] — negative = hostile, missing = assume hostile for elites
-  const dungeonNpcs = npcs.filter((npc) => {
+  const filteredNpcs = npcs.filter((npc) => {
     if (npc.classification < 1) return false;
     if (IGNORED_NPC_NAMES.has(npc.name)) return false;
     // If react data exists, check hostility; if missing, assume hostile for elite+ mobs
     const isFriendly = npc.react && npc.react[0] > 0 && npc.react[1] > 0;
     return !isFriendly;
   });
-  console.log(`  Filtered to ${dungeonNpcs.length} dungeon NPCs`);
+
+  // Deduplicate NPCs by name — Wowhead often lists multiple IDs for the same mob.
+  // Keep the one with the highest classification, breaking ties by highest ID (newest).
+  const npcByName = new Map<string, WowheadNpc>();
+  for (const npc of filteredNpcs) {
+    const existing = npcByName.get(npc.name);
+    if (!existing || npc.classification > existing.classification || (npc.classification === existing.classification && npc.id > existing.id)) {
+      npcByName.set(npc.name, npc);
+    }
+  }
+  const dungeonNpcs = [...npcByName.values()];
+  console.log(`  Filtered to ${dungeonNpcs.length} dungeon NPCs (from ${filteredNpcs.length} before dedup)`);
 
   // Fetch abilities for each trash NPC
   const uniqueSpellIds = new Set<number>();
@@ -495,7 +616,16 @@ async function fetchZoneSpellsForInstance(
       const abilities = await fetchNpcAbilities(npc.id);
       if (abilities.length === 0) continue;
 
-      const spells = abilities.map((a) => {
+      // Deduplicate spells by name — Wowhead lists multiple ranks/versions of the same ability.
+      // Keep the highest spell ID (newest version) for each name.
+      const spellByName = new Map<string, WowheadSpell>();
+      for (const a of abilities) {
+        const existing = spellByName.get(a.name);
+        if (!existing || a.id > existing.id) {
+          spellByName.set(a.name, a);
+        }
+      }
+      const spells = [...spellByName.values()].map((a) => {
         uniqueSpellIds.add(a.id);
         return {
           id: a.id,
@@ -522,12 +652,14 @@ async function fetchZoneSpellsForInstance(
   const spellDescriptions = new Map<number, string>();
 
   for (const spellId of uniqueSpellIds) {
-    const [icon, tooltip] = await Promise.all([
+    const [blizzIcon, tooltipResult] = await Promise.all([
       fetchMedia(`/data/wow/media/spell/${spellId}`),
       fetchSpellTooltip(spellId),
     ]);
+    // Prefer Blizzard API icon, fall back to Wowhead icon
+    const icon = blizzIcon ?? tooltipResult?.icon;
     if (icon) spellIcons.set(spellId, icon);
-    if (tooltip) spellDescriptions.set(spellId, tooltip);
+    if (tooltipResult?.description) spellDescriptions.set(spellId, tooltipResult.description);
   }
 
   // Enrich spells with icons and descriptions
@@ -649,14 +781,16 @@ async function main() {
     }
   }
 
-  // --only-zone-spells: skip Blizzard API, read existing data from disk
+  // --only-zone-spells: skip full Blizzard API fetch, but still authenticate for spell icons
   if (process.argv.includes('--only-zone-spells')) {
+    await authenticate();
     return fetchZoneSpellsFromDisk();
   }
 
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   await authenticate();
+  await fetchSectionMetadata();
 
   // 1. Fetch all expansions
   let expansions = await fetchAllExpansions();
@@ -729,11 +863,14 @@ async function main() {
   );
   console.log(`Wrote ${allInstances.length} instances`);
 
-  // 4. Fetch all encounters
+  // 4. Fetch all encounters (deduplicated by ID in case the same encounter appears in multiple instances)
   const allEncounters = [];
+  const seenEncounterIds = new Set<number>();
   for (const instance of allInstances) {
     console.log(`\nFetching encounters for ${instance.name}...`);
     for (const ref of instance.encounters) {
+      if (seenEncounterIds.has(ref.id)) continue;
+      seenEncounterIds.add(ref.id);
       try {
         console.log(`  Fetching encounter: ${ref.name}...`);
         const encounter = await fetchEncounter(ref.id, instance.slug);

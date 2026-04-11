@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { DownOutlined, ThunderboltOutlined } from '@ant-design/icons';
-import type { ZoneNpc, ZoneSpell } from '../../types';
+import type { ZoneNpc, ZoneSpell, InstanceCategory } from '../../types';
 
 const SCHOOL_TAGS: Record<number, { label: string; style: string }> = {
   1: { label: 'Physical', style: 'bg-amber-500/20 text-amber-400' },
@@ -125,9 +125,10 @@ function NpcGroup({ npc, isBoss }: { npc: ZoneNpc; isBoss: boolean }) {
 interface ZoneSpellSectionProps {
   npcs: ZoneNpc[];
   bossNames: Set<string>;
+  category: InstanceCategory;
 }
 
-export default function ZoneSpellSection({ npcs, bossNames }: ZoneSpellSectionProps) {
+export default function ZoneSpellSection({ npcs, bossNames, category }: ZoneSpellSectionProps) {
   const sortedNpcs = [...npcs].sort((a, b) => {
     // Priority: boss (0) > elite/rare-elite (1) > other (2)
     const tierA = bossNames.has(a.name) ? 0 : a.classification >= 1 ? 1 : 2;
@@ -139,7 +140,7 @@ export default function ZoneSpellSection({ npcs, bossNames }: ZoneSpellSectionPr
   return (
     <div className="mt-10">
       <h3 className="text-lg font-semibold text-wow-gold mb-4 tracking-wide">
-        Dungeon Abilities
+        {category === 'raid' ? 'Raid' : 'Dungeon'} Abilities
       </h3>
       <div>
         {sortedNpcs.map((npc) => (

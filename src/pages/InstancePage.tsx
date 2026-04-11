@@ -102,8 +102,8 @@ export default function InstancePage() {
         ))}
       </div>
 
-      {instance.category === 'dungeon' && zoneSpells && zoneSpells.npcs.length > 0 && (
-        <ZoneSpellSection npcs={zoneSpells.npcs} bossNames={bossNames} />
+      {zoneSpells && zoneSpells.npcs.length > 0 && (
+        <ZoneSpellSection npcs={zoneSpells.npcs} bossNames={bossNames} category={instance.category} />
       )}
     </div>
   );

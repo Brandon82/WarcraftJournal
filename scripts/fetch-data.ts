@@ -470,7 +470,7 @@ async function fetchEncounter(encounterId: number, instanceSlug: string) {
   };
 }
 
-// Mapping of Blizzard journal instance ID → Wowhead zone info for dungeon trash spells.
+// Mapping of Blizzard journal instance ID → Wowhead zone info for zone spells (trash/NPC abilities).
 // Zone IDs and slugs are from wowhead.com/zone=XXXXX/slug URLs.
 const INSTANCE_TO_WOWHEAD_ZONE: Record<number, { id: number; slug: string }> = {
   // Midnight expansion dungeons
@@ -487,6 +487,10 @@ const INSTANCE_TO_WOWHEAD_ZONE: Record<number, { id: number; slug: string }> = {
   1313: { id: 16425, slug: 'voidscar-arena' },
   1315: { id: 16395, slug: 'maisara-caverns' },
   1316: { id: 16573, slug: 'nexus-point-xenas' },
+  // Midnight expansion raids
+  1307: { id: 16340, slug: 'the-voidspire' },
+  1308: { id: 16342, slug: 'isle-of-queldanas' },
+  1314: { id: 16531, slug: 'the-dreamrift' },
 };
 
 async function fetchWowheadPage(url: string, retries = 5): Promise<string> {
@@ -680,6 +684,45 @@ async function fetchZoneSpellsForInstance(
   };
 }
 
+// Remove spells that appear in more than one instance — they're generic/shared abilities, not
+// instance-specific trash mechanics. Mutates the array in place and drops NPCs left with no spells.
+function removeSharedSpells(allZoneSpells: Record<string, unknown>[]): void {
+  // Build a map of spellId → set of instanceSlugs it appears in
+  const spellInstances = new Map<number, Set<string>>();
+  for (const entry of allZoneSpells) {
+    const slug = entry.instanceSlug as string;
+    const npcs = entry.npcs as Array<{ spells: Array<{ id: number }> }>;
+    for (const npc of npcs) {
+      for (const spell of npc.spells) {
+        let slugs = spellInstances.get(spell.id);
+        if (!slugs) {
+          slugs = new Set();
+          spellInstances.set(spell.id, slugs);
+        }
+        slugs.add(slug);
+      }
+    }
+  }
+
+  const sharedSpellIds = new Set<number>();
+  for (const [spellId, slugs] of spellInstances) {
+    if (slugs.size > 1) sharedSpellIds.add(spellId);
+  }
+
+  if (sharedSpellIds.size > 0) {
+    console.log(`\nRemoving ${sharedSpellIds.size} spells shared across multiple instances`);
+  }
+
+  // Filter out shared spells and remove NPCs left with no spells
+  for (const entry of allZoneSpells) {
+    const npcs = entry.npcs as Array<{ name: string; spells: Array<{ id: number }> }>;
+    for (const npc of npcs) {
+      npc.spells = npc.spells.filter((s) => !sharedSpellIds.has(s.id));
+    }
+    entry.npcs = npcs.filter((npc) => npc.spells.length > 0);
+  }
+}
+
 const ZONE_SPELLS_MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 function loadCachedZoneSpells(): Map<string, { data: Record<string, unknown>; fresh: boolean }> {
@@ -730,12 +773,12 @@ async function fetchZoneSpellsFromDisk() {
   const cache = loadCachedZoneSpells();
   const forceRefresh = process.argv.includes('--force');
 
-  const dungeonInstances = allInstances.filter(
-    (i: Record<string, unknown>) => i.category === 'dungeon' && INSTANCE_TO_WOWHEAD_ZONE[i.id as number],
+  const zoneSpellInstances = allInstances.filter(
+    (i: Record<string, unknown>) => INSTANCE_TO_WOWHEAD_ZONE[i.id as number],
   );
   const allZoneSpells: Record<string, unknown>[] = [];
 
-  for (const inst of dungeonInstances) {
+  for (const inst of zoneSpellInstances) {
     const cached = cache.get(inst.slug);
     if (cached?.fresh && !forceRefresh) {
       console.log(`\nSkipping ${inst.slug} (fetched ${cached.data.fetchedAt}, still fresh)`);
@@ -760,11 +803,13 @@ async function fetchZoneSpellsFromDisk() {
     }
   }
 
+  removeSharedSpells(allZoneSpells);
+
   fs.writeFileSync(
     path.join(OUTPUT_DIR, 'zone-spells.json'),
     JSON.stringify(allZoneSpells, null, 2),
   );
-  console.log(`\nWrote zone spells for ${allZoneSpells.length} dungeons`);
+  console.log(`\nWrote zone spells for ${allZoneSpells.length} instances`);
   console.log('\nDone!');
 }
 
@@ -887,16 +932,16 @@ async function main() {
   );
   console.log(`\nWrote ${allEncounters.length} encounters`);
 
-  // 5. Fetch zone spells for dungeons (trash mob abilities from Wowhead)
+  // 5. Fetch zone spells (trash/NPC abilities from Wowhead)
   if (!process.argv.includes('--skip-zone-spells')) {
     const cache = loadCachedZoneSpells();
     const forceRefresh = process.argv.includes('--force');
-    const dungeonInstances = allInstances.filter(
-      (i: Record<string, unknown>) => i.category === 'dungeon' && INSTANCE_TO_WOWHEAD_ZONE[i.id as number],
+    const zoneSpellInstances = allInstances.filter(
+      (i: Record<string, unknown>) => INSTANCE_TO_WOWHEAD_ZONE[i.id as number],
     );
     const allZoneSpells: Record<string, unknown>[] = [];
 
-    for (const inst of dungeonInstances) {
+    for (const inst of zoneSpellInstances) {
       const cached = cache.get(inst.slug);
       if (cached?.fresh && !forceRefresh) {
         console.log(`\nSkipping ${inst.slug} (fetched ${cached.data.fetchedAt}, still fresh)`);
@@ -920,11 +965,13 @@ async function main() {
       }
     }
 
+    removeSharedSpells(allZoneSpells);
+
     fs.writeFileSync(
       path.join(OUTPUT_DIR, 'zone-spells.json'),
       JSON.stringify(allZoneSpells, null, 2),
     );
-    console.log(`\nWrote zone spells for ${allZoneSpells.length} dungeons`);
+    console.log(`\nWrote zone spells for ${allZoneSpells.length} instances`);
   }
 
   console.log('\nDone! Data written to src/data/generated/');

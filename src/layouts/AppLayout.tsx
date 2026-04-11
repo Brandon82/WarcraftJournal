@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigate, useLocation } from 'react-router';
 import { Drawer } from 'antd';
-import { BookOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined } from '@ant-design/icons';
+import { BookOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, ToolOutlined } from '@ant-design/icons';
 import ExpansionMenu from '../components/navigation/ExpansionMenu';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SearchBar from '../components/navigation/SearchBar';
@@ -27,6 +27,8 @@ export default function AppLayout() {
   const [searchOpen, setSearchOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigate = useCallback(() => {
     setDrawerOpen(false);
@@ -50,13 +52,26 @@ export default function AppLayout() {
 
   const sidebarContent = (
     <>
-      <div className="px-5 py-4 border-b border-wow-border flex items-center gap-2.5">
+      <div className="px-5 py-4 border-b border-wow-border flex items-center gap-2.5 rounded-t-2xl">
         <BookOutlined className="text-wow-gold text-xl" />
         <h4 className="text-wow-gold font-semibold text-lg m-0 whitespace-nowrap">
           WarcraftJournal
         </h4>
       </div>
       <ExpansionMenu onNavigate={handleNavigate} />
+      <div className="px-3 py-4 border-t border-wow-border">
+        <button
+          onClick={() => { navigate('/tools'); handleNavigate(); }}
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg border-none cursor-pointer text-sm font-medium transition-all duration-150 ${
+            location.pathname === '/tools'
+              ? 'bg-wow-bg-elevated text-wow-gold'
+              : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
+          }`}
+        >
+          <ToolOutlined />
+          Useful Tools
+        </button>
+      </div>
     </>
   );
 
@@ -66,10 +81,11 @@ export default function AppLayout() {
         {/* Desktop sidebar */}
         {!isMobile && (
           <aside
-            className="fixed inset-y-0 left-0 z-10 w-[280px] overflow-y-auto bg-wow-bg-surface border-r border-wow-border transition-colors duration-200"
+            className="fixed top-3 bottom-3 left-3 z-10 w-[270px] overflow-y-auto bg-wow-bg-surface rounded-2xl transition-colors duration-200"
             style={{
-              transform: collapsed ? 'translateX(-100%)' : 'translateX(0)',
+              transform: collapsed ? 'translateX(calc(-100% - 12px))' : 'translateX(0)',
               transition: 'transform 200ms ease, background-color 200ms ease',
+              boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)',
             }}
           >
             {sidebarContent}
@@ -96,11 +112,11 @@ export default function AppLayout() {
         <div
           className="flex-1 flex flex-col"
           style={{
-            marginLeft: isMobile ? 0 : collapsed ? 0 : 280,
+            marginLeft: isMobile ? 0 : collapsed ? 0 : 294,
             transition: 'margin-left 200ms ease',
           }}
         >
-          <header className="sticky top-0 z-5 h-14 bg-wow-bg-surface border-b border-wow-border flex items-center px-4 sm:px-6 gap-3 transition-colors duration-200">
+          <header className="sticky top-3 z-5 h-14 bg-wow-bg-surface rounded-2xl flex items-center mx-3 px-4 sm:px-6 gap-3 transition-colors duration-200" style={{ boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)' }}>
             <button
               onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(!collapsed)}
               className="bg-transparent border-none cursor-pointer text-wow-text-secondary text-lg p-0 flex items-center hover:text-wow-text transition-colors duration-150"

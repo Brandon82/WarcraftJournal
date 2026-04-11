@@ -27,13 +27,7 @@ export const darkTheme: ThemeConfig = {
     colorLinkHover: '#e0b854',
   },
   components: {
-    Menu: {
-      darkItemBg: '#09090b',
-      darkSubMenuItemBg: '#09090b',
-      darkItemSelectedBg: '#27272a',
-      darkItemColor: '#a1a1aa',
-      darkItemSelectedColor: '#d4a843',
-    },
+    Menu: {},
     Tabs: {
       inkBarColor: '#d4a843',
       itemSelectedColor: '#d4a843',
@@ -63,13 +57,7 @@ export const lightTheme: ThemeConfig = {
     colorLinkHover: '#8b6c28',
   },
   components: {
-    Menu: {
-      itemBg: '#fafafa',
-      subMenuItemBg: '#fafafa',
-      itemSelectedBg: '#f4f4f5',
-      itemColor: '#71717a',
-      itemSelectedColor: '#a07d2e',
-    },
+    Menu: {},
     Tabs: {
       inkBarColor: '#a07d2e',
       itemSelectedColor: '#a07d2e',

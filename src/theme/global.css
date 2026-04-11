@@ -114,7 +114,3 @@ body {
   background: var(--color-wow-bg-hover);
 }
 
-/* Ant Design overrides */
-.ant-menu {
-  border-inline-end: none !important;
-}

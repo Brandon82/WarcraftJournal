@@ -51,15 +51,29 @@ export default function AppLayout() {
   }, [handleKeyDown]);
 
   const sidebarContent = (
-    <>
-      <div className="px-5 py-4 border-b border-wow-border flex items-center gap-2.5 rounded-t-2xl">
-        <BookOutlined className="text-wow-gold text-xl" />
-        <h4 className="text-wow-gold font-semibold text-lg m-0 whitespace-nowrap">
-          WarcraftJournal
-        </h4>
+    <div className="flex flex-col h-full">
+      <div className="px-4 py-4 border-b border-wow-border flex items-center gap-2.5 rounded-t-2xl">
+        <button
+          onClick={() => { navigate('/'); handleNavigate(); }}
+          className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer p-0"
+        >
+          <BookOutlined className="text-wow-gold text-xl" />
+          <h4 className="text-wow-gold font-semibold text-lg m-0 whitespace-nowrap">
+            WarcraftJournal
+          </h4>
+        </button>
+        <div className="flex-1" />
+        {!isMobile && (
+          <button
+            onClick={() => setCollapsed(!collapsed)}
+            className="bg-transparent border-none cursor-pointer text-wow-text-dim text-base p-1 flex items-center hover:text-wow-text transition-colors duration-150 rounded"
+          >
+            <MenuFoldOutlined />
+          </button>
+        )}
       </div>
       <ExpansionMenu onNavigate={handleNavigate} />
-      <div className="px-3 py-4 border-t border-wow-border">
+      <div className="mt-auto px-3 py-4 border-t border-wow-border">
         <button
           onClick={() => { navigate('/tools'); handleNavigate(); }}
           className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg border-none cursor-pointer text-sm font-medium transition-all duration-150 ${
@@ -72,7 +86,7 @@ export default function AppLayout() {
           Useful Tools
         </button>
       </div>
-    </>
+    </div>
   );
 
   return (
@@ -81,7 +95,7 @@ export default function AppLayout() {
         {/* Desktop sidebar */}
         {!isMobile && (
           <aside
-            className="fixed top-3 bottom-3 left-3 z-10 w-[270px] overflow-y-auto bg-wow-bg-surface rounded-2xl transition-colors duration-200"
+            className="fixed top-3 bottom-3 left-3 z-10 w-[270px] overflow-hidden bg-wow-bg-surface rounded-2xl transition-colors duration-200"
             style={{
               transform: collapsed ? 'translateX(calc(-100% - 12px))' : 'translateX(0)',
               transition: 'transform 200ms ease, background-color 200ms ease',
@@ -117,12 +131,14 @@ export default function AppLayout() {
           }}
         >
           <header className="sticky top-3 z-5 h-14 bg-wow-bg-surface rounded-2xl flex items-center mx-3 px-4 sm:px-6 gap-3 transition-colors duration-200" style={{ boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)' }}>
-            <button
-              onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(!collapsed)}
-              className="bg-transparent border-none cursor-pointer text-wow-text-secondary text-lg p-0 flex items-center hover:text-wow-text transition-colors duration-150"
-            >
-              {isMobile ? <MenuUnfoldOutlined /> : collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            </button>
+            {(isMobile || collapsed) && (
+              <button
+                onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(false)}
+                className="bg-transparent border-none cursor-pointer text-wow-text-secondary text-lg p-0 flex items-center hover:text-wow-text transition-colors duration-150"
+              >
+                <MenuUnfoldOutlined />
+              </button>
+            )}
             <BreadcrumbNav />
             <div className="flex-1" />
             <button

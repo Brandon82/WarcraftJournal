@@ -1,5 +1,7 @@
 # WarcraftJournal
 
+**[warcraftjournal.app](https://warcraftjournal.app)**
+
 A web-based World of Warcraft Adventure Guide that displays dungeon and raid encounter data, boss abilities, loot tables, and zone spells across all expansions.
 
 Built with React, TypeScript, and Vite. All encounter data is pre-fetched from the Blizzard API and served as static JSON, so the app requires no runtime API calls.

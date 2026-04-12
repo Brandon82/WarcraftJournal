@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router';
 import { Drawer } from 'antd';
-import { BookOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, ToolOutlined, CodeOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, ToolOutlined, CodeOutlined } from '@ant-design/icons';
+import JournalIcon from '../components/JournalIcon';
 import ExpansionMenu from '../components/navigation/ExpansionMenu';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SearchBar from '../components/navigation/SearchBar';
@@ -59,7 +60,7 @@ export default function AppLayout() {
           onClick={() => { navigate('/'); handleNavigate(); }}
           className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer p-0"
         >
-          <BookOutlined className="text-wow-gold text-xl" />
+          <JournalIcon className="text-wow-gold text-2xl" />
           <h4 className="text-wow-gold font-semibold text-lg m-0 whitespace-nowrap">
             WarcraftJournal
           </h4>

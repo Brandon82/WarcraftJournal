@@ -129,7 +129,7 @@ interface DevInfoPanelProps {
 }
 
 export default function DevInfoPanel({ instanceId }: DevInfoPanelProps) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const overrides = ZONE_NPC_OVERRIDES[instanceId];
   const instanceBlacklistedSpells = INSTANCE_BLACKLISTED_SPELL_IDS[instanceId];
   const instanceIgnoredNpcs = INSTANCE_IGNORED_NPC_NAMES[instanceId];

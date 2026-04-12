@@ -94,13 +94,13 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
       {/* Header */}
       <div
         onClick={isCollapsible ? () => setExpanded(!expanded) : undefined}
-        className={`px-4 py-2 select-none flex items-start gap-3 ${
+        className={`px-4 py-2 select-none flex items-center gap-3 ${
           isCollapsible ? 'cursor-pointer hover:bg-wow-bg-hover/30 transition-colors duration-150' : ''
         } ${isTopLevel ? 'rounded-t-xl py-3' : ''}`}
       >
         {isCollapsible && (
           <span
-            className="text-wow-text-secondary text-[10px] w-3 shrink-0 inline-flex transition-transform duration-200 mt-1.5"
+            className="text-wow-text-secondary text-[10px] w-3 shrink-0 inline-flex transition-transform duration-200"
             style={{ transform: expanded ? 'rotate(0deg)' : 'rotate(-90deg)' }}
           >
             <DownOutlined />
@@ -113,7 +113,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="shrink-0 mt-0.5 hover:brightness-125 transition-all"
+            className="shrink-0 hover:brightness-125 transition-all"
           >
             {section.spellIcon ? (
               <img
@@ -133,10 +133,10 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
             src={section.spellIcon}
             alt={section.title}
             title={section.title}
-            className="w-8 h-8 rounded-lg object-cover border border-wow-border shrink-0 mt-0.5"
+            className="w-8 h-8 rounded-lg object-cover border border-wow-border shrink-0"
           />
         ) : isTopLevel ? (
-          <div className="w-8 h-8 rounded-lg bg-wow-bg-raised text-wow-gold-muted flex items-center justify-center shrink-0 mt-0.5">
+          <div className="w-8 h-8 rounded-lg bg-wow-bg-raised text-wow-gold-muted flex items-center justify-center shrink-0">
             <ThunderboltOutlined className="text-xs" />
           </div>
         ) : null}
@@ -167,7 +167,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
             )}
           </div>
           {!isCollapsible && section.bodyText && (
-            <p className="text-wow-text-secondary text-[13px] leading-relaxed m-0 mt-0.5">
+            <p className="text-zinc-300 text-sm leading-relaxed m-0 mt-0.5">
               {section.bodyText}
             </p>
           )}
@@ -184,7 +184,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
           <div className="overflow-hidden min-h-0">
             <div className="pb-2">
               {section.bodyText && (
-                <p className="text-wow-text-secondary text-[13px] leading-relaxed m-0 px-4 ml-3">
+                <p className="text-zinc-300 text-sm leading-relaxed m-0 px-4 ml-3">
                   {section.bodyText}
                 </p>
               )}

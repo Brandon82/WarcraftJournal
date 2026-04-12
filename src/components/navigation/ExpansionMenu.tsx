@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router';
 import { RightOutlined } from '@ant-design/icons';
-import { instanceBySlug } from '../../data';
 import { currentSeason } from '../../data/currentSeason';
 
 interface ExpansionMenuProps {
@@ -11,61 +10,34 @@ interface ExpansionMenuProps {
 interface NavInstance {
   slug: string;
   name: string;
-  encounters: { slug: string; name: string }[];
 }
 
 export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
   const navigate = useNavigate();
-  const { instanceSlug, bossSlug } = useParams();
+  const { instanceSlug } = useParams();
   const location = useLocation();
 
   const pathParts = location.pathname.replace(/^\//, '').split('/');
-  const selectedKey = bossSlug && instanceSlug
-    ? `${pathParts[0]}/${instanceSlug}/${bossSlug}`
-    : instanceSlug
-      ? `${pathParts[0]}/${instanceSlug}`
-      : '';
-
-  const isSeasonRoute = pathParts[0] === 'season';
 
   // Build instance lists
-  const raids: NavInstance[] = (currentSeason?.raids ?? []).map((inst) => {
-    const full = instanceBySlug.get(inst.slug);
-    return {
-      slug: inst.slug,
-      name: inst.name,
-      encounters: full?.encounters.map((e) => ({ slug: e.slug, name: e.name })) ?? [],
-    };
-  });
+  const raids: NavInstance[] = (currentSeason?.raids ?? []).map((inst) => ({
+    slug: inst.slug,
+    name: inst.name,
+  }));
 
-  const dungeons: NavInstance[] = (currentSeason?.dungeons ?? []).map((inst) => {
-    const full = instanceBySlug.get(inst.slug);
-    return {
-      slug: inst.slug,
-      name: inst.name,
-      encounters: full?.encounters.map((e) => ({ slug: e.slug, name: e.name })) ?? [],
-    };
-  });
+  const dungeons: NavInstance[] = (currentSeason?.dungeons ?? []).map((inst) => ({
+    slug: inst.slug,
+    name: inst.name,
+  }));
 
-  // Track which categories and instances are expanded
+  // Track which categories are expanded
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({
     raids: true,
     dungeons: true,
   });
-  const [expandedInstances, setExpandedInstances] = useState<Record<string, boolean>>(() => {
-    // Auto-expand the currently selected instance
-    if (instanceSlug && isSeasonRoute) {
-      return { [instanceSlug]: true };
-    }
-    return {};
-  });
 
   const toggleCategory = (key: string) => {
     setExpandedCategories((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
-  const toggleInstance = (slug: string) => {
-    setExpandedInstances((prev) => ({ ...prev, [slug]: !prev[slug] }));
   };
 
   const go = (path: string) => {
@@ -75,55 +47,25 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
 
   if (!currentSeason) return null;
 
+  const isSeasonRoute = pathParts[0] === 'season';
+
   const renderInstances = (instances: NavInstance[]) =>
     instances.map((inst) => {
       const instKey = `season/${inst.slug}`;
-      const isExpanded = expandedInstances[inst.slug] ?? false;
-      const isSelected = selectedKey === instKey;
+      const isSelected = isSeasonRoute && instanceSlug === inst.slug;
 
       return (
-        <div key={inst.slug}>
-          <button
-            onClick={() => {
-              toggleInstance(inst.slug);
-              go(`/${instKey}`);
-            }}
-            className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
-              isSelected
-                ? 'bg-wow-bg-raised text-wow-gold font-medium'
-                : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
-            }`}
-          >
-            <RightOutlined
-              className="text-[9px] transition-transform duration-200 flex-shrink-0"
-              style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}
-            />
-            <span className="truncate">{inst.name}</span>
-          </button>
-
-          {isExpanded && inst.encounters.length > 0 && (
-            <div className="ml-4">
-              {inst.encounters.map((enc) => {
-                const encKey = `season/${inst.slug}/${enc.slug}`;
-                const isEncSelected = selectedKey === encKey;
-
-                return (
-                  <button
-                    key={enc.slug}
-                    onClick={() => go(`/${encKey}`)}
-                    className={`w-full text-left pl-8 pr-3 py-1 border-none cursor-pointer text-[12px] transition-all duration-150 rounded-md ${
-                      isEncSelected
-                        ? 'bg-wow-bg-raised text-wow-gold font-medium'
-                        : 'bg-transparent text-wow-text-dim hover:text-wow-text-secondary hover:bg-wow-bg-elevated'
-                    }`}
-                  >
-                    <span className="truncate block">{enc.name}</span>
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </div>
+        <button
+          key={inst.slug}
+          onClick={() => go(`/${instKey}`)}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+            isSelected
+              ? 'bg-wow-bg-raised text-wow-gold font-medium'
+              : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
+          }`}
+        >
+          <span className="truncate">{inst.name}</span>
+        </button>
       );
     });
 

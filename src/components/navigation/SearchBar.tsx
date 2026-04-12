@@ -40,11 +40,12 @@ export default function SearchBar({ onClose }: SearchBarProps) {
     for (const inst of instances) {
       if (inst.name.toLowerCase().includes(q)) {
         const exp = expansionById.get(inst.expansionId);
+        const prefix = exp ? `/${exp.slug}` : '/season';
         matches.push({
           type: 'instance',
           name: inst.name,
-          path: `/${exp?.slug ?? ''}/${inst.slug}`,
-          subtitle: `${inst.category === 'raid' ? 'Raid' : 'Dungeon'} · ${exp?.name ?? ''}`,
+          path: `${prefix}/${inst.slug}`,
+          subtitle: `${inst.category === 'raid' ? 'Raid' : 'Dungeon'} · ${exp?.name ?? 'Current Season'}`,
         });
       }
     }
@@ -53,10 +54,11 @@ export default function SearchBar({ onClose }: SearchBarProps) {
       if (enc.name.toLowerCase().includes(q)) {
         const inst = instances.find((i) => i.id === enc.instanceId);
         const exp = inst ? expansionById.get(inst.expansionId) : undefined;
+        const prefix = exp ? `/${exp.slug}` : '/season';
         matches.push({
           type: 'encounter',
           name: enc.name,
-          path: `/${exp?.slug ?? ''}/${enc.instanceSlug}/${enc.slug}`,
+          path: `${prefix}/${enc.instanceSlug}/${enc.slug}`,
           subtitle: inst?.name,
         });
       }

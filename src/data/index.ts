@@ -115,11 +115,79 @@ function filterSectionsRecursive(
   difficulty: Difficulty,
   modesBitmask: number,
 ): JournalSection[] {
-  return sections
+  const filtered = sections
     .filter((s) => sectionVisibleAtDifficulty(s, difficulty, modesBitmask))
     .map((s) =>
       s.sections
         ? { ...s, sections: filterSectionsRecursive(s.sections, difficulty, modesBitmask) }
         : s,
     );
+  return deduplicateSections(filtered, difficulty);
+}
+
+/**
+ * Remove duplicate sibling sections. Two dedup strategies:
+ * 1. Same spellId: keep the entry with more children / richer metadata.
+ * 2. Same title, different spellIds, one tagged heroic/mythic: pick the version
+ *    matching the current difficulty (e.g. show heroic version at heroic+).
+ */
+function deduplicateSections(sections: JournalSection[], difficulty: Difficulty): JournalSection[] {
+  const removeIndices = new Set<number>();
+
+  // Pass 1: same spellId
+  const seenSpell = new Map<number, number>();
+  for (let i = 0; i < sections.length; i++) {
+    const s = sections[i];
+    if (!s.spellId) continue;
+    const prev = seenSpell.get(s.spellId);
+    if (prev === undefined) {
+      seenSpell.set(s.spellId, i);
+    } else {
+      const prevChildren = sections[prev].sections?.length ?? 0;
+      const curChildren = s.sections?.length ?? 0;
+      if (curChildren > prevChildren || (curChildren === prevChildren && s.headerIcon && !sections[prev].headerIcon)) {
+        removeIndices.add(prev);
+        seenSpell.set(s.spellId, i);
+      } else {
+        removeIndices.add(i);
+      }
+    }
+  }
+
+  // Pass 2: same title with difficulty-specific headerIcons (heroic/mythic)
+  const seenTitle = new Map<string, number[]>();
+  for (let i = 0; i < sections.length; i++) {
+    if (removeIndices.has(i)) continue;
+    const s = sections[i];
+    if (!s.title) continue;
+    const group = seenTitle.get(s.title);
+    if (group) group.push(i);
+    else seenTitle.set(s.title, [i]);
+  }
+  const playerLevel = DIFFICULTY_RANK[difficulty];
+  for (const indices of seenTitle.values()) {
+    if (indices.length < 2) continue;
+    // Check if any entries have difficulty headerIcons
+    const hasDiffTag = indices.some((i) => {
+      const icon = sections[i].headerIcon;
+      return icon === 'heroic' || icon === 'mythic';
+    });
+    if (!hasDiffTag) continue;
+    // Pick the best match: highest difficulty tag that the player meets
+    let bestIdx = indices[0];
+    let bestRank = -1;
+    for (const i of indices) {
+      const rank = HEADER_ICON_MIN_DIFFICULTY[sections[i].headerIcon ?? ''] ?? 0;
+      if (rank <= playerLevel && rank > bestRank) {
+        bestRank = rank;
+        bestIdx = i;
+      }
+    }
+    for (const i of indices) {
+      if (i !== bestIdx) removeIndices.add(i);
+    }
+  }
+
+  if (removeIndices.size === 0) return sections;
+  return sections.filter((_, i) => !removeIndices.has(i));
 }

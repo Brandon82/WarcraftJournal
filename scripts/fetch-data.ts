@@ -758,8 +758,8 @@ const INSTANCE_BLACKLISTED_SPELL_IDS: Record<number, number[]> = {};
 // Per-instance ignored NPC names — keyed by instance ID.
 // These are merged with the global IGNORED_NPC_NAMES during fetch.
 const INSTANCE_IGNORED_NPC_NAMES: Record<number, string[]> = {
-  // Algeth'ar Academy: NPC not in current dungeon mob list
-  1201: ['Ethereal Restorer'],
+  // Algeth'ar Academy: Mage Tower NPCs and NPC not in current dungeon mob list
+  1201: ['Raest Magespear', 'Hand from Beyond', 'Ethereal Restorer'],
   // Pit of Saron: friendly/RP NPCs and original WotLK mobs replaced by M+ reworks
   278: [
     'Sindragosa', 'Coliseum Champion',
@@ -858,7 +858,7 @@ async function fetchZoneSpellsForInstance(
 
   // NPCs that appear in zone data but aren't actual dungeon mobs (warlock pets, story NPCs, multi-zone mobs, etc.)
   const IGNORED_NPC_NAMES = new Set([
-    'Dreadstalker', 'Wild Imp', "Xal'atath", 'Raest Magespear', 'Hand from Beyond', 'Spiteful Shade',
+    'Dreadstalker', 'Wild Imp', "Xal'atath", 'Spiteful Shade',
   ]);
   // Merge instance-specific ignored NPC names
   for (const name of INSTANCE_IGNORED_NPC_NAMES[instance.id] ?? []) {

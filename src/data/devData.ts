@@ -175,21 +175,22 @@ export const INSTANCE_BLACKLISTED_SPELL_IDS: Record<number, number[]> = {};
 // Mirrors IGNORED_NPC_NAMES in scripts/fetch-data.ts
 // NPCs that appear in zone data but aren't actual dungeon mobs
 export const IGNORED_NPC_NAMES: string[] = [
-  'Dreadstalker', 'Wild Imp', "Xal'atath", 'Raest Magespear', 'Hand from Beyond', 'Spiteful Shade',
-  // Pit of Saron: friendly/RP NPCs
-  'Sindragosa', 'Coliseum Champion',
-  'Alliance Slave', 'Horde Slave', 'Freed Alliance Slave', 'Freed Horde Slave',
-  'Archmage Koreln', 'Archmage Elandra', 'Dark Ranger Kalira', 'Dark Ranger Loralen',
-  // Pit of Saron: original WotLK mobs replaced by M+ reworks
-  'Ymirjar Skycaller', 'Ymirjar Wrathbringer', 'Ymirjar Deathbringer', 'Ymirjar Flamebearer',
-  'Fallen Warrior', 'Wrathbone Laborer', 'Wrathbone Coldwraith', 'Disturbed Glacial Revenant',
-  'Plagueborn Horror', 'Geist Ambusher', 'Stonespine Gargoyle',
-  'Hungering Ghoul', 'Deathwhisper Shadowcaster', 'Deathwhisper Torturer', 'Wrathbone Sorcerer',
+  'Dreadstalker', 'Wild Imp', "Xal'atath", 'Spiteful Shade',
 ];
 
 // Mirrors INSTANCE_IGNORED_NPC_NAMES in scripts/fetch-data.ts — keyed by instance ID
 // Per-instance NPC names ignored in addition to the global list
 export const INSTANCE_IGNORED_NPC_NAMES: Record<number, string[]> = {
-  // Algeth'ar Academy: NPC not in current dungeon mob list
-  1201: ['Ethereal Restorer'],
+  // Algeth'ar Academy: Mage Tower NPCs and NPC not in current dungeon mob list
+  1201: ['Raest Magespear', 'Hand from Beyond', 'Ethereal Restorer'],
+  // Pit of Saron: friendly/RP NPCs and original WotLK mobs replaced by M+ reworks
+  278: [
+    'Sindragosa', 'Coliseum Champion',
+    'Alliance Slave', 'Horde Slave', 'Freed Alliance Slave', 'Freed Horde Slave',
+    'Archmage Koreln', 'Archmage Elandra', 'Dark Ranger Kalira', 'Dark Ranger Loralen',
+    'Ymirjar Skycaller', 'Ymirjar Wrathbringer', 'Ymirjar Deathbringer', 'Ymirjar Flamebearer',
+    'Fallen Warrior', 'Wrathbone Laborer', 'Wrathbone Coldwraith', 'Disturbed Glacial Revenant',
+    'Plagueborn Horror', 'Geist Ambusher', 'Stonespine Gargoyle',
+    'Hungering Ghoul', 'Deathwhisper Shadowcaster', 'Deathwhisper Torturer', 'Wrathbone Sorcerer',
+  ],
 };

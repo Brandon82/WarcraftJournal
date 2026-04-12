@@ -2,7 +2,7 @@
   {
     "instanceId": 1314,
     "instanceSlug": "the-dreamrift",
-    "fetchedAt": "2026-04-11T20:37:47.055Z",
+    "fetchedAt": "2026-04-12T04:53:57.102Z",
     "npcs": [
       {
         "id": 257691,
@@ -205,7 +205,7 @@
   {
     "instanceId": 1307,
     "instanceSlug": "the-voidspire",
-    "fetchedAt": "2026-04-11T20:39:05.412Z",
+    "fetchedAt": "2026-04-12T04:55:17.863Z",
     "npcs": [
       {
         "id": 219161,
@@ -1827,7 +1827,7 @@
   {
     "instanceId": 1308,
     "instanceSlug": "march-on-queldanas",
-    "fetchedAt": "2026-04-11T20:39:22.989Z",
+    "fetchedAt": "2026-04-12T04:55:35.282Z",
     "npcs": [
       {
         "id": 240391,
@@ -2289,7 +2289,7 @@
   {
     "instanceId": 1311,
     "instanceSlug": "den-of-nalorakk",
-    "fetchedAt": "2026-04-11T20:39:39.544Z",
+    "fetchedAt": "2026-04-12T04:55:51.586Z",
     "npcs": [
       {
         "id": 244584,
@@ -2506,7 +2506,7 @@
   {
     "instanceId": 1300,
     "instanceSlug": "magisters-terrace",
-    "fetchedAt": "2026-04-11T20:40:05.079Z",
+    "fetchedAt": "2026-04-12T04:56:18.747Z",
     "npcs": [
       {
         "id": 231861,
@@ -2988,7 +2988,7 @@
   {
     "instanceId": 1315,
     "instanceSlug": "maisara-caverns",
-    "fetchedAt": "2026-04-11T20:40:44.594Z",
+    "fetchedAt": "2026-04-12T04:57:00.855Z",
     "npcs": [
       {
         "id": 1531,
@@ -3667,7 +3667,7 @@
   {
     "instanceId": 1304,
     "instanceSlug": "murder-row",
-    "fetchedAt": "2026-04-11T20:40:58.389Z",
+    "fetchedAt": "2026-04-12T04:57:14.541Z",
     "npcs": [
       {
         "id": 234647,
@@ -3877,7 +3877,7 @@
   {
     "instanceId": 1316,
     "instanceSlug": "nexus-point-xenas",
-    "fetchedAt": "2026-04-11T20:41:23.283Z",
+    "fetchedAt": "2026-04-12T04:57:32.536Z",
     "npcs": [
       {
         "id": 241546,
@@ -4055,6 +4055,76 @@
         ]
       },
       {
+        "id": 241539,
+        "name": "Kasreth",
+        "classification": 3,
+        "spells": [
+          {
+            "id": 1250553,
+            "name": "Arcane Zap",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/achievement_bg_wineos.jpg",
+            "description": "Kasreth zaps the player, inflicting 50845 Arcane damage."
+          },
+          {
+            "id": 1251626,
+            "name": "Leyline Array",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_arcane_beam.jpg",
+            "description": "A dangerous flow of Arcane power links between conduits inflicting 152535 Arcane damage when crossed and reducing their movement speed by 20% for 8 sec. This effect stacks."
+          },
+          {
+            "id": 1251772,
+            "name": "Reflux Charge",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_trinkettechnomancer_ritualengine.jpg",
+            "description": "Kasreth hurls a refluxing circuit on a random player inflicting 5 Arcane damage every 1 sec. Provides immunity while standing in Leyline Array as the circuit recoils and clears the effect, stunning the player for 1 sec."
+          },
+          {
+            "id": 1257509,
+            "name": "Corespark Detonation",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_forcesphere_pink.jpg",
+            "description": "Upon reaching 100 energy, Kasreth overcharges a spark in the core engine and launches it at a random location, inflicting 127113 Arcane damage to all players within 14 yards of the impact. The detonation causes a Flux Collapse , leaving behind Arcane Spill s, and Sparkburn clings to all players."
+          },
+          {
+            "id": 1264048,
+            "name": "Flux Collapse",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv12_spell_nature_starfall_empowered.jpg",
+            "description": "Broken pipes leak excess power, inflicting 10 Arcane damage to enemies within 2.5 yards of the impact. Causes an Arcane Spill to form for 1.3 min."
+          }
+        ]
+      },
+      {
+        "id": 241644,
+        "name": "Corewright Arcanist",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1250553,
+            "name": "Arcane Zap",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/achievement_bg_wineos.jpg",
+            "description": "Kasreth zaps the player, inflicting 50845 Arcane damage."
+          },
+          {
+            "id": 1249815,
+            "name": "Transference",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_mindsooth.jpg",
+            "description": "Imbues a target with a rerouting essence causing all incoming healing received by the target to be redirected to the caster. (2s cooldown)"
+          },
+          {
+            "id": 1285445,
+            "name": "Arcane Explosion",
+            "schools": 64,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_arcane_groundstate.jpg",
+            "description": "Inflicts 9 Arcane damage to all enemies every 2 sec."
+          }
+        ]
+      },
+      {
         "id": 241642,
         "name": "Lingering Image",
         "classification": 1,
@@ -4086,6 +4156,27 @@
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_missile.jpg",
             "description": "Inflicts 8 Holy damage to an enemy. Inflicts 5 Holy damage to an enemy every 1 sec for 6 sec."
+          }
+        ]
+      },
+      {
+        "id": 248502,
+        "name": "Null Sentinel",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1252414,
+            "name": "Nullwark Blast",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
+            "description": "The Null Sentinel charges its shield with void and aims it at a player, inflicting 18 Shadow damage and an additional 7 Shadow damage every 2 sec for 12 sec."
+          },
+          {
+            "id": 1252406,
+            "name": "Dreadbellow",
+            "schools": 32,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_ragingscream.jpg",
+            "description": "The sentinel unleashes a dark roar, knocking back all players and inflicting 3 Shadow damage to them every 1 sec for 12 sec."
           }
         ]
       },
@@ -4128,6 +4219,62 @@
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_trinkettechnomancer_ritualengine.jpg",
             "description": "Places a suppression field on an enemy, decreasing movement by 50% and pulsing out 5 Arcane damage every 1 sec for 10 sec. Additionally, if the enemy moves while being suppressed, they explode, inflicting 1 Arcane damage to themselves and all allies within 6 yards."
+          }
+        ]
+      },
+      {
+        "id": 241660,
+        "name": "Duskfright Herald",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1252062,
+            "name": "Entropic Leech",
+            "schools": 32,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_purple.jpg",
+            "description": "The herald imbues a random target with entropic essence absorbing the next 40 healing and leeching 5 health every 1 sec for 12 sec."
+          },
+          {
+            "id": 1252076,
+            "name": "Dark Beckoning",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadesofdarkness.jpg",
+            "description": "The caster calls out to dark entities that travel outwards in erratic patterns, inflicting 14 Shadow damage to all enemies every 3 sec for 9 sec. The entities knock up the first target caught in its path, inflicting 25 Shadow damage."
+          }
+        ]
+      },
+      {
+        "id": 241645,
+        "name": "Hollowsoul Scrounger",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1227020,
+            "name": "Dimensional Shred",
+            "schools": 32,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_masterofsubtlety.jpg",
+            "description": "Teleports behind its target and viciously strikes them inflicting 7 Shadow damage."
+          },
+          {
+            "id": 1252204,
+            "name": "Leech Veil",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antishadow.jpg",
+            "description": "At 45% health, latches to an ally's shadow, hiding within and draining life to heal. The effect ends early if the shield on the leech victim is broken."
+          }
+        ]
+      },
+      {
+        "id": 248706,
+        "name": "Cursed Voidcaller",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1281636,
+            "name": "Creeping Void",
+            "schools": 32,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_gold.jpg",
+            "description": "Causes all enemies within 60 yards to take 10% increased Shadow damage for 15 sec. Inflicts 3 Shadow damage to enemies within 60 yards."
           }
         ]
       },
@@ -4206,7 +4353,7 @@
   {
     "instanceId": 1309,
     "instanceSlug": "the-blinding-vale",
-    "fetchedAt": "2026-04-11T20:44:09.558Z",
+    "fetchedAt": "2026-04-12T04:57:48.597Z",
     "npcs": [
       {
         "id": 243028,
@@ -4521,7 +4668,7 @@
   {
     "instanceId": 1313,
     "instanceSlug": "voidscar-arena",
-    "fetchedAt": "2026-04-11T20:44:14.747Z",
+    "fetchedAt": "2026-04-12T05:00:26.082Z",
     "npcs": [
       {
         "id": 238887,
@@ -4682,7 +4829,7 @@
   {
     "instanceId": 1299,
     "instanceSlug": "windrunner-spire",
-    "fetchedAt": "2026-04-11T20:44:27.028Z",
+    "fetchedAt": "2026-04-12T05:00:38.599Z",
     "npcs": [
       {
         "id": 231606,
@@ -5340,7 +5487,7 @@
   {
     "instanceId": 278,
     "instanceSlug": "pit-of-saron",
-    "fetchedAt": "2026-04-11T20:45:41.833Z",
+    "fetchedAt": "2026-04-12T05:01:58.802Z",
     "npcs": [
       {
         "id": 31260,
@@ -6376,7 +6523,7 @@
   {
     "instanceId": 945,
     "instanceSlug": "seat-of-the-triumvirate",
-    "fetchedAt": "2026-04-11T20:46:30.222Z",
+    "fetchedAt": "2026-04-12T05:02:50.715Z",
     "npcs": [
       {
         "id": 124309,
@@ -7370,7 +7517,7 @@
   {
     "instanceId": 476,
     "instanceSlug": "skyreach",
-    "fetchedAt": "2026-04-11T20:47:34.116Z",
+    "fetchedAt": "2026-04-12T05:03:55.426Z",
     "npcs": [
       {
         "id": 75964,
@@ -8454,7 +8601,7 @@
   {
     "instanceId": 1201,
     "instanceSlug": "algethar-academy",
-    "fetchedAt": "2026-04-11T20:50:40.471Z",
+    "fetchedAt": "2026-04-12T05:04:32.479Z",
     "npcs": [
       {
         "id": 190609,

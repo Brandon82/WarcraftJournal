@@ -591,14 +591,36 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
   ],
   // Nexus-point Xenas
   1316: [
-    { id: 241644, name: 'Corewright Arcanist', classification: 1 },
+    { id: 241539, name: 'Kasreth', classification: 3, spells: [
+      { id: 1250553, name: 'Arcane Zap', schools: 64 },
+      { id: 1251626, name: 'Leyline Array', schools: 64 },
+      { id: 1251772, name: 'Reflux Charge', schools: 64 },
+      { id: 1257509, name: 'Corespark Detonation', schools: 64 },
+      { id: 1264048, name: 'Flux Collapse', schools: 1 },
+    ] },
+    { id: 241644, name: 'Corewright Arcanist', classification: 1, spells: [
+      { id: 1250553, name: 'Arcane Zap', schools: 64 },
+      { id: 1249815, name: 'Transference', schools: 64 },
+      { id: 1285445, name: 'Arcane Explosion', schools: 64 },
+    ] },
     { id: 241642, name: 'Lingering Image', classification: 1 },
-    { id: 248502, name: 'Null Sentinel', classification: 1 },
+    { id: 248502, name: 'Null Sentinel', classification: 1, spells: [
+      { id: 1252414, name: 'Nullwark Blast', schools: 1 },
+      { id: 1252406, name: 'Dreadbellow', schools: 32 },
+    ] },
     { id: 254932, name: 'Radiant Swarm', classification: 1 },
     { id: 241647, name: 'Flux Engineer', classification: 1 },
-    { id: 241660, name: 'Duskfright Herald', classification: 1 },
-    { id: 241645, name: 'Hollowsoul Scrounger', classification: 1 },
-    { id: 248706, name: 'Cursed Voidcaller', classification: 1 },
+    { id: 241660, name: 'Duskfright Herald', classification: 1, spells: [
+      { id: 1252062, name: 'Entropic Leech', schools: 32 },
+      { id: 1252076, name: 'Dark Beckoning', schools: 1 },
+    ] },
+    { id: 241645, name: 'Hollowsoul Scrounger', classification: 1, spells: [
+      { id: 1227020, name: 'Dimensional Shred', schools: 32 },
+      { id: 1252204, name: 'Leech Veil', schools: 1 },
+    ] },
+    { id: 248706, name: 'Cursed Voidcaller', classification: 1, spells: [
+      { id: 1281636, name: 'Creeping Void', schools: 32 },
+    ] },
     { id: 254926, name: 'Lightwrought', classification: 1 },
     { id: 248373, name: 'Circuit Seer', classification: 1 },
     { id: 248708, name: 'Nexus Adept', classification: 1 },

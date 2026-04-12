@@ -129,10 +129,11 @@ interface ZoneSpellSectionProps {
 }
 
 export default function ZoneSpellSection({ npcs, bossNames, category }: ZoneSpellSectionProps) {
+  const isBoss = (npc: ZoneNpc) => bossNames.has(npc.name) || npc.classification === 3;
   const sortedNpcs = [...npcs].sort((a, b) => {
     // Priority: boss (0) > elite/rare-elite (1) > other (2)
-    const tierA = bossNames.has(a.name) ? 0 : a.classification >= 1 ? 1 : 2;
-    const tierB = bossNames.has(b.name) ? 0 : b.classification >= 1 ? 1 : 2;
+    const tierA = isBoss(a) ? 0 : a.classification >= 1 ? 1 : 2;
+    const tierB = isBoss(b) ? 0 : b.classification >= 1 ? 1 : 2;
     if (tierA !== tierB) return tierA - tierB;
     return a.name.localeCompare(b.name);
   });
@@ -144,7 +145,7 @@ export default function ZoneSpellSection({ npcs, bossNames, category }: ZoneSpel
       </h3>
       <div>
         {sortedNpcs.map((npc) => (
-          <NpcGroup key={npc.id} npc={npc} isBoss={bossNames.has(npc.name)} />
+          <NpcGroup key={npc.id} npc={npc} isBoss={isBoss(npc)} />
         ))}
       </div>
     </div>

@@ -39,7 +39,7 @@ export default function InstancePage() {
     <div>
       {/* Hero banner */}
       {hasHero && (
-        <div className="relative overflow-hidden rounded-xl mb-8 -mt-2" style={{ height: '200px' }}>
+        <div className="relative overflow-hidden rounded-xl mb-8 -mt-2 h-[140px] sm:h-[200px]">
           {!heroLoaded && (
             <div className="absolute inset-0 bg-wow-bg-raised animate-pulse rounded-xl" />
           )}

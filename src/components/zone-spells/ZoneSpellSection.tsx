@@ -22,6 +22,15 @@ function getSchoolTag(schools: number): { label: string; style: string } | undef
   return undefined;
 }
 
+const MECHANIC_TAGS: Record<string, { label: string; style: string }> = {
+  interruptible: { label: 'Interruptible', style: 'bg-cyan-500/20 text-cyan-400' },
+  magic: { label: 'Magic', style: 'bg-blue-500/20 text-blue-400' },
+  curse: { label: 'Curse', style: 'bg-purple-500/20 text-purple-400' },
+  poison: { label: 'Poison', style: 'bg-emerald-500/20 text-emerald-400' },
+  disease: { label: 'Disease', style: 'bg-yellow-500/20 text-yellow-400' },
+  enrage: { label: 'Enrage', style: 'bg-orange-600/20 text-orange-500' },
+};
+
 const CLASSIFICATION_LABELS: Record<number, { label: string; style: string }> = {
   1: { label: 'Elite', style: 'bg-orange-500/20 text-orange-400' },
   2: { label: 'Rare Elite', style: 'bg-blue-500/20 text-blue-400' },
@@ -59,6 +68,14 @@ function SpellRow({ spell }: { spell: ZoneSpell }) {
               {schoolTag.label}
             </span>
           )}
+          {spell.tags?.map((tag) => {
+            const info = MECHANIC_TAGS[tag];
+            return info ? (
+              <span key={tag} className={`px-2 py-0.5 text-xs rounded-md font-medium ${info.style}`}>
+                {info.label}
+              </span>
+            ) : null;
+          })}
           <span className="text-xs text-wow-text-secondary font-mono">({spell.id})</span>
         </div>
         {spell.description && (

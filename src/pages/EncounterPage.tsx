@@ -64,7 +64,7 @@ export default function EncounterPage() {
   return (
     <div>
       {/* Boss header */}
-      <div className="flex items-start gap-5 mb-6">
+      <div className="flex items-start gap-3 sm:gap-5 mb-6">
         <div className="relative shrink-0">
           {creatureImage ? (
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-[3px] border-wow-gold-muted relative">
@@ -103,7 +103,7 @@ export default function EncounterPage() {
               {encounter.modes.map((mode) => (
                 <span
                   key={mode.type}
-                  className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider rounded bg-wow-bg-raised text-wow-text-secondary border border-wow-border"
+                  className="px-2 py-1 text-[11px] font-medium uppercase tracking-wider rounded bg-wow-bg-raised text-wow-text-secondary border border-wow-border"
                 >
                   {mode.name}
                 </span>

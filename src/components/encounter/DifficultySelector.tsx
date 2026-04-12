@@ -39,10 +39,12 @@ export default function DifficultySelector({ supportedModes }: DifficultySelecto
   if (options.length <= 1) return null;
 
   return (
-    <Segmented
-      options={options}
-      value={effectiveDifficulty}
-      onChange={(val) => setDifficulty(val as Difficulty)}
-    />
+    <div className="max-w-full overflow-x-auto">
+      <Segmented
+        options={options}
+        value={effectiveDifficulty}
+        onChange={(val) => setDifficulty(val as Difficulty)}
+      />
+    </div>
   );
 }

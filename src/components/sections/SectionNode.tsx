@@ -83,6 +83,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
   const isCollapsible = hasChildren || !!section.bodyText;
   const [expanded, setExpanded] = useState(isTopLevel);
   const contentRef = useRef<HTMLDivElement>(null);
+  const hasIcon = !!(section.spellId || section.spellIcon || isTopLevel);
   const difficultyTag = getDifficultyTag(section.difficultyMask, modes);
 
   return (
@@ -184,7 +185,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
           <div className="overflow-hidden min-h-0">
             <div className="pb-2">
               {section.bodyText && (
-                <p className="text-zinc-300 text-sm leading-relaxed m-0 px-4 ml-3">
+                <p className={`text-zinc-300 text-sm leading-relaxed m-0 px-4 ${hasIcon ? 'ml-[68px]' : 'ml-6'}`}>
                   {section.bodyText}
                 </p>
               )}

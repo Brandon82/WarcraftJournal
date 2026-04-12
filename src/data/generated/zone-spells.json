@@ -2,7 +2,7 @@
   {
     "instanceId": 1314,
     "instanceSlug": "the-dreamrift",
-    "fetchedAt": "2026-04-12T16:57:45.356Z",
+    "fetchedAt": "2026-04-12T19:01:38.405Z",
     "npcs": [
       {
         "id": 257691,
@@ -126,7 +126,10 @@
             "name": "Consuming Miasma",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_azerite_essence_16.jpg",
-            "description": "Chimaerus surrounds several players with ravenous energy, causing them to suffer 69931 Nature damage every 1.5 sec for 1 min. Upon removal, the target erupts with Lingering Miasma and consumes Alndust Essence within 10 yards."
+            "description": "Chimaerus surrounds several players with ravenous energy, causing them to suffer 69931 Nature damage every 1.5 sec for 1 min. Upon removal, the target erupts with Lingering Miasma and consumes Alndust Essence within 10 yards.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1257093,
@@ -182,14 +185,21 @@
             "name": "Fearsome Cry",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathscream.jpg",
-            "description": "The Haunting Essence unleashes a scream, inflicting 54391 Nature damage every 1 sec to all players for 3 sec and causing them to flee in fear."
+            "description": "The Haunting Essence unleashes a scream, inflicting 54391 Nature damage every 1 sec to all players for 3 sec and causing them to flee in fear.",
+            "tags": [
+              "magic",
+              "interruptible"
+            ]
           },
           {
             "id": 1261997,
             "name": "Essence Bolt",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv__azerite-explosion.jpg",
-            "description": "The Manifestation launches a bolt of essence at a random player, inflicting 116551 Nature damage."
+            "description": "The Manifestation launches a bolt of essence at a random player, inflicting 116551 Nature damage.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1277301,
@@ -205,7 +215,7 @@
   {
     "instanceId": 1307,
     "instanceSlug": "the-voidspire",
-    "fetchedAt": "2026-04-12T16:59:15.723Z",
+    "fetchedAt": "2026-04-12T19:02:58.759Z",
     "npcs": [
       {
         "id": 219161,
@@ -216,7 +226,10 @@
             "name": "Diabolic Bolt",
             "schools": 36,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_shadowflame_missile.jpg",
-            "description": "2 sec cast Requires Warlock Requires level 1 Deals (23.805% of Spell Power) Fire damage to a target."
+            "description": "2 sec cast Requires Warlock Requires level 1 Deals (23.805% of Spell Power) Fire damage to a target.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -279,7 +292,10 @@
             "name": "Null Corona",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "description": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player."
+            "description": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1243982,
@@ -531,7 +547,10 @@
             "name": "Shadowclaw Slam",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_rylakclaw.jpg",
-            "description": "Vorasius slams a giant claw into the ground, inflicting 699308 Shadow and 699308 Physical damage to players in the impact area and 271953 Shadow damage to all players. If the central impact fails to hit at least 1 player, Vorasius inflicts 777009 Shadow damage to all players instead. The impact of the larger claws applies Smashed and creates Void Crystals."
+            "description": "Vorasius slams a giant claw into the ground, inflicting 699308 Shadow and 699308 Physical damage to players in the impact area and 271953 Shadow damage to all players. If the central impact fails to hit at least 1 player, Vorasius inflicts 777009 Shadow damage to all players instead. The impact of the larger claws applies Smashed and creates Void Crystals.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1241844,
@@ -552,21 +571,30 @@
             "name": "Parasite Expulsion",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_voidcreepermount_blue.jpg",
-            "description": "Vorasius shakes off parasitic Blistercreeps, spraying the battlefield with globs of dark ichor that inflict 271953 Shadow damage to players within 3 yards upon impact."
+            "description": "Vorasius shakes off parasitic Blistercreeps, spraying the battlefield with globs of dark ichor that inflict 271953 Shadow damage to players within 3 yards upon impact.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1256855,
             "name": "Void Breath",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-            "description": "Vorasius sweeps a deadly beam across the battlefield, immediately inflicting &nbsp;3108037 Shadow damage to all players in front of him and 388505 Shadow damage every 1 sec to players caught in its path. The beam radiates Dark Energy while active, inflicting 34965 Shadow damage every 0.5 sec for 15 sec."
+            "description": "Vorasius sweeps a deadly beam across the battlefield, immediately inflicting &nbsp;3108037 Shadow damage to all players in front of him and 388505 Shadow damage every 1 sec to players caught in its path. The beam radiates Dark Energy while active, inflicting 34965 Shadow damage every 0.5 sec for 15 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1260052,
             "name": "Primordial Roar",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_twilightflamebreath.jpg",
-            "description": "Vorasius takes a deep breath, pulling players closer before unleashing a deafening roar that inflicts 349654 Physical damage to all players and knocks them away."
+            "description": "Vorasius takes a deep breath, pulling players closer before unleashing a deafening roar that inflicts 349654 Physical damage to all players and knocks them away.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1272937,
@@ -671,7 +699,10 @@
             "name": "Void Marked",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_improvedsoulleech.jpg",
-            "description": "Averzian marks several targets with a devouring void. Upon removal, applies Lingering Darkness and consumes an application of Cosmic Shell within 7 yards."
+            "description": "Averzian marks several targets with a devouring void. Upon removal, applies Lingering Darkness and consumes an application of Cosmic Shell within 7 yards.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1280075,
@@ -706,7 +737,10 @@
             "name": "Madness of the Void",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_improvedsoulleech.jpg",
-            "description": "Increases haste by 25% and movement speed by 50%."
+            "description": "Increases haste by 25% and movement speed by 50%.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1228347,
@@ -734,7 +768,10 @@
             "name": "Call of the Void",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-            "description": "The caster calls upon the devouring void to devour its foes in a shadowy bubble that inflicts 23310 Shadow damage every 1 sec."
+            "description": "The caster calls upon the devouring void to devour its foes in a shadowy bubble that inflicts 23310 Shadow damage every 1 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1228330,
@@ -762,7 +799,10 @@
             "name": "Exposed Void",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-            "description": "The caster exposes the target to the void, inflicting 97126 Shadow damage and absorbing 198724 healing for 20 sec."
+            "description": "The caster exposes the target to the void, inflicting 97126 Shadow damage and absorbing 198724 healing for 20 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1228518,
@@ -811,7 +851,10 @@
             "name": "Cosmic Zap",
             "schools": 106,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-            "description": "The caster hurls a void bolt at its enemy, dealing 77701 Cosmic damage and then jumping to additional nearby enemies."
+            "description": "The caster hurls a void bolt at its enemy, dealing 77701 Cosmic damage and then jumping to additional nearby enemies.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1228518,
@@ -895,14 +938,20 @@
             "name": "Blink",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-            "description": "The caster teleports to a random player's location."
+            "description": "The caster teleports to a random player's location.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1258624,
             "name": "Fearsome Howl",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_fomor_boss_shout.jpg",
-            "description": "The caster lets out a terrifying howl, inflicting 116551 Shadow damage to enemies within 30 yards and causing them to cower in place for 6 sec."
+            "description": "The caster lets out a terrifying howl, inflicting 116551 Shadow damage to enemies within 30 yards and causing them to cower in place for 6 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -951,7 +1000,10 @@
             "name": "Absorb Power",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_deathsiphon.jpg",
-            "description": "The caster absorbs the remaining power of the target."
+            "description": "The caster absorbs the remaining power of the target.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1236951,
@@ -993,7 +1045,10 @@
             "name": "Absorb Power",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_deathsiphon.jpg",
-            "description": "The caster absorbs the remaining power of the target."
+            "description": "The caster absorbs the remaining power of the target.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1254928,
@@ -1014,7 +1069,10 @@
             "name": "Dread Breath",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_envelopingshadows.jpg",
-            "description": "Vaelgor roars toward a targeted player, fearing players in a massive frontal cone. The dragon's breath inflicts 252528 Shadow damage and an additional 145689 Shadow damage every 3 sec , increasing movement speed by 50%, fearing them for 21 sec ."
+            "description": "Vaelgor roars toward a targeted player, fearing players in a massive frontal cone. The dragon's breath inflicts 252528 Shadow damage and an additional 145689 Shadow damage every 3 sec , increasing movement speed by 50%, fearing them for 21 sec .",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1244413,
@@ -1293,7 +1351,10 @@
             "name": "Null Corona",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "description": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player."
+            "description": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1246350,
@@ -1440,14 +1501,20 @@
             "name": "Blisterburst",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_argus_soulburst.jpg",
-            "description": "The Blistercreep explodes upon death, inflicting 271953 Shadow damage to players within 8 yards, increasing their damage taken by 100% for 30 sec and knocking them away. The explosion also inflicts 97126 Shadow damage to all players."
+            "description": "The Blistercreep explodes upon death, inflicting 271953 Shadow damage to players within 8 yards, increasing their damage taken by 100% for 30 sec and knocking them away. The explosion also inflicts 97126 Shadow damage to all players.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1273159,
             "name": "Creep Spit",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-            "description": "The Blistercreep periodically spits void ichor at a player, reducing their movement speed by 30% for 20 sec. This effect stacks."
+            "description": "The Blistercreep periodically spits void ichor at a player, reducing their movement speed by 30% for 20 sec. This effect stacks.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -1461,7 +1528,10 @@
             "name": "Consecration",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_innerfire.jpg",
-            "description": "Consecrated ground inflicts 38850 Holy damage to players within every 1 sec."
+            "description": "Consecrated ground inflicts 38850 Holy damage to players within every 1 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1246384,
@@ -1489,7 +1559,10 @@
             "name": "Aura of Peace",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg",
-            "description": "5 sec. Upon expiration, Senn consecrates the ground beneath her feet."
+            "description": "5 sec. Upon expiration, Senn consecrates the ground beneath her feet.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1248674,
@@ -1524,7 +1597,10 @@
             "name": "Blinding Light",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-            "description": "Senn emits a blinding flash of light, inflicting 378792 Holy damage to all players and disorienting them for 10 sec."
+            "description": "Senn emits a blinding flash of light, inflicting 378792 Holy damage to all players and disorienting them for 10 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1276982,
@@ -1594,7 +1670,10 @@
             "name": "Slaughter!",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_wave.jpg",
-            "description": "The caster repeatedly strikes all enemies in a cone in front of him, inflicting 155402 Shadowstrike damage."
+            "description": "The caster repeatedly strikes all enemies in a cone in front of him, inflicting 155402 Shadowstrike damage.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1258602,
@@ -1629,7 +1708,10 @@
             "name": "Cosmic Injection",
             "schools": 106,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-            "description": "The caster injects a draining cosmic energy, inflicting 485631 Cosmic damage to the player and reducing all of their stats by 10% for 15 sec. This effect stacks."
+            "description": "The caster injects a draining cosmic energy, inflicting 485631 Cosmic damage to the player and reducing all of their stats by 10% for 15 sec. This effect stacks.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1259329,
@@ -1650,7 +1732,10 @@
             "name": "Three-Headed Slam",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_11_arenaboss_conductionslam.jpg",
-            "description": "The caster slams their current target with a three-headed slam, inflicting 69931 Physical damage and knocking them away."
+            "description": "The caster slams their current target with a three-headed slam, inflicting 69931 Physical damage and knocking them away.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -1790,7 +1875,10 @@
             "name": "Black Miasma",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_void-flay.jpg",
-            "description": "The Abyssal Malus curses several players with a dark miasma, inflicting 97126 Shadow damage and reducing their haste by 70% for 15 sec."
+            "description": "The Abyssal Malus curses several players with a dark miasma, inflicting 97126 Shadow damage and reducing their haste by 70% for 15 sec.",
+            "tags": [
+              "curse"
+            ]
           }
         ]
       },
@@ -1811,14 +1899,20 @@
             "name": "Darkness Calls",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonvoidwalker.jpg",
-            "description": "Calls to the creatures of the void to assist the caster."
+            "description": "Calls to the creatures of the void to assist the caster.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1282013,
             "name": "Dark Strike",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-            "description": "Inflicts 77701 Shadow damage to an enemy and absorbs 496809 incoming healing."
+            "description": "Inflicts 77701 Shadow damage to an enemy and absorbs 496809 incoming healing.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       }
@@ -1827,7 +1921,7 @@
   {
     "instanceId": 1308,
     "instanceSlug": "march-on-queldanas",
-    "fetchedAt": "2026-04-12T16:59:32.764Z",
+    "fetchedAt": "2026-04-12T19:03:17.127Z",
     "npcs": [
       {
         "id": 240391,
@@ -2154,7 +2248,10 @@
             "name": "Void Eruption",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-            "description": "The ember unleashes the devouring void within, inflicting 679883 Shadow damage to all players. This spell can only be interrupted by players infused with a Void Feather ."
+            "description": "The ember unleashes the devouring void within, inflicting 679883 Shadow damage to all players. This spell can only be interrupted by players infused with a Void Feather .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1263412,
@@ -2168,7 +2265,10 @@
             "name": "Void Blast",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-            "description": "The ember blasts a random player, inflicting 77701 Shadow damage."
+            "description": "The ember blasts a random player, inflicting 77701 Shadow damage.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -2196,7 +2296,10 @@
             "name": "Light Eruption",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-            "description": "The ember unleashes the radiant light within, inflicting 679883 Holy damage to all players. This spell can only be interrupted by players infused with a Light Feather ."
+            "description": "The ember unleashes the radiant light within, inflicting 679883 Holy damage to all players. This spell can only be interrupted by players infused with a Light Feather .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1263412,
@@ -2210,7 +2313,10 @@
             "name": "Light Blast",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_holybolt.jpg",
-            "description": "The ember blasts a random player, inflicting 77701 Holy damage."
+            "description": "The ember blasts a random player, inflicting 77701 Holy damage.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -2289,7 +2395,7 @@
   {
     "instanceId": 1311,
     "instanceSlug": "den-of-nalorakk",
-    "fetchedAt": "2026-04-12T16:59:50.214Z",
+    "fetchedAt": "2026-04-12T19:03:37.210Z",
     "npcs": [
       {
         "id": 244584,
@@ -2301,7 +2407,10 @@
             "name": "Toxic Spores",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_06.jpg",
-            "description": "Rotten Mushrooms apply a noxious cloud, inflicting 5085 Nature damage every 2 sec for 12 sec. This effect stacks."
+            "description": "Rotten Mushrooms apply a noxious cloud, inflicting 5085 Nature damage every 2 sec for 12 sec. This effect stacks.",
+            "tags": [
+              "poison"
+            ]
           },
           {
             "id": 1245593,
@@ -2506,7 +2615,7 @@
   {
     "instanceId": 1300,
     "instanceSlug": "magisters-terrace",
-    "fetchedAt": "2026-04-12T17:00:17.847Z",
+    "fetchedAt": "2026-04-12T19:04:08.058Z",
     "npcs": [
       {
         "id": 231861,
@@ -2546,7 +2655,10 @@
             "name": "Ethereal Shackles",
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcane01.jpg",
-            "description": "Arcanotron Custos suppresses the movement of several players, inflicting 45761 Arcane damage every 3 sec and rooting them for 15 sec."
+            "description": "Arcanotron Custos suppresses the movement of several players, inflicting 45761 Arcane damage every 3 sec and rooting them for 15 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1214081,
@@ -2672,7 +2784,10 @@
             "name": "Void Torrent",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_beam.jpg",
-            "description": "The Celestial Orrery's focusing lenses channel Void energy into Degentrius. Contact with a Void Torrent inflicts 152419 Shadow damage and stuns the player for 5 sec."
+            "description": "The Celestial Orrery's focusing lenses channel Void energy into Degentrius. Contact with a Void Torrent inflicts 152419 Shadow damage and stuns the player for 5 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1215087,
@@ -2721,7 +2836,10 @@
             "name": "Umbral Splinters",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchanting_80_umbrashard.jpg",
-            "description": "Embedded splinters from Hulking Fragment inflict 20338 Shadow damage every 1 sec for 30 sec. This effect stacks. Upon removal, the splinters dissolve, leaving behind Stygian Ichor ."
+            "description": "Embedded splinters from Hulking Fragment inflict 20338 Shadow damage every 1 sec for 30 sec. This effect stacks. Upon removal, the splinters dissolve, leaving behind Stygian Ichor .",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1284633,
@@ -2763,7 +2881,10 @@
             "name": "Ethereal Shackles",
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcane01.jpg",
-            "description": "Inflicts 45761 Arcane damage to target enemy every 3 sec for 15 sec and roots them in place."
+            "description": "Inflicts 45761 Arcane damage to target enemy every 3 sec for 15 sec and roots them in place.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -2840,7 +2961,10 @@
             "name": "Arcane Blade",
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_spelldeflection.jpg",
-            "description": "The caster enchants their weapon, causing their melee attacks to inflict an additional 40676 Arcane damage to their target. (1s cooldown)"
+            "description": "The caster enchants their weapon, causing their melee attacks to inflict an additional 40676 Arcane damage to their target. (1s cooldown)",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1253224,
@@ -2861,14 +2985,20 @@
             "name": "Power Word: Shield",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg",
-            "description": "Protects a nearby injured ally absorbing 20% of their health in damage."
+            "description": "Protects a nearby injured ally absorbing 20% of their health in damage.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1255187,
             "name": "Holy Fire",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_searinglight.jpg",
-            "description": "Sets a player ablaze in Holy Fire inflicting 25423 Holy damage and an additional 25423 Holy damage every 1 sec for 15 sec."
+            "description": "Sets a player ablaze in Holy Fire inflicting 25423 Holy damage and an additional 25423 Holy damage every 1 sec for 15 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -2917,7 +3047,10 @@
             "name": "Consuming Void",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-            "description": "Void Infuser unleashes consuming void upon a random player inflicting 10169 Shadow damage every 0.5 sec for 15 sec."
+            "description": "Void Infuser unleashes consuming void upon a random player inflicting 10169 Shadow damage every 0.5 sec for 15 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1264693,
@@ -2945,7 +3078,10 @@
             "name": "Flamestrike",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_selfdestruct.jpg",
-            "description": "Inflicts 177958 Fire damage and creates a patch of flame that inflicts 50845 Fire damage every 1 sec to players in the area."
+            "description": "Inflicts 177958 Fire damage and creates a patch of flame that inflicts 50845 Fire damage every 1 sec to players in the area.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1254338,
@@ -2988,7 +3124,7 @@
   {
     "instanceId": 1315,
     "instanceSlug": "maisara-caverns",
-    "fetchedAt": "2026-04-12T17:01:07.694Z",
+    "fetchedAt": "2026-04-12T19:04:53.368Z",
     "npcs": [
       {
         "id": 1531,
@@ -3000,7 +3136,10 @@
             "name": "Cries of the Fallen",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_soulleech_3.jpg",
-            "description": "The soul cries out upon contacting a player, inflicting 25423 Shadow damage and rooting them for 3 sec."
+            "description": "The soul cries out upon contacting a player, inflicting 25423 Shadow damage and rooting them for 3 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -3028,7 +3167,10 @@
             "name": "Hooked Snare",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_fishing_nethooks01.jpg",
-            "description": "The caster flings a net, rooting the target for 4 sec and inflicting 13982 Physical damage every 0.5 sec for 4 sec."
+            "description": "The caster flings a net, rooting the target for 4 sec and inflicting 13982 Physical damage every 0.5 sec for 4 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3042,7 +3184,10 @@
             "name": "Freezing Trap",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_chainsofice.jpg",
-            "description": "Muro'jin throws traps at players which remain for 40 sec. Upon contact, these incapacitate the triggering player for 8 sec. Damage may break the effect."
+            "description": "Muro'jin throws traps at players which remain for 40 sec. Upon contact, these incapacitate the triggering player for 8 sec. Damage may break the effect.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1243751,
@@ -3056,7 +3201,10 @@
             "name": "Revive Pet",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastsoothe.jpg",
-            "description": "Muro'jin revives Nekraxx, returning them to life with 35% of their health."
+            "description": "Muro'jin revives Nekraxx, returning them to life with 35% of their health.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1260648,
@@ -3070,7 +3218,10 @@
             "name": "Vilebranch Sting",
             "schools": 40,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_potentvenom.jpg",
-            "description": "Muro'jin's venom-tipped arrows inhibit targets, reducing their movement speed by 5% for 10 sec. This effect stacks."
+            "description": "Muro'jin's venom-tipped arrows inhibit targets, reducing their movement speed by 5% for 10 sec. This effect stacks.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1266485,
@@ -3098,21 +3249,31 @@
             "name": "Fetid Quillstorm",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_icon_feather03e.jpg",
-            "description": "Nekraxx soars to a location and releases a surge of dark energy, inflicting 127113 Shadow damage to players within 10 yards and flinging quills which inflict 127113 Shadow damage to players within 3 yards."
+            "description": "Nekraxx soars to a location and releases a surge of dark energy, inflicting 127113 Shadow damage to players within 10 yards and flinging quills which inflict 127113 Shadow damage to players within 3 yards.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1246666,
             "name": "Infected Pinions",
             "schools": 40,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_necroticplague.jpg",
-            "description": "Nekraxx pierces all players with festering feathers, inflicting 12711 Plague damage every 1 sec for 30 sec."
+            "description": "Nekraxx pierces all players with festering feathers, inflicting 12711 Plague damage every 1 sec for 30 sec.",
+            "tags": [
+              "disease",
+              "interruptible"
+            ]
           },
           {
             "id": 1249479,
             "name": "Carrion Swoop",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_eagleclaw_fel.jpg",
-            "description": "Nekraxx charges toward a marked player, inflicting 88979 Shadow damage to players in her path and knocking them upwards. If Nekraxx strikes a player incapacitated by Freezing Trap , the trap shatters instead, stunning Nekraxx for 5 sec."
+            "description": "Nekraxx charges toward a marked player, inflicting 88979 Shadow damage to players in her path and knocking them upwards. If Nekraxx strikes a player incapacitated by Freezing Trap , the trap shatters instead, stunning Nekraxx for 5 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1249769,
@@ -3147,7 +3308,10 @@
             "name": "Wrest Phantoms",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_necro_conclave.jpg",
-            "description": "Vordaza wrests fresh sacrifices to do her bidding, manifesting Unstable Phantoms that seek out players."
+            "description": "Vordaza wrests fresh sacrifices to do her bidding, manifesting Unstable Phantoms that seek out players.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1251568,
@@ -3245,7 +3409,10 @@
             "name": "Soulrending Roar",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_misc_zandalari_council_soulswap.jpg",
-            "description": "Rak'tul roars with tremendous force, awakening the Restless Masses and applying Withering Soul to all players. This affliction tears players' souls asunder, flinging them across the Echoing Span and severing them from the realm of the living. Soul Expulsion leaves Rak'tul momentarily in a trance."
+            "description": "Rak'tul roars with tremendous force, awakening the Restless Masses and applying Withering Soul to all players. This affliction tears players' souls asunder, flinging them across the Echoing Span and severing them from the realm of the living. Soul Expulsion leaves Rak'tul momentarily in a trance.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1253844,
@@ -3280,7 +3447,10 @@
             "name": "Blood Frenzy",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/warrior_talent_icon_furyintheblood.jpg",
-            "description": "The caster enrages, increasing their damage done by 20% and increasing their attack speed by 30% for 20 sec."
+            "description": "The caster enrages, increasing their damage done by 20% and increasing their attack speed by 30% for 20 sec.",
+            "tags": [
+              "enrage"
+            ]
           },
           {
             "id": 1255966,
@@ -3301,14 +3471,21 @@
             "name": "Hex",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shaman_hex.jpg",
-            "description": "The caster transforms a player into a frog, rendering it unable to attack or cast spells for 6 sec."
+            "description": "The caster transforms a player into a frog, rendering it unable to attack or cast spells for 6 sec.",
+            "tags": [
+              "magic",
+              "interruptible"
+            ]
           },
           {
             "id": 1256015,
             "name": "Shadow Bolt",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "description": "Inflicts 61014 Shadow damage to an enemy."
+            "description": "Inflicts 61014 Shadow damage to an enemy.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3322,14 +3499,20 @@
             "name": "Necrotic Wave",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_necro_deathall.jpg",
-            "description": "The caster unleashes a wave of necrotic energy which arcs between players, inflicting 25423 Shadow damage and absorbing the next 39000 healing received."
+            "description": "The caster unleashes a wave of necrotic energy which arcs between players, inflicting 25423 Shadow damage and absorbing the next 39000 healing received.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1257155,
             "name": "Rain of Toads",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_pet_toad_green.jpg",
-            "description": "The caster causes a torrent of toads to rain down, inflicting 127113 Nature damage to players within 3 yards of each impact."
+            "description": "The caster causes a torrent of toads to rain down, inflicting 127113 Nature damage to players within 3 yards of each impact.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3343,7 +3526,10 @@
             "name": "Reanimation",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_bone_02.jpg",
-            "description": "The caster begins to reanimate, reviving with 50% of their max health if the channel completes."
+            "description": "The caster begins to reanimate, reviving with 50% of their max health if the channel completes.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1257914,
@@ -3406,14 +3592,21 @@
             "name": "Shadowfrost Blast",
             "schools": 48,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchant_shardshadowfrostlarge.jpg",
-            "description": "The caster inflicts 127113 Shadowfrost damage to their target."
+            "description": "The caster inflicts 127113 Shadowfrost damage to their target.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1271623,
             "name": "Frost Nova",
             "schools": 16,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg",
-            "description": "The caster blasts their target with a rime of frost, inflicting 81352 Frost damage to players within 8 yards and rooting them for 5 sec."
+            "description": "The caster blasts their target with a rime of frost, inflicting 81352 Frost damage to players within 8 yards and rooting them for 5 sec.",
+            "tags": [
+              "magic",
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3469,7 +3662,10 @@
             "name": "Staggering Blow",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_relics_totemofrage.jpg",
-            "description": "The caster strikes their target with a hefty blow, inflicting 254225 Physical damage and reducing the target's movement speed by 50% for 8 sec."
+            "description": "The caster strikes their target with a hefty blow, inflicting 254225 Physical damage and reducing the target's movement speed by 50% for 8 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3483,7 +3679,11 @@
             "name": "Spirit Rend",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_broker_missile.jpg",
-            "description": "Inflicts 30507 Shadow damage to an enemy. Inflicts 8135 Shadow damage to an enemy every 1 sec for 8 sec."
+            "description": "Inflicts 30507 Shadow damage to an enemy. Inflicts 8135 Shadow damage to an enemy every 1 sec for 8 sec.",
+            "tags": [
+              "magic",
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3581,7 +3781,10 @@
             "name": "Magma Surge",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shaman_lavasurge.jpg",
-            "description": "The caster lets loose a surge of flame, inflicting 86437 Fire damage to players within a frontal line."
+            "description": "The caster lets loose a surge of flame, inflicting 86437 Fire damage to players within a frontal line.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1258482,
@@ -3595,7 +3798,10 @@
             "name": "Ritual Firebrand",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felflamering_red.jpg",
-            "description": "The caster brands several players with a ritual mark, causing a gout of flame to erupt underneath them every 4 sec for 12 sec that inflicts 127113 Fire damage to players within 5 yards."
+            "description": "The caster brands several players with a ritual mark, causing a gout of flame to erupt underneath them every 4 sec for 12 sec that inflicts 127113 Fire damage to players within 5 yards.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -3651,7 +3857,10 @@
             "name": "Shrink",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antishadow.jpg",
-            "description": "The caster shrinks their target, inflicting 20338 Shadow damage for 0.5 sec for 8 sec and greatly reducing their size. If the target comes into contact with a full-sized player, the target is stunned for 4 sec."
+            "description": "The caster shrinks their target, inflicting 20338 Shadow damage for 0.5 sec for 8 sec and greatly reducing their size. If the target comes into contact with a full-sized player, the target is stunned for 4 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1265832,
@@ -3667,7 +3876,7 @@
   {
     "instanceId": 1304,
     "instanceSlug": "murder-row",
-    "fetchedAt": "2026-04-12T17:01:26.414Z",
+    "fetchedAt": "2026-04-12T19:05:08.354Z",
     "npcs": [
       {
         "id": 234647,
@@ -3679,14 +3888,20 @@
             "name": "Legion Strike",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_axe_09.jpg",
-            "description": "Xathuux the Annihilator performs a powerful swing with his axe that inflicts 279648 Physical damage and reduces healing received by 80% for 8 sec."
+            "description": "Xathuux the Annihilator performs a powerful swing with his axe that inflicts 279648 Physical damage and reduces healing received by 80% for 8 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 474197,
             "name": "Demonic Rage",
             "schools": 127,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_demonicempowerment.jpg",
-            "description": "Xathuux the Annihilator flies into a Demonic Rage, inflicting 101690 Chaos damage to all players. While this effect is active, Xathuux gains 75% attack speed, suffers 30% increased incoming damage, and gains Burning Steps for 15 sec."
+            "description": "Xathuux the Annihilator flies into a Demonic Rage, inflicting 101690 Chaos damage to all players. While this effect is active, Xathuux gains 75% attack speed, suffers 30% increased incoming damage, and gains Burning Steps for 15 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 474234,
@@ -3700,14 +3915,20 @@
             "name": "Fel Lightning",
             "schools": 124,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_cracklingjadelightning.jpg",
-            "description": "Xathuux the Annihilator's axe channels beams of fel lightning at all players inflicting 2542 Chaos damage every 1 sec. This effect stacks."
+            "description": "Xathuux the Annihilator's axe channels beams of fel lightning at all players inflicting 2542 Chaos damage every 1 sec. This effect stacks.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1214663,
             "name": "Axe Toss",
             "schools": 124,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_titansgrip.jpg",
-            "description": "Xathuux the Annihilator throws his massive axe at the location of a random player inflicting 91521 Chaos damage and interrupting players within 10 yds of the impact. The axe remains on the ground emitting Fel Light until it is destroyed."
+            "description": "Xathuux the Annihilator throws his massive axe at the location of a random player inflicting 91521 Chaos damage and interrupting players within 10 yds of the impact. The axe remains on the ground emitting Fel Light until it is destroyed.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3721,14 +3942,20 @@
             "name": "Killing Spree",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_rogue_betweentheeyes.jpg",
-            "description": "Zaen unleashes a rapid barrage of gunfire, inflicting 20338 Physical damage to all players every 0.5 sec over 3 sec."
+            "description": "Zaen unleashes a rapid barrage of gunfire, inflicting 20338 Physical damage to all players every 0.5 sec over 3 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 474515,
             "name": "Heartstop Poison",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_boss_kilrogg_heartseeker.jpg",
-            "description": "A lethal poison that reduces the target's maximum health by 30% and inflicts 533873 Nature damage over 15 sec."
+            "description": "A lethal poison that reduces the target's maximum health by 30% and inflicts 533873 Nature damage over 15 sec.",
+            "tags": [
+              "poison"
+            ]
           },
           {
             "id": 474765,
@@ -3756,7 +3983,10 @@
             "name": "Envenom",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_disembowel.jpg",
-            "description": "Zaen drives a poisoned blade in deep at his current target, inflicting 228803 Physical damage and applying Heartstop Poison ."
+            "description": "Zaen drives a poisoned blade in deep at his current target, inflicting 228803 Physical damage and applying Heartstop Poison .",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -3770,7 +4000,10 @@
             "name": "Chaos Bolt",
             "schools": 124,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_chaosbolt.jpg",
-            "description": "Lithiel Cinderfury unleashes a devastating blast inflicting 81352 Chaos damage."
+            "description": "Lithiel Cinderfury unleashes a devastating blast inflicting 81352 Chaos damage.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 474457,
@@ -3784,7 +4017,10 @@
             "name": "Demonic Gateway",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_warlock_demonicportal_purple.jpg",
-            "description": "Lithiel Cinderfury creates a demonic gateway between two locations. Activating the gateway transports the user to the other gateway and prevents initial damage and Fire vulnerability from Malefic Wave ."
+            "description": "Lithiel Cinderfury creates a demonic gateway between two locations. Activating the gateway transports the user to the other gateway and prevents initial damage and Fire vulnerability from Malefic Wave .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1216945,
@@ -3805,7 +4041,10 @@
             "name": "Felshield",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felfireward.jpg",
-            "description": "Lithiel enshrouds herself in a fel barrier, reducing the damage she takes by 50% for 10 sec."
+            "description": "Lithiel enshrouds herself in a fel barrier, reducing the damage she takes by 50% for 10 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1226469,
@@ -3833,14 +4072,20 @@
             "name": "Felshield",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felfireward.jpg",
-            "description": "Kystia enshrouds herself in a fel barrier, reducing the damage she takes by [abs(20 * 4)]%."
+            "description": "Kystia enshrouds herself in a fel barrier, reducing the damage she takes by [abs(20 * 4)]%.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1223906,
             "name": "Fel Nova",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felflamering.jpg",
-            "description": "Kystia teleports to a random player's location and sends out an explosive wave of destructive energy, inflicting 152535 Fire damage to nearby players and knocking them back."
+            "description": "Kystia teleports to a random player's location and sends out an explosive wave of destructive energy, inflicting 152535 Fire damage to nearby players and knocking them back.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1230289,
@@ -3861,14 +4106,20 @@
             "name": "Mirror Images",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_magic_lesserinvisibilty.jpg",
-            "description": "Kystia creates copies of herself nearby, each of which cast Felstorm ."
+            "description": "Kystia creates copies of herself nearby, each of which cast Felstorm .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1264106,
             "name": "Felstorm",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felcano.jpg",
-            "description": "Kystia's mirror image engulfs the arena in fel fire, inflicting 5085 Fire damage to all nearby players every 1 sec."
+            "description": "Kystia's mirror image engulfs the arena in fel fire, inflicting 5085 Fire damage to all nearby players every 1 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       }
@@ -3877,7 +4128,7 @@
   {
     "instanceId": 1316,
     "instanceSlug": "nexus-point-xenas",
-    "fetchedAt": "2026-04-12T17:01:52.407Z",
+    "fetchedAt": "2026-04-12T19:05:27.477Z",
     "npcs": [
       {
         "id": 241546,
@@ -3959,7 +4210,10 @@
             "name": "Nullify",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-            "description": "The Grand Nullifier conjures a blast of void energy at the target, inflicting 203380 Shadow damage."
+            "description": "The Grand Nullifier conjures a blast of void energy at the target, inflicting 203380 Shadow damage.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1282723,
@@ -4050,7 +4304,10 @@
             "name": "Mirrored Rend",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_searinglightpriest.jpg",
-            "description": "Coming in contact with a Fractured Image rends the target, knocking them away and inflicting 50845 Holy damage with an additional 10169 Holy damage every 1 sec. This effect stacks and leaves behind Radiant Scar s."
+            "description": "Coming in contact with a Fractured Image rends the target, knocking them away and inflicting 50845 Holy damage with an additional 10169 Holy damage every 1 sec. This effect stacks and leaves behind Radiant Scar s.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -4113,7 +4370,10 @@
             "name": "Transference",
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_mindsooth.jpg",
-            "description": "Imbues a target with a rerouting essence causing all incoming healing received by the target to be redirected to the caster. (2s cooldown)"
+            "description": "Imbues a target with a rerouting essence causing all incoming healing received by the target to be redirected to the caster. (2s cooldown)",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1285445,
@@ -4239,7 +4499,10 @@
             "name": "Dark Beckoning",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadesofdarkness.jpg",
-            "description": "The caster calls out to dark entities that travel outwards in erratic patterns, inflicting 14 Shadow damage to all enemies every 3 sec for 9 sec. The entities knock up the first target caught in its path, inflicting 25 Shadow damage."
+            "description": "The caster calls out to dark entities that travel outwards in erratic patterns, inflicting 14 Shadow damage to all enemies every 3 sec for 9 sec. The entities knock up the first target caught in its path, inflicting 25 Shadow damage.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -4274,7 +4537,10 @@
             "name": "Creeping Void",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_gold.jpg",
-            "description": "Causes all enemies within 60 yards to take 10% increased Shadow damage for 15 sec. Inflicts 3 Shadow damage to enemies within 60 yards."
+            "description": "Causes all enemies within 60 yards to take 10% increased Shadow damage for 15 sec. Inflicts 3 Shadow damage to enemies within 60 yards.",
+            "tags": [
+              "curse"
+            ]
           }
         ]
       },
@@ -4295,7 +4561,10 @@
             "name": "Burning Radiance",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/paladin_holy.jpg",
-            "description": "The caster bursts with a holy radiance searing up to 2 nearby enemies, inflicting 5 Holy damage every 1 sec for 8 sec."
+            "description": "The caster bursts with a holy radiance searing up to 2 nearby enemies, inflicting 5 Holy damage every 1 sec for 8 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -4344,7 +4613,10 @@
             "name": "Umbra Bolt",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-            "description": "Inflicts 12 Shadow damage to an enemy."
+            "description": "Inflicts 12 Shadow damage to an enemy.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       }
@@ -4353,7 +4625,7 @@
   {
     "instanceId": 1309,
     "instanceSlug": "the-blinding-vale",
-    "fetchedAt": "2026-04-12T17:04:38.641Z",
+    "fetchedAt": "2026-04-12T19:05:46.169Z",
     "npcs": [
       {
         "id": 243028,
@@ -4449,7 +4721,10 @@
             "name": "Bloodthorn Roots",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_-misc_herb_marrowroot_leaf.jpg",
-            "description": "Roots entangle players, inflicting 30507 Nature damage and rooting them in place until destroyed."
+            "description": "Roots entangle players, inflicting 30507 Nature damage and rooting them in place until destroyed.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1236709,
@@ -4540,14 +4815,20 @@
             "name": "Pulverizing Strikes",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_swipe.jpg",
-            "description": "Ruia marks several targets and launches a wave of force toward each of them in a frontal cone every 2 sec for 6 sec. Each impact inflicts 76268 Physical damage to players within the effect and applies Pulverized ."
+            "description": "Ruia marks several targets and launches a wave of force toward each of them in a frontal cone every 2 sec for 6 sec. Each impact inflicts 76268 Physical damage to players within the effect and applies Pulverized .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1241058,
             "name": "Grievous Thrash",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_druid_bloodythrash.jpg",
-            "description": "Ruia thrashes about, inflicting 81352 Physical damage to players and causing them to bleed an additional 20338 Physical damage every 1 sec for 20 sec or until fully healed. This effect stacks."
+            "description": "Ruia thrashes about, inflicting 81352 Physical damage to players and causing them to bleed an additional 20338 Physical damage every 1 sec for 20 sec or until fully healed. This effect stacks.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1241067,
@@ -4582,7 +4863,10 @@
             "name": "Awaken the Lightbloom",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_desertlasherorchid_yellow.jpg",
-            "description": "Ziekket sows Light energy into the soil, sprouting Lightspawn Lashers and reawakening any that are Dormant . Lashers reawaken with Vicious Regrowth ."
+            "description": "Ziekket sows Light energy into the soil, sprouting Lightspawn Lashers and reawakening any that are Dormant . Lashers reawaken with Vicious Regrowth .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1246379,
@@ -4596,7 +4880,10 @@
             "name": "Concentrated Lightbeam",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_flashoflight.jpg",
-            "description": "Ziekket releases a powerful beam of Light energy, inflicting 25423 Holy damage every 0.5 sec to players within the effect. Any Dormant Lightspawn Lashers hit by the beam are instantly liquified into puddles of Lightsap ."
+            "description": "Ziekket releases a powerful beam of Light energy, inflicting 25423 Holy damage every 0.5 sec to players within the effect. Any Dormant Lightspawn Lashers hit by the beam are instantly liquified into puddles of Lightsap .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1246660,
@@ -4610,7 +4897,10 @@
             "name": "Lightbloom's Essence",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_orb.jpg",
-            "description": "Ziekket draws out globules of Lightbloom energy from the earth that move toward him, triggering a Fluorescent Outburst upon reaching him. The orbs instead burst when touched by players, granting that player Lightbloom's Might ."
+            "description": "Ziekket draws out globules of Lightbloom energy from the earth that move toward him, triggering a Fluorescent Outburst upon reaching him. The orbs instead burst when touched by players, granting that player Lightbloom's Might .",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1247039,
@@ -4645,14 +4935,20 @@
             "name": "Lightspore Shot",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_orange_sporecreature2.jpg",
-            "description": "The lasher spews at a player, inflicting 30507 Holy damage."
+            "description": "The lasher spews at a player, inflicting 30507 Holy damage.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1247685,
             "name": "Thornspike",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_herb_goldthorn_bramble.jpg",
-            "description": "Ziekket impales the player with his spiked branch, inflicting 101690 Holy damage and knocking them back. The puncture wound causes the player to bleed an additional 30507 Physical damage every 1 sec for 10 sec."
+            "description": "Ziekket impales the player with his spiked branch, inflicting 101690 Holy damage and knocking them back. The puncture wound causes the player to bleed an additional 30507 Physical damage every 1 sec for 10 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1253320,
@@ -4668,7 +4964,7 @@
   {
     "instanceId": 1313,
     "instanceSlug": "voidscar-arena",
-    "fetchedAt": "2026-04-12T17:04:45.181Z",
+    "fetchedAt": "2026-04-12T19:08:22.275Z",
     "npcs": [
       {
         "id": 238887,
@@ -4680,7 +4976,10 @@
             "name": "Cosmic Spike",
             "schools": 33,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_outdoorethereal_c_01.jpg",
-            "description": "Taz'Rah slashes his current target, inflicting 177958 Shadowstrike damage."
+            "description": "Taz'Rah slashes his current target, inflicting 177958 Shadowstrike damage.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1262283,
@@ -4715,7 +5014,10 @@
             "name": "Provoke Creeper",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_voidcreepermount_yellow.jpg",
-            "description": "Atroxus agitates the surrounding pools, causing a Toxic Creeper to emerge and attack players."
+            "description": "Atroxus agitates the surrounding pools, causing a Toxic Creeper to emerge and attack players.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1222484,
@@ -4729,7 +5031,10 @@
             "name": "Hulking Claw",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_03.jpg",
-            "description": "Atroxus delivers a powerful blow to a player that inflicts 127113 Nature damage with an additional 35592 Nature damage every 1 sec for 10 sec."
+            "description": "Atroxus delivers a powerful blow to a player that inflicts 127113 Nature damage with an additional 35592 Nature damage every 1 sec for 10 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1222692,
@@ -4750,21 +5055,30 @@
             "name": "Poison Splash",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_corrosivebreath.jpg",
-            "description": "Atroxus splashes poison around itself, inflicting 101690 Nature damage with an additional 30507 Nature damage every 1 sec for 5 sec to players struck. Each impact creates a poison pool for 1 min."
+            "description": "Atroxus splashes poison around itself, inflicting 101690 Nature damage with an additional 30507 Nature damage every 1 sec for 5 sec to players struck. Each impact creates a poison pool for 1 min.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1262497,
             "name": "Monstrous Stomp",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_darkflight.jpg",
-            "description": "Atroxus inflicts 91521 &nbsp;Physical damage to all players, knocking them back."
+            "description": "Atroxus inflicts 91521 &nbsp;Physical damage to all players, knocking them back.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1263971,
             "name": "Lingering Poison",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_02.jpg",
-            "description": "Leaving a Poison Pool afflicts the player with a lingering poison, inflicting 25423 Nature damage every 1 sec for 5 sec."
+            "description": "Leaving a Poison Pool afflicts the player with a lingering poison, inflicting 25423 Nature damage every 1 sec for 5 sec.",
+            "tags": [
+              "poison"
+            ]
           },
           {
             "id": 1282892,
@@ -4799,14 +5113,20 @@
             "name": "Gravitic Orbs",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchant_voidsphere.jpg",
-            "description": "Charonus summons a seeking Gravitic Orb near each player. The orb afflicts target player with Condensed Mass every 1 sec. If the orb comes within 6 yards of an Unstable Singularity, its essence is torn apart and the orb is destroyed."
+            "description": "Charonus summons a seeking Gravitic Orb near each player. The orb afflicts target player with Condensed Mass every 1 sec. If the orb comes within 6 yards of an Unstable Singularity, its essence is torn apart and the orb is destroyed.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1227197,
             "name": "Cosmic Blast",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "description": "Charonus releases a massive blast, knocking back all players and inflicting 81352 Shadow damage to them with an additional 7627 Shadow damage every 1 sec for 20 sec."
+            "description": "Charonus releases a massive blast, knocking back all players and inflicting 81352 Shadow damage to them with an additional 7627 Shadow damage every 1 sec for 20 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1248130,
@@ -4829,7 +5149,7 @@
   {
     "instanceId": 1299,
     "instanceSlug": "windrunner-spire",
-    "fetchedAt": "2026-04-12T17:04:57.785Z",
+    "fetchedAt": "2026-04-12T19:08:34.097Z",
     "npcs": [
       {
         "id": 231606,
@@ -4841,7 +5161,10 @@
             "name": "Burning Gale",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_firestorm.jpg",
-            "description": "Emberdawn conjures a flaming windstorm that inflicts 20338 Fire damage every 1 sec to all players and pushes them for 16 sec."
+            "description": "Emberdawn conjures a flaming windstorm that inflicts 20338 Fire damage every 1 sec to all players and pushes them for 16 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 466064,
@@ -4855,7 +5178,10 @@
             "name": "Flaming Updraft",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_burningembers.jpg",
-            "description": "Emberdawn spits fire at a player, inflicting 25423 Fire damage every 1 sec for 6 sec. Upon expiration, the fire forms into a flaming patch that inflicts 76268 Fire damage every 1.5 sec to players within it. The patch's central updraft inflicts 127113 Fire damage to players who touch it, knocking them away."
+            "description": "Emberdawn spits fire at a player, inflicting 25423 Fire damage every 1 sec for 6 sec. Upon expiration, the fire forms into a flaming patch that inflicts 76268 Fire damage every 1.5 sec to players within it. The patch's central updraft inflicts 127113 Fire damage to players who touch it, knocking them away.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 467120,
@@ -4974,7 +5300,10 @@
             "name": "Rampage",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_rampage.jpg",
-            "description": "Commander Kroluk focuses his destructive urge on his current target, repeatedly thrashing them and inflicting 101690 Physical damage every 0.5 sec for 5 sec."
+            "description": "Commander Kroluk focuses his destructive urge on his current target, repeatedly thrashing them and inflicting 101690 Physical damage every 0.5 sec for 5 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 467815,
@@ -4988,14 +5317,20 @@
             "name": "Rallying Bellow",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/racial_orc_berserkerstrength.jpg",
-            "description": "Commander Kroluk unleashes a bloodthirsty warcry, inflicting 88979 Physical damage to all players and summoning a warparty to fight alongside him."
+            "description": "Commander Kroluk unleashes a bloodthirsty warcry, inflicting 88979 Physical damage to all players and summoning a warparty to fight alongside him.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 470963,
             "name": "Bladestorm",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_bladestorm.jpg",
-            "description": "Commander Kroluk enters a battle-trance, fixating on a player and inflicting 76268 Physical damage every 1 sec to players within 7 yards. Commander Kroluk continues to Bladestorm until his warparty is defeated."
+            "description": "Commander Kroluk enters a battle-trance, fixating on a player and inflicting 76268 Physical damage every 1 sec to players within 7 yards. Commander Kroluk continues to Bladestorm until his warparty is defeated.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 472081,
@@ -5030,7 +5365,10 @@
             "name": "Intimidating Shout",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_golemthunderclap.jpg",
-            "description": "Commander Kroluk bellows an intimidating shout, causing players who stand alone to run in fear and suffer 50845 Shadow damage every 1 sec for 6 sec."
+            "description": "Commander Kroluk bellows an intimidating shout, causing players who stand alone to run in fear and suffer 50845 Shadow damage every 1 sec for 6 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1270620,
@@ -5149,7 +5487,10 @@
             "name": "Ephemeral Bloodlust",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg",
-            "description": "The caster sends its allies into a frenzy, increasing their haste by 35% for 15 sec."
+            "description": "The caster sends its allies into a frenzy, increasing their haste by 35% for 15 sec.",
+            "tags": [
+              "enrage"
+            ]
           }
         ]
       },
@@ -5268,7 +5609,10 @@
             "name": "Soul Torment",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_astralrecalgroup.jpg",
-            "description": "The caster inflicts 5 Shadow damage to a player every 1 sec for 15 sec."
+            "description": "The caster inflicts 5 Shadow damage to a player every 1 sec for 15 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -5478,7 +5822,10 @@
             "name": "Bolstering Flames",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felflamering_red.jpg",
-            "description": "The caster bolsters themselves with flaming energy, absorbing 85 damage and increasing their haste by 30% for 20 sec."
+            "description": "The caster bolsters themselves with flaming energy, absorbing 85 damage and increasing their haste by 30% for 20 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       }
@@ -5487,7 +5834,7 @@
   {
     "instanceId": 278,
     "instanceSlug": "pit-of-saron",
-    "fetchedAt": "2026-04-12T17:05:31.824Z",
+    "fetchedAt": "2026-04-12T19:09:08.974Z",
     "npcs": [
       {
         "id": 36476,
@@ -5632,7 +5979,10 @@
             "name": "Cryoshards",
             "schools": 16,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/artifactability_frostmage_ebonbolt.jpg",
-            "description": "Shards of ice slam into players, increasing their Frost damage taken by 50% and slowing them by 15% for 12 sec."
+            "description": "Shards of ice slam into players, increasing their Frost damage taken by 50% and slowing them by 15% for 12 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 1262029,
@@ -5730,7 +6080,10 @@
             "name": "Necromantic Infusion",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_warlock_demonsoul.jpg",
-            "description": "The caster infuses an ally with power, increasing their haste by 50% for 12 sec."
+            "description": "The caster infuses an ally with power, increasing their haste by 50% for 12 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -5765,7 +6118,10 @@
             "name": "Plague Frenzy",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv12_ability_deathknight_empowereddreadplague.jpg",
-            "description": "The caster ejects Plague Spew towards players and enrages for 24 sec, increasing its haste by 25% and causing Blight Splatter more frequently."
+            "description": "The caster ejects Plague Spew towards players and enrages for 24 sec, increasing its haste by 25% and causing Blight Splatter more frequently.",
+            "tags": [
+              "enrage"
+            ]
           },
           {
             "id": 1259145,
@@ -5863,7 +6219,10 @@
             "name": "Permeating Cold",
             "schools": 16,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_chilledtothebone.jpg",
-            "description": "The caster slows the movement speed of a player by 40% and inflicts 24151 Frost damage every 1 sec for 15 sec."
+            "description": "The caster slows the movement speed of a player by 40% and inflicts 24151 Frost damage every 1 sec for 15 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -5954,7 +6313,10 @@
             "name": "Shadowbind",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nzinsanity_chasedbyshadows.jpg",
-            "description": "Krick's shade channels dark magic into a player, inflicting 24660 Shadow damage every 1 sec and slowing their movement speed by 35%."
+            "description": "Krick's shade channels dark magic into a player, inflicting 24660 Shadow damage every 1 sec and slowing their movement speed by 35%.",
+            "tags": [
+              "curse"
+            ]
           },
           {
             "id": 1271678,
@@ -6012,7 +6374,7 @@
   {
     "instanceId": 945,
     "instanceSlug": "seat-of-the-triumvirate",
-    "fetchedAt": "2026-04-12T17:06:21.767Z",
+    "fetchedAt": "2026-04-12T19:09:56.932Z",
     "npcs": [
       {
         "id": 124309,
@@ -6332,7 +6694,10 @@
             "name": "Battle Rage",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg",
-            "description": "Inflict 50% increased Physical damage. This effect stacks."
+            "description": "Inflict 50% increased Physical damage. This effect stacks.",
+            "tags": [
+              "enrage"
+            ]
           }
         ]
       },
@@ -6353,7 +6718,10 @@
             "name": "Abyssal Enhancement",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_polearm_2h_voidscythe_d_01.jpg",
-            "description": "Infuses the weapon with void energy, causing melee attacks to unleash void energy on target enemy and nearby players, inflicting Shadow damage."
+            "description": "Infuses the weapon with void energy, causing melee attacks to unleash void energy on target enemy and nearby players, inflicting Shadow damage.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -6402,7 +6770,10 @@
             "name": "Dark Breath",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_twilightflamebreath.jpg",
-            "description": "Expels a breath tainted with void energy, inflicting 72964 Shadow damage every 1 sec for 4 sec."
+            "description": "Expels a breath tainted with void energy, inflicting 72964 Shadow damage every 1 sec for 4 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -6451,7 +6822,10 @@
             "name": "Wild Summon",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_bestialdiscipline.jpg",
-            "description": "Summons a random creature to assist the caster for 10 sec."
+            "description": "Summons a random creature to assist the caster for 10 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 248411,
@@ -6521,7 +6895,10 @@
             "name": "Dark Matter",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchant_voidsphere.jpg",
-            "description": "Summons a shard of dark matter into the world. This Dark Matter is unstable and begins to Collapse , inflicting 211629 Shadow damage to all enemies."
+            "description": "Summons a shard of dark matter into the world. This Dark Matter is unstable and begins to Collapse , inflicting 211629 Shadow damage to all enemies.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 248232,
@@ -6535,7 +6912,10 @@
             "name": "Dark Splice",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowmend.jpg",
-            "description": "Weaves dark magic into the target, inflicting 95094 Shadow damage every 1 sec for 8 sec."
+            "description": "Weaves dark magic into the target, inflicting 95094 Shadow damage every 1 sec for 8 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1262508,
@@ -6563,14 +6943,20 @@
             "name": "Corrupting Touch",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_slime_02.jpg",
-            "description": "Infused with the void, causing melee attacks to have a chance to inflict 20433 Shadow damage every 1 sec for 12 sec."
+            "description": "Infused with the void, causing melee attacks to have a chance to inflict 20433 Shadow damage every 1 sec for 12 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 246900,
             "name": "Dark Outbreak",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_everlastingaffliction.jpg",
-            "description": "The caster explodes upon death, inflicting 132095 Shadow damage to all nearby enemies and additionally inflicting 29393 Shadow damage every 1 sec for 5 sec."
+            "description": "The caster explodes upon death, inflicting 132095 Shadow damage to all nearby enemies and additionally inflicting 29393 Shadow damage every 1 sec for 5 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -6584,14 +6970,20 @@
             "name": "Darkened Remnant",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_painspike.jpg",
-            "description": "Expels remnants of the void at random targets, inflicting Shadow damage to all enemies at the point of impact."
+            "description": "Expels remnants of the void at random targets, inflicting Shadow damage to all enemies at the point of impact.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 248133,
             "name": "Stygian Blast",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_soulswap.jpg",
-            "description": "Assaults the target with dark energy, inflicting 151114 Shadow damage and causing the target to flee in fear for 3 sec."
+            "description": "Assaults the target with dark energy, inflicting 151114 Shadow damage and causing the target to flee in fear for 3 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -6752,7 +7144,10 @@
             "name": "Grand Shift",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_shadoworbs.jpg",
-            "description": "L'ura calls out to all Remnants of Anguish, causing them jump to random enemies, inflicting 16 Shadow damage to all enemies near the impact point and knocking them back."
+            "description": "L'ura calls out to all Remnants of Anguish, causing them jump to random enemies, inflicting 16 Shadow damage to all enemies near the impact point and knocking them back.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 254020,
@@ -6836,7 +7231,10 @@
             "name": "Fragment of Despair",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_painspike.jpg",
-            "description": "Hurls a bolt of shadow energy at random locations, which inflict 5085 Shadow damage to enemies at the target location. If no players are hit, Fragment of Despair inflicts 629355 Shadow damage to all players."
+            "description": "Hurls a bolt of shadow energy at random locations, which inflict 5085 Shadow damage to enemies at the target location. If no players are hit, Fragment of Despair inflicts 629355 Shadow damage to all players.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -6871,7 +7269,10 @@
             "name": "Dark Splice",
             "schools": 32,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowmend.jpg",
-            "description": "Weaves dark magic into the target, inflicting 14 Shadow damage every 1 sec for 8 sec."
+            "description": "Weaves dark magic into the target, inflicting 14 Shadow damage every 1 sec for 8 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -6927,7 +7328,10 @@
             "name": "Empowered Shield of Light",
             "schools": 2,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_reflectiveshield.jpg",
-            "description": "Reduce damage from incoming attacks by 25% and increases damage done by 10%. Also spells have a 50% chance to be reflected. Lasts 45 sec."
+            "description": "Reduce damage from incoming attacks by 25% and increases damage done by 10%. Also spells have a 50% chance to be reflected. Lasts 45 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -6969,7 +7373,10 @@
             "name": "Destabilize Time",
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-            "description": "Eternus summons a Manifested Timeways that attempts to Destabilize Time , inflicting 30 Arcane damage to all players. Upon death, the Manifested Timeway splits into 3 smaller Manifested Timeways and grants players with Stabilized Time , increasing haste, critical strike chance, versatility and mastery for 30 sec."
+            "description": "Eternus summons a Manifested Timeways that attempts to Destabilize Time , inflicting 30 Arcane damage to all players. Upon death, the Manifested Timeway splits into 3 smaller Manifested Timeways and grants players with Stabilized Time , increasing haste, critical strike chance, versatility and mastery for 30 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1247901,
@@ -7006,7 +7413,7 @@
   {
     "instanceId": 476,
     "instanceSlug": "skyreach",
-    "fetchedAt": "2026-04-12T17:07:24.651Z",
+    "fetchedAt": "2026-04-12T19:11:01.597Z",
     "npcs": [
       {
         "id": 75964,
@@ -7144,14 +7551,20 @@
             "name": "Solar Flame",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_druid_sunfall.jpg",
-            "description": "Inflicts 50845 Fire damage to the target every 1.5 sec for 6 sec."
+            "description": "Inflicts 50845 Fire damage to the target every 1.5 sec for 6 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1253448,
             "name": "Solar Nova",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_heraldofthesunpaladin_dawnlight.jpg",
-            "description": "Inflicts 167789 Fire damage to enemies within 8 yards."
+            "description": "Inflicts 167789 Fire damage to enemies within 8 yards.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -7515,7 +7928,10 @@
             "name": "Rushing Winds",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/achievement_raidprimalist_windelemental.jpg",
-            "description": "Caster envelops themselves with Rushing Winds, increasing their Haste by 30% for 15 sec."
+            "description": "Caster envelops themselves with Rushing Winds, increasing their Haste by 30% for 15 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -7879,7 +8295,10 @@
             "name": "Solar Wrath",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_wrathv2.jpg",
-            "description": "Causes Fire damage to the target."
+            "description": "Causes Fire damage to the target.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 160066,
@@ -7900,7 +8319,10 @@
             "name": "Solar Barrier",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordbarrier.jpg",
-            "description": "Caster puts Solar Barrier on nearby allies, absorbing 183528 incoming damage and causing them to radiates solar energy that inflicts 10169 Fire damage every 2 sec."
+            "description": "Caster puts Solar Barrier on nearby allies, absorbing 183528 incoming damage and causing them to radiates solar energy that inflicts 10169 Fire damage every 2 sec.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -7921,7 +8343,10 @@
             "name": "Solar Wrath",
             "schools": 4,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_wrathv2.jpg",
-            "description": "Causes Fire damage to the target."
+            "description": "Causes Fire damage to the target.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 160066,
@@ -8090,7 +8515,7 @@
   {
     "instanceId": 1201,
     "instanceSlug": "algethar-academy",
-    "fetchedAt": "2026-04-12T17:08:00.850Z",
+    "fetchedAt": "2026-04-12T19:11:39.638Z",
     "npcs": [
       {
         "id": 190609,
@@ -8199,21 +8624,30 @@
             "name": "Savage Peck",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_raptortalon_nightmare.jpg",
-            "description": "Crawth viciously pecks at her target, inflicting 228803 Physical damage instantly with an additional 35592 Physical damage every 1 sec for 10 sec."
+            "description": "Crawth viciously pecks at her target, inflicting 228803 Physical damage instantly with an additional 35592 Physical damage every 1 sec for 10 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 454341,
             "name": "Deafening Screech",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_vehicle_sonicshockwave.jpg",
-            "description": "Crawth releases a loud screech, causing a sonic eruption at all players, inflicting 61014 Nature damage. This effect interrupts spell casts and also silences any player interrupted in this manner for 6 sec."
+            "description": "Crawth releases a loud screech, causing a sonic eruption at all players, inflicting 61014 Nature damage. This effect interrupts spell casts and also silences any player interrupted in this manner for 6 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 377034,
             "name": "Overpowering Gust",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_icon_wing06b.jpg",
-            "description": "Crawth faces a random player and flaps her wings, inflicting 254476 Nature damage and knocking back all players in front of her."
+            "description": "Crawth faces a random player and flaps her wings, inflicting 254476 Nature damage and knocking back all players in front of her.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 377182,
@@ -8275,7 +8709,10 @@
             "name": "Peck",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_birdbeck_01.jpg",
-            "description": "Territorial Eagle pecks at the target, causing them to bleed 10169 Physical every 1.5 sec for 6 sec."
+            "description": "Territorial Eagle pecks at the target, causing them to bleed 10169 Physical every 1.5 sec for 6 sec.",
+            "tags": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -8289,7 +8726,10 @@
             "name": "Gust",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_wind.jpg",
-            "description": "Knocks all enemies in front of the caster back. Inflicts 177750 Nature damage to all enemies in front of the caster."
+            "description": "Knocks all enemies in front of the caster back. Inflicts 177750 Nature damage to all enemies in front of the caster.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 1276632,
@@ -8310,14 +8750,20 @@
             "name": "Expel Intruders",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_galewinds.jpg",
-            "description": "Knocks all enemies within 30 yards of the caster back. Inflicts 152814 Nature damage to enemies within 30 yards."
+            "description": "Knocks all enemies within 30 yards of the caster back. Inflicts 152814 Nature damage to enemies within 30 yards.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 377991,
             "name": "Storm Slash",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_unrelentingstorm.jpg",
-            "description": "Inflicts 127113 Nature damage to an enemy."
+            "description": "Inflicts 127113 Nature damage to an enemy.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 378011,
@@ -8394,7 +8840,10 @@
             "name": "Monotonous Lecture",
             "schools": 64,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_book_18.jpg",
-            "description": "Bores the target to sleep with a stodgy lesson."
+            "description": "Bores the target to sleep with a stodgy lesson.",
+            "tags": [
+              "magic"
+            ]
           }
         ]
       },
@@ -8464,7 +8913,10 @@
             "name": "Celestial Shield",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_arcanosphere.jpg",
-            "description": "The caster shields an ally, absorbing 196637 damage taken and increases the spell haste of the target by 50% for 30 sec."
+            "description": "The caster shields an ally, absorbing 196637 damage taken and increases the spell haste of the target by 50% for 30 sec.",
+            "tags": [
+              "magic"
+            ]
           },
           {
             "id": 387970,
@@ -8485,14 +8937,20 @@
             "name": "Barkbreaker",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_smash.jpg",
-            "description": "The Overgrown Ancient stomps its target with crushing force, inflicting 244246 Physical damage and increasing Physical damage taken by 100% for 9 sec."
+            "description": "The Overgrown Ancient stomps its target with crushing force, inflicting 244246 Physical damage and increasing Physical damage taken by 100% for 9 sec.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 388623,
             "name": "Branch Out",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_branch_01.jpg",
-            "description": "The Overgrown Ancient throws one of its own branches at a location, inflicting 152535 Physical damage to players within 8 yds and knocking them back. The Ancient Branch then animates and attacks players."
+            "description": "The Overgrown Ancient throws one of its own branches at a location, inflicting 152535 Physical damage to players within 8 yds and knocking them back. The Ancient Branch then animates and attacks players.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 388796,
@@ -8506,7 +8964,10 @@
             "name": "Burst Forth",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_earthquake.jpg",
-            "description": "Upon reaching 100 energy, the Overgrown Ancient releases its abundant life magic to awaken all dormant Lashers, inflicting 81352 Nature damage to all players as they burst free from the ground."
+            "description": "Upon reaching 100 energy, the Overgrown Ancient releases its abundant life magic to awaken all dormant Lashers, inflicting 81352 Nature damage to all players as they burst free from the ground.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 390297,
@@ -8534,7 +8995,10 @@
             "name": "Healing Touch",
             "schools": 8,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg",
-            "description": "Heal an ally for 393273."
+            "description": "Heal an ally for 393273.",
+            "tags": [
+              "interruptible"
+            ]
           },
           {
             "id": 396721,
@@ -8618,7 +9082,10 @@
             "name": "Agitation",
             "schools": 1,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_enrage.jpg",
-            "description": "Causes the caster to inflict 15% increased Physical damage."
+            "description": "Causes the caster to inflict 15% increased Physical damage.",
+            "tags": [
+              "enrage"
+            ]
           },
           {
             "id": 390944,

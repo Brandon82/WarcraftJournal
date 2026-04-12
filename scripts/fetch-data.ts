@@ -720,6 +720,10 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 1278986, name: 'Frost Breath', schools: 16 },
     ] },
   ],
+  // Magister's Terrace
+  1300: [
+    { id: 231861, name: 'Arcanotron Custos', classification: 3 },
+  ],
 };
 
 // Per-instance spell blacklists — keyed by instance ID.

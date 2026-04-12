@@ -1,6 +1,8 @@
-import { InboxOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { InboxOutlined, DownOutlined, UpOutlined } from '@ant-design/icons';
 import type { JournalSection } from '../../types';
 import SectionTree from '../sections/SectionTree';
+import type { ExpandTrigger } from '../sections/SectionTree';
 
 interface AbilitiesTabProps {
   sections: JournalSection[];
@@ -11,6 +13,8 @@ export default function AbilitiesTab({ sections, modes }: AbilitiesTabProps) {
   const abilitySections = sections.filter(
     (s) => s.title.toLowerCase() !== 'overview',
   );
+  const [expandTrigger, setExpandTrigger] = useState<ExpandTrigger>({ expand: false, version: 0 });
+  const allExpanded = expandTrigger.expand && expandTrigger.version > 0;
 
   if (abilitySections.length === 0) {
     return (
@@ -23,5 +27,18 @@ export default function AbilitiesTab({ sections, modes }: AbilitiesTabProps) {
     );
   }
 
-  return <SectionTree sections={abilitySections} modes={modes} />;
+  return (
+    <div>
+      <div className="flex justify-end mb-3">
+        <button
+          onClick={() => setExpandTrigger({ expand: !allExpanded, version: expandTrigger.version + 1 })}
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-wow-text-secondary hover:text-wow-text bg-wow-bg-raised hover:bg-wow-bg-hover border border-wow-border rounded-lg transition-colors cursor-pointer"
+        >
+          {allExpanded ? <UpOutlined className="text-[10px]" /> : <DownOutlined className="text-[10px]" />}
+          {allExpanded ? 'Collapse All' : 'Expand All'}
+        </button>
+      </div>
+      <SectionTree sections={abilitySections} modes={modes} expandTrigger={expandTrigger} />
+    </div>
+  );
 }

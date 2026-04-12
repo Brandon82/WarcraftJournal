@@ -1,11 +1,13 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ThunderboltOutlined, DownOutlined } from '@ant-design/icons';
 import type { JournalSection } from '../../types';
+import type { ExpandTrigger } from './SectionTree';
 
 interface SectionNodeProps {
   section: JournalSection;
   depth: number;
   modes?: Array<{ name: string; type: string }>;
+  expandTrigger?: ExpandTrigger;
 }
 
 const MODE_TYPE_RANK: Record<string, number> = {
@@ -77,13 +79,19 @@ const TAG_LABELS: Record<string, string> = {
   deadly: 'Deadly',
 };
 
-export default function SectionNode({ section, depth, modes }: SectionNodeProps) {
+export default function SectionNode({ section, depth, modes, expandTrigger }: SectionNodeProps) {
   const hasChildren = section.sections && section.sections.length > 0;
   const isTopLevel = depth === 0;
   const isCollapsible = hasChildren || !!section.bodyText;
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const difficultyTag = getDifficultyTag(section.difficultyMask, modes);
+
+  useEffect(() => {
+    if (expandTrigger && expandTrigger.version > 0) {
+      setExpanded(expandTrigger.expand);
+    }
+  }, [expandTrigger?.version]);
 
   return (
     <div
@@ -195,7 +203,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
               {hasChildren && (
                 <div className="mt-2">
                   {section.sections!.map((child) => (
-                    <SectionNode key={child.id} section={child} depth={depth + 1} modes={modes} />
+                    <SectionNode key={child.id} section={child} depth={depth + 1} modes={modes} expandTrigger={expandTrigger} />
                   ))}
                 </div>
               )}

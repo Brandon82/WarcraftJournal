@@ -81,7 +81,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
   const hasChildren = section.sections && section.sections.length > 0;
   const isTopLevel = depth === 0;
   const isCollapsible = hasChildren || !!section.bodyText;
-  const [expanded, setExpanded] = useState(isTopLevel);
+  const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const difficultyTag = getDifficultyTag(section.difficultyMask, modes);
 

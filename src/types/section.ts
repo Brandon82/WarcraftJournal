@@ -9,7 +9,7 @@ export interface JournalSection {
   spellIcon?: string;
   creatureDisplayId?: number;
   creatureDisplayMedia?: string;
-  headerIcon?: SectionHeaderIcon;
+  headerIcons?: SectionHeaderIcon[];
 }
 
 export type SectionHeaderIcon =

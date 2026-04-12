@@ -137,7 +137,7 @@ export default function OverviewTab({ overviewSection, description }: OverviewTa
                   </h4>
                 </div>
                 {alert.bodyText && (
-                  <div className="ml-[26px]">
+                  <div className="ml-4 sm:ml-[26px]">
                     <FormattedBody text={alert.bodyText} />
                   </div>
                 )}

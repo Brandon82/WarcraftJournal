@@ -88,7 +88,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
   return (
     <div
       className={`mb-2 ${
-        depth > 0 ? 'ml-6 border-l-2 border-wow-border' : ''
+        depth > 0 ? 'ml-3 sm:ml-6 border-l-2 border-wow-border' : ''
       } ${isTopLevel ? 'bg-wow-bg-elevated border border-wow-border rounded-xl' : ''}`}
     >
       {/* Header */}
@@ -148,14 +148,17 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
             >
               {section.title}
             </span>
-            {section.headerIcon && TAG_STYLES[section.headerIcon] && (
-              <span
-                className={`px-2 py-0.5 text-xs rounded-md font-medium ${TAG_STYLES[section.headerIcon]}`}
-              >
-                {TAG_LABELS[section.headerIcon]}
-              </span>
+            {section.headerIcons?.map((icon) =>
+              TAG_STYLES[icon] ? (
+                <span
+                  key={icon}
+                  className={`px-2 py-0.5 text-xs rounded-md font-medium ${TAG_STYLES[icon]}`}
+                >
+                  {TAG_LABELS[icon]}
+                </span>
+              ) : null,
             )}
-            {difficultyTag && difficultyTag !== section.headerIcon && (
+            {difficultyTag && !section.headerIcons?.includes(difficultyTag) && (
               <span
                 className={`px-2 py-0.5 text-xs rounded-md font-medium ${TAG_STYLES[difficultyTag]}`}
               >
@@ -184,7 +187,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
           <div className="overflow-hidden min-h-0">
             <div className="pb-1">
               {section.bodyText && (
-                <p className="text-zinc-300 text-[17px] leading-relaxed m-0 ml-[40px] pr-4">
+                <p className="text-zinc-300 text-[17px] leading-relaxed m-0 ml-6 sm:ml-[40px] pr-4">
                   {section.bodyText}
                 </p>
               )}

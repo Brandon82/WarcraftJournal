@@ -1,10 +1,12 @@
-import { Breadcrumb } from 'antd';
 import { Link, useParams, useLocation } from 'react-router';
 import { HomeOutlined } from '@ant-design/icons';
 import { useExpansion } from '../../hooks/useExpansion';
 import { useInstance } from '../../hooks/useInstance';
 import { useEncounter } from '../../hooks/useEncounter';
 import { currentSeason } from '../../data/currentSeason';
+
+const CRUMB_LINK = 'text-wow-text-dim hover:text-wow-text transition-colors truncate block';
+const CRUMB_TEXT = 'text-wow-text-secondary truncate block';
 
 export default function BreadcrumbNav() {
   const { expansionSlug, instanceSlug, bossSlug } = useParams();
@@ -13,10 +15,11 @@ export default function BreadcrumbNav() {
   const instance = useInstance(instanceSlug);
   const encounter = useEncounter(bossSlug);
 
-  const items = [
+  const crumbs: { key: string; node: React.ReactNode; hiddenOnDeep?: boolean }[] = [
     {
-      title: (
-        <Link to="/">
+      key: 'home',
+      node: (
+        <Link to="/" className="text-wow-text-dim hover:text-wow-text transition-colors">
           <HomeOutlined />
         </Link>
       ),
@@ -24,27 +27,65 @@ export default function BreadcrumbNav() {
   ];
 
   if (isSeason) {
-    items.push({
-      title: <Link to="/season">{currentSeason?.name ?? 'Current Season'}</Link>,
+    crumbs.push({
+      key: 'season',
+      hiddenOnDeep: true,
+      node: (
+        <Link to="/season" className={CRUMB_LINK}>
+          {currentSeason?.name ?? 'Current Season'}
+        </Link>
+      ),
     });
   } else if (expansion) {
-    items.push({
-      title: <Link to={`/${expansion.slug}`}>{expansion.name}</Link>,
+    crumbs.push({
+      key: 'expansion',
+      hiddenOnDeep: true,
+      node: (
+        <Link to={`/${expansion.slug}`} className={CRUMB_LINK}>
+          {expansion.name}
+        </Link>
+      ),
     });
   }
 
   if (instance) {
     const instancePath = isSeason ? `/season/${instance.slug}` : `/${expansionSlug}/${instance.slug}`;
-    items.push({
-      title: <Link to={instancePath}>{instance.name}</Link>,
+    crumbs.push({
+      key: 'instance',
+      node: (
+        <Link to={instancePath} className={CRUMB_LINK}>
+          {instance.name}
+        </Link>
+      ),
     });
   }
 
   if (encounter) {
-    items.push({
-      title: <span>{encounter.name}</span>,
+    crumbs.push({
+      key: 'encounter',
+      node: <span className={CRUMB_TEXT}>{encounter.name}</span>,
     });
   }
 
-  return <Breadcrumb items={items} />;
+  // When we have 4+ crumbs (home + season/expansion + instance + boss),
+  // hide the season/expansion on mobile to save space
+  const isDeep = crumbs.length >= 4;
+
+  return (
+    <nav className="min-w-0 overflow-hidden">
+      <ol className="flex items-center gap-1 list-none m-0 p-0 text-sm flex-nowrap">
+        {crumbs.map((crumb, i) => (
+          <li
+            key={crumb.key}
+            className={`flex items-center gap-1 shrink min-w-0 ${
+              isDeep && crumb.hiddenOnDeep ? 'hidden sm:flex' : 'flex'
+            }`}
+          >
+            {i > 0 && <span className="text-wow-text-dim shrink-0">/</span>}
+            {crumb.node}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
 }

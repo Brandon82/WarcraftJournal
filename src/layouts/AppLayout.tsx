@@ -127,7 +127,7 @@ export default function AppLayout() {
 
         {/* Main content */}
         <div
-          className="flex-1 flex flex-col"
+          className="flex-1 flex flex-col min-w-0"
           style={{
             marginLeft: isMobile ? 0 : collapsed ? 0 : 294,
             transition: 'margin-left 200ms ease',
@@ -137,13 +137,14 @@ export default function AppLayout() {
             {(isMobile || collapsed) && (
               <button
                 onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(false)}
-                className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"
+                className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2.5 sm:p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"
               >
                 <MenuUnfoldOutlined />
               </button>
             )}
-            <BreadcrumbNav />
-            <div className="flex-1" />
+            <div className="flex-1 min-w-0">
+              <BreadcrumbNav />
+            </div>
             <button
               onClick={() => setSearchOpen(true)}
               className="bg-transparent border border-wow-border rounded-lg cursor-pointer text-wow-text-dim text-sm px-3 py-1.5 flex items-center gap-2 hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150 hidden sm:flex"
@@ -156,13 +157,13 @@ export default function AppLayout() {
             </button>
             <button
               onClick={() => setSearchOpen(true)}
-              className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150 sm:hidden"
+              className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2.5 sm:p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150 sm:hidden"
             >
               <SearchOutlined />
             </button>
             <button
               onClick={toggleDevMode}
-              className={`bg-transparent border border-wow-border rounded-xl cursor-pointer text-sm p-2 flex items-center hover:bg-wow-bg-elevated transition-all duration-150 ${
+              className={`bg-transparent border border-wow-border rounded-xl cursor-pointer text-sm p-2.5 sm:p-2 flex items-center hover:bg-wow-bg-elevated transition-all duration-150 ${
                 devMode ? 'text-wow-gold border-wow-gold-muted' : 'text-wow-text-secondary hover:text-wow-text'
               }`}
               title={devMode ? 'Disable developer mode' : 'Enable developer mode'}
@@ -171,14 +172,14 @@ export default function AppLayout() {
             </button>
             <button
               onClick={toggleTheme}
-              className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"
+              className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2.5 sm:p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"
               title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {theme === 'dark' ? <SunOutlined /> : <MoonOutlined />}
             </button>
           </header>
 
-          <main className="flex-1 py-4 px-6 sm:py-8 sm:px-16 lg:px-24 xl:px-32">
+          <main className="flex-1 py-4 px-3 sm:py-8 sm:px-16 lg:px-24 xl:px-32">
             <div className="max-w-6xl mx-auto">
               <Outlet />
             </div>

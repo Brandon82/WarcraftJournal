@@ -186,14 +186,12 @@ const ICON_FLAG_MAP: Record<number, string> = {
   2048: 'enrage',
 };
 
-function iconFlagsToHeaderIcon(flags: number): string | undefined {
-  // Return the most significant flag as the primary icon
-  // Priority: heroic/mythic > deadly > important > dispel types > role indicators
-  const priority = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 1, 2, 4];
-  for (const bit of priority) {
-    if (flags & bit) return ICON_FLAG_MAP[bit];
+function iconFlagsToHeaderIcons(flags: number): string[] {
+  const icons: string[] = [];
+  for (const [bit, name] of Object.entries(ICON_FLAG_MAP)) {
+    if (flags & Number(bit)) icons.push(name);
   }
-  return undefined;
+  return icons;
 }
 
 // Section metadata from wago.tools DB2 export
@@ -233,6 +231,87 @@ async function fetchSectionMetadata(): Promise<void> {
   } catch (err) {
     console.warn(`  Warning: Failed to fetch section metadata: ${err}`);
   }
+}
+
+// Spell mechanic metadata from wago.tools DB2 exports (for zone spell tags)
+const DISPEL_TYPE_MAP: Record<number, string> = {
+  1: 'magic',
+  2: 'curse',
+  3: 'disease',
+  4: 'poison',
+  9: 'enrage',
+};
+
+let spellDispelTypes: Map<number, number> = new Map();
+let spellInterruptFlags: Map<number, number> = new Map();
+
+async function fetchSpellMetadata(): Promise<void> {
+  console.log('Fetching spell metadata from wago.tools...');
+
+  // Fetch SpellCategories for dispel types
+  try {
+    const response = await fetch('https://wago.tools/db2/SpellCategories/csv');
+    if (response.ok) {
+      const csvText = await response.text();
+      const lines = csvText.split('\n');
+      const header = lines[0].split(',');
+      const spellIdIdx = header.indexOf('SpellID');
+      const dispelIdx = header.indexOf('DispelType');
+      if (spellIdIdx !== -1 && dispelIdx !== -1) {
+        for (let i = 1; i < lines.length; i++) {
+          const cols = lines[i].split(',');
+          const spellId = parseInt(cols[spellIdIdx], 10);
+          const dispelType = parseInt(cols[dispelIdx], 10);
+          if (!isNaN(spellId) && dispelType > 0) {
+            spellDispelTypes.set(spellId, dispelType);
+          }
+        }
+        console.log(`  Loaded dispel types for ${spellDispelTypes.size} spells`);
+      }
+    }
+  } catch (err) {
+    console.warn(`  Warning: Failed to fetch SpellCategories: ${err}`);
+  }
+
+  // Fetch SpellInterrupts for interruptibility
+  try {
+    const response = await fetch('https://wago.tools/db2/SpellInterrupts/csv');
+    if (response.ok) {
+      const csvText = await response.text();
+      const lines = csvText.split('\n');
+      const header = lines[0].split(',');
+      const spellIdIdx = header.indexOf('SpellID');
+      const flagsIdx = header.indexOf('InterruptFlags');
+      if (spellIdIdx !== -1 && flagsIdx !== -1) {
+        for (let i = 1; i < lines.length; i++) {
+          const cols = lines[i].split(',');
+          const spellId = parseInt(cols[spellIdIdx], 10);
+          const flags = parseInt(cols[flagsIdx], 10);
+          if (!isNaN(spellId) && flags > 0) {
+            spellInterruptFlags.set(spellId, flags);
+          }
+        }
+        console.log(`  Loaded interrupt flags for ${spellInterruptFlags.size} spells`);
+      }
+    }
+  } catch (err) {
+    console.warn(`  Warning: Failed to fetch SpellInterrupts: ${err}`);
+  }
+}
+
+function getSpellTags(spellId: number): string[] {
+  const tags: string[] = [];
+  const dispelType = spellDispelTypes.get(spellId);
+  if (dispelType != null) {
+    const tag = DISPEL_TYPE_MAP[dispelType];
+    if (tag) tags.push(tag);
+  }
+  const interruptFlags = spellInterruptFlags.get(spellId);
+  // Bit 0x04 = can be interrupted by interrupt abilities (Kick, Counterspell, etc.)
+  if (interruptFlags != null && interruptFlags & 0x04) {
+    tags.push('interruptible');
+  }
+  return tags;
 }
 
 interface BlizzardItemDetail {
@@ -371,18 +450,19 @@ async function processSection(section: BlizzardSection): Promise<Record<string, 
     }
   }
 
-  // Resolve headerIcon and difficultyMask from wago.tools metadata or Blizzard header_type
+  // Resolve headerIcons and difficultyMask from wago.tools metadata or Blizzard header_type
   const meta = sectionMetadata.get(section.id);
-  let headerIcon: string | undefined;
+  let headerIcons: string[] = [];
   let difficultyMask: number | undefined;
 
   if (meta) {
-    if (meta.iconFlags) headerIcon = iconFlagsToHeaderIcon(meta.iconFlags);
+    if (meta.iconFlags) headerIcons = iconFlagsToHeaderIcons(meta.iconFlags);
     if (meta.difficultyMask !== -1) difficultyMask = meta.difficultyMask;
   }
   // Fallback to Blizzard API header_type if no wago data
-  if (!headerIcon && section.header_type != null) {
-    headerIcon = HEADER_TYPE_MAP[section.header_type];
+  if (headerIcons.length === 0 && section.header_type != null) {
+    const icon = HEADER_TYPE_MAP[section.header_type];
+    if (icon) headerIcons = [icon];
   }
 
   return {
@@ -397,7 +477,7 @@ async function processSection(section: BlizzardSection): Promise<Record<string, 
       ? { creatureDisplayId: section.creature_display.id }
       : {}),
     ...(creatureDisplayMedia ? { creatureDisplayMedia } : {}),
-    ...(headerIcon ? { headerIcon } : {}),
+    ...(headerIcons.length > 0 ? { headerIcons } : {}),
   };
 }
 
@@ -884,13 +964,15 @@ async function fetchZoneSpellsForInstance(
     if (tooltipResult?.description) spellDescriptions.set(spellId, tooltipResult.description);
   }
 
-  // Enrich spells with icons and descriptions
+  // Enrich spells with icons, descriptions, and mechanic tags
   for (const npc of npcResults) {
     for (const spell of npc.spells) {
       const icon = spellIcons.get(spell.id);
       const desc = spellDescriptions.get(spell.id);
+      const tags = getSpellTags(spell.id);
       if (icon) (spell as Record<string, unknown>).spellIcon = icon;
       if (desc) (spell as Record<string, unknown>).description = desc;
+      if (tags.length > 0) (spell as Record<string, unknown>).tags = tags;
     }
   }
 
@@ -1087,6 +1169,7 @@ async function main() {
   // --only-zone-spells: skip full Blizzard API fetch, but still authenticate for spell icons
   if (process.argv.includes('--only-zone-spells')) {
     await authenticate();
+    await fetchSpellMetadata();
     return fetchZoneSpellsFromDisk();
   }
 
@@ -1094,6 +1177,7 @@ async function main() {
 
   await authenticate();
   await fetchSectionMetadata();
+  await fetchSpellMetadata();
 
   // 1. Fetch all expansions
   let expansions = await fetchAllExpansions();

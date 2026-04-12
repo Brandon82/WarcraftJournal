@@ -77,10 +77,14 @@ function sectionVisibleAtDifficulty(
   if (s.difficultyMask != null && s.difficultyMask > 0) {
     return (s.difficultyMask & modesBitmask) !== 0;
   }
-  // Fallback: use headerIcon tags (heroic = Heroic+, mythic = Mythic only)
-  if (s.headerIcon) {
-    const minRank = HEADER_ICON_MIN_DIFFICULTY[s.headerIcon];
-    if (minRank != null) return DIFFICULTY_RANK[difficulty] >= minRank;
+  // Fallback: use headerIcons tags (heroic = Heroic+, mythic = Mythic only)
+  if (s.headerIcons) {
+    let maxMinRank: number | undefined;
+    for (const icon of s.headerIcons) {
+      const rank = HEADER_ICON_MIN_DIFFICULTY[icon];
+      if (rank != null && (maxMinRank == null || rank > maxMinRank)) maxMinRank = rank;
+    }
+    if (maxMinRank != null) return DIFFICULTY_RANK[difficulty] >= maxMinRank;
   }
   return true;
 }
@@ -145,7 +149,7 @@ function deduplicateSections(sections: JournalSection[], difficulty: Difficulty)
     } else {
       const prevChildren = sections[prev].sections?.length ?? 0;
       const curChildren = s.sections?.length ?? 0;
-      if (curChildren > prevChildren || (curChildren === prevChildren && s.headerIcon && !sections[prev].headerIcon)) {
+      if (curChildren > prevChildren || (curChildren === prevChildren && s.headerIcons?.length && !sections[prev].headerIcons?.length)) {
         removeIndices.add(prev);
         seenSpell.set(s.spellId, i);
       } else {
@@ -169,15 +173,19 @@ function deduplicateSections(sections: JournalSection[], difficulty: Difficulty)
     if (indices.length < 2) continue;
     // Check if any entries have difficulty headerIcons
     const hasDiffTag = indices.some((i) => {
-      const icon = sections[i].headerIcon;
-      return icon === 'heroic' || icon === 'mythic';
+      const icons = sections[i].headerIcons;
+      return icons?.includes('heroic') || icons?.includes('mythic');
     });
     if (!hasDiffTag) continue;
     // Pick the best match: highest difficulty tag that the player meets
     let bestIdx = indices[0];
     let bestRank = -1;
     for (const i of indices) {
-      const rank = HEADER_ICON_MIN_DIFFICULTY[sections[i].headerIcon ?? ''] ?? 0;
+      const icons = sections[i].headerIcons ?? [];
+      let rank = 0;
+      for (const icon of icons) {
+        rank = Math.max(rank, HEADER_ICON_MIN_DIFFICULTY[icon] ?? 0);
+      }
       if (rank <= playerLevel && rank > bestRank) {
         bestRank = rank;
         bestIdx = i;

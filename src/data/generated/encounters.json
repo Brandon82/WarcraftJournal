@@ -53,7 +53,9 @@
         ],
         "spellId": 1258427,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_archangel.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34889,
@@ -84,7 +86,9 @@
         "bodyText": "Lu'ashal exhales a breath of holy flame at her primary target, inflicting Radiant damage every 0.5 sec for 2 sec sec to her primary target and players standing in the area.",
         "spellId": 1276247,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_firebreath.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -205,7 +209,9 @@
         ],
         "spellId": 1257825,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_explodingjadeblossom.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34198,
@@ -225,7 +231,9 @@
             "bodyText": "The mote erupts in a dazzling cascade of light, inflicting 74438 Holy damage to all other players within 12 yards of the detonation, causing them to become disoriented for 6 sec.",
             "spellId": 1257618,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_debuff.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "magic"
+            ]
           }
         ],
         "spellId": 1257320,
@@ -237,7 +245,9 @@
         "bodyText": "Thorm'belan rends their target's flesh, inflicting 198501 Physical damage and causing them to bleed for an additional 49625 Physical damage every 3 sec for 12 sec.",
         "spellId": 1258136,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_artifact_bloodoftheassassinated.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -372,7 +382,9 @@
                 "bodyText": "The consumptor shakes it off spraying toxins throughout inflicting 12406 Nature damage.",
                 "spellId": 1276988,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_poison_missile.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "creatureDisplayId": 131272,
@@ -388,12 +400,17 @@
                 "bodyText": "Enters a bestial rage increasing damage done by 100% for 18 sec.",
                 "spellId": 1277711,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "magic",
+                  "enrage"
+                ]
               }
             ],
             "creatureDisplayId": 131609,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-131609.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "spellId": 1276193,
@@ -444,7 +461,9 @@
                 "bodyText": "Seismic Slam jostles the shredclaw ejecting myocardial fluid inflicting 17369 Shadow damage and an additional 2481 Shadow damage every 1 sec, increasing damage taken by 3% for 9 sec. This effect stacks.",
                 "spellId": 1277694,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/artifactability_blooddeathknight_umbilicuseternus.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "magic"
+                ]
               }
             ],
             "creatureDisplayId": 131609,
@@ -453,7 +472,9 @@
         ],
         "spellId": 1276320,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_hand_1h_bwdraid_d_01.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       }
     ],
     "items": [
@@ -583,12 +604,17 @@
             "bodyText": "This treant fixates on a nearby player after being rudely awakened.",
             "creatureDisplayId": 864,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-864.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "spellId": 1235131,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shaman_earthquake.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "healer",
+          "important"
+        ]
       },
       {
         "id": 32618,
@@ -596,7 +622,9 @@
         "bodyText": "Cragpine grows a mighty pine from the earth and wields it as a war club, causing his next 10 melee attacks to inflict additional Physical damage.",
         "spellId": 1235144,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_manatree.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 32650,
@@ -755,7 +783,9 @@
             ],
             "spellId": 1282001,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_earthen_azeritesurge.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 32999,
@@ -781,7 +811,9 @@
             ],
             "spellId": 1262289,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_earthen_azeritesurge.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34066,
@@ -837,7 +869,9 @@
                     ],
                     "creatureDisplayId": 124154,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-124154.jpg",
-                    "headerIcon": "tank"
+                    "headerIcons": [
+                      "tank"
+                    ]
                   },
                   {
                     "id": 33303,
@@ -849,7 +883,10 @@
                         "bodyText": "The Haunting Essence unleashes a scream, inflicting 54391 Nature damage every 1 sec to all players for 3 sec and causing them to flee in fear.",
                         "spellId": 1249017,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathscream.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible",
+                          "magic"
+                        ]
                       },
                       {
                         "id": 34239,
@@ -857,7 +894,9 @@
                         "bodyText": "The Manifestation launches a bolt of essence at a random player, inflicting 116551 Nature damage.",
                         "spellId": 1261997,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv__azerite-explosion.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 124152,
@@ -871,12 +910,16 @@
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-124155.jpg"
                   }
                 ],
-                "headerIcon": "dps"
+                "headerIcons": [
+                  "dps"
+                ]
               }
             ],
             "spellId": 1258610,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_azeritefireball.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33923,
@@ -889,7 +932,9 @@
                 "bodyText": "Cannibalizing a Manifestation inflicts 388505 Nature damage to all players and heals Chimaerus for 500% of the Manifestation's remaining vitality. In addition, Chimaerus' damage done is increased by 100%. This effect stacks.",
                 "spellId": 1245844,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1252863,
@@ -919,7 +964,10 @@
             ],
             "spellId": 1257087,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_azerite_essence_16.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic",
+              "magic"
+            ]
           },
           {
             "id": 33931,
@@ -927,7 +975,9 @@
             "bodyText": "Chimaerus launches globs of phlegm at all players, inflicting 32168 Nature damage every 1 sec for 20 sec.",
             "spellId": 1246653,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_poison_orb.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 33322,
@@ -947,7 +997,9 @@
                 "bodyText": "Cannibalizing a Manifestation inflicts 388505 Nature damage to all players and heals Chimaerus for 500% of the Manifestation's remaining vitality. In addition, Chimaerus' damage done is increased by 100%. This effect stacks.",
                 "spellId": 1245844,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1245396,
@@ -1010,12 +1062,16 @@
                         "bodyText": "The Colossal Horror unleashes a series of three strikes at its current target over 1 sec, inflicting 388505 Physical damage and 135977 Nature damage with each strike.",
                         "spellId": 1262020,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_golemthunderclap.jpg",
-                        "headerIcon": "tank"
+                        "headerIcons": [
+                          "tank"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 124154,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-124154.jpg",
-                    "headerIcon": "tank"
+                    "headerIcons": [
+                      "tank"
+                    ]
                   },
                   {
                     "id": 34528,
@@ -1027,7 +1083,10 @@
                         "bodyText": "The Haunting Essence unleashes a scream, inflicting 54391 Nature damage every 1 sec to all players for 3 sec and causing them to flee in fear.",
                         "spellId": 1249017,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathscream.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible",
+                          "magic"
+                        ]
                       },
                       {
                         "id": 34530,
@@ -1035,7 +1094,9 @@
                         "bodyText": "The Manifestation launches a bolt of essence at a random player, inflicting 116551 Nature damage.",
                         "spellId": 1261997,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv__azerite-explosion.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 124152,
@@ -1049,7 +1110,10 @@
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-124155.jpg"
                   }
                 ],
-                "headerIcon": "important"
+                "headerIcons": [
+                  "dps",
+                  "important"
+                ]
               },
               {
                 "id": 34532,
@@ -1061,7 +1125,9 @@
             ],
             "spellId": 1245486,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_azerite_essence02.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 33296,
@@ -1093,7 +1159,9 @@
                     ],
                     "creatureDisplayId": 124154,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-124154.jpg",
-                    "headerIcon": "tank"
+                    "headerIcons": [
+                      "tank"
+                    ]
                   },
                   {
                     "id": 33315,
@@ -1105,7 +1173,10 @@
                         "bodyText": "The Haunting Essence unleashes a scream, inflicting 54391 Nature damage every 1 sec to all players for 3 sec and causing them to flee in fear.",
                         "spellId": 1249017,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathscream.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible",
+                          "magic"
+                        ]
                       },
                       {
                         "id": 34238,
@@ -1113,7 +1184,9 @@
                         "bodyText": "The Manifestation launches a bolt of essence at a random player, inflicting 116551 Nature damage.",
                         "spellId": 1261997,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv__azerite-explosion.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 124152,
@@ -1127,7 +1200,10 @@
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-124155.jpg"
                   }
                 ],
-                "headerIcon": "important"
+                "headerIcons": [
+                  "dps",
+                  "important"
+                ]
               },
               {
                 "id": 33317,
@@ -1152,7 +1228,9 @@
                 "bodyText": "Cannibalizing a Manifestation inflicts 388505 Nature damage to all players and heals Chimaerus for 500% of the Manifestation's remaining vitality. In addition, Chimaerus' damage done is increased by 100%. This effect stacks.",
                 "spellId": 1245844,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1245406,
@@ -1169,7 +1247,9 @@
                 "bodyText": "Cannibalizing a Manifestation inflicts 388505 Nature damage to all players and heals Chimaerus for 500% of the Manifestation's remaining vitality. In addition, Chimaerus' damage done is increased by 100%. This effect stacks.",
                 "spellId": 1245844,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1245406,
@@ -1181,7 +1261,9 @@
             "bodyText": "Chimaerus launches globs of phlegm at all players, inflicting 32168 Nature damage every 1 sec for 20 sec.",
             "spellId": 1246621,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_poison_orb.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 34472,
@@ -1199,7 +1281,10 @@
             ],
             "spellId": 1257085,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_azerite_essence_16.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic",
+              "magic"
+            ]
           },
           {
             "id": 33320,
@@ -1456,7 +1541,9 @@
                 "bodyText": "The Abyssal Voidshaper claims territory for Averzian, inflicting 349654 Shadow damage to players within 12 yards and an additional 350466 Shadow damage to players caught in the star burst blast. Each claimed territory brings Averzian's army closer to the March of the Endless .",
                 "spellId": 1262036,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_cursed_03.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "creatureDisplayId": 136444,
@@ -1481,7 +1568,9 @@
                 "bodyText": "The Abyssal Voidshaper claims territory for Averzian, inflicting 349654 Shadow damage to players within 12 yards and an additional 350466 Shadow damage to players caught in the star burst blast. Each claimed territory brings Averzian's army closer to the March of the Endless .",
                 "spellId": 1262036,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_cursed_03.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 35001,
@@ -1489,12 +1578,16 @@
                 "bodyText": "At full power, the Voidshaper transforms into an Obscurion Endwalker.",
                 "spellId": 1255749,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonvoidwalker.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               }
             ],
             "creatureDisplayId": 136444,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-136444.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 34578,
@@ -1531,7 +1624,9 @@
                 "bodyText": "While at 35% health remaining, the Voidmaw's movement speed is reduced by 75%.",
                 "spellId": 1267205,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_butcher_gushingwounds.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 34583,
@@ -1539,12 +1634,16 @@
                 "bodyText": "Upon reaching 35% health remaining, the Voidmaw approaches the closest void-claimed space to restore its health.",
                 "spellId": 1264164,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               }
             ],
             "creatureDisplayId": 137402,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-137402.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 34585,
@@ -1556,7 +1655,9 @@
                 "bodyText": "The caster grants a shield to allies that absorbs the next 1324824 damage.",
                 "spellId": 1255702,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "creatureDisplayId": 129818,
@@ -1572,7 +1673,9 @@
                 "bodyText": "The caster grants a shield to allies that absorbs the next 1324824 damage.",
                 "spellId": 1255702,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 35111,
@@ -1588,7 +1691,9 @@
         ],
         "spellId": 1251361,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antishadow.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32191,
@@ -1621,7 +1726,9 @@
                 "bodyText": "The Abyssal Voidshaper claims territory for Averzian, inflicting 349654 Shadow damage to players within 12 yards and an additional 350466 Shadow damage to players caught in the star burst blast. Each claimed territory brings Averzian's army closer to the March of the Endless .",
                 "spellId": 1262036,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_cursed_03.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 34597,
@@ -1668,7 +1775,9 @@
                 "bodyText": "The caster grants a shield to allies that absorbs the next 1324824 damage.",
                 "spellId": 1255702,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "creatureDisplayId": 129818,
@@ -1684,7 +1793,9 @@
                 "bodyText": "The caster grants a shield to allies that absorbs the next 1324824 damage.",
                 "spellId": 1255702,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 35117,
@@ -1707,7 +1818,9 @@
                 "bodyText": "The caster grants a shield to allies that absorbs the next 1324824 damage.",
                 "spellId": 1255702,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 34857,
@@ -1722,7 +1835,9 @@
                 "bodyText": "The Abyssal Malus curses several players with a dark miasma, inflicting 97126 Shadow damage and reducing their haste by 70% for 15 sec.",
                 "spellId": 1275059,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_void-flay.jpg",
-                "headerIcon": "curse"
+                "headerIcons": [
+                  "curse"
+                ]
               }
             ],
             "creatureDisplayId": 137390,
@@ -1764,7 +1879,9 @@
         ],
         "spellId": 1280015,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_improvedsoulleech.jpg",
-        "headerIcon": "magic"
+        "headerIcons": [
+          "magic"
+        ]
       },
       {
         "id": 33969,
@@ -1793,7 +1910,9 @@
         "bodyText": "With three adjacent portals empowering each other, Averzian tears open the void unleashing the endless march, inflicting 427355 Shadow damage every 1 sec to players in its path.",
         "spellId": 1251583,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_cursed_03.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "deadly"
+        ]
       },
       {
         "id": 33972,
@@ -1801,7 +1920,9 @@
         "bodyText": "Averzian harnesses the Void, inflicting 143747 Shadow damage to all players. He then continues to radiate energy, inflicting 30303 Shadow damage every 1 sec.",
         "spellId": 1249251,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_voidentropy.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 34411,
@@ -1818,7 +1939,9 @@
         ],
         "spellId": 1265540,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcanepotency_nightborne.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 33971,
@@ -2017,12 +2140,16 @@
             "bodyText": "Vorasius sweeps a deadly beam across the battlefield, immediately inflicting &nbsp;3108037 Shadow damage to all players in front of him and 388505 Shadow damage every 1 sec to players caught in its path. The beam radiates Dark Energy while active, inflicting 34965 Shadow damage every 0.5 sec for 15 sec.",
             "spellId": 1280101,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 1256855,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "deadly"
+        ]
       },
       {
         "id": 33247,
@@ -2047,7 +2174,9 @@
                 "bodyText": "The Blistercreep periodically spits void ichor at a player, reducing their movement speed by 30% for 20 sec. This effect stacks.",
                 "spellId": 1272527,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_voidcreepermount_blue.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "magic"
+                ]
               },
               {
                 "id": 33253,
@@ -2076,7 +2205,9 @@
             "bodyText": "The impact from Vorasius's larger claws increases the victim's Physical damage taken by 150% for 2 min. This effect stacks.",
             "spellId": 1241844,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_earthen_pillar.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34911,
@@ -2314,7 +2445,9 @@
             "bodyText": "An orb of dark energy that is drawn towards Salhadaar.",
             "creatureDisplayId": 131659,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-131659.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 35163,
@@ -2329,12 +2462,16 @@
             "bodyText": "Salhadaar consumes the orb on contact, inflicting 1165514 Shadow damage to all players and an additional 194252 Shadow damage every 1 sec for 1 min.",
             "spellId": 1245960,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_wave.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 1247738,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_gravity.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33455,
@@ -2348,7 +2485,9 @@
             "bodyText": "An orb of dark energy that is drawn towards Salhadaar.",
             "creatureDisplayId": 131659,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-131659.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 35218,
@@ -2363,7 +2502,9 @@
             "bodyText": "Orbs of Concentrated Void cover all players in void essence when destroyed, inflicting 93241 Shadow damage every 2 sec for 8 sec. This effect stacks.",
             "spellId": 1250991,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchant_essencecosmicgreater.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic"
+            ]
           },
           {
             "id": 35220,
@@ -2371,12 +2512,17 @@
             "bodyText": "Salhadaar consumes the orb on contact, inflicting 1165514 Shadow damage to all players and an additional 194252 Shadow damage every 1 sec for 1 min.",
             "spellId": 1245960,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_wave.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 1247738,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_gravity.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank",
+          "dps"
+        ]
       },
       {
         "id": 35213,
@@ -2389,7 +2535,9 @@
             "bodyText": "An orb of dark energy that is drawn toward Salhadaar.",
             "creatureDisplayId": 131659,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-131659.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 35215,
@@ -2397,7 +2545,9 @@
             "bodyText": "An orb remnant of dark energy that is drawn toward Salhadaar. Reactivated during [Void Convergence].",
             "creatureDisplayId": 131659,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-131659.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 35221,
@@ -2419,7 +2569,9 @@
             "bodyText": "Salhadaar consumes the orb on contact, inflicting 1165514 Shadow damage to all players and an additional 194252 Shadow damage every 1 sec for 1 min.",
             "spellId": 1245960,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_wave.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 1247738,
@@ -2436,7 +2588,9 @@
             "bodyText": "Lingering void energy that inflicts 128207 Shadow damage every 1 sec to players within it.",
             "spellId": 1245592,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34294,
@@ -2444,12 +2598,17 @@
             "bodyText": "Beams of pure void radiate from Salhadaar, inflicting 388505 Shadow damage every 0.3 sec to players within them.",
             "spellId": 1260015,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_beam.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 1246175,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_etherealwraps_empowered_blue.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "dps",
+          "important"
+        ]
       },
       {
         "id": 34448,
@@ -2517,7 +2676,9 @@
                 "bodyText": "The Fractured Image releases a burst of void energy, inflicting 971262 Shadow damage to all players and leaving behind Torturous Extract . The image then reintegrates with Salhadaar.",
                 "spellId": 1254088,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_netherportal.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "creatureDisplayId": 137185,
@@ -2542,7 +2703,9 @@
                 "bodyText": "The Fractured Image releases a burst of void energy, inflicting 971262 Shadow damage to all players and leaving behind Torturous Extract . The image then reintegrates with Salhadaar.",
                 "spellId": 1254088,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_netherportal.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 34851,
@@ -2581,7 +2744,9 @@
         ],
         "spellId": 1248697,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 33444,
@@ -2589,7 +2754,9 @@
         "bodyText": "Salhadaar releases a bolt of twisting darkness that jumps between all players, inflicting 46621 Shadow damage upon contact and an additional 27972 Shadow damage every 1 sec for 26 sec.",
         "spellId": 1250686,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 34290,
@@ -2597,7 +2764,9 @@
         "bodyText": "Salhadaar's melee attacks destabilize his current target, inflicting 13986 Shadow damage every 1 sec for 15 sec. This effect stacks.",
         "spellId": 1271577,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_twistedfaith.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -2842,7 +3011,9 @@
                 ],
                 "spellId": 1262623,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_ironmaidens_convulsiveshadows.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 35320,
@@ -2851,7 +3022,9 @@
                 "difficultyMask": 0,
                 "spellId": 1244221,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_envelopingshadows.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "magic"
+                ]
               },
               {
                 "id": 33242,
@@ -2876,7 +3049,9 @@
                 ],
                 "spellId": 1265131,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_icon_wing07c.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "creatureDisplayId": 92168,
@@ -2902,7 +3077,9 @@
                         "bodyText": "Gloomtouched's affliction weighs heavily on targets, increasing damage taken by Gloomtouched by 1000% for 1.3 min. This effect stacks.",
                         "spellId": 1270852,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_nullstone_void.jpg",
-                        "headerIcon": "heroic"
+                        "headerIcons": [
+                          "heroic"
+                        ]
                       }
                     ],
                     "spellId": 1245554,
@@ -2918,7 +3095,9 @@
                 ],
                 "spellId": 1245391,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 33245,
@@ -2935,12 +3114,16 @@
                         "bodyText": "The Voidorb ejects raw void magic at a player, inflicting 77701 Shadow damage plus an additional 24282 Shadow damage every 1 sec for 5 sec. This effect stacks.",
                         "spellId": 1245175,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 142710,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-142710.jpg",
-                    "headerIcon": "dps"
+                    "headerIcons": [
+                      "dps"
+                    ]
                   }
                 ],
                 "spellId": 1244917,
@@ -2962,7 +3145,9 @@
                 ],
                 "spellId": 1245645,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_rubysanctum4.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "creatureDisplayId": 92168,
@@ -2974,7 +3159,10 @@
             "bodyText": "Upon reaching 100 energy, Ezzorak and Vaelgor fly as one, each spewing 233103 Shadow damage to all players plus an additional 21368 Shadow damage every 0.5 sec for 25 sec.",
             "spellId": 1249748,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicdragonmount.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly",
+              "important"
+            ]
           },
           {
             "id": 34559,
@@ -2999,7 +3187,9 @@
             "difficultyMask": 0,
             "spellId": 1280458,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_flayer.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ]
       },
@@ -3063,7 +3253,9 @@
             ],
             "spellId": 1248847,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_blessedresillience.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33728,
@@ -3306,7 +3498,9 @@
             ],
             "spellId": 1248449,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_sealofwrath.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35118,
@@ -3321,12 +3515,17 @@
                 "difficultyMask": 0,
                 "spellId": 1246155,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_innerfire.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               }
             ],
             "spellId": 1248449,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_sealofwrath.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic",
+              "important"
+            ]
           },
           {
             "id": 35119,
@@ -3335,7 +3534,9 @@
             "difficultyMask": 0,
             "spellId": 1248449,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_sealofwrath.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35010,
@@ -3358,12 +3559,16 @@
                 "difficultyMask": 0,
                 "spellId": 1246391,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_removecurse.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1280159,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_paladin_executionsentence.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 33691,
@@ -3390,7 +3595,9 @@
             ],
             "spellId": 1248983,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_paladin_executionsentence.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 33689,
@@ -3415,7 +3622,9 @@
             "bodyText": "Lightblood deems players within 100 yards unworthy, inflicting 231160 Holy damage to them.",
             "spellId": 1246749,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_bastion_paladin.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 33688,
@@ -3428,12 +3637,16 @@
                 "bodyText": "Lightblood unleashes a devastating strike on his current target that inflicts 777009 Holy damage.",
                 "spellId": 1251812,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_paladin_templarsverdict.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "spellId": 1246736,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_judgementred.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34920,
@@ -3450,7 +3663,9 @@
             ],
             "spellId": 1246385,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_avenginewrath.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "creatureDisplayId": 131527,
@@ -3477,7 +3692,9 @@
             ],
             "spellId": 1246162,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_devotionaura.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35120,
@@ -3492,12 +3709,17 @@
                 "difficultyMask": 0,
                 "spellId": 1246155,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_innerfire.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               }
             ],
             "spellId": 1246162,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_devotionaura.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic",
+              "important"
+            ]
           },
           {
             "id": 35121,
@@ -3506,7 +3728,9 @@
             "difficultyMask": 0,
             "spellId": 1246162,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_devotionaura.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33686,
@@ -3537,7 +3761,9 @@
             "bodyText": "Bellamy is infused with holy light that inflicts 18454 Holy damage to all players every 2 sec. This damage increases by 25% every time a member of the Vanguard unleashes their aura.",
             "spellId": 1258659,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_auramastery.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 33683,
@@ -3550,12 +3776,16 @@
                 "bodyText": "Bellamy slams her current target with her shield, inflicting 777009 Holy damage.",
                 "spellId": 1251859,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_shieldofvengeance.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "spellId": 1251857,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_judgementblue.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34921,
@@ -3598,7 +3828,9 @@
             ],
             "spellId": 1248451,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35123,
@@ -3613,12 +3845,17 @@
                 "difficultyMask": 0,
                 "spellId": 1246155,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_innerfire.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               }
             ],
             "spellId": 1248451,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic",
+              "important"
+            ]
           },
           {
             "id": 35124,
@@ -3627,7 +3864,9 @@
             "difficultyMask": 0,
             "spellId": 1248451,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33696,
@@ -3644,7 +3883,9 @@
             ],
             "spellId": 1248710,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_debuff.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 34028,
@@ -3664,7 +3905,9 @@
                 "bodyText": "Senn charges forward on her mighty elekk, inflicting 155402 Physical damage to players in her path.",
                 "spellId": 1249130,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_lightforgedelekk.jpg",
-                "headerIcon": "dps"
+                "headerIcons": [
+                  "dps"
+                ]
               },
               {
                 "id": 34939,
@@ -3672,12 +3915,16 @@
                 "bodyText": "Senn emits a blinding flash of light, inflicting 378792 Holy damage to all players and disorienting them for 10 sec.",
                 "spellId": 1258514,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "spellId": 1248674,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_blessedmending.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 33693,
@@ -3685,7 +3932,9 @@
             "bodyText": "Senn exorcises her current target, inflicting 252528 Holy damage.",
             "spellId": 1246745,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_searinglight.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34922,
@@ -3714,7 +3963,9 @@
         "difficultyMask": 0,
         "spellId": 1256133,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_crusade.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       }
     ],
     "items": [
@@ -3918,7 +4169,9 @@
             ],
             "spellId": 1233602,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ammo_arrow_03.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34029,
@@ -3958,7 +4211,10 @@
             "bodyText": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player.",
             "spellId": 1233865,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "healer",
+              "magic"
+            ]
           },
           {
             "id": 33159,
@@ -3977,7 +4233,9 @@
                     "difficultyMask": 0,
                     "spellId": 1233778,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_burningwill_shadow.jpg",
-                    "headerIcon": "heroic"
+                    "headerIcons": [
+                      "heroic"
+                    ]
                   },
                   {
                     "id": 33156,
@@ -3993,7 +4251,9 @@
                     "bodyText": "The Undying Sentinel strikes its current target with a deadly touch, inflicting 971262 Physical and 971262 Shadow damage and knocking the target back.",
                     "spellId": 1233787,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_disease_05.jpg",
-                    "headerIcon": "tank"
+                    "headerIcons": [
+                      "tank"
+                    ]
                   },
                   {
                     "id": 33151,
@@ -4017,7 +4277,9 @@
                     "difficultyMask": 0,
                     "spellId": 1233778,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_burningwill_shadow.jpg",
-                    "headerIcon": "heroic"
+                    "headerIcons": [
+                      "heroic"
+                    ]
                   },
                   {
                     "id": 33157,
@@ -4056,7 +4318,9 @@
                     "difficultyMask": 0,
                     "spellId": 1233778,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_burningwill_shadow.jpg",
-                    "headerIcon": "heroic"
+                    "headerIcons": [
+                      "heroic"
+                    ]
                   },
                   {
                     "id": 32940,
@@ -4085,7 +4349,9 @@
                 "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-112807.jpg"
               }
             ],
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 32459,
@@ -4097,7 +4363,9 @@
                 "bodyText": "The droplet erupts with Void upon death and splashes players and Sentinels within 5 yards. This inflicts 194252 Shadow damage and causes the target to take 30% increased damage for 20 sec. This effect stacks.",
                 "spellId": 1261531,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_elemental_primal_shadow.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "magic"
+                ]
               }
             ],
             "creatureDisplayId": 94300,
@@ -4117,7 +4385,9 @@
             "difficultyMask": 0,
             "spellId": 1234564,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_shootwand.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33202,
@@ -4126,7 +4396,10 @@
             "difficultyMask": 0,
             "spellId": 1243982,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_shootwand.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic",
+              "important"
+            ]
           },
           {
             "id": 33200,
@@ -4161,7 +4434,10 @@
                 "difficultyMask": 0,
                 "spellId": 1237251,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic",
+                  "important"
+                ]
               },
               {
                 "id": 34218,
@@ -4170,7 +4446,9 @@
                 "difficultyMask": 0,
                 "spellId": 1261165,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 33407,
@@ -4185,7 +4463,10 @@
                 "bodyText": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player.",
                 "spellId": 1233865,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "healer",
+                  "magic"
+                ]
               },
               {
                 "id": 33326,
@@ -4193,12 +4474,16 @@
                 "bodyText": "The Rift Simulacrum strikes its current target with a draining touch, inflicting 660458 Physical damage to the player and reducing all of their stats by 10% for 20 sec. This effect stacks.",
                 "spellId": 1246461,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_mindspike.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "creatureDisplayId": 129430,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-129430.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 32916,
@@ -4222,7 +4507,9 @@
             ],
             "spellId": 1237614,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_hopeandgrace.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34005,
@@ -4270,7 +4557,9 @@
                     "bodyText": "The Voidspawn blasts random players, inflicting 97126 Shadow damage.",
                     "spellId": 1260000,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-                    "headerIcon": "interruptible"
+                    "headerIcons": [
+                      "interruptible"
+                    ]
                   },
                   {
                     "id": 34041,
@@ -4278,7 +4567,9 @@
                     "bodyText": "Upon reaching 100 energy, the Voidspawn permanently gains 300% movement speed, 500% damage done, and immunity to crowd controlling effects.",
                     "spellId": 1238672,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_void-flay.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 76435,
@@ -4304,7 +4595,9 @@
                     "bodyText": "The Voidspawn blasts random players, inflicting 97126 Shadow damage.",
                     "spellId": 1260000,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-                    "headerIcon": "interruptible"
+                    "headerIcons": [
+                      "interruptible"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 76435,
@@ -4343,7 +4636,9 @@
             "difficultyMask": 0,
             "spellId": 1243982,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_shootwand.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic"
+            ]
           },
           {
             "id": 33302,
@@ -4365,7 +4660,9 @@
             "bodyText": "Alleria calls upon the unending cosmos to consume her foes. Players caught within suffer 116551 Shadow damage every 1 sec and receive 99% reduced healing and absorbs.",
             "spellId": 1238843,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 32474,
@@ -4382,7 +4679,9 @@
             ],
             "spellId": 1239080,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_warlock_demonsoul.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 32475,
@@ -4406,7 +4705,10 @@
             "bodyText": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player.",
             "spellId": 1233865,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "healer",
+              "magic"
+            ]
           },
           {
             "id": 32722,
@@ -4444,7 +4746,9 @@
             ],
             "spellId": 1233602,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ammo_arrow_03.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34082,
@@ -4484,7 +4788,10 @@
             "bodyText": "Alleria places a shell of Void magic around a player that absorbs 1987236 healing. If Null Corona is dispelled, the remaining absorb jumps to another random player.",
             "spellId": 1233865,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "healer",
+              "magic"
+            ]
           },
           {
             "id": 34086,
@@ -4509,7 +4816,9 @@
                     "bodyText": "The Undying Sentinel strikes its current target with a deadly touch, inflicting 971262 Physical and 971262 Shadow damage and knocking the target back.",
                     "spellId": 1233787,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_disease_05.jpg",
-                    "headerIcon": "tank"
+                    "headerIcons": [
+                      "tank"
+                    ]
                   },
                   {
                     "id": 34092,
@@ -4610,7 +4919,9 @@
             "bodyText": "Uncontrolled silver-lined arrows fire from Alleria, inflicting 116551 Arcane damage and removing Void effects from players struck. Being hit with an arrow increases damage taken from Silverstrike Barrage by 500% for 8 sec. This effect stacks.",
             "spellId": 1243982,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_shootwand.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34101,
@@ -4640,7 +4951,9 @@
         "title": "Stage Two: The End of the End",
         "bodyText": "Wild cosmic energy spirals out of control, sealing the fate of all atop the Voidspire...",
         "difficultyMask": 0,
-        "headerIcon": "dps"
+        "headerIcons": [
+          "dps"
+        ]
       }
     ],
     "items": [
@@ -4894,7 +5207,9 @@
                     ],
                     "spellId": 1241292,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_phoenix2pet_yellow.jpg",
-                    "headerIcon": "important"
+                    "headerIcons": [
+                      "important"
+                    ]
                   },
                   {
                     "id": 34377,
@@ -4902,7 +5217,9 @@
                     "bodyText": "The ember blasts a random player, inflicting 77701 Holy damage.",
                     "spellId": 1264696,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_holybolt.jpg",
-                    "headerIcon": "interruptible"
+                    "headerIcons": [
+                      "interruptible"
+                    ]
                   },
                   {
                     "id": 33215,
@@ -4910,7 +5227,10 @@
                     "bodyText": "The ember unleashes the radiant light within, inflicting 679883 Holy damage to all players. This spell can only be interrupted by players infused with a Light Feather .",
                     "spellId": 1243852,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly",
+                      "interruptible"
+                    ]
                   },
                   {
                     "id": 34296,
@@ -4942,7 +5262,9 @@
                     ],
                     "spellId": 1241339,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_phoenix2pet.jpg",
-                    "headerIcon": "important"
+                    "headerIcons": [
+                      "important"
+                    ]
                   },
                   {
                     "id": 34378,
@@ -4950,7 +5272,9 @@
                     "bodyText": "The ember blasts a random player, inflicting 77701 Shadow damage.",
                     "spellId": 1264698,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-                    "headerIcon": "interruptible"
+                    "headerIcons": [
+                      "interruptible"
+                    ]
                   },
                   {
                     "id": 33219,
@@ -4958,7 +5282,10 @@
                     "bodyText": "The ember unleashes the devouring void within, inflicting 679883 Shadow damage to all players. This spell can only be interrupted by players infused with a Void Feather .",
                     "spellId": 1243854,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly",
+                      "interruptible"
+                    ]
                   },
                   {
                     "id": 34297,
@@ -5000,7 +5327,9 @@
                 "bodyText": "Echoes react violently on contact with players infused with the opposing element, inflicting 971262 Twilight damage instantly and 466206 Twilight damage over 1 min.",
                 "spellId": 1243866,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_explosion.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1242981,
@@ -5017,7 +5346,9 @@
                 "bodyText": "Belo'ren lashes out, inflicting 1942523 Holy damage and 777009 Physical damage to players in a cone in front of him and knocking them back.",
                 "spellId": 1261217,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_cascade.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               },
               {
                 "id": 34225,
@@ -5025,7 +5356,9 @@
                 "bodyText": "Belo'ren lashes out, inflicting 1942523 Shadow damage and 777009 Physical damage to players in a cone in front of him and knocking them back.",
                 "spellId": 1261218,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_cascade_shadow.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               },
               {
                 "id": 34236,
@@ -5033,12 +5366,16 @@
                 "bodyText": "Belo'ren casts Light Edict and Void Edict simultaneously.",
                 "spellId": 1241640,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_attack.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "spellId": 1260763,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_serendipity.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34228,
@@ -5051,7 +5388,9 @@
                 "bodyText": "Absorbs 331206 healing and inflicts 31080 Holy damage every 1 sec until the burn is fully healed.",
                 "spellId": 1244348,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_buff.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               },
               {
                 "id": 34480,
@@ -5059,12 +5398,16 @@
                 "bodyText": "Absorbs 331206 healing and inflicts 31080 Shadow damage every 1 sec until the burn is fully healed.",
                 "spellId": 1266404,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               }
             ],
             "spellId": 1244344,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_manaburn.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 33127,
@@ -5077,7 +5420,10 @@
                 "bodyText": "Inflicts 582757 Holy damage.",
                 "spellId": 1242093,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_trinket_raid_darkwell_physdps3_phoenixplumage_holy.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic",
+                  "deadly"
+                ]
               },
               {
                 "id": 33229,
@@ -5085,7 +5431,10 @@
                 "bodyText": "Inflicts 582757 Shadow damage.",
                 "spellId": 1242094,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_trinket_raid_darkwell_physdps3_phoenixplumage_void.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic",
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1242260,
@@ -5122,7 +5471,9 @@
             ],
             "spellId": 1241313,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_phoenix_rebirth.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33126,
@@ -5135,7 +5486,9 @@
                 "bodyText": "Inflicts 466206 Holy damage. Players infused with opposing element also take 932411 Holy damage over 1 min. This effect stacks.",
                 "spellId": 1242803,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_wave.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35156,
@@ -5143,12 +5496,16 @@
                 "bodyText": "Inflicts 466206 Shadow damage. Players infused with the opposing element also take 932411 Shadow damage over 1 min. This effect stacks.",
                 "spellId": 1242815,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_wave.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1242792,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_attack.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "creatureDisplayId": 130080,
@@ -5348,7 +5705,9 @@
             "bodyText": "The Darkwell's colossal void beam instantly vaporizes any player that dares to enter.",
             "spellId": 1282027,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_cresentburn.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 35404,
@@ -5356,7 +5715,9 @@
             "bodyText": "The Darkwell releases jets of excess void energy, inflicting 330229 Cosmic damage every 0.3 sec to players within them.",
             "spellId": 1279420,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_beam.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 33988,
@@ -5364,7 +5725,9 @@
             "bodyText": "L'ura spins and unleashes whirling blades that eviscerate players on contact, inflicting up to (116551 * 5) Cosmic damage. The blades ricochet through the chamber, inflicting reduced damage as they lose speed.",
             "spellId": 1253915,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_glaive_1h_darknaaru_d_01.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 35321,
@@ -5390,7 +5753,9 @@
                     "bodyText": "A Dark Rune hit out of order creates an echoing clamor, inflicting 252528 Cosmic damage to all players every 1 sec for 5 sec.",
                     "spellId": 1249584,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_supernova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   },
                   {
                     "id": 35809,
@@ -5406,7 +5771,9 @@
             ],
             "spellId": 1244412,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_120_raid_marchonqueldanas_lura.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35325,
@@ -5431,7 +5798,9 @@
                     "bodyText": "A Dark Rune hit out of order creates an echoing clamor, inflicting 252528 Cosmic damage to all players every 1 sec for 5 sec.",
                     "spellId": 1249584,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_supernova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1249609,
@@ -5470,7 +5839,9 @@
                         "bodyText": "A Dark Rune hit out of order creates an echoing clamor, inflicting 252528 Cosmic damage to all players every 1 sec for 5 sec.",
                         "spellId": 1249584,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_supernova.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       }
                     ],
                     "spellId": 1249609,
@@ -5500,7 +5871,10 @@
                     "bodyText": "The Matrix attempts to fortify itself, gaining an application of Safeguard upon completion. Interrupting this ability removes an application of Safeguard . Removing all applications destroys the Matrix.",
                     "spellId": 1251392,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_winston_bubble.jpg",
-                    "headerIcon": "interruptible"
+                    "headerIcons": [
+                      "interruptible",
+                      "magic"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 136326,
@@ -5522,12 +5896,16 @@
                         "bodyText": "The crystal shatters into shrapnel, inflicting 372964 Cosmic damage to all players and an additional 186482 Cosmic damage every 1 sec for 10 sec.",
                         "spellId": 1251789,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_spellslingermage_splintersblue.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 136356,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-136356.jpg",
-                    "headerIcon": "dps"
+                    "headerIcons": [
+                      "dps"
+                    ]
                   },
                   {
                     "id": 35342,
@@ -5545,7 +5923,9 @@
                             "bodyText": "The crystal shatters into shrapnel, inflicting 372964 Cosmic damage to all players and an additional 186482 Cosmic damage every 1 sec for 10 sec.",
                             "spellId": 1251807,
                             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_spellslingermage_splintersblue.jpg",
-                            "headerIcon": "deadly"
+                            "headerIcons": [
+                              "deadly"
+                            ]
                           }
                         ],
                         "spellId": 1252974,
@@ -5554,7 +5934,9 @@
                     ],
                     "creatureDisplayId": 136357,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-136357.jpg",
-                    "headerIcon": "healer"
+                    "headerIcons": [
+                      "healer"
+                    ]
                   },
                   {
                     "id": 35441,
@@ -5568,7 +5950,9 @@
                         "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                         "spellId": 1282458,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       },
                       {
                         "id": 35443,
@@ -5580,7 +5964,9 @@
                     ],
                     "creatureDisplayId": 137188,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-137188.jpg",
-                    "headerIcon": "important"
+                    "headerIcons": [
+                      "important"
+                    ]
                   },
                   {
                     "id": 35360,
@@ -5598,12 +5984,16 @@
                             "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                             "spellId": 1254256,
                             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                            "headerIcon": "deadly"
+                            "headerIcons": [
+                              "deadly"
+                            ]
                           }
                         ],
                         "spellId": 1254262,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                        "headerIcon": "heroic"
+                        "headerIcons": [
+                          "heroic"
+                        ]
                       },
                       {
                         "id": 35366,
@@ -5611,7 +6001,9 @@
                         "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                         "spellId": 1282458,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       },
                       {
                         "id": 35361,
@@ -5631,7 +6023,9 @@
             ],
             "spellId": 1251386,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_cascade_shadow.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33737,
@@ -5649,7 +6043,10 @@
                     "bodyText": "The Matrix attempts to execute hostiles, inflicting 2587441 Cosmic damage to all players in front of it upon completion. Interrupting this ability removes an application of Terminate . Removing all applications destroys the Matrix.",
                     "spellId": 1284934,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_demonhunter.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly",
+                      "interruptible"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 142715,
@@ -5671,12 +6068,16 @@
                         "bodyText": "The crystal shatters into shrapnel, inflicting 372964 Cosmic damage to all players and an additional 186482 Cosmic damage every 1 sec for 10 sec.",
                         "spellId": 1251789,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_spellslingermage_splintersblue.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 136356,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-136356.jpg",
-                    "headerIcon": "dps"
+                    "headerIcons": [
+                      "dps"
+                    ]
                   },
                   {
                     "id": 33981,
@@ -5694,7 +6095,9 @@
                             "bodyText": "The crystal shatters into shrapnel, inflicting 372964 Cosmic damage to all players and an additional 186482 Cosmic damage every 1 sec for 10 sec.",
                             "spellId": 1251807,
                             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_spellslingermage_splintersblue.jpg",
-                            "headerIcon": "deadly"
+                            "headerIcons": [
+                              "deadly"
+                            ]
                           }
                         ],
                         "spellId": 1252974,
@@ -5703,7 +6106,9 @@
                     ],
                     "creatureDisplayId": 136357,
                     "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-136357.jpg",
-                    "headerIcon": "healer"
+                    "headerIcons": [
+                      "healer"
+                    ]
                   },
                   {
                     "id": 35444,
@@ -5716,7 +6121,9 @@
                         "bodyText": "The destruction of a Dawn Crystal induces utter despair, inflicting 372964 Holy damage to all players and increasing all damage taken by 500% for 10 min.",
                         "spellId": 1284699,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_explosion.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       },
                       {
                         "id": 35446,
@@ -5729,12 +6136,16 @@
                             "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                             "spellId": 1254256,
                             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                            "headerIcon": "deadly"
+                            "headerIcons": [
+                              "deadly"
+                            ]
                           }
                         ],
                         "spellId": 1254262,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                        "headerIcon": "heroic"
+                        "headerIcons": [
+                          "heroic"
+                        ]
                       },
                       {
                         "id": 35448,
@@ -5742,7 +6153,9 @@
                         "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                         "spellId": 1282458,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       },
                       {
                         "id": 35449,
@@ -5778,7 +6191,9 @@
             ],
             "spellId": 1263970,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_armor_voidelf_d_01.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 33640,
@@ -5786,7 +6201,9 @@
             "bodyText": "L'ura showers the chamber in infinite darkness, inflicting 40793 Shadow damage to all players every 1 sec for 25 sec.",
             "spellId": 1249796,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ]
       },
@@ -5801,7 +6218,9 @@
             "bodyText": "The Darkwell's colossal void beam instantly vaporizes any player that dares to enter.",
             "spellId": 1282027,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_cresentburn.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 35040,
@@ -5809,7 +6228,9 @@
             "bodyText": "The Darkwell releases jets of excess void energy, inflicting 330229 Cosmic damage every 0.3 sec to players within them.",
             "spellId": 1285561,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_beam.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 35037,
@@ -5822,7 +6243,9 @@
                 "bodyText": "Enveloped in refracting shadows, absorbing the next 29809 healing received.",
                 "spellId": 1262055,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_eclipse.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               },
               {
                 "id": 35435,
@@ -5834,7 +6257,9 @@
             ],
             "spellId": 1260261,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv12_ability_druid_totaleclipse.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35038,
@@ -5855,7 +6280,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35452,
@@ -5884,12 +6311,16 @@
                     "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                     "spellId": 1254256,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1254262,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 35456,
@@ -5897,7 +6328,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35457,
@@ -5921,7 +6354,9 @@
                 "bodyText": "The destruction of a Dawn Crystal induces utter despair, inflicting 372964 Holy damage to all players and increasing all damage taken by 500% for 10 min.",
                 "spellId": 1284699,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_explosion.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35460,
@@ -5934,12 +6369,16 @@
                     "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                     "spellId": 1254256,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1254262,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 35462,
@@ -5947,7 +6386,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35463,
@@ -5966,7 +6407,9 @@
             "bodyText": "L'ura showers the chamber in infinite darkness, inflicting 40793 Shadow damage to all players every 1 sec for 25 sec.",
             "spellId": 1249796,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ]
       },
@@ -5986,7 +6429,9 @@
                 "bodyText": "The surrounding iris of pure void atomizes any players attempting to escape.",
                 "spellId": 1279463,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35068,
@@ -5998,7 +6443,9 @@
             ],
             "spellId": 1282034,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_purple.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35273,
@@ -6042,7 +6489,9 @@
                     "bodyText": "Excess power arcs between all players, inflicting up to 497286 Cosmic damage. Each player within the effect of Galvanize diffuses its overflow, reducing this damage.",
                     "spellId": 1285827,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_thunderking_lightningwhip.jpg",
-                    "headerIcon": "heroic"
+                    "headerIcons": [
+                      "heroic"
+                    ]
                   },
                   {
                     "id": 35490,
@@ -6055,7 +6504,9 @@
                         "bodyText": "The Void Core brims with power, inflicting 1243215 Cosmic damage to players on contact.",
                         "spellId": 1282373,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       }
                     ],
                     "spellId": 1282249,
@@ -6076,7 +6527,9 @@
                     "bodyText": "Excess power arcs between all players, inflicting up to 497286 Cosmic damage. Each player within the effect of Galvanize diffuses its overflow, reducing this damage.",
                     "spellId": 1285827,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_thunderking_lightningwhip.jpg",
-                    "headerIcon": "heroic"
+                    "headerIcons": [
+                      "heroic"
+                    ]
                   },
                   {
                     "id": 35274,
@@ -6096,7 +6549,9 @@
                         "bodyText": "The Void Core brims with power, inflicting 1243215 Cosmic damage to players on contact.",
                         "spellId": 1282373,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       }
                     ],
                     "spellId": 1282249,
@@ -6126,12 +6581,16 @@
                     "difficultyMask": 0,
                     "spellId": 1282373,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1282412,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_crushinggravity.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               },
               {
                 "id": 34243,
@@ -6144,12 +6603,16 @@
                     "bodyText": "Remaining Void Cores overheat and detonate, regenerating L'ura's energy. Each blast inflicts 1087813 Cosmic damage to all players and an additional 543907 Cosmic damage every 1 sec for 10 min. This effect stacks.",
                     "spellId": 1284638,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1281194,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_blackhole.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               }
             ],
             "spellId": 1282246,
@@ -6167,7 +6630,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35466,
@@ -6179,7 +6644,9 @@
             ],
             "creatureDisplayId": 137188,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-137188.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35467,
@@ -6197,12 +6664,16 @@
                     "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                     "spellId": 1254256,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1254262,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 35470,
@@ -6210,7 +6681,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35471,
@@ -6234,7 +6707,9 @@
                 "bodyText": "The destruction of a Dawn Crystal induces utter despair, inflicting 372964 Holy damage to all players and increasing all damage taken by 500% for 10 min.",
                 "spellId": 1284699,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_explosion.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35474,
@@ -6247,12 +6722,16 @@
                     "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                     "spellId": 1254256,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1254262,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 35476,
@@ -6260,7 +6739,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35477,
@@ -6288,7 +6769,9 @@
             ],
             "spellId": 1263970,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_armor_voidelf_d_01.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 35438,
@@ -6296,7 +6779,9 @@
             "bodyText": "L'ura showers the chamber in infinite darkness, inflicting 40793 Shadow damage to all players every 1 sec for 25 sec.",
             "spellId": 1249796,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ]
       },
@@ -6316,12 +6801,16 @@
                 "bodyText": "The Darkwell rages with overflowing void, inflicting 13598 Cosmic damage to all players every 2 sec.",
                 "spellId": 1254642,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_bossgorefiend_touchofdoom.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               }
             ],
             "spellId": 1282027,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_cresentburn.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 33740,
@@ -6334,12 +6823,16 @@
                 "bodyText": "The aftershocks trigger a wave of void to cascade from the Darkwell, inflicting 1864822 Cosmic damage and an additional 291378 Cosmic damage every 1 sec to players caught within.",
                 "spellId": 1263253,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_wave.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1250898,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_darkarchangel.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 35131,
@@ -6347,7 +6840,9 @@
             "bodyText": "True darkness suffocates any player forsaken within, reducing movement speed by 40% and inflicting 58276 Shadow damage every 1 sec. This effect stacks.",
             "spellId": 1266622,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_darkness.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 33975,
@@ -6355,7 +6850,9 @@
             "bodyText": "L'ura calls down dark stars, inflicting 1942523 Cosmic damage within 2.5 yards of each impact. The stars interconnect, inflicting 194252 Cosmic damage to players within the patterns.",
             "spellId": 1266388,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dh_void_ability_starfragments.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           },
           {
             "id": 34900,
@@ -6370,7 +6867,9 @@
                 "difficultyMask": 0,
                 "spellId": 1287702,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_void-blast.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 34901,
@@ -6379,7 +6878,9 @@
                 "difficultyMask": 0,
                 "spellId": 1276529,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 34902,
@@ -6417,7 +6918,9 @@
                     "bodyText": "A Dark Rune hit out of order creates an echoing clamor, inflicting 252528 Cosmic damage to all players every 1 sec for 5 sec.",
                     "spellId": 1249584,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_supernova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1249609,
@@ -6439,12 +6942,16 @@
                 "bodyText": "Space-time collapses, inflicting 854710 Cosmic damage to all players.",
                 "spellId": 1266898,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_voiddh_ability_voidnova.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1266897,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raiddimensius_devour.jpg",
-            "headerIcon": "heroic"
+            "headerIcons": [
+              "heroic"
+            ]
           },
           {
             "id": 35367,
@@ -6458,7 +6965,9 @@
                 "bodyText": "Any player holding a Dawn Crystal becomes a beacon of hope for their allies, protecting players within 12 yards from the darkness of Midnight .",
                 "spellId": 1266113,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_torch_thrown.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 35478,
@@ -6473,7 +6982,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35368,
@@ -6485,7 +6996,9 @@
             ],
             "creatureDisplayId": 137188,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-137188.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35479,
@@ -6498,7 +7011,9 @@
                 "bodyText": "Any player holding a Dawn Crystal becomes a beacon of hope for their allies, protecting players within 12 yards from the darkness of Midnight .",
                 "spellId": 1266113,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_torch_thrown.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 35480,
@@ -6506,7 +7021,9 @@
                 "bodyText": "The Dawn Crystal scintillates with holy light during dire moments, briefly allowing its holder to cast Dawnlight Barrier . The crystal tessellates into a brilliant dome, reducing damage taken by players within by 99% for up to 6 sec. This consumes the Dawn Crystal .",
                 "spellId": 1253104,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordbarrier.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 35481,
@@ -6519,12 +7036,16 @@
                     "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                     "spellId": 1254256,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1254262,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 35483,
@@ -6532,7 +7053,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 35484,
@@ -6556,7 +7079,9 @@
                 "bodyText": "Any player holding a Dawn Crystal becomes a beacon of hope for their allies, protecting players within 12 yards from the darkness of Midnight .",
                 "spellId": 1266113,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_torch_thrown.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 35485,
@@ -6564,7 +7089,9 @@
                 "bodyText": "The Dawn Crystal scintillates with holy light during dire moments, briefly allowing its holder to cast Dawnlight Barrier . The crystal tessellates into a brilliant dome, reducing damage taken by players within by 99% for up to 6 sec. This consumes the Dawn Crystal .",
                 "spellId": 1253104,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordbarrier.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               },
               {
                 "id": 34423,
@@ -6572,7 +7099,9 @@
                 "bodyText": "The destruction of a Dawn Crystal induces utter despair, inflicting 372964 Holy damage to all players and increasing all damage taken by 500% for 10 min.",
                 "spellId": 1284699,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_12_dualityphoenix_lightvoid_explosion.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 34426,
@@ -6585,12 +7114,16 @@
                     "bodyText": "L'ura weeps alone, inflicting 582757 Holy damage to all players.",
                     "spellId": 1254256,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "spellId": 1254262,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_purifyingpower.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 35312,
@@ -6598,7 +7131,9 @@
                 "bodyText": "While not held by a player, the Dawn Crystal surges with overwhelming light, inflicting increasing Holy damage to all players every 1 sec.",
                 "spellId": 1282458,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 34424,
@@ -6626,7 +7161,9 @@
             ],
             "spellId": 1263970,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_armor_voidelf_d_01.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34496,
@@ -6634,7 +7171,9 @@
             "bodyText": "L'ura showers the chamber in infinite darkness, inflicting 40793 Shadow damage to all players every 1 sec for 25 sec.",
             "spellId": 1249796,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ]
       }
@@ -6865,12 +7404,16 @@
             "bodyText": "Gathering from his pile of meat, the Hoardmonger unlocks Hearty Bellow . The Hoardmonger lets out a mighty roar, inflicting 86437 Physical damage to all players and an additional 15254 Physical damage every 1 sec for 8 sec. Ignores armor.",
             "spellId": 1235125,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "spellId": 1235072,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_crate_08.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32652,
@@ -6906,7 +7449,9 @@
             "bodyText": "Gathering from his pile of meat, the Hoardmonger unlocks Hearty Bellow . The Hoardmonger lets out a mighty roar, inflicting 86437 Physical damage to all players and an additional 15254 Physical damage every 1 sec for 8 sec. Ignores armor.",
             "spellId": 1235125,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "spellId": 1235072,
@@ -6928,7 +7473,9 @@
                 "bodyText": "Rotten Mushrooms apply a noxious cloud, inflicting 5085 Nature damage every 2 sec for 12 sec. This effect stacks.",
                 "spellId": 1234846,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_06.jpg",
-                "headerIcon": "poison"
+                "headerIcons": [
+                  "poison"
+                ]
               },
               {
                 "id": 32662,
@@ -6958,7 +7505,9 @@
         "bodyText": "The Hoardmonger lets out a mighty roar, inflicting 86437 Physical damage to all players. Ignores armor.",
         "spellId": 1234681,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_challangingroar.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       }
     ],
     "items": [
@@ -7091,7 +7640,9 @@
                 "bodyText": "The Fractured Shivercore blankets players with the chill of Winter, inflicting 50845 Frost damage to all players, increasing their Frost damage taken by 10% for 20 sec. This effect stacks.",
                 "spellId": 1235829,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_icygrip.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 34307,
@@ -7107,7 +7658,9 @@
         ],
         "spellId": 1235783,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_pillaroffrost.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32694,
@@ -7141,7 +7694,9 @@
                 "bodyText": "The Fractured Shivercore blankets players with the chill of Winter, inflicting 50845 Frost damage to all players, increasing their Frost damage taken by 10% for 20 sec. This effect stacks.",
                 "spellId": 1235829,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_icygrip.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 32697,
@@ -7157,7 +7712,9 @@
         ],
         "spellId": 1235783,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_deathknight_pillaroffrost.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32698,
@@ -7179,7 +7736,10 @@
         "bodyText": "The Sentinel of Winter assaults players with freezing temperatures, inflicting 40676 Frost damage every 2 sec for 16 sec.",
         "spellId": 1235548,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_chilledtothebone.jpg",
-        "headerIcon": "magic"
+        "headerIcons": [
+          "healer",
+          "magic"
+        ]
       }
     ],
     "items": [
@@ -7329,12 +7889,16 @@
             "bodyText": "The charging Echo of Nalorakk ravages the first target in their path, inflicting 50845 Nature damage.",
             "spellId": 1243408,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_xavius_tormentingswipe.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "spellId": 1243002,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_shamanrage.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33171,
@@ -7361,7 +7925,9 @@
             "bodyText": "The charging Echo of Nalorakk ravages the first target in their path, inflicting 50845 Nature damage.",
             "spellId": 1243408,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_xavius_tormentingswipe.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "spellId": 1243002,
@@ -7395,7 +7961,9 @@
         "bodyText": "Nalorakk's shout resonates throughout the den, inflicting 91522 Physical damage and pushes away players for 3 sec. Ignores armor.",
         "spellId": 1255385,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_druid_stamedingroar.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 33175,
@@ -7408,12 +7976,16 @@
             "bodyText": "When Nalorakk casts Overwhelming Onslaught , Zul'jarra creates a protective barrier reducing damage taken from Overwhelming Onslaught by 50% to players behind her.",
             "spellId": 1261776,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_safeguard.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "spellId": 1243585,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_druid_thrash.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -7585,7 +8157,9 @@
         ],
         "spellId": 474345,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_socererking_arcanemines.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33180,
@@ -7609,7 +8183,9 @@
         "bodyText": "Arcanotron Custos suppresses the movement of several players, inflicting 45761 Arcane damage every 3 sec and rooting them for 15 sec.",
         "spellId": 1214038,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcane01.jpg",
-        "headerIcon": "magic"
+        "headerIcons": [
+          "magic"
+        ]
       },
       {
         "id": 31146,
@@ -7617,7 +8193,9 @@
         "bodyText": "Arcanotron Custos strikes it's current target with destructive force inflicting 152535 Arcane damage and knocking them back.",
         "spellId": 474496,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_golemthunderclap.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -7768,7 +8346,9 @@
         "bodyText": "Seranel readies a Wave of Silence , inflicting 76268 Arcane damage to all players and pacifying any player outside of the Suppression Zone for 8 sec.",
         "spellId": 1225193,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32031,
@@ -7783,7 +8363,10 @@
         "bodyText": "Seranel surrounds himself in a hastening ward, increasing his attack speed by 100% and his auto attacks to inflict an additional 25423 Arcane damage for 15 sec.",
         "spellId": 1248689,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_arcane_buff.jpg",
-        "headerIcon": "magic"
+        "headerIcons": [
+          "tank",
+          "magic"
+        ]
       }
     ],
     "items": [
@@ -7948,7 +8531,9 @@
         "difficultyMask": 0,
         "spellId": 1253707,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_psychiclink.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 31991,
@@ -7997,7 +8582,9 @@
         ],
         "spellId": 1284958,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_everlastingaffliction.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       }
     ],
     "items": [
@@ -8108,7 +8695,9 @@
         "bodyText": "The Celestial Orrery's focusing lenses channel Void energy into Degentrius. Contact with a Void Torrent inflicts 152419 Shadow damage and stuns the player for 5 sec.",
         "spellId": 1214714,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_beam.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 31274,
@@ -8121,12 +8710,16 @@
             "bodyText": "Void energy erupts upon impact with the ground inflicting 61014 Shadow damage to all players plus an additional 5085 Shadow damage every 0.5 sec for 40 sec. This effect stacks.",
             "spellId": 1215161,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_groundsate.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ],
         "spellId": 1215087,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 31292,
@@ -8143,7 +8736,9 @@
         ],
         "spellId": 1215897,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 31278,
@@ -8165,7 +8760,9 @@
             ],
             "spellId": 1284627,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchanting_80_umbrashard.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "magic"
+            ]
           }
         ],
         "spellId": 1280113,
@@ -8177,7 +8774,9 @@
         "bodyText": "Degentrius unleashes an Entropy Blast at its primary target inflicting Physical damage.",
         "spellId": 1271066,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -8340,7 +8939,9 @@
             "difficultyMask": 3,
             "spellId": 1260731,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_chainsofice.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33650,
@@ -8370,7 +8971,9 @@
                 "bodyText": "Muro'jin's venom-tipped arrows inhibit targets, reducing their movement speed by 5% for 10 sec. This effect stacks.",
                 "spellId": 1260709,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_potentvenom.jpg",
-                "headerIcon": "magic"
+                "headerIcons": [
+                  "magic"
+                ]
               }
             ],
             "spellId": 1260643,
@@ -8391,7 +8994,9 @@
             ],
             "spellId": 1266480,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_impalingbolt.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 33644,
@@ -8399,7 +9004,9 @@
             "bodyText": "Muro'jin revives Nekraxx, returning them to life with 35% of their health.",
             "spellId": 1249789,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastsoothe.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "creatureDisplayId": 130699,
@@ -8416,7 +9023,9 @@
             "difficultyMask": 3,
             "spellId": 1249479,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_eagleclaw_fel.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33651,
@@ -8431,12 +9040,16 @@
                 "difficultyMask": 0,
                 "spellId": 1249769,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_coordinatedassault.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1249479,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_eagleclaw_fel.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33646,
@@ -8451,7 +9064,9 @@
             "bodyText": "Nekraxx pierces all players with festering feathers, inflicting 12711 Plague damage every 1 sec for 30 sec.",
             "spellId": 1246666,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_necroticplague.jpg",
-            "headerIcon": "disease"
+            "headerIcons": [
+              "disease"
+            ]
           },
           {
             "id": 33653,
@@ -8459,7 +9074,9 @@
             "bodyText": "Muro'jin's defeat sends Nekraxx into a frenzy, increasing her damage done by 20% every 4 sec. This effect stacks.",
             "spellId": 1249948,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_ferociousbite.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "creatureDisplayId": 130705,
@@ -8595,7 +9212,9 @@
         ],
         "spellId": 1250708,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_necro_deathrift.jpg",
-        "headerIcon": "interruptible"
+        "headerIcons": [
+          "interruptible"
+        ]
       },
       {
         "id": 33733,
@@ -8621,7 +9240,9 @@
                 ],
                 "spellId": 1251775,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_fixated_state_red.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               },
               {
                 "id": 33891,
@@ -8636,7 +9257,9 @@
                 "bodyText": "The phantom screams when slain, inflicting 25423 Shadow damage to all players.",
                 "spellId": 1251813,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_necro_inevitableend.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               },
               {
                 "id": 34397,
@@ -8660,7 +9283,9 @@
         ],
         "spellId": 1251204,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_necro_conclave.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33894,
@@ -8675,7 +9300,9 @@
         "bodyText": "Vordaza siphons the life essence from her current target, inflicting 50845 Shadow damage and absorbing the next 26218 healing received every 1 sec for 4 sec.",
         "spellId": 1251554,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_disease_05.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 34387,
@@ -8683,7 +9310,9 @@
         "bodyText": "A withering miasma saturates the cavern, inflicting 13982 Shadow damage to all players every 2 sec.",
         "spellId": 1264987,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_touchofdecay.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       }
     ],
     "items": [
@@ -8834,7 +9463,9 @@
                 "bodyText": "The totem inflicts 50845 Shadow damage every 0.5 sec to players within 0 yards.",
                 "spellId": 1252816,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_skull.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "creatureDisplayId": 137911,
@@ -8843,7 +9474,9 @@
         ],
         "spellId": 1252676,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_maldraxxus_priest.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33918,
@@ -8860,7 +9493,9 @@
         ],
         "spellId": 1251023,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_maldraxxus_deathknight.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 33919,
@@ -8877,7 +9512,9 @@
         ],
         "spellId": 1248863,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_necro_deathlyecho.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 33961,
@@ -8898,7 +9535,9 @@
                     "bodyText": "The soul cries out upon contacting a player, inflicting 25423 Shadow damage and rooting them for 3 sec.",
                     "spellId": 1254175,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_soulleech_3.jpg",
-                    "headerIcon": "magic"
+                    "headerIcons": [
+                      "magic"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 136272,
@@ -8950,12 +9589,16 @@
             "bodyText": "Rak'tul's roar shatters each remaining Soulbind Totem, inflicting 127113 Shadow damage to all players for each totem shattered.",
             "spellId": 1259810,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_totem_wardofdraining.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 1253788,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_misc_zandalari_council_soulswap.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       }
     ],
     "items": [
@@ -9111,7 +9754,9 @@
             "bodyText": "Kystia unleashes a devastating blast of chaos at her current target, dealing 152535 Chaos damage and then jumping to nearby players at reduced effectiveness.",
             "spellId": 1230298,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felrainoffire.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 32426,
@@ -9132,7 +9777,9 @@
                 "bodyText": "Kystia's mirror image engulfs the arena in fel fire, inflicting 5085 Fire damage to all nearby players every 1 sec.",
                 "spellId": 1264106,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felcano.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "spellId": 1264095,
@@ -9159,7 +9806,9 @@
             "bodyText": "Nibbles spits at players, inflicting 30507 Fire damage immediately and 55930 Fire damage every 3 sec for 30 sec. This effect stacks.",
             "spellId": 1228198,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_fabric_felcloth_ebon.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "magic"
+            ]
           },
           {
             "id": 34460,
@@ -9176,7 +9825,9 @@
             ],
             "spellId": 1230304,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_paladin_lightofdawn.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ],
         "creatureDisplayId": 126199,
@@ -9296,7 +9947,9 @@
         "bodyText": "Zaen takes a few precious moments to take aim at all players. When he is ready to fire, he shoots all players in his line of sight, inflicting 203380 Physical damage and an additional 457605 Bleed damage over 15 sec.",
         "spellId": 1218347,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_legendary_gun.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "deadly"
+        ]
       },
       {
         "id": 31526,
@@ -9315,7 +9968,9 @@
                 "difficultyMask": 2,
                 "spellId": 1266241,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felflamering.jpg",
-                "headerIcon": "heroic"
+                "headerIcons": [
+                  "heroic"
+                ]
               },
               {
                 "id": 31528,
@@ -9346,7 +10001,9 @@
         "bodyText": "Zaen hurls a ticking bomb at a player. After 6 sec the bomb explodes, dealing 91521 Fire damage to players within 6 yards and destroying any Forbidden Freight caught in the blast.",
         "spellId": 1214357,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_eng_bombfire.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34349,
@@ -9359,12 +10016,18 @@
             "bodyText": "A lethal poison that reduces the target's maximum health by 30% and inflicts 533873 Nature damage over 15 sec.",
             "spellId": 474515,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_boss_kilrogg_heartseeker.jpg",
-            "headerIcon": "poison"
+            "headerIcons": [
+              "tank",
+              "poison"
+            ]
           }
         ],
         "spellId": 1222795,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_disembowel.jpg",
-        "headerIcon": "poison"
+        "headerIcons": [
+          "tank",
+          "poison"
+        ]
       }
     ],
     "items": [
@@ -9486,7 +10149,9 @@
             "bodyText": "Xathuux the Annihilator spreads fel magic across the ground from his feet inflicting 55930 Fire damage every 1 sec to any players standing in it.",
             "spellId": 474234,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_bossfellord_felfissure.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ],
         "spellId": 474197,
@@ -9514,7 +10179,9 @@
         "bodyText": "Xathuux the Annihilator performs a powerful swing with his axe that inflicts 279648 Physical damage and reduces healing received by 80% for 8 sec.",
         "spellId": 473898,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_axe_09.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -9651,7 +10318,9 @@
         ],
         "spellId": 1217384,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_felarakkoa_feldetonation_green.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "deadly"
+        ]
       },
       {
         "id": 31333,
@@ -9666,7 +10335,9 @@
         "bodyText": "Lithiel Cinderfury unleashes a devastating blast inflicting 81352 Chaos damage.",
         "spellId": 474375,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_chaosbolt.jpg",
-        "headerIcon": "interruptible"
+        "headerIcons": [
+          "interruptible"
+        ]
       },
       {
         "id": 31307,
@@ -9687,7 +10358,9 @@
             ],
             "creatureDisplayId": 77407,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-77407.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "spellId": 474457,
@@ -9699,7 +10372,9 @@
         "bodyText": "Lithiel summons a vilefiend that attacks players.",
         "creatureDisplayId": 84426,
         "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-84426.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 34414,
@@ -9718,7 +10393,9 @@
         ],
         "creatureDisplayId": 103096,
         "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-103096.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 35531,
@@ -9884,7 +10561,9 @@
             "bodyText": "An arcane discharge clings to players absorbing the next 104873 healing and inflicts 15254 Arcane damage every 1 sec.",
             "spellId": 1276485,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_netherwindpresence.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "spellId": 1257509,
@@ -9901,7 +10580,9 @@
             "bodyText": "An arcane discharge clings to players absorbing the next 104873 healing and inflicts 15254 Arcane damage every 1 sec.",
             "spellId": 1276485,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_netherwindpresence.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "spellId": 1257509,
@@ -9913,7 +10594,9 @@
         "bodyText": "Kasreth hurls a refluxing circuit on a random player inflicting 25423 Arcane damage every 1 sec. Provides immunity while standing in Leyline Array as the circuit recoils and clears the effect, stunning the player for 1 sec.",
         "spellId": 1251767,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_trinkettechnomancer_ritualengine.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34333,
@@ -10065,7 +10748,9 @@
             "difficultyMask": 3,
             "spellId": 1247976,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_priest_cascade.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 33460,
@@ -10126,7 +10811,9 @@
                 "bodyText": "The Grand Nullifier conjures a blast of void energy at the target, inflicting 203380 Shadow damage.",
                 "spellId": 1282722,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 33911,
@@ -10158,7 +10845,9 @@
         ],
         "spellId": 1247937,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_soulcleave.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 33519,
@@ -10355,7 +11044,9 @@
         ],
         "spellId": 1253950,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_searinglightpriest.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -10530,7 +11221,9 @@
             ],
             "spellId": 1234753,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_earthquake.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 32515,
@@ -10550,7 +11243,9 @@
                 "bodyText": "The impact of Bedrock Slam causes an aftershock that inflicts 20338 Nature damage to all players every 1 sec for 8 sec.",
                 "spellId": 1276586,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_sandexplosion.jpg",
-                "headerIcon": "healer"
+                "headerIcons": [
+                  "healer"
+                ]
               }
             ],
             "spellId": 1234753,
@@ -10591,17 +11286,23 @@
                         "bodyText": "The charred earth inflicts 50845 Holyfire damage every 1 sec to players standing within the effect.",
                         "spellId": 1235814,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_groundstate.jpg",
-                        "headerIcon": "deadly"
+                        "headerIcons": [
+                          "deadly"
+                        ]
                       }
                     ],
                     "spellId": 1235751,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_herb_dreamingglory.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 129261,
                 "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-129261.jpg",
-                "headerIcon": "important"
+                "headerIcons": [
+                  "important"
+                ]
               }
             ],
             "spellId": 1234850,
@@ -10679,7 +11380,9 @@
             ],
             "spellId": 1235564,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_infusionoflight.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 32524,
@@ -10687,7 +11390,9 @@
             "bodyText": "Kezkitt inflicts 61014 Holy damage to a player.",
             "spellId": 1235616,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_holybolt.jpg",
-            "headerIcon": "interruptible"
+            "headerIcons": [
+              "interruptible"
+            ]
           }
         ],
         "creatureDisplayId": 127945,
@@ -10815,7 +11520,9 @@
         "bodyText": "Roots entangle players, inflicting 30507 Nature damage and rooting them in place until destroyed.",
         "spellId": 1236658,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_-misc_herb_marrowroot_leaf.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32731,
@@ -11012,7 +11719,9 @@
             ],
             "spellId": 1239824,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_buff.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 33017,
@@ -11027,7 +11736,9 @@
             "bodyText": "Ruia blasts his current target with a bolt of energy, inflicting 25423 Nature damage.",
             "spellId": 1239821,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_wispsplodegreen.jpg",
-            "headerIcon": "interruptible"
+            "headerIcons": [
+              "interruptible"
+            ]
           }
         ]
       },
@@ -11064,7 +11775,9 @@
             "bodyText": "While in Bear form, Lightwarden Ruia's melee attacks inflict 100%1 increased damage.",
             "spellId": 1272265,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_mangle2.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ]
       },
@@ -11079,7 +11792,9 @@
             "bodyText": "Ruia calls upon the spirits, casting Lightfire , Lightfall , Pulverizing Strikes , and Grievous Thrash every 8 sec until he is defeated.",
             "spellId": 1241067,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_druid_convokethespirits.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ]
       }
@@ -11228,7 +11943,9 @@
         ],
         "spellId": 1246372,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_desertlasherorchid_yellow.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33190,
@@ -11285,7 +12002,9 @@
         "bodyText": "Ziekket impales the player with his spiked branch, inflicting 101690 Holy damage and knocking them back. The puncture wound causes the player to bleed an additional 30507 Physical damage every 1 sec for 10 sec.",
         "spellId": 1247685,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_herb_goldthorn_bramble.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 33199,
@@ -11293,7 +12012,9 @@
         "bodyText": "Ziekket gorges on Light energy, inflicting 30507 Holy damage to all players every 3 sec.",
         "spellId": 1247377,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_holyfire_nova.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       }
     ],
     "items": [
@@ -11438,7 +12159,9 @@
         "bodyText": "Taz'Rah rips open a rift for 6 sec that pulls all players toward it, inflicting 29463 &nbsp;Shadow damage every 1 sec to them. Players who fall within the center of the rift suffer 91521 Shadow damage every 1 sec.",
         "spellId": 1222199,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 32970,
@@ -11478,7 +12201,9 @@
         "bodyText": "Taz'Rah slashes his current target, inflicting 177958 Shadowstrike damage.",
         "spellId": 1222085,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_outdoorethereal_c_01.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -11642,7 +12367,9 @@
                 "bodyText": "Leaving a Poison Pool afflicts the player with a lingering poison, inflicting 25423 Nature damage every 1 sec for 5 sec.",
                 "spellId": 1263971,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_02.jpg",
-                "headerIcon": "poison"
+                "headerIcons": [
+                  "poison"
+                ]
               }
             ],
             "spellId": 1222484,
@@ -11651,7 +12378,9 @@
         ],
         "spellId": 1226031,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_corrosivebreath.jpg",
-        "headerIcon": "poison"
+        "headerIcons": [
+          "poison"
+        ]
       },
       {
         "id": 32975,
@@ -11659,7 +12388,9 @@
         "bodyText": "Atroxus breathes out Noxious Fumes in front of itself, inflicting 203380 Nature damage to players struck.",
         "spellId": 1222724,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_05.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34340,
@@ -11674,7 +12405,10 @@
         "bodyText": "Atroxus delivers a powerful blow to a player that inflicts 127113 Nature damage with an additional 35592 Nature damage every 1 sec for 10 sec.",
         "spellId": 1222642,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_03.jpg",
-        "headerIcon": "poison"
+        "headerIcons": [
+          "tank",
+          "poison"
+        ]
       }
     ],
     "items": [
@@ -11961,7 +12695,9 @@
         "difficultyMask": 3,
         "spellId": 465904,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_firestorm.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 30596,
@@ -12002,7 +12738,9 @@
         ],
         "spellId": 466556,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_burningembers.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 30598,
@@ -12010,7 +12748,9 @@
         "bodyText": "Emberdawn pecks her current target, inflicting 279648 Physical damage and an additional 50845 Fire damage every 1 sec for 8 sec.",
         "spellId": 466064,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_raptortalon_nightmare.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -12137,7 +12877,9 @@
         "bodyText": "When either Kalis or Latch falls in battle, the other becomes incensed, increasing their damage done by 50% every 5 sec.",
         "spellId": 1219551,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg",
-        "headerIcon": "dps"
+        "headerIcons": [
+          "dps"
+        ]
       },
       {
         "id": 30463,
@@ -12149,7 +12891,9 @@
             "bodyText": "Kalis continually releases piercing shrieks, inflicting 25423 Shadow damage to all players every 2 sec and increasing their damage taken from Debilitating Shriek by 30% for 3 sec. This effect stacks. Latch's Heaving Yank interrupts this ability.",
             "spellId": 472736,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ui_darkshore_warfront_horde_banshee.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 31242,
@@ -12175,7 +12919,9 @@
             ],
             "spellId": 474105,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseofsargeras.jpg",
-            "headerIcon": "curse"
+            "headerIcons": [
+              "curse"
+            ]
           },
           {
             "id": 31243,
@@ -12183,7 +12929,9 @@
             "bodyText": "Kalis inflicts 61014 Shadow damage to a player.",
             "spellId": 472724,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "headerIcon": "interruptible"
+            "headerIcons": [
+              "interruptible"
+            ]
           }
         ],
         "creatureDisplayId": 125201,
@@ -12204,12 +12952,16 @@
                 "bodyText": "Latch strikes the hooked player, inflicting 101690 Physical damage and stunning them for 4 sec.",
                 "spellId": 474075,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_butcher2.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 472795,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_hook_01.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 31248,
@@ -12241,7 +12993,9 @@
             ],
             "spellId": 472745,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_plaguecloud.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 31250,
@@ -12249,7 +13003,9 @@
             "bodyText": "Latch chops his primary target, inflicting 203380 Physical damage every 0.75 sec for 3 sec.",
             "spellId": 472888,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/warrior_talent_icon_mastercleaver.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "creatureDisplayId": 124335,
@@ -12424,7 +13180,9 @@
             ],
             "creatureDisplayId": 139031,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-139031.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 31019,
@@ -12436,17 +13194,23 @@
                 "bodyText": "The Haunting Grunt charges toward their current target and inflicts 61014 Physical damage.",
                 "spellId": 467815,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg",
-                "headerIcon": "tank"
+                "headerIcons": [
+                  "tank"
+                ]
               }
             ],
             "creatureDisplayId": 139032,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-139032.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "spellId": 468070,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/racial_orc_berserkerstrength.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 31065,
@@ -12483,7 +13247,9 @@
             ],
             "creatureDisplayId": 139032,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-139032.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 33720,
@@ -12500,7 +13266,9 @@
             ],
             "creatureDisplayId": 139031,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-139031.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           },
           {
             "id": 31070,
@@ -12513,7 +13281,9 @@
                 "bodyText": "The Phantasmal Mystic sends lightning into a player, inflicting 61014 Nature damage. The lightning then jumps to the closest other player.",
                 "spellId": 1251981,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 34564,
@@ -12525,12 +13295,16 @@
             ],
             "creatureDisplayId": 139030,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-139030.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "spellId": 472043,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/racial_orc_berserkerstrength.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 31016,
@@ -12538,7 +13312,9 @@
         "bodyText": "Commander Kroluk focuses his destructive urge on his current target, repeatedly thrashing them and inflicting 101690 Physical damage every 0.5 sec for 5 sec.",
         "spellId": 467620,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_rampage.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 31066,
@@ -12692,12 +13468,16 @@
             "bodyText": "A ring of violent wind expands, inflicting 61014 Nature damage every 1 sec to players who touch it and stunning them for 4 sec.",
             "spellId": 468442,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_sonic_nova.jpg",
-            "headerIcon": "deadly"
+            "headerIcons": [
+              "deadly"
+            ]
           }
         ],
         "spellId": 468429,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_broker_nova.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 35152,
@@ -12748,7 +13528,9 @@
         "bodyText": "The Restless Heart fires a salvo of arrows towards a player for 5 sec, inflicting 20338 Nature damage every 0.5 sec to players in a frontal cone.",
         "spellId": 474528,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_wind_wall.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 31270,
@@ -12765,7 +13547,9 @@
         ],
         "spellId": 472662,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_134.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 31271,
@@ -12917,7 +13701,9 @@
         "bodyText": "Garfrost's overloaded forge pulses cold for 3.5 sec, increasing all player's Frost damage taken by 75% every 0.5 sec for 14 sec. This effect stacks. Saronite ore protects players from this effect.",
         "spellId": 1262029,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_mage_frostbomb.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "deadly"
+        ]
       },
       {
         "id": 34251,
@@ -12942,7 +13728,9 @@
         ],
         "spellId": 1261299,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ore_saronite_01.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34253,
@@ -12955,7 +13743,10 @@
             "bodyText": "Shards of ice slam into players, increasing their Frost damage taken by 50% and slowing them by 15% for 12 sec.",
             "spellId": 1261921,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/artifactability_frostmage_ebonbolt.jpg",
-            "headerIcon": "magic"
+            "headerIcons": [
+              "healer",
+              "magic"
+            ]
           }
         ],
         "spellId": 1261847,
@@ -12967,7 +13758,9 @@
         "bodyText": "Garfrost unleashes a devastating mace slam on players within 5 yards of his primary target, inflicting 355915 Physical damage and stunning them for 8 sec. If the slam strikes saronite ore, it no longer stuns, instead destroying the ore.",
         "spellId": 1261546,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_eng_frostlacedammunition.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 34256,
@@ -13320,12 +14113,16 @@
                 ],
                 "spellId": 1264453,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_fixated_state_purple.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1264363,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34363,
@@ -13342,7 +14139,10 @@
                     "bodyText": "Krick's shade channels dark magic into a player, inflicting 24660 Shadow damage every 1 sec and slowing their movement speed by 35%.",
                     "spellId": 1264186,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nzinsanity_chasedbyshadows.jpg",
-                    "headerIcon": "interruptible"
+                    "headerIcons": [
+                      "interruptible",
+                      "curse"
+                    ]
                   },
                   {
                     "id": 34735,
@@ -13350,12 +14150,16 @@
                     "bodyText": "Krick's shade explodes after 1 min, destroying itself. This inflicts 254225 Shadow damage to all players and an additional 50845 Shadow damage every 1 sec for 10 sec. This effect stacks.",
                     "spellId": 1271678,
                     "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_shadowfurytga.jpg",
-                    "headerIcon": "deadly"
+                    "headerIcons": [
+                      "deadly"
+                    ]
                   }
                 ],
                 "creatureDisplayId": 138601,
                 "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-138601.jpg",
-                "headerIcon": "dps"
+                "headerIcons": [
+                  "dps"
+                ]
               }
             ],
             "spellId": 1264027,
@@ -13367,7 +14171,9 @@
             "bodyText": "Krick fires a massive shadow bolt at a player that inflicts 183042 Shadow damage.",
             "spellId": 1278893,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_twilightflamebolt.jpg",
-            "headerIcon": "interruptible"
+            "headerIcons": [
+              "interruptible"
+            ]
           },
           {
             "id": 35002,
@@ -13375,7 +14181,9 @@
             "bodyText": "While riding atop Ick, Krick throws dark energy at a player that inflicts 30507 Shadow damage.",
             "spellId": 1279667,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_ironmaidens_convulsiveshadows.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "creatureDisplayId": 137499,
@@ -13425,7 +14233,9 @@
             ],
             "spellId": 1264287,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_10_specialreagentfoozles_tuskclaw_brown.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "creatureDisplayId": 137500,
@@ -13787,7 +14597,9 @@
                         "bodyText": "The Rotling rots its primary target with each melee strike, reducing their maximum health by (1 / 2)% for 3 sec. This effect stacks.",
                         "spellId": 1262929,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_thrash_ghoul.jpg",
-                        "headerIcon": "disease"
+                        "headerIcons": [
+                          "disease"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 138343,
@@ -13819,7 +14631,9 @@
                         "bodyText": "The Scourge Plaguespreader hurls putrid magic at a player that inflicts 61014 Nature damage.",
                         "spellId": 1262941,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_felflamebolt.jpg",
-                        "headerIcon": "interruptible"
+                        "headerIcons": [
+                          "interruptible"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 138341,
@@ -13854,7 +14668,9 @@
                         "bodyText": "The Rotling rots its primary target with each melee strike, reducing their maximum health by (1 / 2)% for 3 sec. This effect stacks.",
                         "spellId": 1262929,
                         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_thrash_ghoul.jpg",
-                        "headerIcon": "disease"
+                        "headerIcons": [
+                          "disease"
+                        ]
                       }
                     ],
                     "creatureDisplayId": 138343,
@@ -13867,7 +14683,10 @@
             ],
             "spellId": 1263406,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_armyofthedead.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "dps",
+              "important"
+            ]
           },
           {
             "id": 34320,
@@ -13876,7 +14695,10 @@
             "difficultyMask": 0,
             "spellId": 1263406,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_armyofthedead.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "dps",
+              "important"
+            ]
           },
           {
             "id": 34326,
@@ -13900,7 +14722,9 @@
             ],
             "spellId": 1262582,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_ebonblade_b_01_green.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "creatureDisplayId": 137505,
@@ -13939,7 +14763,9 @@
             "bodyText": "Rimefang spits frost at a player that inflicts 27965 Frost damage.",
             "spellId": 1262739,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_blueflamebolt.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "creatureDisplayId": 31154,
@@ -14520,7 +15346,9 @@
         "bodyText": "Zuraal unleashes three powerful swipes at his target, inflicting 152535 &nbsp;Physical damage twice with another final strike inflicting 127113 Shadow damage.",
         "spellId": 1263440,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_ability_demonhunter_metamorphasisvoid.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -14733,7 +15561,9 @@
             "bodyText": "Saprish throws void bombs at nearby player locations. Upon contact with a player, the bomb explodes and inflicts 61014 Shadow damage to players within 5 yards and additional 15254 Shadow damage every 1 sec for 15 sec.",
             "spellId": 246026,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_orb.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 16073,
@@ -14773,7 +15603,9 @@
             "bodyText": "Saprish's melee attacks inflict an additional 40676 Shadow damage.",
             "spellId": 1266449,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_wand_1h_outdoorvoidelf_c_01.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "creatureDisplayId": 76771,
@@ -14789,7 +15621,9 @@
             "bodyText": "Darkfang pounces on a player, inflicting 30507 Physical damage and additional 25423 Physical damage every 1 sec for 5 sec.",
             "spellId": 245742,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_supriseattack.jpg",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           }
         ],
         "creatureDisplayId": 76602,
@@ -14812,7 +15646,9 @@
                 "difficultyMask": 0,
                 "spellId": 248831,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_manaraymount_magenta.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               }
             ],
             "spellId": 248830,
@@ -14988,12 +15824,16 @@
             "bodyText": "Raging storm that inflicts 45761 Shadow damage every 2 sec for 10 sec. Additionally, players inside the storm are suffer an additional 91521 Shadow damage every 1 sec.",
             "spellId": 1265030,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_purple.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ],
         "spellId": 1263529,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_purple.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34390,
@@ -15016,12 +15856,16 @@
             "difficultyMask": 0,
             "spellId": 1265030,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_purple.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ],
         "spellId": 1263529,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_purple.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 15926,
@@ -15077,7 +15921,9 @@
         "difficultyMask": 0,
         "spellId": 1263542,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_debuff.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 15924,
@@ -15085,7 +15931,10 @@
         "bodyText": "Viceroy Nezhar hurls a bolt of void energy at his target, inflicting 177958 Shadow damage.",
         "spellId": 244750,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_enchant_voidsphere.jpg",
-        "headerIcon": "interruptible"
+        "headerIcons": [
+          "tank",
+          "interruptible"
+        ]
       }
     ],
     "items": [
@@ -15320,12 +16169,16 @@
                 "bodyText": "L'ura channels the Eternal Night, attempting to instantly kill all players.",
                 "spellId": 1266003,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadesofdarkness.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1265419,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rune.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34463,
@@ -15362,12 +16215,16 @@
                 "bodyText": "L'ura channels the Eternal Night, attempting to instantly kill all players.",
                 "spellId": 1266003,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadesofdarkness.jpg",
-                "headerIcon": "deadly"
+                "headerIcons": [
+                  "deadly"
+                ]
               }
             ],
             "spellId": 1265419,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rune.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 34464,
@@ -15389,7 +16246,9 @@
             "bodyText": "L'ura passively tears open a rift to the void every 4 sec. After 3 rifts are opened, L'ura summons an Abyssal Lance from each of them, inflicting 50845 Shadow damage to her target for each lance. This effect closes the rifts.",
             "spellId": 1267207,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_ironmaidens_convulsiveshadows.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           },
           {
             "id": 34468,
@@ -15610,7 +16469,9 @@
             "id": 10698,
             "title": "Tanks",
             "bodyText": "$bullet;Ranjit hurls chakrams in various patterns to create damaging zones that move or rotate.",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ]
       },
@@ -15620,7 +16481,9 @@
         "bodyText": "Ranjit throws a powerful wind chakram to the center of the platform, inflicting 127113 Nature damage to players within 10 yards of the impact area. The chakram continues to spin, inflicting 76268 Nature damage to players it hits and knocking them back. The chakram forms raging wind vortexes that trail around the platform, inflicting 76268 Nature damage to any enemy hit and knocking them in the air.",
         "spellId": 156793,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_four_wind.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 33921,
@@ -15654,7 +16517,9 @@
         "bodyText": "Ranjit throws razor sharp blades in all directions, inflicting 50845 Physical damage and causing them to bleed, inflicting 30507 Physical damage every 2 sec for 6 sec.",
         "spellId": 153757,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_fanofknives.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 34061,
@@ -16354,7 +17219,9 @@
             "difficultyMask": 0,
             "spellId": 1252877,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_heraldofthesunpaladin_dawnlight.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35065,
@@ -16366,7 +17233,9 @@
         ],
         "spellId": 154139,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_energize.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 8842,
@@ -16381,7 +17250,9 @@
             "difficultyMask": 3,
             "spellId": 154150,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_druid_sunfall.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           },
           {
             "id": 35064,
@@ -16393,7 +17264,9 @@
         ],
         "spellId": 154139,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_energize.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 8841,
@@ -16401,7 +17274,9 @@
         "bodyText": "Araknath releases a burst of solar energy that inflicts 86437 Fire damage to all players.",
         "spellId": 154135,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_ragnaros_supernova.jpg",
-        "headerIcon": "healer"
+        "headerIcons": [
+          "healer"
+        ]
       },
       {
         "id": 8840,
@@ -16409,7 +17284,9 @@
         "bodyText": "Araknath raises one of its arms and smashes the ground on that side, inflicting 127113 Fire damage to all players in the impact area and increases their damage taken from Fiery Smash by 300% for 1 min. This effect stacks.",
         "spellId": 154132,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_solar_burst.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 35178,
@@ -16424,7 +17301,10 @@
         "bodyText": "Araknath unleashes a wave of solar energy that inflicts 35592 Fire damage to all players and additional 10169 Fire damage every 1 sec for 20 sec. This effect stacks. This attack is only used by Araknath whenever he is not actively engaged in melee combat.",
         "spellId": 1279002,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_inferno.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "tank",
+          "deadly"
+        ]
       }
     ],
     "items": [
@@ -17242,7 +18122,9 @@
         "bodyText": "Rukhran unleashes waves of flaming quills, inflicting 113252 Fire damage every 1 sec to players in line of sight for 3 sec.",
         "spellId": 159381,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_icon_feather06a.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 8849,
@@ -17250,7 +18132,9 @@
         "bodyText": "Rukhran lashes their current target with burning claws, inflicting 203380 Physical damage and 76268 Fire damage. Also casues the the target to burn, inflicting 30507 Fire damage every 2 sec for 8 sec.",
         "spellId": 1253519,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_druidoftheclawdruid_ravage.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 9226,
@@ -17258,7 +18142,10 @@
         "bodyText": "Rukhran unleashes a deafening screech, inflicting 177958 Sonic damage to all players. This attack is only used if Ruhkhran is not actively engaged in melee combat.",
         "spellId": 153898,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv-mount_raven_54.jpg",
-        "headerIcon": "deadly"
+        "headerIcons": [
+          "tank",
+          "deadly"
+        ]
       }
     ],
     "items": [
@@ -17992,7 +18879,10 @@
         "bodyText": "High Sage Viryx summons a Solar Zealot above a random player that will attempt to carry them off the balcony and drop them to their death below.",
         "spellId": 153954,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_castdown.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "dps",
+          "important"
+        ]
       },
       {
         "id": 33950,
@@ -18033,7 +18923,9 @@
         "bodyText": "High Sage Viryx blasts their current target with solar energy, inflicting 228803 Fire damage.",
         "spellId": 154396,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_skyreach_solar_burst.jpg",
-        "headerIcon": "interruptible"
+        "headerIcons": [
+          "interruptible"
+        ]
       }
     ],
     "items": [
@@ -19166,7 +20058,9 @@
             ],
             "spellId": 387691,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_mage_arcaneorb_nightborne.jpg",
-            "headerIcon": "important"
+            "headerIcons": [
+              "important"
+            ]
           }
         ],
         "creatureDisplayId": 107061,
@@ -19214,7 +20108,9 @@
             "bodyText": "Vexamus ejects a mass of arcane energy inflicting 228901 Arcane damage to players in front of it.",
             "spellId": 385958,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcanetorrent.jpg",
-            "headerIcon": "tank"
+            "headerIcons": [
+              "tank"
+            ]
           }
         ],
         "creatureDisplayId": 107525,
@@ -19343,12 +20239,16 @@
                 "difficultyMask": 0,
                 "spellId": 389033,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_04.jpg",
-                "headerIcon": "poison"
+                "headerIcons": [
+                  "poison"
+                ]
               }
             ],
             "creatureDisplayId": 104474,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-104474.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "spellId": 388796,
@@ -19360,7 +20260,10 @@
         "bodyText": "Upon reaching 100 energy, the Overgrown Ancient releases its abundant life magic to awaken all dormant Lashers, inflicting 81352 Nature damage to all players as they burst free from the ground.",
         "spellId": 388923,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_earthquake.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "healer",
+          "important"
+        ]
       },
       {
         "id": 25687,
@@ -19386,7 +20289,9 @@
                 "bodyText": "Heal an ally for 393273.",
                 "spellId": 396640,
                 "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg",
-                "headerIcon": "interruptible"
+                "headerIcons": [
+                  "interruptible"
+                ]
               },
               {
                 "id": 26069,
@@ -19399,7 +20304,9 @@
             ],
             "creatureDisplayId": 107359,
             "creatureDisplayMedia": "https://render.worldofwarcraft.com/us/npcs/zoom/creature-display-107359.jpg",
-            "headerIcon": "dps"
+            "headerIcons": [
+              "dps"
+            ]
           }
         ],
         "spellId": 388623,
@@ -19411,7 +20318,9 @@
         "bodyText": "The Overgrown Ancient stomps its target with crushing force, inflicting 244246 Physical damage and increasing Physical damage taken by 100% for 9 sec.",
         "spellId": 388544,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_smash.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -19572,7 +20481,9 @@
         ],
         "spellId": 377182,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_throwingball_01.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 34909,
@@ -19610,7 +20521,9 @@
         "bodyText": "Crawth viciously pecks at her target, inflicting 228803 Physical damage instantly with an additional 35592 Physical damage every 1 sec for 10 sec.",
         "spellId": 376997,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_raptortalon_nightmare.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       }
     ],
     "items": [
@@ -19714,7 +20627,9 @@
             "id": 25655,
             "title": "Healers",
             "bodyText": "$bullet; Multiple applications of [Overwhelming Power] will create [Arcane Rifts] .",
-            "headerIcon": "healer"
+            "headerIcons": [
+              "healer"
+            ]
           },
           {
             "id": 25656,
@@ -19748,7 +20663,9 @@
         ],
         "spellId": 389011,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_socererking_arcanefortification.jpg",
-        "headerIcon": "important"
+        "headerIcons": [
+          "important"
+        ]
       },
       {
         "id": 28867,
@@ -19782,7 +20699,9 @@
         "bodyText": "The Echo of Doragosa blasts the target player with powerful arcane energy, inflicting 152535 Arcane damage and applying Overwhelming Power .",
         "spellId": 1282251,
         "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_astralrecalgroup.jpg",
-        "headerIcon": "tank"
+        "headerIcons": [
+          "tank"
+        ]
       },
       {
         "id": 29859,

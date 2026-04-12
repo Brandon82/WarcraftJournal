@@ -83,7 +83,6 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
   const isCollapsible = hasChildren || !!section.bodyText;
   const [expanded, setExpanded] = useState(isTopLevel);
   const contentRef = useRef<HTMLDivElement>(null);
-  const hasIcon = !!(section.spellId || section.spellIcon || isTopLevel);
   const difficultyTag = getDifficultyTag(section.difficultyMask, modes);
 
   return (
@@ -168,7 +167,7 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
             )}
           </div>
           {!isCollapsible && section.bodyText && (
-            <p className="text-zinc-300 text-sm leading-relaxed m-0 mt-0.5">
+            <p className="text-zinc-300 text-[17px] leading-relaxed m-0 mt-0.5">
               {section.bodyText}
             </p>
           )}
@@ -183,9 +182,9 @@ export default function SectionNode({ section, depth, modes }: SectionNodeProps)
           style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
         >
           <div className="overflow-hidden min-h-0">
-            <div className="pb-2">
+            <div className="pb-1">
               {section.bodyText && (
-                <p className={`text-zinc-300 text-sm leading-relaxed m-0 px-4 ${hasIcon ? 'ml-[68px]' : 'ml-6'}`}>
+                <p className="text-zinc-300 text-[17px] leading-relaxed m-0 ml-[40px] pr-4">
                   {section.bodyText}
                 </p>
               )}

@@ -8,6 +8,7 @@ export interface DevNpcOverride {
   name: string;
   classification: number; // 1=elite, 2=rare-elite, 3=boss, 4=rare
   spells?: { id: number; name: string; schools: number }[];
+  additionalSpells?: { id: number; name: string; schools: number }[];
 }
 
 // Mirrors ZONE_NPC_OVERRIDES in scripts/fetch-data.ts — keyed by instance ID
@@ -122,20 +123,43 @@ export const ZONE_NPC_OVERRIDES: Record<number, DevNpcOverride[]> = {
     { id: 254926, name: 'Lightwrought', classification: 1 },
     { id: 248373, name: 'Circuit Seer', classification: 1 },
     { id: 248708, name: 'Nexus Adept', classification: 1 },
+    { id: 252825, name: 'Mana Battery', classification: 1, spells: [
+      { id: 1257126, name: 'Corespark Overload', schools: 64 },
+    ] },
+    { id: 248769, name: 'Smudge', classification: 1, spells: [
+      { id: 1257268, name: 'Forfeit Essence', schools: 1 },
+    ] },
   ],
   // Pit of Saron
   278: [
-    { id: 252559, name: 'Leaping Geist', classification: 1, spells: [
-      { id: 1258464, name: 'Leaping Maul', schools: 1 },
+    { id: 36476, name: 'Ick', classification: 1, additionalSpells: [
+      { id: 1264453, name: 'Lumbering Fixation', schools: 1 },
     ] },
-    { id: 252602, name: 'Risen Soldier', classification: 1, spells: [
-      { id: 1258451, name: 'Charging Slash', schools: 1 },
+  ],
+  // Algeth'ar Academy
+  1201: [
+    { id: 196798, name: 'Corrupted Manafiend', classification: 1, spells: [
+      { id: 388863, name: 'Mana Void', schools: 64 },
+      { id: 388862, name: 'Surge', schools: 64 },
     ] },
-    { id: 252606, name: 'Plungetalon Gargoyle', classification: 1, spells: [
-      { id: 1258997, name: 'Plungegrip', schools: 1 },
+    { id: 197904, name: 'Spellbound Battleaxe', classification: 1 },
+  ],
+  // Maisara Caverns
+  1315: [
+    { id: 249002, name: 'Warding Mask', classification: 1, spells: [
+      { id: 1257328, name: 'Sear', schools: 4 },
     ] },
-    { id: 257190, name: 'Iceborn Proto-Drake', classification: 1, spells: [
-      { id: 1278986, name: 'Frost Breath', schools: 16 },
+    { id: 248678, name: 'Hulking Juggernaut', classification: 1, spells: [
+      { id: 1256047, name: 'Deafening Roar', schools: 1 },
+      { id: 1256059, name: 'Rending Gore', schools: 1 },
+    ] },
+    { id: 253701, name: "Death's Grasp", classification: 1, spells: [
+      { id: 1259794, name: 'Ritual Sacrifice', schools: 32 },
+    ] },
+    // Override existing Rokh'zal (254233) to add Invoke Shadow from second Rokh'zal NPC (253683)
+    { id: 254233, name: "Rokh'zal", classification: 1, spells: [
+      { id: 1259777, name: 'Umbral Vortex', schools: 32 },
+      { id: 1262241, name: 'Invoke Shadow', schools: 32 },
     ] },
   ],
 };
@@ -165,4 +189,7 @@ export const IGNORED_NPC_NAMES: string[] = [
 
 // Mirrors INSTANCE_IGNORED_NPC_NAMES in scripts/fetch-data.ts — keyed by instance ID
 // Per-instance NPC names ignored in addition to the global list
-export const INSTANCE_IGNORED_NPC_NAMES: Record<number, string[]> = {};
+export const INSTANCE_IGNORED_NPC_NAMES: Record<number, string[]> = {
+  // Algeth'ar Academy: NPC not in current dungeon mob list
+  1201: ['Ethereal Restorer'],
+};

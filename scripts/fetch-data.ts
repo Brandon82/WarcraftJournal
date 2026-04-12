@@ -584,6 +584,7 @@ interface WowheadNpc {
 // These are merged into the zone's NPC list before deduplication and ability fetching.
 // If `spells` is provided, the Wowhead ability fetch is skipped for that NPC (icons/tooltips are still fetched).
 // If `spells` is omitted, abilities are fetched from Wowhead as normal.
+// If `additionalSpells` is provided, those spells are merged into the NPC's fetched abilities (not replaced).
 // classification: 1=elite, 2=rare-elite, 3=boss, 4=rare
 // schools bitmask: 1=Physical, 2=Holy, 4=Fire, 8=Nature, 16=Frost, 32=Shadow, 64=Arcane
 interface NpcOverride {
@@ -591,6 +592,7 @@ interface NpcOverride {
   name: string;
   classification: number;
   spells?: { id: number; name: string; schools: number }[];
+  additionalSpells?: { id: number; name: string; schools: number }[];
 }
 
 const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
@@ -704,25 +706,48 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     { id: 254926, name: 'Lightwrought', classification: 1 },
     { id: 248373, name: 'Circuit Seer', classification: 1 },
     { id: 248708, name: 'Nexus Adept', classification: 1 },
+    { id: 252825, name: 'Mana Battery', classification: 1, spells: [
+      { id: 1257126, name: 'Corespark Overload', schools: 64 },
+    ] },
+    { id: 248769, name: 'Smudge', classification: 1, spells: [
+      { id: 1257268, name: 'Forfeit Essence', schools: 1 },
+    ] },
   ],
   // Pit of Saron
   278: [
-    { id: 252559, name: 'Leaping Geist', classification: 1, spells: [
-      { id: 1258464, name: 'Leaping Maul', schools: 1 },
-    ] },
-    { id: 252602, name: 'Risen Soldier', classification: 1, spells: [
-      { id: 1258451, name: 'Charging Slash', schools: 1 },
-    ] },
-    { id: 252606, name: 'Plungetalon Gargoyle', classification: 1, spells: [
-      { id: 1258997, name: 'Plungegrip', schools: 1 },
-    ] },
-    { id: 257190, name: 'Iceborn Proto-Drake', classification: 1, spells: [
-      { id: 1278986, name: 'Frost Breath', schools: 16 },
+    { id: 36476, name: 'Ick', classification: 1, additionalSpells: [
+      { id: 1264453, name: 'Lumbering Fixation', schools: 1 },
     ] },
   ],
   // Magister's Terrace
   1300: [
     { id: 231861, name: 'Arcanotron Custos', classification: 3 },
+  ],
+  // Algeth'ar Academy
+  1201: [
+    { id: 196798, name: 'Corrupted Manafiend', classification: 1, spells: [
+      { id: 388863, name: 'Mana Void', schools: 64 },
+      { id: 388862, name: 'Surge', schools: 64 },
+    ] },
+    { id: 197904, name: 'Spellbound Battleaxe', classification: 1 },
+  ],
+  // Maisara Caverns
+  1315: [
+    { id: 249002, name: 'Warding Mask', classification: 1, spells: [
+      { id: 1257328, name: 'Sear', schools: 4 },
+    ] },
+    { id: 248678, name: 'Hulking Juggernaut', classification: 1, spells: [
+      { id: 1256047, name: 'Deafening Roar', schools: 1 },
+      { id: 1256059, name: 'Rending Gore', schools: 1 },
+    ] },
+    { id: 253701, name: "Death's Grasp", classification: 1, spells: [
+      { id: 1259794, name: 'Ritual Sacrifice', schools: 32 },
+    ] },
+    // Override existing Rokh'zal (254233) to add Invoke Shadow from second Rokh'zal NPC (253683)
+    { id: 254233, name: "Rokh'zal", classification: 1, spells: [
+      { id: 1259777, name: 'Umbral Vortex', schools: 32 },
+      { id: 1262241, name: 'Invoke Shadow', schools: 32 },
+    ] },
   ],
 };
 
@@ -733,6 +758,8 @@ const INSTANCE_BLACKLISTED_SPELL_IDS: Record<number, number[]> = {};
 // Per-instance ignored NPC names — keyed by instance ID.
 // These are merged with the global IGNORED_NPC_NAMES during fetch.
 const INSTANCE_IGNORED_NPC_NAMES: Record<number, string[]> = {
+  // Algeth'ar Academy: NPC not in current dungeon mob list
+  1201: ['Ethereal Restorer'],
   // Pit of Saron: friendly/RP NPCs and original WotLK mobs replaced by M+ reworks
   278: [
     'Sindragosa', 'Coliseum Champion',
@@ -884,9 +911,13 @@ async function fetchZoneSpellsForInstance(
 
   // Build a map of override NPCs that have pre-populated spells
   const overrideSpellsByNpcId = new Map<number, NonNullable<NpcOverride['spells']>>();
+  const additionalSpellsByNpcId = new Map<number, NonNullable<NpcOverride['additionalSpells']>>();
   for (const o of overrides) {
     if (o.spells && o.spells.length > 0) {
       overrideSpellsByNpcId.set(o.id, o.spells);
+    }
+    if (o.additionalSpells && o.additionalSpells.length > 0) {
+      additionalSpellsByNpcId.set(o.id, o.additionalSpells);
     }
   }
 
@@ -950,6 +981,19 @@ async function fetchZoneSpellsForInstance(
     } catch (err) {
       console.warn(`    Failed to fetch abilities for ${npc.name}: ${err}`);
     }
+  }
+
+  // Merge additional spells from overrides into fetched NPC results
+  for (const result of npcResults) {
+    const extra = additionalSpellsByNpcId.get(result.id);
+    if (!extra) continue;
+    for (const s of extra) {
+      if (BLACKLISTED_SPELL_IDS.has(s.id)) continue;
+      if (result.spells.some((existing) => existing.id === s.id)) continue;
+      result.spells.push({ id: s.id, name: s.name, schools: s.schools });
+      uniqueSpellIds.add(s.id);
+    }
+    console.log(`    ${result.name}: +${extra.length} additional spells (override)`);
   }
 
   // Fetch spell icons and tooltips for all unique spells

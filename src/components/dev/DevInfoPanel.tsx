@@ -115,6 +115,33 @@ function NpcOverrideRow({ npc }: { npc: DevNpcOverride }) {
             );
           })}
         </div>
+      ) : npc.additionalSpells && npc.additionalSpells.length > 0 ? (
+        <div className="ml-4 mt-1.5 space-y-1">
+          <p className="text-xs text-wow-text-secondary m-0 italic mb-1">
+            Fetched from Wowhead + additional spells:
+          </p>
+          {npc.additionalSpells.map((spell) => {
+            const schoolTag = getSchoolTag(spell.schools);
+            return (
+              <div key={spell.id} className="flex items-center gap-2 flex-wrap">
+                <a
+                  href={`https://www.wowhead.com/spell=${spell.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-green-400 hover:text-wow-gold hover:underline transition-colors"
+                >
+                  + {spell.name}
+                </a>
+                {schoolTag && (
+                  <span className={`px-1.5 py-0.5 text-[10px] rounded font-medium ${schoolTag.style}`}>
+                    {schoolTag.label}
+                  </span>
+                )}
+                <span className="text-[10px] text-wow-text-secondary font-mono">#{spell.id}</span>
+              </div>
+            );
+          })}
+        </div>
       ) : (
         <p className="text-xs text-wow-text-secondary ml-4 mt-1 m-0 italic">
           No pre-populated spells (fetched from Wowhead)

@@ -2,6 +2,7 @@ import { ConfigProvider } from 'antd';
 import { RouterProvider } from 'react-router';
 import { darkTheme, lightTheme } from './theme';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { DevModeProvider } from './context/DevModeContext';
 import { router } from './router';
 
 function AppInner() {
@@ -16,7 +17,9 @@ function AppInner() {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppInner />
+      <DevModeProvider>
+        <AppInner />
+      </DevModeProvider>
     </ThemeProvider>
   );
 }

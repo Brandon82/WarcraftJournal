@@ -2,10 +2,12 @@ import { useParams, useLocation } from 'react-router';
 import { useMemo, useState } from 'react';
 import { useInstance } from '../hooks/useInstance';
 import { useZoneSpells } from '../hooks/useZoneSpells';
+import { useDevMode } from '../context/DevModeContext';
 import { getEncountersForInstance } from '../data';
 import { getWarcraftLogsUrl } from '../data/warcraftlogs';
 import EncounterCard from '../components/cards/EncounterCard';
 import ZoneSpellSection from '../components/zone-spells/ZoneSpellSection';
+import DevInfoPanel from '../components/dev/DevInfoPanel';
 
 export default function InstancePage() {
   const { expansionSlug, instanceSlug } = useParams();
@@ -13,6 +15,7 @@ export default function InstancePage() {
   const routePrefix = isSeason ? 'season' : (expansionSlug ?? '');
   const instance = useInstance(instanceSlug);
   const zoneSpells = useZoneSpells(instanceSlug);
+  const { devMode } = useDevMode();
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   const bossNames = useMemo(() => {
@@ -131,6 +134,8 @@ export default function InstancePage() {
           />
         ))}
       </div>
+
+      {devMode && <DevInfoPanel instanceId={instance.id} />}
 
       {zoneSpells && zoneSpells.npcs.length > 0 && (
         <ZoneSpellSection npcs={zoneSpells.npcs} bossNames={bossNames} category={instance.category} />

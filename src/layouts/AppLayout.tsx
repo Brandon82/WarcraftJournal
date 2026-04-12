@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router';
 import { Drawer } from 'antd';
-import { BookOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, ToolOutlined } from '@ant-design/icons';
+import { BookOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, ToolOutlined, CodeOutlined } from '@ant-design/icons';
 import ExpansionMenu from '../components/navigation/ExpansionMenu';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SearchBar from '../components/navigation/SearchBar';
 import { JournalProvider } from '../context/JournalContext';
 import { useTheme } from '../context/ThemeContext';
+import { useDevMode } from '../context/DevModeContext';
 
 const mql = window.matchMedia('(max-width: 768px)');
 function subscribeMql(cb: () => void) {
@@ -26,6 +27,7 @@ export default function AppLayout() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { devMode, toggleDevMode } = useDevMode();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
@@ -156,6 +158,15 @@ export default function AppLayout() {
               className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150 sm:hidden"
             >
               <SearchOutlined />
+            </button>
+            <button
+              onClick={toggleDevMode}
+              className={`bg-transparent border border-wow-border rounded-xl cursor-pointer text-sm p-2 flex items-center hover:bg-wow-bg-elevated transition-all duration-150 ${
+                devMode ? 'text-wow-gold border-wow-gold-muted' : 'text-wow-text-secondary hover:text-wow-text'
+              }`}
+              title={devMode ? 'Disable developer mode' : 'Enable developer mode'}
+            >
+              <CodeOutlined />
             </button>
             <button
               onClick={toggleTheme}

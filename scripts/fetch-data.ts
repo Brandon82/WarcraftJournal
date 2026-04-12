@@ -625,6 +625,40 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     { id: 248373, name: 'Circuit Seer', classification: 1 },
     { id: 248708, name: 'Nexus Adept', classification: 1 },
   ],
+  // Pit of Saron
+  278: [
+    { id: 252559, name: 'Leaping Geist', classification: 1, spells: [
+      { id: 1258464, name: 'Leaping Maul', schools: 1 },
+    ] },
+    { id: 252602, name: 'Risen Soldier', classification: 1, spells: [
+      { id: 1258451, name: 'Charging Slash', schools: 1 },
+    ] },
+    { id: 252606, name: 'Plungetalon Gargoyle', classification: 1, spells: [
+      { id: 1258997, name: 'Plungegrip', schools: 1 },
+    ] },
+    { id: 257190, name: 'Iceborn Proto-Drake', classification: 1, spells: [
+      { id: 1278986, name: 'Frost Breath', schools: 16 },
+    ] },
+  ],
+};
+
+// Per-instance spell blacklists — keyed by instance ID.
+// These are merged with the global BLACKLISTED_SPELL_IDS during fetch.
+const INSTANCE_BLACKLISTED_SPELL_IDS: Record<number, number[]> = {};
+
+// Per-instance ignored NPC names — keyed by instance ID.
+// These are merged with the global IGNORED_NPC_NAMES during fetch.
+const INSTANCE_IGNORED_NPC_NAMES: Record<number, string[]> = {
+  // Pit of Saron: friendly/RP NPCs and original WotLK mobs replaced by M+ reworks
+  278: [
+    'Sindragosa', 'Coliseum Champion',
+    'Alliance Slave', 'Horde Slave', 'Freed Alliance Slave', 'Freed Horde Slave',
+    'Archmage Koreln', 'Archmage Elandra', 'Dark Ranger Kalira', 'Dark Ranger Loralen',
+    'Ymirjar Skycaller', 'Ymirjar Wrathbringer', 'Ymirjar Deathbringer', 'Ymirjar Flamebearer',
+    'Fallen Warrior', 'Wrathbone Laborer', 'Wrathbone Coldwraith', 'Disturbed Glacial Revenant',
+    'Plagueborn Horror', 'Geist Ambusher', 'Stonespine Gargoyle',
+    'Hungering Ghoul', 'Deathwhisper Shadowcaster', 'Deathwhisper Torturer', 'Wrathbone Sorcerer',
+  ],
 };
 
 async function fetchWowheadPage(url: string, retries = 5): Promise<string> {
@@ -712,10 +746,20 @@ async function fetchZoneSpellsForInstance(
   console.log(`  Found ${npcs.length} NPCs in zone`);
 
   // NPCs that appear in zone data but aren't actual dungeon mobs (warlock pets, story NPCs, multi-zone mobs, etc.)
-  const IGNORED_NPC_NAMES = new Set(['Dreadstalker', 'Wild Imp', "Xal'atath", 'Raest Magespear', 'Hand from Beyond', 'Spiteful Shade']);
+  const IGNORED_NPC_NAMES = new Set([
+    'Dreadstalker', 'Wild Imp', "Xal'atath", 'Raest Magespear', 'Hand from Beyond', 'Spiteful Shade',
+  ]);
+  // Merge instance-specific ignored NPC names
+  for (const name of INSTANCE_IGNORED_NPC_NAMES[instance.id] ?? []) {
+    IGNORED_NPC_NAMES.add(name);
+  }
 
   // Spells to exclude from all zone spell results (generic/irrelevant abilities)
-  const BLACKLISTED_SPELL_IDS = new Set([209859, 228318, 240443]);
+  const BLACKLISTED_SPELL_IDS = new Set([209859, 228318, 240443, 288865, 344663]);
+  // Merge instance-specific blacklisted spell IDs
+  for (const id of INSTANCE_BLACKLISTED_SPELL_IDS[instance.id] ?? []) {
+    BLACKLISTED_SPELL_IDS.add(id);
+  }
 
   // Filter: hostile/elite NPCs (bosses + trash), excluding rare-elites
   // classification: 0=normal, 1=elite, 2=rare-elite, 3=boss, 4=rare

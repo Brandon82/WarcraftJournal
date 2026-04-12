@@ -2,7 +2,7 @@
   {
     "instanceId": 1314,
     "instanceSlug": "the-dreamrift",
-    "fetchedAt": "2026-04-12T04:53:57.102Z",
+    "fetchedAt": "2026-04-12T05:22:34.491Z",
     "npcs": [
       {
         "id": 257691,
@@ -205,7 +205,7 @@
   {
     "instanceId": 1307,
     "instanceSlug": "the-voidspire",
-    "fetchedAt": "2026-04-12T04:55:17.863Z",
+    "fetchedAt": "2026-04-12T05:23:49.608Z",
     "npcs": [
       {
         "id": 219161,
@@ -1827,7 +1827,7 @@
   {
     "instanceId": 1308,
     "instanceSlug": "march-on-queldanas",
-    "fetchedAt": "2026-04-12T04:55:35.282Z",
+    "fetchedAt": "2026-04-12T05:24:06.826Z",
     "npcs": [
       {
         "id": 240391,
@@ -2289,7 +2289,7 @@
   {
     "instanceId": 1311,
     "instanceSlug": "den-of-nalorakk",
-    "fetchedAt": "2026-04-12T04:55:51.586Z",
+    "fetchedAt": "2026-04-12T05:24:21.853Z",
     "npcs": [
       {
         "id": 244584,
@@ -2506,7 +2506,7 @@
   {
     "instanceId": 1300,
     "instanceSlug": "magisters-terrace",
-    "fetchedAt": "2026-04-12T04:56:18.747Z",
+    "fetchedAt": "2026-04-12T05:24:47.154Z",
     "npcs": [
       {
         "id": 231861,
@@ -2988,7 +2988,7 @@
   {
     "instanceId": 1315,
     "instanceSlug": "maisara-caverns",
-    "fetchedAt": "2026-04-12T04:57:00.855Z",
+    "fetchedAt": "2026-04-12T05:25:23.282Z",
     "npcs": [
       {
         "id": 1531,
@@ -3667,7 +3667,7 @@
   {
     "instanceId": 1304,
     "instanceSlug": "murder-row",
-    "fetchedAt": "2026-04-12T04:57:14.541Z",
+    "fetchedAt": "2026-04-12T05:25:35.821Z",
     "npcs": [
       {
         "id": 234647,
@@ -3877,7 +3877,7 @@
   {
     "instanceId": 1316,
     "instanceSlug": "nexus-point-xenas",
-    "fetchedAt": "2026-04-12T04:57:32.536Z",
+    "fetchedAt": "2026-04-12T05:25:53.606Z",
     "npcs": [
       {
         "id": 241546,
@@ -4353,7 +4353,7 @@
   {
     "instanceId": 1309,
     "instanceSlug": "the-blinding-vale",
-    "fetchedAt": "2026-04-12T04:57:48.597Z",
+    "fetchedAt": "2026-04-12T05:26:08.120Z",
     "npcs": [
       {
         "id": 243028,
@@ -4668,7 +4668,7 @@
   {
     "instanceId": 1313,
     "instanceSlug": "voidscar-arena",
-    "fetchedAt": "2026-04-12T05:00:26.082Z",
+    "fetchedAt": "2026-04-12T05:26:13.944Z",
     "npcs": [
       {
         "id": 238887,
@@ -4829,7 +4829,7 @@
   {
     "instanceId": 1299,
     "instanceSlug": "windrunner-spire",
-    "fetchedAt": "2026-04-12T05:00:38.599Z",
+    "fetchedAt": "2026-04-12T05:28:56.299Z",
     "npcs": [
       {
         "id": 231606,
@@ -5487,29 +5487,8 @@
   {
     "instanceId": 278,
     "instanceSlug": "pit-of-saron",
-    "fetchedAt": "2026-04-12T05:01:58.802Z",
+    "fetchedAt": "2026-04-12T05:29:30.146Z",
     "npcs": [
-      {
-        "id": 31260,
-        "name": "Ymirjar Skycaller",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70291,
-            "name": "Frostblade",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_halberd18.jpg",
-            "description": "Infuses your weapon with the power of Icecrown, causing it to emit Frost damage for 14 sec."
-          },
-          {
-            "id": 70292,
-            "name": "Glacial Strike",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_empowerruneblade2.jpg",
-            "description": "Requires Melee Weapon A vicious, chilling attack that causes the target to bleed profusely until fully healed. &nbsp;Deals 15% Frost damage every 3 seconds until fully healed."
-          }
-        ]
-      },
       {
         "id": 36476,
         "name": "Ick",
@@ -5742,41 +5721,6 @@
         ]
       },
       {
-        "id": 36767,
-        "name": "Alliance Slave",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69570,
-            "name": "Fireball",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          },
-          {
-            "id": 70516,
-            "name": "Pyroblast",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          }
-        ]
-      },
-      {
-        "id": 36773,
-        "name": "Horde Slave",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69570,
-            "name": "Fireball",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          }
-        ]
-      },
-      {
         "id": 252551,
         "name": "Deathwhisper Necrolyte",
         "classification": 1,
@@ -5791,513 +5735,16 @@
         ]
       },
       {
-        "id": 36830,
-        "name": "Wrathbone Laborer",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69572,
-            "name": "Shovelled!",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_shovel_01.jpg",
-            "description": "Smacks a nearby enemy upside the head with his shovel, dealing 65% weapon damage and stunning them for 3 sec."
-          },
-          {
-            "id": 70278,
-            "name": "Puncture Wound",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_backstab.jpg",
-            "description": "Requires Melee Weapon Inflicts 78626 Physical damage to an enemy every 1 sec. for 5 sec."
-          },
-          {
-            "id": 70302,
-            "name": "Blinding Dirt",
-            "schools": 8,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindsteal.jpg",
-            "description": "Blinds the target, causing it to wander confused for up to 3 sec. &nbsp;Any damage caused will remove the effect."
-          }
-        ]
-      },
-      {
-        "id": 36840,
-        "name": "Ymirjar Wrathbringer",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69603,
-            "name": "Blight",
-            "schools": 8,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unstableaffliction_2.jpg",
-            "description": "An unholy affliction blights the target, dealing Nature damage every 3 sec. If not removed in 15 sec, it will jump to another target."
-          }
-        ]
-      },
-      {
-        "id": 38487,
-        "name": "Fallen Warrior",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 61044,
-            "name": "Demoralizing Shout",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_warcry.jpg",
-            "description": "Reduces the melee attack power of nearby enemies by 20% for 15 sec."
-          },
-          {
-            "id": 69579,
-            "name": "Arcing Slice",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_sunder.jpg",
-            "description": "Requires Melee Weapon Hacks at an enemy's armor, reducing it 10% per Arcing Slice. Can be applied up to 5 times. Lasts 30 sec."
-          },
-          {
-            "id": 69580,
-            "name": "Shield Block",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_defend.jpg",
-            "description": "Requires Shield Increases the caster's chance to block by 100% for 20 sec., but will only block 1 attack."
-          }
-        ]
-      },
-      {
-        "id": 36842,
-        "name": "Wrathbone Coldwraith",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69573,
-            "name": "Frostbolt",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg",
-            "description": "3 sec cast Inflicts Frost damage to an enemy and reduces its movement speed for 4 sec."
-          },
-          {
-            "id": 69574,
-            "name": "Freezing Circle",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_arcticwinds.jpg",
-            "description": "2.5 sec cast Summons a circle of ice that freezes enemies."
-          }
-        ]
-      },
-      {
-        "id": 36874,
-        "name": "Disturbed Glacial Revenant",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 55216,
-            "name": "Avalanche",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_arcticwinds.jpg",
-            "description": "Inflicts 68095 Frost damage."
-          }
-        ]
-      },
-      {
-        "id": 36879,
-        "name": "Plagueborn Horror",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69581,
-            "name": "Pustulant Flesh",
-            "schools": 8,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_corrosivebreath.jpg",
-            "description": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every 5 sec. for 10 sec."
-          },
-          {
-            "id": 69582,
-            "name": "Blight Bomb",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_selfdestruct.jpg",
-            "description": "Sacrifices the caster's life in order to inflict 314503 Fire damage to nearby enemies."
-          },
-          {
-            "id": 70274,
-            "name": "Toxic Waste",
-            "schools": 8,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_acid_01.jpg",
-            "description": "Deals Nature damage to all enemies within the acid. Lasts 10 sec."
-          }
-        ]
-      },
-      {
-        "id": 36886,
-        "name": "Geist Ambusher",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69503,
-            "name": "Devour Humanoid",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_creature_poison_01.jpg",
-            "description": "25% damage every 1.5 seconds."
-          },
-          {
-            "id": 69504,
-            "name": "Leaping Face Maul",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/trade_engineering.jpg",
-            "description": "Leaping attack to the face. Painful!"
-          }
-        ]
-      },
-      {
-        "id": 36891,
+        "id": 257190,
         "name": "Iceborn Proto-Drake",
         "classification": 1,
         "spells": [
           {
-            "id": 69527,
+            "id": 1278986,
             "name": "Frost Breath",
             "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg",
-            "description": "Inflicts 251603 Frost damage to enemies in a 30 yard cone in front of the caster. In addition, the targets' attack speed is decreased by 100% for 6 sec."
-          }
-        ]
-      },
-      {
-        "id": 36892,
-        "name": "Ymirjar Deathbringer",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69516,
-            "name": "Summon Undead",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_senseundead.jpg",
-            "description": "Summons Ymirjar undead to accompany the caster until dismissed."
-          },
-          {
-            "id": 69528,
-            "name": "Empowered Shadow Bolt",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "description": "2 sec cast Hurls a bolt of dark magic at an enemy, inflicting 188702 Shadow damage to the target and an additional nearby enemy."
-          }
-        ]
-      },
-      {
-        "id": 36893,
-        "name": "Ymirjar Flamebearer",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69583,
-            "name": "Fireball",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_flamebolt.jpg",
-            "description": "3 sec cast Inflicts 210717 Fire damage to the target."
-          },
-          {
-            "id": 69584,
-            "name": "Tactical Blink",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blink.jpg",
-            "description": "Teleports the caster behind the target. Also frees the caster from any bonds."
-          },
-          {
-            "id": 69586,
-            "name": "Hellfire",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_incinerate.jpg",
-            "description": "Ignites the area surrounding the caster, causing 62901 Fire damage to himself and 62901 Fire damage to all nearby enemies every 1 sec. &nbsp;Lasts 15 sec."
-          }
-        ]
-      },
-      {
-        "id": 36896,
-        "name": "Stonespine Gargoyle",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69520,
-            "name": "Gargoyle Strike",
-            "schools": 8,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "description": "Inflicts Nature damage to an enemy."
-          }
-        ]
-      },
-      {
-        "id": 37588,
-        "name": "Coliseum Champion",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 69350,
-            "name": "Raise Dead",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_raisedead.jpg",
-            "description": "Return from life into undeath."
-          },
-          {
-            "id": 69413,
-            "name": "Strangulating",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_strangulate.jpg",
-            "description": "Being strangulated."
-          }
-        ]
-      },
-      {
-        "id": 37576,
-        "name": "Freed Alliance Slave",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 46604,
-            "name": "Ice Block",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frost.jpg",
-            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 4 sec, but during that time you cannot attack, move or cast spells. &nbsp;Also causes Hypothermia, preventing you from recasting Ice Block for 30 sec."
-          },
-          {
-            "id": 69570,
-            "name": "Fireball",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          },
-          {
-            "id": 70421,
-            "name": "Blizzard",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_icestorm.jpg",
-            "description": "Calls down a blizzard that lasts 10 sec., inflicting 24265 Frost damage every 2 sec. to all enemies in a selected area."
-          },
-          {
-            "id": 70516,
-            "name": "Pyroblast",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          }
-        ]
-      },
-      {
-        "id": 37579,
-        "name": "Freed Horde Slave",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 46604,
-            "name": "Ice Block",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frost.jpg",
-            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 4 sec, but during that time you cannot attack, move or cast spells. &nbsp;Also causes Hypothermia, preventing you from recasting Ice Block for 30 sec."
-          },
-          {
-            "id": 69570,
-            "name": "Fireball",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          },
-          {
-            "id": 70421,
-            "name": "Blizzard",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_icestorm.jpg",
-            "description": "Calls down a blizzard that lasts 10 sec., inflicting 24265 Frost damage every 2 sec. to all enemies in a selected area."
-          },
-          {
-            "id": 70516,
-            "name": "Pyroblast",
-            "schools": 4,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
-            "description": "Inflicts Fire damage to an enemy."
-          }
-        ]
-      },
-      {
-        "id": 37582,
-        "name": "Archmage Koreln",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 17741,
-            "name": "Mana Shield",
-            "schools": 64,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_detectlesserinvisibility.jpg",
-            "description": "Enfolds the caster in a protective shield that lasts 1 min and absorbs up to 262182 Physical damage, draining mana instead of health. Drains 2 mana per point of damage absorbed."
-          },
-          {
-            "id": 22645,
-            "name": "Frost Nova",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg",
-            "description": "Inflicts Frost damage to nearby enemies, immobilizing them for up to 8 sec."
-          },
-          {
-            "id": 22746,
-            "name": "Cone of Cold",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_glacier.jpg",
-            "description": "Inflicts Frost damage to enemies in a cone in front of the caster, reducing their movement speed for 8 sec."
-          },
-          {
-            "id": 70616,
-            "name": "Frostfire Bolt",
-            "schools": 20,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_frostfirebolt.jpg",
-            "description": "3 sec cast Launches a bolt of frostfire at the enemy, causing 1510097 Frost-Fire damage, slowing movement speed by 40% and causing an additional 335577 Fire damage over 9 sec. &nbsp;If the target is more vulnerable to Frost damage, this spell will cause Frost instead of Fire damage."
-          }
-        ]
-      },
-      {
-        "id": 37583,
-        "name": "Dark Ranger Kalira",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70513,
-            "name": "Multi-Shot",
-            "schools": 64,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_upgrademoonglaive.jpg",
-            "description": "Requires Ranged Fires a volley of missiles at an enemy and its nearby allies, striking up to 3 targets for normal damage plus 9604."
-          }
-        ]
-      },
-      {
-        "id": 37711,
-        "name": "Hungering Ghoul",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70393,
-            "name": "Devour Flesh",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_vampiricaura.jpg",
-            "description": "Drains 69191 health and 5% Stamina from an enemy, transferring it to the caster."
-          }
-        ]
-      },
-      {
-        "id": 37712,
-        "name": "Deathwhisper Shadowcaster",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70386,
-            "name": "Shadow Bolt",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "description": "3 sec cast Hurls a bolt of dark magic at an enemy, inflicting Shadow damage."
-          },
-          {
-            "id": 70388,
-            "name": "Seed of Corruption",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_seedofdestruction.jpg",
-            "description": "2 sec cast Requires Warlock Imbeds a demon seed in the enemy target, causing (100.2% of Spell Power) Shadow damage over 18 sec. &nbsp;When the target takes 3250 total damage, the seed will detonate, inflicting Shadow damage to all enemies within 10 yards of the target."
-          }
-        ]
-      },
-      {
-        "id": 37713,
-        "name": "Deathwhisper Torturer",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70391,
-            "name": "Curse of Agony",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseofsargeras.jpg",
-            "description": "Instant Curses the target with agony, causing 226443 Shadow damage over 24 sec. &nbsp;This damage is dealt slowly at first, and builds up as the Curse reaches its full duration. &nbsp;Only one Curse per Warlock can be active on any one target."
-          },
-          {
-            "id": 70392,
-            "name": "Black Brand",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_elemental_primal_shadow.jpg",
-            "description": "Inflicts 3629 Shadow damage to an enemy and increases the Shadow damage it takes by 50% for 10 sec."
-          }
-        ]
-      },
-      {
-        "id": 37728,
-        "name": "Wrathbone Sorcerer",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70388,
-            "name": "Seed of Corruption",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_seedofdestruction.jpg",
-            "description": "2 sec cast Requires Warlock Imbeds a demon seed in the enemy target, causing (100.2% of Spell Power) Shadow damage over 18 sec. &nbsp;When the target takes 3250 total damage, the seed will detonate, inflicting Shadow damage to all enemies within 10 yards of the target."
-          },
-          {
-            "id": 75330,
-            "name": "Shadow Bolt",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowbolt.jpg",
-            "description": "3 sec cast Hurls a bolt of dark magic at an enemy, inflicting Shadow damage."
-          }
-        ]
-      },
-      {
-        "id": 37755,
-        "name": "Sindragosa",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70521,
-            "name": "Frost Bomb",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_chillingblast.jpg",
-            "description": "Deals 0 Frost damage to all nearby targets."
-          }
-        ]
-      },
-      {
-        "id": 37774,
-        "name": "Archmage Elandra",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 17741,
-            "name": "Mana Shield",
-            "schools": 64,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_detectlesserinvisibility.jpg",
-            "description": "Enfolds the caster in a protective shield that lasts 1 min and absorbs up to 262182 Physical damage, draining mana instead of health. Drains 2 mana per point of damage absorbed."
-          },
-          {
-            "id": 22645,
-            "name": "Frost Nova",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg",
-            "description": "Inflicts Frost damage to nearby enemies, immobilizing them for up to 8 sec."
-          },
-          {
-            "id": 22746,
-            "name": "Cone of Cold",
-            "schools": 16,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_glacier.jpg",
-            "description": "Inflicts Frost damage to enemies in a cone in front of the caster, reducing their movement speed for 8 sec."
-          },
-          {
-            "id": 70616,
-            "name": "Frostfire Bolt",
-            "schools": 20,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_frostfirebolt.jpg",
-            "description": "3 sec cast Launches a bolt of frostfire at the enemy, causing 1510097 Frost-Fire damage, slowing movement speed by 40% and causing an additional 335577 Fire damage over 9 sec. &nbsp;If the target is more vulnerable to Frost damage, this spell will cause Frost instead of Fire damage."
-          }
-        ]
-      },
-      {
-        "id": 37779,
-        "name": "Dark Ranger Loralen",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 70513,
-            "name": "Multi-Shot",
-            "schools": 64,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_upgrademoonglaive.jpg",
-            "description": "Requires Ranged Fires a volley of missiles at an enemy and its nearby allies, striking up to 3 targets for normal damage plus 9604."
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_blueflamebreath.jpg",
+            "description": "The caster breathes frost in a frontal cone, inflicting 40 Frost damage to players hit."
           }
         ]
       },
@@ -6517,13 +5964,55 @@
             "description": "Krick's shade explodes after 1 min, destroying itself. This inflicts 254225 Shadow damage to all players and an additional 50845 Shadow damage every 1 sec for 10 sec. This effect stacks."
           }
         ]
+      },
+      {
+        "id": 252559,
+        "name": "Leaping Geist",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1258464,
+            "name": "Leaping Maul",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_heroicleap.jpg",
+            "description": "The caster leaps to a player's location and lashes outward with its claws, inflicting 35592 Physical damage to players within 3 yards."
+          }
+        ]
+      },
+      {
+        "id": 252602,
+        "name": "Risen Soldier",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1258451,
+            "name": "Charging Slash",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg",
+            "description": "The caster charges to a player and slashes them, inflicting 40676 Physical damage."
+          }
+        ]
+      },
+      {
+        "id": 252606,
+        "name": "Plungetalon Gargoyle",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1258997,
+            "name": "Plungegrip",
+            "schools": 1,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_10_worlddroplevelingoptionalreagent_misc_rylakclaw_color2.jpg",
+            "description": "The caster applies Stoneskin and pulls a player upward, inflicting 2 Physical damage every 1 sec for 12 sec. Upon interruption, the caster drops them. If the caster finishes channeling, they stun the victim for 5 sec."
+          }
+        ]
       }
     ]
   },
   {
     "instanceId": 945,
     "instanceSlug": "seat-of-the-triumvirate",
-    "fetchedAt": "2026-04-12T05:02:50.715Z",
+    "fetchedAt": "2026-04-12T05:30:19.174Z",
     "npcs": [
       {
         "id": 124309,
@@ -7517,7 +7006,7 @@
   {
     "instanceId": 476,
     "instanceSlug": "skyreach",
-    "fetchedAt": "2026-04-12T05:03:55.426Z",
+    "fetchedAt": "2026-04-12T05:31:17.491Z",
     "npcs": [
       {
         "id": 75964,
@@ -8601,20 +8090,13 @@
   {
     "instanceId": 1201,
     "instanceSlug": "algethar-academy",
-    "fetchedAt": "2026-04-12T05:04:32.479Z",
+    "fetchedAt": "2026-04-12T05:31:51.888Z",
     "npcs": [
       {
         "id": 190609,
         "name": "Echo of Doragosa",
         "classification": 1,
         "spells": [
-          {
-            "id": 344663,
-            "name": "Shattered Psyche",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/sha_spell_fire_bluehellfire_nightmare.jpg",
-            "description": "Your next 5 damaging abilities inflict Shattered Psyche, dealing 7280 Shadow damage and increasing the target's damage taken from Shattered Psyche by 1% for 5 sec, stacking up to 25 times."
-          },
           {
             "id": 454365,
             "name": "Arcane Missiles",
@@ -8697,13 +8179,6 @@
             "name": "Encounter Event",
             "schools": 1,
             "description": "An encounter event has occurred."
-          },
-          {
-            "id": 344663,
-            "name": "Shattered Psyche",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/sha_spell_fire_bluehellfire_nightmare.jpg",
-            "description": "Your next 5 damaging abilities inflict Shattered Psyche, dealing 7280 Shadow damage and increasing the target's damage taken from Shattered Psyche by 1% for 5 sec, stacking up to 25 times."
           },
           {
             "id": 376448,
@@ -8908,13 +8383,6 @@
         "classification": 1,
         "spells": [
           {
-            "id": 344663,
-            "name": "Shattered Psyche",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/sha_spell_fire_bluehellfire_nightmare.jpg",
-            "description": "Your next 5 damaging abilities inflict Shattered Psyche, dealing 7280 Shadow damage and increasing the target's damage taken from Shattered Psyche by 1% for 5 sec, stacking up to 25 times."
-          },
-          {
             "id": 387523,
             "name": "Return to Book",
             "schools": 1,
@@ -9012,20 +8480,6 @@
         "name": "Overgrown Ancient",
         "classification": 1,
         "spells": [
-          {
-            "id": 288865,
-            "name": "Meerah's Jukebox",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_alpaca.jpg",
-            "description": "Set up a rickety jukebox featuring Meerah's greatest hit!"
-          },
-          {
-            "id": 344663,
-            "name": "Shattered Psyche",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/sha_spell_fire_bluehellfire_nightmare.jpg",
-            "description": "Your next 5 damaging abilities inflict Shattered Psyche, dealing 7280 Shadow damage and increasing the target's damage taken from Shattered Psyche by 1% for 5 sec, stacking up to 25 times."
-          },
           {
             "id": 388544,
             "name": "Barkbreaker",

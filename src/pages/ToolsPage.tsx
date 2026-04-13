@@ -34,7 +34,7 @@ const tools: Tool[] = [
   },
   {
     name: 'SimC Rotation Guides',
-    url: 'https://simc-rotation-guides.vercel.app/',
+    url: 'https://simc-rotation.app/',
     description: 'SimulationCraft-based rotation guides and priority lists.',
     logo: '/logos/simcguides.svg',
   },

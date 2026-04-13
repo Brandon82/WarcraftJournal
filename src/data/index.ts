@@ -66,18 +66,15 @@ const HEADER_ICON_MIN_DIFFICULTY: Record<string, number> = {
 
 /**
  * Check if a section is visible at a given difficulty.
- * difficultyMask bits correspond to the encounter's modes array indices.
+ * Primary signal: headerIcons 'heroic'/'mythic' tags (reliable for all content).
+ * Secondary signal: difficultyMask bitmask (mode-index based, reliable for dungeon data).
  */
 function sectionVisibleAtDifficulty(
   s: JournalSection,
   difficulty: Difficulty,
   modesBitmask: number,
 ): boolean {
-  // Use difficultyMask if available
-  if (s.difficultyMask != null && s.difficultyMask > 0) {
-    return (s.difficultyMask & modesBitmask) !== 0;
-  }
-  // Fallback: use headerIcons tags (heroic = Heroic+, mythic = Mythic only)
+  // Primary: use headerIcons tags (heroic = Heroic+, mythic = Mythic only)
   if (s.headerIcons) {
     let maxMinRank: number | undefined;
     for (const icon of s.headerIcons) {
@@ -85,6 +82,10 @@ function sectionVisibleAtDifficulty(
       if (rank != null && (maxMinRank == null || rank > maxMinRank)) maxMinRank = rank;
     }
     if (maxMinRank != null) return DIFFICULTY_RANK[difficulty] >= maxMinRank;
+  }
+  // Secondary: difficultyMask bitmask (mode-index based, works for dungeon sections)
+  if (s.difficultyMask != null && s.difficultyMask > 0) {
+    return (s.difficultyMask & modesBitmask) !== 0;
   }
   return true;
 }
@@ -125,7 +126,9 @@ function filterSectionsRecursive(
       s.sections
         ? { ...s, sections: filterSectionsRecursive(s.sections, difficulty, modesBitmask) }
         : s,
-    );
+    )
+    // Prune container sections that had children but are now empty after filtering
+    .filter((s) => s.sections === undefined || s.sections.length > 0 || s.bodyText);
   return deduplicateSections(filtered, difficulty);
 }
 

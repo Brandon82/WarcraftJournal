@@ -184,6 +184,7 @@ const ICON_FLAG_MAP: Record<number, string> = {
   512: 'poison',
   1024: 'disease',
   2048: 'enrage',
+  4096: 'mythic',
 };
 
 function iconFlagsToHeaderIcons(flags: number): string[] {
@@ -197,6 +198,46 @@ function iconFlagsToHeaderIcons(flags: number): string[] {
 // Section metadata from wago.tools DB2 export
 let sectionMetadata: Map<number, { iconFlags: number; difficultyMask: number }> = new Map();
 
+/** Parse CSV text into rows, handling quoted fields with commas and newlines. */
+function parseCsvRows(text: string): string[][] {
+  const rows: string[][] = [];
+  const fields: string[] = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (inQuotes) {
+      if (ch === '"' && text[i + 1] === '"') {
+        current += '"';
+        i++;
+      } else if (ch === '"') {
+        inQuotes = false;
+      } else {
+        current += ch;
+      }
+    } else if (ch === '"') {
+      inQuotes = true;
+    } else if (ch === ',') {
+      fields.push(current);
+      current = '';
+    } else if (ch === '\n' || (ch === '\r' && text[i + 1] === '\n')) {
+      if (ch === '\r') i++;
+      fields.push(current);
+      current = '';
+      rows.push([...fields]);
+      fields.length = 0;
+    } else {
+      current += ch;
+    }
+  }
+  if (current || fields.length > 0) {
+    fields.push(current);
+    rows.push(fields);
+  }
+  return rows;
+}
+
 async function fetchSectionMetadata(): Promise<void> {
   console.log('Fetching section metadata from wago.tools...');
   try {
@@ -206,8 +247,10 @@ async function fetchSectionMetadata(): Promise<void> {
       return;
     }
     const csvText = await response.text();
-    const lines = csvText.split('\n');
-    const header = lines[0].split(',');
+    const rows = parseCsvRows(csvText);
+    if (rows.length === 0) return;
+
+    const header = rows[0];
     const idIdx = header.indexOf('ID');
     const iconFlagsIdx = header.indexOf('IconFlags');
     const diffMaskIdx = header.indexOf('DifficultyMask');
@@ -217,9 +260,10 @@ async function fetchSectionMetadata(): Promise<void> {
       return;
     }
 
-    for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(',');
-      if (cols.length <= Math.max(idIdx, iconFlagsIdx, diffMaskIdx)) continue;
+    const minCols = Math.max(idIdx, iconFlagsIdx, diffMaskIdx) + 1;
+    for (let i = 1; i < rows.length; i++) {
+      const cols = rows[i];
+      if (cols.length < minCols) continue;
       const id = parseInt(cols[idIdx], 10);
       const iconFlags = parseInt(cols[iconFlagsIdx], 10);
       const difficultyMask = parseInt(cols[diffMaskIdx], 10);
@@ -463,6 +507,15 @@ async function processSection(section: BlizzardSection): Promise<Record<string, 
   if (headerIcons.length === 0 && section.header_type != null) {
     const icon = HEADER_TYPE_MAP[section.header_type];
     if (icon) headerIcons = [icon];
+  }
+
+  // Parse bodyText for difficulty mentions (catches cases where iconFlags are missing)
+  if (bodyText) {
+    const diffMatch = bodyText.match(/^On (Heroic|Mythic) difficulty/i);
+    if (diffMatch) {
+      const tag = diffMatch[1].toLowerCase() as 'heroic' | 'mythic';
+      if (!headerIcons.includes(tag)) headerIcons.push(tag);
+    }
   }
 
   return {

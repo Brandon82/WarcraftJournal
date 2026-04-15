@@ -88,12 +88,22 @@ function SpellRow({ spell }: { spell: ZoneSpell }) {
   );
 }
 
-function NpcGroup({ npc, isBoss }: { npc: ZoneNpc; isBoss: boolean }) {
+interface NpcGroupProps {
+  npc: ZoneNpc;
+  isBoss: boolean;
+  /** Optional "× N" badge (e.g. clone count in an MDT pull). */
+  countBadge?: number;
+  /** Body shown when the NPC has no spells recorded. */
+  fallbackNote?: string;
+}
+
+export function NpcGroup({ npc, isBoss, countBadge, fallbackNote }: NpcGroupProps) {
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const classification = isBoss
     ? CLASSIFICATION_LABELS[3]
     : CLASSIFICATION_LABELS[npc.classification];
+  const hasSpells = npc.spells.length > 0;
 
   return (
     <div className="bg-wow-bg-elevated border border-wow-border rounded-xl mb-2">
@@ -110,13 +120,18 @@ function NpcGroup({ npc, isBoss }: { npc: ZoneNpc; isBoss: boolean }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-[15px] font-semibold text-wow-text">{npc.name}</span>
+            {countBadge != null && countBadge > 1 && (
+              <span className="text-xs text-wow-text-secondary font-mono">× {countBadge}</span>
+            )}
             {classification && (
               <span className={`px-2 py-0.5 text-xs rounded-md font-medium ${classification.style}`}>
                 {classification.label}
               </span>
             )}
             <span className="text-xs text-wow-text-secondary">
-              {npc.spells.length} {npc.spells.length === 1 ? 'ability' : 'abilities'}
+              {hasSpells
+                ? `${npc.spells.length} ${npc.spells.length === 1 ? 'ability' : 'abilities'}`
+                : 'No abilities recorded'}
             </span>
           </div>
         </div>
@@ -129,9 +144,13 @@ function NpcGroup({ npc, isBoss }: { npc: ZoneNpc; isBoss: boolean }) {
       >
         <div className="overflow-hidden min-h-0">
           <div className="pb-2">
-            {npc.spells.map((spell) => (
-              <SpellRow key={spell.id} spell={spell} />
-            ))}
+            {hasSpells ? (
+              npc.spells.map((spell) => <SpellRow key={spell.id} spell={spell} />)
+            ) : (
+              <p className="text-wow-text-secondary text-sm m-0 px-4 py-2 italic">
+                {fallbackNote ?? 'No abilities recorded for this NPC.'}
+              </p>
+            )}
           </div>
         </div>
       </div>

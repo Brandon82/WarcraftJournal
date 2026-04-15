@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router';
-import { RightOutlined } from '@ant-design/icons';
+import { RightOutlined, NodeIndexOutlined } from '@ant-design/icons';
 import { currentSeason } from '../../data/currentSeason';
 
 interface ExpansionMenuProps {
@@ -111,6 +111,18 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
       <div className="px-1">
         {renderCategory('raids', 'Raids', raids)}
         {renderCategory('dungeons', 'Dungeons', dungeons)}
+        <div className="my-2 mx-3 border-t border-wow-border" />
+        <button
+          onClick={() => go('/tools/mdt-route')}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+            location.pathname === '/tools/mdt-route'
+              ? 'bg-wow-bg-raised text-wow-gold font-medium'
+              : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
+          }`}
+        >
+          <NodeIndexOutlined className="text-[12px]" />
+          <span className="truncate">M+ Route Helper</span>
+        </button>
       </div>
     </nav>
   );

@@ -93,9 +93,7 @@ export default function ToolsPage() {
                   </h3>
                   <LinkOutlined className="text-wow-text-dim text-xs ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
                 </div>
-                <p className="text-sm m-0 text-wow-text-secondary">
-                  {tool.description}
-                </p>
+                <p className="text-sm m-0 text-wow-text-secondary">{tool.description}</p>
               </div>
             </div>
           </a>

@@ -27,21 +27,17 @@ export default function RouteLandingView({
 }: RouteLandingViewProps) {
   return (
     <div>
-      <div className="rounded-xl border border-wow-border bg-wow-bg-surface p-4 mb-6 grid gap-3 sm:grid-cols-2">
+      <div className="flex flex-wrap items-center gap-2 mb-6">
         <Button
           type="primary"
-          size="large"
           icon={<PlusOutlined />}
           onClick={onCreate}
-          block
         >
           Create new route
         </Button>
         <Button
-          size="large"
           icon={<ImportOutlined />}
           onClick={onImport}
-          block
         >
           Import from MDT
         </Button>

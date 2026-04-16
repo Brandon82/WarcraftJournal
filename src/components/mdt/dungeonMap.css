@@ -356,6 +356,30 @@
   outline-offset: -2px;
 }
 
+/* ── DungeonPicker open animation ────────────────────────────────────── */
+
+@keyframes mdt-picker-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mdt-picker-enter {
+  animation: mdt-picker-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  transform-origin: top center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mdt-picker-enter {
+    animation: none;
+  }
+}
+
 /* ── Map note pins ───────────────────────────────────────────────────── */
 
 .mdt-note-icon-wrapper {

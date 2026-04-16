@@ -253,6 +253,9 @@ function FitToBounds({
   useEffect(() => {
     map.fitBounds(bounds, { padding: [-40, -40] });
     map.setMaxBounds(bounds);
+    // Lock min zoom to the fitBounds level so the user can't zoom out further
+    const fitZoom = map.getBoundsZoom(bounds, false, [-40, -40]);
+    map.setMinZoom(fitZoom);
   }, [map, bounds, dungeonKey]);
   return null;
 }

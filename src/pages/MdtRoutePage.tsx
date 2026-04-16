@@ -526,6 +526,10 @@ export default function MdtRoutePage() {
         footer={null}
         width={560}
         destroyOnHidden
+        // Aligned roughly with the "Saved routes" heading on the landing
+        // page so the modal feels anchored to the same vertical region the
+        // user was already looking at.
+        style={{ top: 304 }}
       >
         <p className="text-sm text-wow-text-secondary mt-0 mb-3">
           Paste a route export from the MDT addon's <span className="text-wow-text">Share</span> &rarr; <span className="text-wow-text">Export</span> button.

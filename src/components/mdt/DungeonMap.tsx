@@ -73,7 +73,8 @@ export default function DungeonMap({
     <div className="relative rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface h-[720px]">
       <MapContainer
         key={dungeon.mapKey}
-        className="w-full h-full bg-wow-bg-surface"
+        className="w-full h-full"
+        style={{ backgroundColor: 'var(--color-wow-bg-surface)' }}
         crs={CRS.Simple}
         center={MAP_CENTER}
         bounds={MAP_BOUNDS}

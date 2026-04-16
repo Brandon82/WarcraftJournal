@@ -78,7 +78,7 @@ export default function DungeonMap({
         crs={CRS.Simple}
         center={MAP_CENTER}
         bounds={MAP_BOUNDS}
-        minZoom={3}
+        minZoom={1}
         maxZoom={5}
         zoom={3}
         zoomSnap={0.25}

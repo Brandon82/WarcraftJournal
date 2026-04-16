@@ -10,7 +10,9 @@ const CRUMB_TEXT = 'text-wow-text-secondary truncate block';
 
 export default function BreadcrumbNav() {
   const { expansionSlug, instanceSlug, bossSlug } = useParams();
-  const isSeason = useLocation().pathname.startsWith('/season');
+  const pathname = useLocation().pathname;
+  const isSeason = pathname.startsWith('/season');
+  const isTools = pathname.startsWith('/tools');
   const expansion = useExpansion(expansionSlug);
   const instance = useInstance(instanceSlug);
   const encounter = useEncounter(bossSlug);
@@ -26,7 +28,26 @@ export default function BreadcrumbNav() {
     },
   ];
 
-  if (isSeason) {
+  if (isTools) {
+    // /tools is the index for Useful Tools; deeper paths (e.g. /tools/mdt-route)
+    // append a sub-crumb for the specific tool. Keep the parent linkable so
+    // users can hop back to the tools index from any sub-page.
+    crumbs.push({
+      key: 'tools',
+      hiddenOnDeep: true,
+      node: (
+        <Link to="/tools" className={CRUMB_LINK}>
+          Useful Tools
+        </Link>
+      ),
+    });
+    if (pathname === '/tools/mdt-route') {
+      crumbs.push({
+        key: 'mdt-route',
+        node: <span className={CRUMB_TEXT}>M+ Route Helper</span>,
+      });
+    }
+  } else if (isSeason) {
     crumbs.push({
       key: 'season',
       hiddenOnDeep: true,

@@ -25,8 +25,20 @@ export interface RawMdtRoute {
     currentDungeonIdx?: number;
     selection?: number[];
     pulls?: RawMdtPull[];
+    /** Free-form route notes pinned to map positions. WarcraftJournal-only;
+     *  the MDT addon will round-trip these through LibSerialize untouched. */
+    wjNotes?: MapNote[];
   };
   [key: string]: unknown;
+}
+
+/** A free-form text annotation pinned to a position on the dungeon map. */
+export interface MapNote {
+  /** Stable client-generated id so React keys stay valid across edits. */
+  id: string;
+  /** Same coordinate space as MdtSpawnMarker.pos. */
+  pos: [number, number];
+  text: string;
 }
 
 /** An enemy entry in a vendored dungeon table (see dungeons/*.json).
@@ -92,6 +104,12 @@ export interface MdtSpawnMarker {
   pullIndex: number | null;
   /** Pull color (hex without `#`) when the spawn is in a pull. */
   pullColor: string | null;
+  /** Pack/patrol group number from the dungeon table. Spawns sharing a group
+   *  are pulled together by default (matches MDT click behavior). */
+  group: number | null;
+  /** Patrol waypoints (closed loop) when the spawn roams. Same coordinate
+   *  space as `pos`. Null when the mob is stationary. */
+  patrol: Array<[number, number]> | null;
 }
 
 export interface ParsedMdtRoute {
@@ -100,6 +118,7 @@ export interface ParsedMdtRoute {
   pulls: MdtPull[];
   totalForces: number;
   spawnMarkers: MdtSpawnMarker[];
+  notes: MapNote[];
 }
 
 export type MdtDecodeErrorReason =

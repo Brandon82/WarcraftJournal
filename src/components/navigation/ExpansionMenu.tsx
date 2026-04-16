@@ -30,7 +30,9 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
     name: inst.name,
   }));
 
-  // Track which categories are expanded
+  // Track whether the season header is expanded
+  const [seasonExpanded, setSeasonExpanded] = useState(true);
+  // Track which sub-categories (raids/dungeons) are expanded
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({
     raids: true,
     dungeons: true,
@@ -69,10 +71,9 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
       );
     });
 
-  const renderCategory = (key: string, label: string, instances: NavInstance[]) => {
+  const renderGroup = (key: string, label: string, instances: NavInstance[]) => {
     if (instances.length === 0) return null;
     const isExpanded = expandedCategories[key] ?? false;
-
     return (
       <div key={key}>
         <button
@@ -85,32 +86,31 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
           />
           {label}
         </button>
-        {isExpanded && (
-          <div className="pb-1">
-            {renderInstances(instances)}
-          </div>
-        )}
+        {isExpanded && <div className="pb-1">{renderInstances(instances)}</div>}
       </div>
     );
   };
 
   return (
     <nav className="flex-1 overflow-y-auto py-2">
-      {/* Season header */}
-      <div className="mx-3 mb-2 px-3 py-2.5 rounded-lg bg-wow-bg-elevated border border-wow-border">
-        <button
-          onClick={() => go('/season')}
-          className="w-full flex items-center gap-2.5 border-none cursor-pointer bg-transparent p-0"
-        >
-          <div className="w-1.5 h-1.5 rounded-full bg-wow-gold flex-shrink-0" />
-          <span className="text-wow-gold font-semibold text-sm">{currentSeason.name}</span>
-        </button>
-      </div>
-
-      {/* Nav tree */}
+      {/* Season collapsible header */}
       <div className="px-1">
-        {renderCategory('raids', 'Raids', raids)}
-        {renderCategory('dungeons', 'Dungeons', dungeons)}
+        <button
+          onClick={() => setSeasonExpanded((prev) => !prev)}
+          className="w-full flex items-center gap-2 px-3 py-2 border-none cursor-pointer bg-transparent text-wow-gold font-semibold text-sm transition-colors duration-150 hover:bg-wow-bg-elevated rounded-md"
+        >
+          <RightOutlined
+            className="text-[10px] transition-transform duration-200"
+            style={{ transform: seasonExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}
+          />
+          <span className="truncate">{currentSeason.name}</span>
+        </button>
+        {seasonExpanded && (
+          <div className="pb-1">
+            {renderGroup('raids', 'Raids', raids)}
+            {renderGroup('dungeons', 'Dungeons', dungeons)}
+          </div>
+        )}
         <div className="my-2 mx-3 border-t border-wow-border" />
         <button
           onClick={() => go('/tools/mdt-route')}

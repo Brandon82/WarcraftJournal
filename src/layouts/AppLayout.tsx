@@ -7,6 +7,7 @@ import ExpansionMenu from '../components/navigation/ExpansionMenu';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SearchBar from '../components/navigation/SearchBar';
 import { JournalProvider } from '../context/JournalContext';
+import { LayoutProvider, useLayout } from '../context/LayoutContext';
 import { useTheme } from '../context/ThemeContext';
 import { useDevMode } from '../context/DevModeContext';
 
@@ -24,11 +25,22 @@ function useIsMobile() {
 }
 
 export default function AppLayout() {
+  return (
+    <JournalProvider>
+      <LayoutProvider>
+        <AppLayoutInner />
+      </LayoutProvider>
+    </JournalProvider>
+  );
+}
+
+function AppLayoutInner() {
   const [collapsed, setCollapsed] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { devMode, toggleDevMode } = useDevMode();
+  const { wide } = useLayout();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
@@ -80,7 +92,6 @@ export default function AppLayout() {
   );
 
   return (
-    <JournalProvider>
       <div className="flex min-h-screen bg-wow-bg-base transition-colors duration-200">
         {/* Desktop sidebar */}
         {!isMobile && (
@@ -120,7 +131,7 @@ export default function AppLayout() {
             transition: 'margin-left 200ms ease',
           }}
         >
-          <header className="sticky top-3 z-5 h-14 bg-wow-bg-surface rounded-2xl flex items-center mx-3 px-4 sm:px-6 gap-3 transition-colors duration-200" style={{ boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)' }}>
+          <header className="sticky top-3 z-[1000] h-14 bg-wow-bg-surface rounded-2xl flex items-center mx-3 px-4 sm:px-6 gap-3 transition-colors duration-200" style={{ boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)' }}>
             {(isMobile || collapsed) && (
               <button
                 onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(false)}
@@ -166,9 +177,21 @@ export default function AppLayout() {
             </button>
           </header>
 
-          <main className="flex-1 py-4 px-3 sm:py-8 sm:px-16 lg:px-24 xl:px-32">
-            <div className="max-w-6xl mx-auto">
-              <Outlet />
+          <main
+            className={
+              // Pages opt into a wider container by calling setWide(true)
+              // through LayoutContext (e.g. the MDT route editor while a
+              // route is loaded). Defaults to the centered narrow layout
+              // that suits long-form reading.
+              wide
+                ? 'flex-1 py-4 px-3 sm:py-6 sm:px-6 lg:px-8'
+                : 'flex-1 py-4 px-3 sm:py-8 sm:px-16 lg:px-24 xl:px-32'
+            }
+          >
+            <div className={wide ? 'max-w-[1300px] mx-auto' : 'max-w-6xl mx-auto'}>
+              <div key={location.pathname} className="page-enter">
+                <Outlet />
+              </div>
             </div>
           </main>
         </div>
@@ -176,6 +199,5 @@ export default function AppLayout() {
         {/* Search overlay */}
         {searchOpen && <SearchBar onClose={() => setSearchOpen(false)} />}
       </div>
-    </JournalProvider>
   );
 }

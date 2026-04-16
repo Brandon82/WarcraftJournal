@@ -65,3 +65,39 @@ export function decodeForPrint(input: string): Uint8Array {
 
   return out;
 }
+
+/** Inverse of `decodeForPrint`: packs bytes into the 64-char print alphabet
+ *  using 6 bits per character, little-endian. Every 3 bytes → 4 chars; a
+ *  trailing 1 or 2 bytes produce 2 or 3 chars respectively. */
+export function encodeForPrint(input: Uint8Array): string {
+  const len = input.length;
+  const fullGroups = Math.floor(len / 3);
+  const rem = len % 3;
+  const out: string[] = [];
+
+  let i = 0;
+  for (let g = 0; g < fullGroups; g++) {
+    const word = input[i] | (input[i + 1] << 8) | (input[i + 2] << 16);
+    out.push(
+      ALPHABET[word & 0x3f],
+      ALPHABET[(word >>> 6) & 0x3f],
+      ALPHABET[(word >>> 12) & 0x3f],
+      ALPHABET[(word >>> 18) & 0x3f],
+    );
+    i += 3;
+  }
+
+  if (rem === 2) {
+    const word = input[i] | (input[i + 1] << 8);
+    out.push(
+      ALPHABET[word & 0x3f],
+      ALPHABET[(word >>> 6) & 0x3f],
+      ALPHABET[(word >>> 12) & 0x3f],
+    );
+  } else if (rem === 1) {
+    const word = input[i];
+    out.push(ALPHABET[word & 0x3f], ALPHABET[(word >>> 6) & 0x3f]);
+  }
+
+  return out.join('');
+}

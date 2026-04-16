@@ -1,5 +1,24 @@
 /* Styling for the L.divIcon-based NPC portrait markers used by DungeonMap. */
 
+/* ── Map container sizing ─────────────────────────────────────────────── */
+/* Used by both the inline map and the fullscreen-spacer placeholder so they
+   stay in sync. Responsive height that adapts to viewport instead of a
+   fixed 600px tower. */
+
+.mdt-map-container {
+  height: 60vh;
+  min-height: 420px;
+  max-height: 760px;
+}
+
+@media (max-width: 640px) {
+  .mdt-map-container {
+    height: 55vh;
+    min-height: 360px;
+  }
+}
+
+
 /* ── Leaflet zoom controls ────────────────────────────────────────────── */
 
 .leaflet-control-zoom {
@@ -113,6 +132,37 @@
   background-color: rgba(70, 70, 78, 0.95);
 }
 
+/* ── Reset-position button ───────────────────────────────────────────── */
+
+.mdt-map-reset-btn {
+  position: absolute;
+  top: 10px;
+  right: 54px;
+  z-index: 1000;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background-color: rgba(30, 30, 34, 0.92);
+  color: #d4d4d8;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mdt-map-reset-btn:hover {
+  background-color: rgba(55, 55, 62, 0.95);
+  color: #fbbf24;
+}
+
+.mdt-map-reset-btn:active {
+  background-color: rgba(70, 70, 78, 0.95);
+}
+
 /* ── NPC portrait markers ─────────────────────────────────────────────── */
 
 .mdt-mob-icon-wrapper {
@@ -160,4 +210,202 @@
     0 0 0 2px rgba(255, 255, 255, 0.85),
     0 0 0 5px rgba(255, 215, 0, 0.7),
     0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Pack hover: highlights every mob in the hovered patrol group. */
+.mdt-mob-icon--pack-hover {
+  /* Force opacity back to 1 even for non-pull trash so the whole pack reads. */
+  opacity: 1 !important;
+  filter: grayscale(0) !important;
+  box-shadow:
+    0 0 0 2px rgba(251, 191, 36, 0.9),
+    0 0 12px rgba(251, 191, 36, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+/* Boss diamond shape. The wrapper is rotated 45° and the inner img is
+   counter-rotated so the portrait stays upright. */
+.mdt-mob-icon--boss-diamond {
+  border-radius: 4px !important;
+  transform: rotate(45deg) scale(var(--zoom-scale, 1));
+}
+
+.mdt-mob-icon--boss-diamond img {
+  transform: rotate(-45deg) scale(1.4);
+}
+
+.mdt-mob-icon--boss-diamond:hover {
+  transform: rotate(45deg) scale(calc(var(--zoom-scale, 1) * 1.15));
+}
+
+/* ── Pull number badges ──────────────────────────────────────────────── */
+
+.mdt-pull-badge-wrapper {
+  background: none !important;
+  border: none !important;
+}
+
+.mdt-pull-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0a0a0a;
+  background-color: var(--badge-color, #fbbf24);
+  border: 2px solid rgba(0, 0, 0, 0.55);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  transform: scale(var(--zoom-scale, 1));
+  transform-origin: center;
+  transition: transform 0.1s ease-out;
+}
+
+.mdt-pull-badge--selected {
+  font-size: 15px;
+  border-width: 3px;
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+/* Selected-pull subtle pulse on the hull + badge. Disabled for users with
+   reduced-motion preference. */
+@keyframes mdt-pull-pulse {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.25); }
+}
+
+.mdt-pull-badge--selected,
+.leaflet-interactive.mdt-pull-hull--selected {
+  animation: mdt-pull-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mdt-pull-badge--selected,
+  .leaflet-interactive.mdt-pull-hull--selected {
+    animation: none;
+  }
+}
+
+/* ── Layer toggle control ────────────────────────────────────────────── */
+
+.mdt-layer-control {
+  background-color: rgba(30, 30, 34, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #d4d4d8;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  min-width: 140px;
+}
+
+.mdt-layer-control h5 {
+  margin: 0 0 6px 0;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fbbf24;
+}
+
+.mdt-layer-control label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mdt-layer-control input[type='checkbox'] {
+  margin: 0;
+  accent-color: #fbbf24;
+  cursor: pointer;
+}
+
+/* ── Cursor coordinate readout ───────────────────────────────────────── */
+
+.mdt-coords-readout {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 4px 8px;
+  background-color: rgba(30, 30, 34, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #d4d4d8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Pull list drag-and-drop drop target ─────────────────────────────── */
+
+.mdt-pull-drop-target > button {
+  outline: 2px dashed #fbbf24;
+  outline-offset: -2px;
+}
+
+/* ── Map note pins ───────────────────────────────────────────────────── */
+
+.mdt-note-icon-wrapper {
+  background: none !important;
+  border: none !important;
+}
+
+.mdt-note-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: #facc15;
+  color: #422006;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: ui-serif, Georgia, serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transform: scale(var(--zoom-scale, 1));
+  transform-origin: center;
+  transition: transform 0.1s ease-out;
+}
+
+.mdt-note-icon:hover {
+  transform: scale(calc(var(--zoom-scale, 1) * 1.15));
+}
+
+/* ── Mob info side panel ─────────────────────────────────────────────── */
+
+.mdt-mob-info-panel {
+  border: 1px solid var(--color-wow-border);
+  border-radius: 12px;
+  padding: 16px;
+  background-color: var(--color-wow-bg-surface);
+}
+
+.mdt-mob-info-panel-close {
+  background: none;
+  border: none;
+  color: var(--color-wow-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.mdt-mob-info-panel-close:hover {
+  color: var(--color-wow-gold);
 }

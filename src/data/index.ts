@@ -13,6 +13,13 @@ export const instances = instancesData as JournalInstance[];
 export const encounters = encountersData as JournalEncounter[];
 export const zoneSpells = zoneSpellsData as ZoneSpellData[];
 
+// Most recent fetch timestamp across zone-spell entries — reflects the latest
+// data refresh (zone-spells are written on every full run and on --only-zone-spells runs).
+export const dataGeneratedAt: string = zoneSpells.reduce(
+  (latest, z) => (z.fetchedAt && z.fetchedAt > latest ? z.fetchedAt : latest),
+  '',
+);
+
 export const expansionBySlug = new Map(expansions.map((e) => [e.slug, e]));
 export const expansionById = new Map(expansions.map((e) => [e.id, e]));
 

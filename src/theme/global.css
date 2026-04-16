@@ -114,3 +114,28 @@ body {
   background: var(--color-wow-bg-hover);
 }
 
+/* Page transition: subtle fade + slide-up on route change */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  /* No `both` fill-mode: a lingering transform after the animation would
+     trap `position: fixed` descendants (like the DungeonMap fullscreen
+     overlay) inside this wrapper's containing block. */
+  animation: page-enter 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+

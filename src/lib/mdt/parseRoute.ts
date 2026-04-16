@@ -9,6 +9,7 @@
 import { findDungeonByMdtIdx } from './dungeons';
 import {
   MdtDecodeError,
+  type MapNote,
   type MdtDungeonEnemy,
   type MdtPull,
   type MdtPullEnemy,
@@ -21,6 +22,8 @@ interface RawSpawn {
   id?: unknown;
   idx?: unknown;
   pos?: unknown;
+  group?: unknown;
+  patrol?: unknown;
 }
 
 export function parseMdtRoute(raw: RawMdtRoute): ParsedMdtRoute {
@@ -121,6 +124,9 @@ export function parseMdtRoute(raw: RawMdtRoute): ParsedMdtRoute {
       ) continue;
       const idx = typeof spawn.idx === 'number' ? spawn.idx : null;
       const membership = idx != null ? pullByClone.get(`${enemy.enemyIndex}:${idx}`) : undefined;
+      const group =
+        typeof spawn.group === 'number' && Number.isFinite(spawn.group) ? spawn.group : null;
+      const patrol = parsePatrol(spawn.patrol);
       spawnMarkers.push({
         spawnId: typeof spawn.id === 'string' ? spawn.id : `${enemy.enemyIndex}-${idx ?? '?'}`,
         pos: [pos[0], pos[1]],
@@ -129,6 +135,8 @@ export function parseMdtRoute(raw: RawMdtRoute): ParsedMdtRoute {
         isBoss: !!enemy.isBoss,
         pullIndex: membership?.pullIndex ?? null,
         pullColor: membership?.color ?? null,
+        group,
+        patrol,
       });
     }
   }
@@ -139,6 +147,50 @@ export function parseMdtRoute(raw: RawMdtRoute): ParsedMdtRoute {
     pulls,
     totalForces,
     spawnMarkers,
+    notes: parseNotes(raw.value?.wjNotes),
   };
+}
+
+/** Tolerant note parser: ignores any entry that doesn't have an id, valid
+ *  position, and a string body. Keeps the route render-able even if the
+ *  notes field was hand-edited or imported from a future schema. */
+function parseNotes(raw: unknown): MapNote[] {
+  if (!Array.isArray(raw)) return [];
+  const out: MapNote[] = [];
+  for (const entry of raw) {
+    if (!entry || typeof entry !== 'object') continue;
+    const e = entry as { id?: unknown; pos?: unknown; text?: unknown };
+    if (
+      typeof e.id !== 'string' ||
+      typeof e.text !== 'string' ||
+      !Array.isArray(e.pos) ||
+      e.pos.length < 2 ||
+      typeof e.pos[0] !== 'number' ||
+      typeof e.pos[1] !== 'number'
+    ) {
+      continue;
+    }
+    out.push({ id: e.id, pos: [e.pos[0], e.pos[1]], text: e.text });
+  }
+  return out;
+}
+
+/** Defensive: vendored data is well-formed, but be tolerant of bad shapes
+ *  in case future imports differ. Returns null for missing/invalid patrol
+ *  data so callers can branch cheaply. */
+function parsePatrol(raw: unknown): Array<[number, number]> | null {
+  if (!Array.isArray(raw) || raw.length < 2) return null;
+  const out: Array<[number, number]> = [];
+  for (const point of raw) {
+    if (
+      Array.isArray(point) &&
+      point.length >= 2 &&
+      typeof point[0] === 'number' &&
+      typeof point[1] === 'number'
+    ) {
+      out.push([point[0], point[1]]);
+    }
+  }
+  return out.length >= 2 ? out : null;
 }
 

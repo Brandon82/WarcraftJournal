@@ -80,7 +80,7 @@ export default function DungeonMap({
         bounds={MAP_BOUNDS}
         minZoom={1}
         maxZoom={5}
-        zoom={2}
+        zoom={3}
         zoomSnap={0.25}
         zoomControl
         attributionControl={false}
@@ -251,7 +251,7 @@ function FitToBounds({
 }) {
   const map = useMap();
   useEffect(() => {
-    map.fitBounds(bounds, { padding: [10, 10] });
+    map.fitBounds(bounds, { padding: [-40, -40] });
     map.setMaxBounds(bounds);
   }, [map, bounds, dungeonKey]);
   return null;

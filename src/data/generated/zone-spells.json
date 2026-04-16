@@ -2,7 +2,7 @@
   {
     "instanceId": 1314,
     "instanceSlug": "the-dreamrift",
-    "fetchedAt": "2026-04-12T20:21:49.660Z",
+    "fetchedAt": "2026-04-16T15:55:59.184Z",
     "npcs": [
       {
         "id": 257691,
@@ -215,7 +215,7 @@
   {
     "instanceId": 1307,
     "instanceSlug": "the-voidspire",
-    "fetchedAt": "2026-04-12T20:26:36.270Z",
+    "fetchedAt": "2026-04-16T15:57:21.356Z",
     "npcs": [
       {
         "id": 219161,
@@ -759,33 +759,16 @@
         ]
       },
       {
-        "id": 240548,
+        "id": 264858,
         "name": "Abyssal Caller",
         "classification": 1,
         "spells": [
-          {
-            "id": 1228325,
-            "name": "Call of the Void",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-            "description": "The caster calls upon the devouring void to devour its foes in a shadowy bubble that inflicts 23310 Shadow damage every 1 sec.",
-            "tags": [
-              "interruptible"
-            ]
-          },
           {
             "id": 1228330,
             "name": "Void Bolt",
             "schools": 106,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_missile.jpg",
             "description": "The caster blasts the current target, inflicting 58276 Cosmic damage."
-          },
-          {
-            "id": 1228518,
-            "name": "Rift's Protector",
-            "schools": 1,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-            "description": "Protecting the integrity of the void rift."
           }
         ]
       },
@@ -1640,6 +1623,20 @@
         ]
       },
       {
+        "id": 255304,
+        "name": "Shadowguard Stalwart",
+        "classification": 1,
+        "spells": [
+          {
+            "id": 1255702,
+            "name": "Pitch Bulwark",
+            "schools": 32,
+            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
+            "description": "The caster grants a shield to allies that absorbs the next 1324824 damage."
+          }
+        ]
+      },
+      {
         "id": 255179,
         "name": "Fractured Image",
         "classification": 1,
@@ -1796,20 +1793,6 @@
         ]
       },
       {
-        "id": 255304,
-        "name": "Shadowguard Stalwart",
-        "classification": 1,
-        "spells": [
-          {
-            "id": 1255702,
-            "name": "Pitch Bulwark",
-            "schools": 32,
-            "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcaneresilience.jpg",
-            "description": "The caster grants a shield to allies that absorbs the next 1324824 damage."
-          }
-        ]
-      },
-      {
         "id": 256757,
         "name": "Voidbound Annihilator",
         "classification": 1,
@@ -1921,7 +1904,7 @@
   {
     "instanceId": 1308,
     "instanceSlug": "march-on-queldanas",
-    "fetchedAt": "2026-04-12T20:26:51.054Z",
+    "fetchedAt": "2026-04-16T15:57:43.620Z",
     "npcs": [
       {
         "id": 240391,
@@ -2010,7 +1993,7 @@
             "name": "Eclipsed",
             "schools": 106,
             "spellIcon": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_eclipse.jpg",
-            "description": "Enveloped in refracting shadows, absorbing the next 29809 healing received."
+            "description": "Enveloped in refracting shadows, absorbing the next 26828 healing received."
           },
           {
             "id": 1263253,
@@ -2395,7 +2378,7 @@
   {
     "instanceId": 1311,
     "instanceSlug": "den-of-nalorakk",
-    "fetchedAt": "2026-04-12T20:27:03.936Z",
+    "fetchedAt": "2026-04-16T15:58:00.236Z",
     "npcs": [
       {
         "id": 244584,
@@ -2615,7 +2598,7 @@
   {
     "instanceId": 1300,
     "instanceSlug": "magisters-terrace",
-    "fetchedAt": "2026-04-12T20:27:26.106Z",
+    "fetchedAt": "2026-04-16T15:58:26.399Z",
     "npcs": [
       {
         "id": 231861,
@@ -3124,7 +3107,7 @@
   {
     "instanceId": 1315,
     "instanceSlug": "maisara-caverns",
-    "fetchedAt": "2026-04-12T20:30:37.798Z",
+    "fetchedAt": "2026-04-16T15:59:03.683Z",
     "npcs": [
       {
         "id": 1531,
@@ -3944,7 +3927,7 @@
   {
     "instanceId": 1304,
     "instanceSlug": "murder-row",
-    "fetchedAt": "2026-04-12T20:30:48.741Z",
+    "fetchedAt": "2026-04-16T15:59:17.060Z",
     "npcs": [
       {
         "id": 234647,
@@ -4196,7 +4179,7 @@
   {
     "instanceId": 1316,
     "instanceSlug": "nexus-point-xenas",
-    "fetchedAt": "2026-04-12T20:32:18.461Z",
+    "fetchedAt": "2026-04-16T15:59:37.137Z",
     "npcs": [
       {
         "id": 241546,
@@ -4721,7 +4704,7 @@
   {
     "instanceId": 1309,
     "instanceSlug": "the-blinding-vale",
-    "fetchedAt": "2026-04-12T20:32:31.980Z",
+    "fetchedAt": "2026-04-16T16:00:06.242Z",
     "npcs": [
       {
         "id": 243028,
@@ -5060,7 +5043,7 @@
   {
     "instanceId": 1313,
     "instanceSlug": "voidscar-arena",
-    "fetchedAt": "2026-04-12T20:32:36.702Z",
+    "fetchedAt": "2026-04-16T16:00:12.182Z",
     "npcs": [
       {
         "id": 238887,
@@ -5245,7 +5228,7 @@
   {
     "instanceId": 1299,
     "instanceSlug": "windrunner-spire",
-    "fetchedAt": "2026-04-12T20:32:47.630Z",
+    "fetchedAt": "2026-04-16T16:02:55.255Z",
     "npcs": [
       {
         "id": 231606,
@@ -5930,7 +5913,7 @@
   {
     "instanceId": 278,
     "instanceSlug": "pit-of-saron",
-    "fetchedAt": "2026-04-12T20:33:17.928Z",
+    "fetchedAt": "2026-04-16T16:03:31.843Z",
     "npcs": [
       {
         "id": 36476,
@@ -6438,7 +6421,7 @@
   {
     "instanceId": 945,
     "instanceSlug": "seat-of-the-triumvirate",
-    "fetchedAt": "2026-04-12T20:36:29.936Z",
+    "fetchedAt": "2026-04-16T16:04:23.264Z",
     "npcs": [
       {
         "id": 124309,
@@ -7477,7 +7460,7 @@
   {
     "instanceId": 476,
     "instanceSlug": "skyreach",
-    "fetchedAt": "2026-04-12T20:38:27.096Z",
+    "fetchedAt": "2026-04-16T16:05:26.611Z",
     "npcs": [
       {
         "id": 75964,
@@ -8579,7 +8562,7 @@
   {
     "instanceId": 1201,
     "instanceSlug": "algethar-academy",
-    "fetchedAt": "2026-04-12T20:38:55.081Z",
+    "fetchedAt": "2026-04-16T16:06:00.501Z",
     "npcs": [
       {
         "id": 190609,

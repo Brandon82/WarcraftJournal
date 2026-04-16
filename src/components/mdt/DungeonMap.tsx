@@ -70,10 +70,11 @@ export default function DungeonMap({
   }, [safeSpawns]);
 
   return (
-    <div className="relative rounded-xl overflow-hidden border border-wow-border bg-black h-[520px]">
+    <div className="relative rounded-xl overflow-hidden border border-wow-border h-[720px]" style={{ backgroundColor: '#2a2a2e' }}>
       <MapContainer
         key={dungeon.mapKey}
-        className="w-full h-full bg-black"
+        className="w-full h-full"
+        style={{ backgroundColor: '#2a2a2e' }}
         crs={CRS.Simple}
         center={MAP_CENTER}
         bounds={MAP_BOUNDS}

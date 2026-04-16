@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css';
 import './dungeonMap.css';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   MapContainer,
   TileLayer,
@@ -15,6 +15,7 @@ import {
   type LatLngBoundsExpression,
   type LatLngExpression,
 } from 'leaflet';
+import { FullscreenOutlined, FullscreenExitOutlined } from '@ant-design/icons';
 import type { MdtDungeonTable, MdtSpawnMarker } from '../../lib/mdt/types';
 
 // Match threechest's coordinate system: CRS.Simple with bounds that cover
@@ -47,7 +48,31 @@ export default function DungeonMap({
   selectedPullIndex,
   onSelectPull,
 }: DungeonMapProps) {
+  const [expanded, setExpanded] = useState(false);
+  const [animating, setAnimating] = useState(false);
   const safeSpawns = spawns ?? [];
+
+  // True while the fixed overlay is visible — stays true during
+  // the close animation so elements can animate out before unmounting.
+  const overlayActive = expanded || animating;
+
+  useEffect(() => {
+    if (!expanded) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setAnimating(true);
+        setExpanded(false);
+      }
+    };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [expanded]);
+
+  useEffect(() => {
+    if (!expanded) return;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, [expanded]);
 
   // Build a convex hull per pull so every pull is outlined in its color.
   const pullHulls = useMemo(() => {
@@ -70,95 +95,131 @@ export default function DungeonMap({
   }, [safeSpawns]);
 
   return (
-    <div className="relative rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface h-[600px]">
-      <MapContainer
-        key={dungeon.mapKey}
-        className="w-full h-full"
-        style={{ backgroundColor: 'var(--color-wow-bg-surface)' }}
-        crs={CRS.Simple}
-        center={MAP_CENTER}
-        bounds={MAP_BOUNDS}
-        minZoom={1}
-        maxZoom={5}
-        zoom={3}
-        zoomSnap={0.25}
-        zoomControl
-        attributionControl={false}
-        doubleClickZoom
-        scrollWheelZoom
-        maxBoundsViscosity={1.0}
-      >
-        <TileLayer
-          url={`/maps/${dungeon.mapKey}/{x}_{y}.jpg`}
-          bounds={MAP_BOUNDS}
-          noWrap
-          minNativeZoom={2}
-          maxNativeZoom={2}
-          tileSize={256}
+    <>
+      {overlayActive && <div className="h-[600px]" aria-hidden />}
+      {overlayActive && (
+        <div
+          className={`fixed inset-0 z-40 bg-black/60 ${
+            animating && !expanded ? 'mdt-backdrop-out' : 'mdt-backdrop-in'
+          }`}
+          onClick={() => { setAnimating(true); setExpanded(false); }}
         />
-        <FitToBounds bounds={MAP_BOUNDS} dungeonKey={dungeon.mapKey} />
+      )}
+      <div
+        className={
+          overlayActive
+            ? `fixed inset-4 z-50 rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface${
+                animating ? (expanded ? ' mdt-map-expanding' : ' mdt-map-collapsing') : ''
+              }`
+            : 'relative rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface h-[600px]'
+        }
+        onAnimationEnd={(e) => { if (e.target === e.currentTarget) setAnimating(false); }}
+      >
+        <button
+          type="button"
+          onClick={() => {
+            if (expanded) {
+              setAnimating(true);
+              setExpanded(false);
+            } else {
+              setExpanded(true);
+              setAnimating(true);
+            }
+          }}
+          className="mdt-map-expand-btn"
+          title={expanded ? 'Exit fullscreen (Esc)' : 'Expand map'}
+        >
+          {expanded ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
+        </button>
+        <MapContainer
+          key={dungeon.mapKey}
+          className="w-full h-full"
+          style={{ backgroundColor: 'var(--color-wow-bg-surface)' }}
+          crs={CRS.Simple}
+          center={MAP_CENTER}
+          bounds={MAP_BOUNDS}
+          minZoom={1}
+          maxZoom={5}
+          zoom={3}
+          zoomSnap={0.25}
+          zoomControl
+          attributionControl={false}
+          doubleClickZoom
+          scrollWheelZoom
+        >
+          <TileLayer
+            url={`/maps/${dungeon.mapKey}/{x}_{y}.jpg`}
+            bounds={MAP_BOUNDS}
+            noWrap
+            minNativeZoom={2}
+            maxNativeZoom={2}
+            tileSize={256}
+          />
+          <FitToBounds bounds={MAP_BOUNDS} dungeonKey={dungeon.mapKey} expanded={expanded} animating={animating} />
+          <ZoomScaleTracker />
 
-        {/* Draw a hull outline for every pull so the route is visible at a
-            glance. The selected pull paints on top with stronger emphasis. */}
-        {pullHulls
-          .filter((h) => h.pullIndex !== selectedPullIndex)
-          .map((h) => (
-            <Polygon
-              key={`hull-${h.pullIndex}`}
-              positions={h.hull as LatLngExpression[]}
-              pathOptions={{
-                color: `#${h.color}`,
-                weight: 2,
-                opacity: 0.75,
-                fillColor: `#${h.color}`,
-                fillOpacity: 0.1,
-                dashArray: '4 4',
-                className: 'pointer-events-none',
-              }}
-            />
-          ))}
-        {pullHulls
-          .filter((h) => h.pullIndex === selectedPullIndex)
-          .map((h) => (
-            <Polygon
-              key={`hull-${h.pullIndex}-selected`}
-              positions={h.hull as LatLngExpression[]}
-              pathOptions={{
-                color: `#${h.color}`,
-                weight: 4,
-                opacity: 1,
-                fillColor: `#${h.color}`,
-                fillOpacity: 0.2,
-                className: 'pointer-events-none',
-              }}
-            />
-          ))}
+          {/* Draw a hull outline for every pull so the route is visible at a
+              glance. The selected pull paints on top with stronger emphasis. */}
+          {pullHulls
+            .filter((h) => h.pullIndex !== selectedPullIndex)
+            .map((h) => (
+              <Polygon
+                key={`hull-${h.pullIndex}`}
+                positions={h.hull as LatLngExpression[]}
+                pathOptions={{
+                  color: `#${h.color}`,
+                  weight: 2,
+                  opacity: 0.75,
+                  fillColor: `#${h.color}`,
+                  fillOpacity: 0.1,
+                  dashArray: '4 4',
+                  className: 'pointer-events-none',
+                }}
+              />
+            ))}
+          {pullHulls
+            .filter((h) => h.pullIndex === selectedPullIndex)
+            .map((h) => (
+              <Polygon
+                key={`hull-${h.pullIndex}-selected`}
+                positions={h.hull as LatLngExpression[]}
+                pathOptions={{
+                  color: `#${h.color}`,
+                  weight: 4,
+                  opacity: 1,
+                  fillColor: `#${h.color}`,
+                  fillOpacity: 0.2,
+                  className: 'pointer-events-none',
+                }}
+              />
+            ))}
 
-        {/* Non-selected spawns first so selected ones paint on top. */}
-        {safeSpawns.map((spawn) => {
-          if (spawn.pullIndex === selectedPullIndex) return null;
-          return (
-            <SpawnMarker
-              key={spawn.spawnId}
-              spawn={spawn}
-              selected={false}
-              onSelectPull={onSelectPull}
-            />
-          );
-        })}
-        {selectedPullIndex != null &&
-          safeSpawns
-            .filter((s) => s.pullIndex === selectedPullIndex)
-            .map((spawn) => (
+          {/* Non-selected spawns first so selected ones paint on top. */}
+          {safeSpawns.map((spawn) => {
+            if (spawn.pullIndex === selectedPullIndex) return null;
+            return (
               <SpawnMarker
                 key={spawn.spawnId}
                 spawn={spawn}
-                selected
+                selected={false}
                 onSelectPull={onSelectPull}
               />
-            ))}
-      </MapContainer>
-    </div>
+            );
+          })}
+          {selectedPullIndex != null &&
+            safeSpawns
+              .filter((s) => s.pullIndex === selectedPullIndex)
+              .map((spawn) => (
+                <SpawnMarker
+                  key={spawn.spawnId}
+                  spawn={spawn}
+                  selected
+                  onSelectPull={onSelectPull}
+                />
+              ))}
+        </MapContainer>
+      </div>
+    </>
   );
 }
 
@@ -241,19 +302,49 @@ function buildIcon(spawn: MdtSpawnMarker, selected: boolean) {
   });
 }
 
-/** Ensures the map refits its view when the dungeon changes. */
+/** Ensures the map refits its view when the dungeon or container size changes. */
 function FitToBounds({
   bounds,
   dungeonKey,
+  expanded,
+  animating,
 }: {
   bounds: LatLngBoundsExpression;
   dungeonKey: string;
+  expanded: boolean;
+  animating: boolean;
 }) {
   const map = useMap();
   useEffect(() => {
-    map.fitBounds(bounds, { padding: [-40, -40] });
-    map.setMaxBounds(bounds);
-  }, [map, bounds, dungeonKey]);
+    // During the close animation the container is still at its expanded size —
+    // refitting now would shift the map view while it's fading out. Wait until
+    // the animation ends (animating → false) so the container has actually
+    // resized before we recalculate.
+    if (animating && !expanded) return;
+
+    const timer = setTimeout(() => {
+      map.invalidateSize();
+      map.fitBounds(bounds, { padding: [-40, -40] });
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [map, bounds, dungeonKey, expanded, animating]);
+  return null;
+}
+
+/** Updates a CSS variable on the map container so mob icons scale with zoom. */
+function ZoomScaleTracker() {
+  const map = useMap();
+  useEffect(() => {
+    function update() {
+      const zoom = map.getZoom();
+      // Dampened power-of-2 scale: at native zoom 2 → 1×, zoom 3 → ~1.5×, etc.
+      const scale = Math.pow(2, (zoom - 2) * 0.6);
+      map.getContainer().style.setProperty('--zoom-scale', String(scale));
+    }
+    update();
+    map.on('zoom', update);
+    return () => { map.off('zoom', update); };
+  }, [map]);
   return null;
 }
 

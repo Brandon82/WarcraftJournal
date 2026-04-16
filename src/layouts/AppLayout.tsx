@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router';
 import { Drawer } from 'antd';
-import { MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, ToolOutlined, CodeOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, CodeOutlined } from '@ant-design/icons';
 import JournalIcon from '../components/JournalIcon';
 import ExpansionMenu from '../components/navigation/ExpansionMenu';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
@@ -76,19 +76,6 @@ export default function AppLayout() {
         )}
       </div>
       <ExpansionMenu onNavigate={handleNavigate} />
-      <div className="mt-auto px-3 py-4 border-t border-wow-border">
-        <button
-          onClick={() => { navigate('/tools'); handleNavigate(); }}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg border-none cursor-pointer text-sm font-medium transition-all duration-150 ${
-            location.pathname === '/tools'
-              ? 'bg-wow-bg-elevated text-wow-gold'
-              : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
-          }`}
-        >
-          <ToolOutlined />
-          Useful Tools
-        </button>
-      </div>
     </div>
   );
 

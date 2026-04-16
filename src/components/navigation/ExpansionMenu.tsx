@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router';
-import { RightOutlined, NodeIndexOutlined } from '@ant-design/icons';
+import { RightOutlined, NodeIndexOutlined, ToolOutlined } from '@ant-design/icons';
 import { currentSeason } from '../../data/currentSeason';
 
 interface ExpansionMenuProps {
@@ -122,6 +122,17 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
         >
           <NodeIndexOutlined className="text-[12px]" />
           <span className="truncate">M+ Route Helper</span>
+        </button>
+        <button
+          onClick={() => go('/tools')}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+            location.pathname === '/tools'
+              ? 'bg-wow-bg-raised text-wow-gold font-medium'
+              : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
+          }`}
+        >
+          <ToolOutlined className="text-[12px]" />
+          <span className="truncate">Useful Tools</span>
         </button>
       </div>
     </nav>

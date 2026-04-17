@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Button, Modal, Select } from 'antd';
+import { Button, Input, Modal, Select } from 'antd';
 import { decodeMdtString } from '../lib/mdt/decodeRoute';
 import { parseMdtRoute } from '../lib/mdt/parseRoute';
 import { encodeMdtRoute } from '../lib/mdt/encodeRoute';
@@ -54,6 +54,10 @@ const ABILITY_LIST_OPTIONS: { value: AbilityListMode; label: string }[] = [
 
 export default function MdtRoutePage() {
   const [input, setInput] = useState('');
+  // Import modal's route-name field. Auto-fills with the decoded dungeon
+  // name (see the effect below), but the user can override.
+  const [importName, setImportName] = useState('');
+  const [importNameTouched, setImportNameTouched] = useState(false);
   const [error, setError] = useState<ErrorState | null>(null);
   // Single source of truth for a loaded route — whether it came from an
   // import, a fresh build, or a saved entry. Everything else (rendered
@@ -181,9 +185,64 @@ export default function MdtRoutePage() {
     }
   }
 
+  // Silent preview decode so the name field can auto-fill with the dungeon
+  // name as soon as the user finishes pasting. Any decode error is swallowed
+  // here; the real error surfacing happens in handleImport.
+  const importPreview = useMemo(() => {
+    const trimmed = input.trim();
+    if (!trimmed) return null;
+    try {
+      const raw = decodeMdtString(trimmed);
+      const parsed = parseMdtRoute(raw);
+      return { raw, parsed };
+    } catch {
+      return null;
+    }
+  }, [input]);
+
+  useEffect(() => {
+    if (importNameTouched) return;
+    setImportName(importPreview?.parsed.dungeon.displayName ?? '');
+  }, [importPreview, importNameTouched]);
+
   function handleImport() {
-    const ok = decodeAndDisplay(input);
-    if (ok) setImportOpen(false);
+    setError(null);
+    let preview = importPreview;
+    if (!preview) {
+      // Re-run decode so the user sees a real error message.
+      try {
+        const raw = decodeMdtString(input);
+        const parsed = parseMdtRoute(raw);
+        preview = { raw, parsed };
+      } catch (err) {
+        if (err instanceof MdtDecodeError) {
+          setError({ message: err.message });
+        } else {
+          setError({ message: `Unexpected error: ${(err as Error).message}` });
+        }
+        return;
+      }
+    }
+    const { raw, parsed } = preview;
+    const finalName = importName.trim() || parsed.dungeon.displayName;
+    const renamed = renameRoute(raw, finalName);
+    const encoded = encodeMdtRoute(renamed);
+    setRawRoute(renamed);
+    setSavedMdtString(encoded);
+    setSelectedPullIndex(parsed.pulls.length > 0 ? 1 : null);
+    setPastRoutes([]);
+    setFutureRoutes([]);
+    setMobInfoSpawn(null);
+    setPicking(false);
+    save({
+      name: finalName,
+      dungeonName: parsed.dungeon.displayName,
+      mdtString: encoded,
+    });
+    setImportOpen(false);
+    setInput('');
+    setImportName('');
+    setImportNameTouched(false);
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -195,12 +254,18 @@ export default function MdtRoutePage() {
 
   function handleOpenImport() {
     setError(null);
+    setInput('');
+    setImportName('');
+    setImportNameTouched(false);
     setImportOpen(true);
   }
 
   function handleCloseImport() {
     setImportOpen(false);
     setError(null);
+    setInput('');
+    setImportName('');
+    setImportNameTouched(false);
   }
 
   function handleSave() {
@@ -624,9 +689,26 @@ export default function MdtRoutePage() {
           spellCheck={false}
           autoFocus
         />
+        <label className="mt-3 block text-xs font-semibold uppercase tracking-wider text-wow-text-secondary mb-1">
+          Route name
+        </label>
+        <Input
+          value={importName}
+          onChange={(e) => {
+            setImportName(e.target.value);
+            setImportNameTouched(true);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+              e.preventDefault();
+              handleImport();
+            }
+          }}
+          placeholder={importPreview?.parsed.dungeon.displayName ?? 'Defaults to dungeon name'}
+        />
         <div className="mt-3 flex items-center flex-wrap gap-3">
           <Button type="primary" onClick={handleImport} disabled={!input.trim()}>
-            Import route
+            Import &amp; save
           </Button>
           <Button onClick={handleCloseImport}>Cancel</Button>
           <span className="ml-auto text-xs text-wow-text-dim">

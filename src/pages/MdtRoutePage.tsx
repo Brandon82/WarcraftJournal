@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Button, Modal } from 'antd';
+import { Button, Modal, Select } from 'antd';
 import { decodeMdtString } from '../lib/mdt/decodeRoute';
 import { parseMdtRoute } from '../lib/mdt/parseRoute';
 import { encodeMdtRoute } from '../lib/mdt/encodeRoute';
@@ -25,7 +25,7 @@ import {
   type ParsedMdtRoute,
   type RawMdtRoute,
 } from '../lib/mdt/types';
-import { zoneSpellsByInstanceSlug } from '../data';
+import { getEncountersForInstance, zoneSpellsByInstanceSlug } from '../data';
 import { NpcGroup } from '../components/zone-spells/ZoneSpellSection';
 import DungeonMap, { type FocusPullRequest } from '../components/mdt/DungeonMap';
 import DungeonPicker from '../components/mdt/DungeonPicker';
@@ -43,6 +43,14 @@ interface ErrorState {
 }
 
 const HISTORY_LIMIT = 50;
+
+type AbilityListMode = 'current' | 'all-pulls' | 'dungeon';
+
+const ABILITY_LIST_OPTIONS: { value: AbilityListMode; label: string }[] = [
+  { value: 'current', label: 'Current pull' },
+  { value: 'all-pulls', label: 'All pulls' },
+  { value: 'dungeon', label: 'All mobs in dungeon' },
+];
 
 export default function MdtRoutePage() {
   const [input, setInput] = useState('');
@@ -69,6 +77,7 @@ export default function MdtRoutePage() {
   const [focusPull, setFocusPull] = useState<FocusPullRequest | null>(null);
   // Spawn whose detail panel is currently shown (shift-click).
   const [mobInfoSpawn, setMobInfoSpawn] = useState<MdtSpawnMarker | null>(null);
+  const [abilityListMode, setAbilityListMode] = useState<AbilityListMode>('current');
   const { routes: savedRoutes, save, remove, isSaved } = useSavedMdtRoutes();
 
   const route: ParsedMdtRoute | null = useMemo(() => {
@@ -119,6 +128,14 @@ export default function MdtRoutePage() {
     if (zoneSpells) for (const npc of zoneSpells.npcs) map.set(npc.id, npc);
     return map;
   }, [zoneSpells]);
+
+  // Used by the "All mobs in dungeon" ability list mode so NPCs that appear
+  // as encounter bosses get the Boss classification badge.
+  const bossNames = useMemo(() => {
+    if (!route) return new Set<string>();
+    const encounters = getEncountersForInstance(route.dungeon.instanceSlug);
+    return new Set(encounters.flatMap((e) => e.creatures.map((c) => c.name)));
+  }, [route]);
 
   // For the mob info panel and tooltip, we want O(1) access to the dungeon
   // table entry for any spawn's NPC id.
@@ -529,17 +546,54 @@ export default function MdtRoutePage() {
           )}
 
           <div>
-            {selectedPull ? (
-              <PullDetail
-                pull={selectedPull}
-                npcsById={npcsById}
+            <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
+              <h3 className="text-lg font-semibold text-wow-gold m-0 tracking-wide">
+                Abilities
+              </h3>
+              <Select
+                value={abilityListMode}
+                onChange={setAbilityListMode}
+                options={ABILITY_LIST_OPTIONS}
+                size="small"
+                style={{ minWidth: 200 }}
               />
-            ) : (
-              <p className="text-sm text-wow-text-secondary">
-                {route.pulls.length === 0
-                  ? 'Add a pull and then click mobs on the map to fill it.'
-                  : 'Select a pull to view and edit its mobs.'}
-              </p>
+            </div>
+            {abilityListMode === 'current' && (
+              selectedPull ? (
+                <PullDetail pull={selectedPull} npcsById={npcsById} />
+              ) : (
+                <p className="text-sm text-wow-text-secondary">
+                  {route.pulls.length === 0
+                    ? 'Add a pull and then click mobs on the map to fill it.'
+                    : 'Select a pull to view and edit its mobs.'}
+                </p>
+              )
+            )}
+            {abilityListMode === 'all-pulls' && (
+              route.pulls.length === 0 ? (
+                <p className="text-sm text-wow-text-secondary">
+                  Add a pull and then click mobs on the map to fill it.
+                </p>
+              ) : (
+                <div>
+                  {route.pulls.map((pull) => (
+                    <PullDetail
+                      key={pull.index}
+                      pull={pull}
+                      npcsById={npcsById}
+                    />
+                  ))}
+                </div>
+              )
+            )}
+            {abilityListMode === 'dungeon' && (
+              zoneSpells && zoneSpells.npcs.length > 0 ? (
+                <DungeonAbilityList npcs={zoneSpells.npcs} bossNames={bossNames} />
+              ) : (
+                <p className="text-sm text-wow-text-secondary">
+                  No dungeon abilities recorded for this instance.
+                </p>
+              )
             )}
           </div>
         </>
@@ -616,6 +670,34 @@ export default function MdtRoutePage() {
           <Button onClick={handleCloseExport}>Close</Button>
         </div>
       </Modal>
+    </div>
+  );
+}
+
+interface DungeonAbilityListProps {
+  npcs: ZoneNpc[];
+  bossNames: Set<string>;
+}
+
+// Mirrors ZoneSpellSection's sort (boss > elite/rare-elite > other, then name)
+// but without the outer "Dungeon Abilities" heading since the page already
+// has its own Abilities header and mode selector.
+function DungeonAbilityList({ npcs, bossNames }: DungeonAbilityListProps) {
+  const isBoss = (npc: ZoneNpc) => bossNames.has(npc.name) || npc.classification === 3;
+  const sortedNpcs = useMemo(() => {
+    return [...npcs].sort((a, b) => {
+      const tierA = isBoss(a) ? 0 : a.classification >= 1 ? 1 : 2;
+      const tierB = isBoss(b) ? 0 : b.classification >= 1 ? 1 : 2;
+      if (tierA !== tierB) return tierA - tierB;
+      return a.name.localeCompare(b.name);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [npcs, bossNames]);
+  return (
+    <div>
+      {sortedNpcs.map((npc) => (
+        <NpcGroup key={npc.id} npc={npc} isBoss={isBoss(npc)} />
+      ))}
     </div>
   );
 }

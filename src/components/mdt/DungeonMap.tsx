@@ -16,6 +16,7 @@ import {
   divIcon,
   type LatLngBoundsExpression,
   type LatLngExpression,
+  type LeafletMouseEvent,
 } from 'leaflet';
 import { FullscreenOutlined, FullscreenExitOutlined, AimOutlined } from '@ant-design/icons';
 import type {
@@ -124,6 +125,17 @@ export default function DungeonMap({
   const [layers, setLayers] = useState<MapLayers>(DEFAULT_LAYERS);
   const [contextMenu, setContextMenu] = useState<{
     spawn: MdtSpawnMarker;
+    x: number;
+    y: number;
+  } | null>(null);
+  // React-owned hover tooltip. We drive it from marker mouseover/mouseout
+  // instead of react-leaflet <Tooltip> because leaflet tooltips can linger
+  // when markers are rebuilt or overlap, causing the tooltip to show when
+  // the mouse isn't over any NPC.
+  const [hoverTooltip, setHoverTooltip] = useState<{
+    spawn: MdtSpawnMarker;
+    enemy: MdtDungeonEnemy | undefined;
+    packSize: number;
     x: number;
     y: number;
   } | null>(null);
@@ -250,6 +262,17 @@ export default function DungeonMap({
     setContextMenu({ spawn, x: evt.clientX, y: evt.clientY });
   }
 
+  function handleHoverSpawn(
+    spawn: MdtSpawnMarker,
+    enemy: MdtDungeonEnemy | undefined,
+    packSize: number,
+    e: LeafletMouseEvent,
+  ) {
+    const orig = e.originalEvent as MouseEvent | undefined;
+    if (!orig) return;
+    setHoverTooltip({ spawn, enemy, packSize, x: orig.clientX, y: orig.clientY });
+  }
+
   return (
     <>
       {overlayActive && <div className="mdt-map-container" aria-hidden />}
@@ -326,6 +349,7 @@ export default function DungeonMap({
           <PackHoverHighlighter group={hoveredGroup} />
           <FocusPullView spawns={safeSpawns} request={focusPull ?? null} />
           <CursorCoordsReadout />
+          <TooltipAutoCloser onClose={() => setHoverTooltip(null)} />
           <MapLayersControl layers={layers} onChange={setLayers} />
           {onAddNote && (
             <MapRightClickToAddNote
@@ -415,6 +439,8 @@ export default function DungeonMap({
                 onToggleSpawn={onToggleSpawn}
                 onShowMobInfo={onShowMobInfo}
                 onHoverGroup={setHoveredGroup}
+                onHoverSpawn={handleHoverSpawn}
+                onLeaveSpawn={() => setHoverTooltip(null)}
                 onContextMenu={handleContextMenu}
               />
             );
@@ -433,6 +459,8 @@ export default function DungeonMap({
                   onToggleSpawn={onToggleSpawn}
                   onShowMobInfo={onShowMobInfo}
                   onHoverGroup={setHoveredGroup}
+                  onHoverSpawn={handleHoverSpawn}
+                  onLeaveSpawn={() => setHoverTooltip(null)}
                   onContextMenu={handleContextMenu}
                 />
               ))}
@@ -475,6 +503,15 @@ export default function DungeonMap({
             </Marker>
           ))}
         </MapContainer>
+        {hoverTooltip && (
+          <SpawnHoverTooltip
+            spawn={hoverTooltip.spawn}
+            enemy={hoverTooltip.enemy}
+            packSize={hoverTooltip.packSize}
+            x={hoverTooltip.x}
+            y={hoverTooltip.y}
+          />
+        )}
         </div>
         {sidebar && (
           <aside
@@ -575,6 +612,13 @@ interface SpawnMarkerProps {
   onToggleSpawn?: (spawn: MdtSpawnMarker, info: SpawnClickInfo) => void;
   onShowMobInfo?: (spawn: MdtSpawnMarker) => void;
   onHoverGroup?: (group: number | null) => void;
+  onHoverSpawn?: (
+    spawn: MdtSpawnMarker,
+    enemy: MdtDungeonEnemy | undefined,
+    packSize: number,
+    e: LeafletMouseEvent,
+  ) => void;
+  onLeaveSpawn?: () => void;
   onContextMenu?: (spawn: MdtSpawnMarker, evt: MouseEvent) => void;
 }
 
@@ -587,11 +631,11 @@ function SpawnMarker({
   onToggleSpawn,
   onShowMobInfo,
   onHoverGroup,
+  onHoverSpawn,
+  onLeaveSpawn,
   onContextMenu,
 }: SpawnMarkerProps) {
   const icon = useMemo(() => buildIcon(spawn, selected), [spawn, selected]);
-  const creatureType = typeof enemy?.creatureType === 'string' ? enemy.creatureType : null;
-  const perMobForces = typeof enemy?.count === 'number' ? enemy.count : null;
 
   return (
     <Marker
@@ -624,33 +668,131 @@ function SpawnMarker({
           orig.preventDefault();
           onContextMenu(spawn, orig);
         },
-        mouseover: () => {
+        mouseover: (e) => {
           if (spawn.group != null) onHoverGroup?.(spawn.group);
+          onHoverSpawn?.(spawn, enemy, packSize, e);
+        },
+        mousemove: (e) => {
+          onHoverSpawn?.(spawn, enemy, packSize, e);
         },
         mouseout: () => {
           if (spawn.group != null) onHoverGroup?.(null);
+          onLeaveSpawn?.();
         },
       }}
-    >
-      <Tooltip direction="top" offset={[0, -8]} opacity={0.95}>
-        <div className="text-xs leading-snug">
-          <div className="font-semibold">{spawn.name}</div>
-          <div className="text-[10px] opacity-80 space-y-0.5 mt-0.5">
-            {perMobForces != null && (
-              <div>{perMobForces} forces{spawn.isBoss ? ' · boss' : ''}</div>
-            )}
-            {creatureType && <div>{creatureType}</div>}
-            {packSize > 1 && <div>Pack of {packSize}</div>}
-            {spawn.pullIndex != null && (
-              <div className="font-semibold" style={{ color: spawn.pullColor ? `#${spawn.pullColor}` : undefined }}>
-                Pull {spawn.pullIndex}
-              </div>
-            )}
-          </div>
-        </div>
-      </Tooltip>
-    </Marker>
+    />
   );
+}
+
+/** Safety net for the hover tooltip: clears it when the user starts panning,
+ *  zooms, or the cursor leaves the map area. Without this, if a marker's
+ *  mouseout is missed (it can happen when a marker is rebuilt while hovered,
+ *  or when moving quickly between overlapping markers), the tooltip would
+ *  stay open until another marker is hovered. */
+function TooltipAutoCloser({ onClose }: { onClose: () => void }) {
+  useMapEvents({
+    movestart: onClose,
+    zoomstart: onClose,
+    mouseout: onClose,
+    click: onClose,
+  });
+  return null;
+}
+
+/** Custom hover tooltip rendered at the map wrapper level, styled to match
+ *  the boss-overview spell tooltips (dark bg, gold title, icon on left).
+ *  React owns the open/close lifecycle so the tooltip can't linger the way
+ *  leaflet's native tooltip sometimes does when markers overlap or rebuild. */
+function SpawnHoverTooltip({
+  spawn,
+  enemy,
+  packSize,
+  x,
+  y,
+}: {
+  spawn: MdtSpawnMarker;
+  enemy: MdtDungeonEnemy | undefined;
+  packSize: number;
+  x: number;
+  y: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
+
+  const creatureType = typeof enemy?.creatureType === 'string' ? enemy.creatureType : null;
+  const perMobForces = typeof enemy?.count === 'number' ? enemy.count : null;
+  const health = typeof enemy?.health === 'number' ? enemy.health : null;
+  const portraitUrl = `/npc_portraits/${spawn.npcId}.png`;
+
+  // Position the tooltip above+right of the cursor, but clamp to viewport so
+  // it never clips off-screen near the map edges.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const offsetX = 14;
+    const offsetY = 14;
+    let left = x + offsetX;
+    let top = y - rect.height - offsetY;
+    if (top < 8) top = y + offsetY;
+    if (left + rect.width > window.innerWidth - 8) {
+      left = x - rect.width - offsetX;
+    }
+    if (left < 8) left = 8;
+    setPos({ left, top });
+  }, [x, y, spawn.spawnId]);
+
+  return (
+    <div
+      ref={ref}
+      className="mdt-hover-tooltip"
+      style={{
+        left: pos?.left ?? x + 14,
+        top: pos?.top ?? y - 80,
+        visibility: pos ? 'visible' : 'hidden',
+      }}
+    >
+      <div className="flex items-center gap-2 mb-1.5">
+        <img
+          src={portraitUrl}
+          alt=""
+          className="w-9 h-9 rounded border border-wow-border shrink-0 object-cover"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).style.visibility = 'hidden';
+          }}
+        />
+        <div className="min-w-0">
+          <div className="font-semibold text-wow-gold text-sm leading-tight truncate">
+            {spawn.name}
+          </div>
+          {creatureType && (
+            <div className="text-wow-text-secondary text-[11px] leading-tight mt-0.5">
+              {creatureType}{spawn.isBoss ? ' · Boss' : ''}
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="text-wow-text-secondary text-xs leading-relaxed space-y-0.5">
+        {perMobForces != null && <div>{perMobForces} forces</div>}
+        {health != null && <div>{formatHealth(health)} HP</div>}
+        {packSize > 1 && <div>Pack of {packSize}</div>}
+        {spawn.pullIndex != null && (
+          <div
+            className="font-semibold"
+            style={{ color: spawn.pullColor ? `#${spawn.pullColor}` : undefined }}
+          >
+            Pull {spawn.pullIndex}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function formatHealth(h: number): string {
+  if (h >= 1_000_000) return `${(h / 1_000_000).toFixed(1)}M`;
+  if (h >= 1000) return `${(h / 1000).toFixed(0)}K`;
+  return String(h);
 }
 
 /**

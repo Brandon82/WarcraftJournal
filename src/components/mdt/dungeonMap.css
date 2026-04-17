@@ -411,6 +411,26 @@
   transform: scale(calc(var(--zoom-scale, 1) * 1.15));
 }
 
+/* ── NPC hover tooltip ───────────────────────────────────────────────── */
+/* Matches the spell tooltips used on boss overview pages: dark background,
+   gold title, portrait on the left, secondary-colored detail lines below.
+   Positioned in fixed coordinates by React so its open/close lifecycle is
+   reliable (leaflet's native tooltip sometimes lingers when markers overlap
+   or get rebuilt mid-hover). */
+
+.mdt-hover-tooltip {
+  position: fixed;
+  z-index: 1200;
+  pointer-events: none;
+  max-width: 260px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-wow-border, #3a2f22);
+  background-color: var(--color-wow-bg-raised, #1a1512);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  color: var(--color-wow-text, #e7d7b8);
+}
+
 /* ── Mob info side panel ─────────────────────────────────────────────── */
 
 .mdt-mob-info-panel {

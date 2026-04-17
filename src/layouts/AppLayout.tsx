@@ -40,7 +40,7 @@ function AppLayoutInner() {
   const [searchOpen, setSearchOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { devMode, toggleDevMode } = useDevMode();
-  const { wide } = useLayout();
+  const { wide, hideHeader } = useLayout();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
@@ -131,7 +131,13 @@ function AppLayoutInner() {
             transition: 'margin-left 200ms ease',
           }}
         >
-          <header className="sticky top-3 z-[1000] h-14 bg-wow-bg-surface rounded-2xl flex items-center mx-3 px-4 sm:px-6 gap-3 transition-colors duration-200" style={{ boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)' }}>
+          <header
+            className="sticky top-3 z-[1000] h-14 bg-wow-bg-surface rounded-2xl flex items-center mx-3 px-4 sm:px-6 gap-3 transition-colors duration-200"
+            style={{
+              boxShadow: '0 2px 16px 0 rgb(0 0 0 / 0.15)',
+              visibility: hideHeader ? 'hidden' : 'visible',
+            }}
+          >
             {(isMobile || collapsed) && (
               <button
                 onClick={() => isMobile ? setDrawerOpen(true) : setCollapsed(false)}

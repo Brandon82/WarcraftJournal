@@ -7,13 +7,21 @@ interface LayoutContextValue {
    *  and pulls sidebar) and reset to false otherwise. */
   wide: boolean;
   setWide: (wide: boolean) => void;
+  /** When true, the AppLayout hides its sticky top header. Used by the MDT
+   *  dungeon map while in fullscreen so the overlay isn't interrupted. */
+  hideHeader: boolean;
+  setHideHeader: (hide: boolean) => void;
 }
 
 const LayoutContext = createContext<LayoutContextValue | null>(null);
 
 export function LayoutProvider({ children }: { children: ReactNode }) {
   const [wide, setWide] = useState(false);
-  const value = useMemo(() => ({ wide, setWide }), [wide]);
+  const [hideHeader, setHideHeader] = useState(false);
+  const value = useMemo(
+    () => ({ wide, setWide, hideHeader, setHideHeader }),
+    [wide, hideHeader],
+  );
   return <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>;
 }
 

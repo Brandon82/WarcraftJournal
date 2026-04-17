@@ -29,6 +29,7 @@ import SpawnContextMenu from './SpawnContextMenu';
 import MapLayersControl from './MapLayersControl';
 import MapNoteEditor from './MapNoteEditor';
 import { DEFAULT_LAYERS, type MapLayers } from './mapLayers';
+import { useLayout } from '../../context/LayoutContext';
 
 // Match threechest's coordinate system: CRS.Simple with bounds that cover
 // the MDT map tiles. Spawn positions in our vendored JSON are already in
@@ -171,6 +172,12 @@ export default function DungeonMap({
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, [expanded]);
+
+  const { setHideHeader } = useLayout();
+  useEffect(() => {
+    setHideHeader(expanded);
+    return () => setHideHeader(false);
+  }, [expanded, setHideHeader]);
 
   // Lookup table keyed by NPC id so the tooltip can show forces, count and
   // creature type without an O(n) scan per render.

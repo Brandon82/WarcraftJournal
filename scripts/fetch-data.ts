@@ -197,6 +197,9 @@ function iconFlagsToHeaderIcons(flags: number): string[] {
 
 // Section metadata from wago.tools DB2 export
 let sectionMetadata: Map<number, { iconFlags: number; difficultyMask: number }> = new Map();
+// Aggregated IconFlags per spell across all its JournalEncounterSection entries.
+// Used to tag zone spells — same authoritative source as encounter section icons.
+let spellJournalIconFlags: Map<number, number> = new Map();
 
 /** Parse CSV text into rows, handling quoted fields with commas and newlines. */
 function parseCsvRows(text: string): string[][] {
@@ -254,24 +257,32 @@ async function fetchSectionMetadata(): Promise<void> {
     const idIdx = header.indexOf('ID');
     const iconFlagsIdx = header.indexOf('IconFlags');
     const diffMaskIdx = header.indexOf('DifficultyMask');
+    const spellIdIdx = header.indexOf('SpellID');
 
     if (idIdx === -1 || iconFlagsIdx === -1 || diffMaskIdx === -1) {
       console.warn('  Warning: Unexpected CSV format from wago.tools');
       return;
     }
 
-    const minCols = Math.max(idIdx, iconFlagsIdx, diffMaskIdx) + 1;
+    const minCols = Math.max(idIdx, iconFlagsIdx, diffMaskIdx, spellIdIdx) + 1;
     for (let i = 1; i < rows.length; i++) {
       const cols = rows[i];
       if (cols.length < minCols) continue;
       const id = parseInt(cols[idIdx], 10);
-      const iconFlags = parseInt(cols[iconFlagsIdx], 10);
+      const iconFlags = parseInt(cols[iconFlagsIdx], 10) || 0;
       const difficultyMask = parseInt(cols[diffMaskIdx], 10);
       if (!isNaN(id)) {
-        sectionMetadata.set(id, { iconFlags: iconFlags || 0, difficultyMask });
+        sectionMetadata.set(id, { iconFlags, difficultyMask });
+      }
+      if (spellIdIdx !== -1) {
+        const spellId = parseInt(cols[spellIdIdx], 10);
+        if (!isNaN(spellId) && spellId > 0) {
+          // A spell may have multiple section entries (per difficulty, etc.) — OR the flags together.
+          spellJournalIconFlags.set(spellId, (spellJournalIconFlags.get(spellId) ?? 0) | iconFlags);
+        }
       }
     }
-    console.log(`  Loaded metadata for ${sectionMetadata.size} sections`);
+    console.log(`  Loaded metadata for ${sectionMetadata.size} sections (${spellJournalIconFlags.size} unique spells)`);
   } catch (err) {
     console.warn(`  Warning: Failed to fetch section metadata: ${err}`);
   }
@@ -287,7 +298,9 @@ const DISPEL_TYPE_MAP: Record<number, string> = {
 };
 
 let spellDispelTypes: Map<number, number> = new Map();
-let spellInterruptFlags: Map<number, number> = new Map();
+// MDT hand-curated trash interruptible list. Journal is authoritative for
+// bosses; MDT fills in trash mobs, which don't appear in JournalEncounterSection.
+let mdtInterruptibleSpellIds: Set<number> = new Set();
 
 async function fetchSpellMetadata(): Promise<void> {
   console.log('Fetching spell metadata from wago.tools...');
@@ -317,30 +330,29 @@ async function fetchSpellMetadata(): Promise<void> {
     console.warn(`  Warning: Failed to fetch SpellCategories: ${err}`);
   }
 
-  // Fetch SpellInterrupts for interruptibility
-  try {
-    const response = await fetch('https://wago.tools/db2/SpellInterrupts/csv');
-    if (response.ok) {
-      const csvText = await response.text();
-      const lines = csvText.split('\n');
-      const header = lines[0].split(',');
-      const spellIdIdx = header.indexOf('SpellID');
-      const flagsIdx = header.indexOf('InterruptFlags');
-      if (spellIdIdx !== -1 && flagsIdx !== -1) {
-        for (let i = 1; i < lines.length; i++) {
-          const cols = lines[i].split(',');
-          const spellId = parseInt(cols[spellIdIdx], 10);
-          const flags = parseInt(cols[flagsIdx], 10);
-          if (!isNaN(spellId) && flags > 0) {
-            spellInterruptFlags.set(spellId, flags);
+  loadMdtInterruptibleSpells();
+}
+
+function loadMdtInterruptibleSpells(): void {
+  const mdtDir = path.resolve(__dirname, '../src/lib/mdt/dungeons');
+  if (!fs.existsSync(mdtDir)) return;
+  for (const file of fs.readdirSync(mdtDir)) {
+    if (!file.endsWith('_mdt.json')) continue;
+    try {
+      const raw = fs.readFileSync(path.join(mdtDir, file), 'utf-8');
+      const data = JSON.parse(raw) as { enemies?: Array<{ spells?: Array<{ id: number; attributes?: string[] }> }> };
+      for (const enemy of data.enemies ?? []) {
+        for (const spell of enemy.spells ?? []) {
+          if (spell.attributes?.includes('interruptible')) {
+            mdtInterruptibleSpellIds.add(spell.id);
           }
         }
-        console.log(`  Loaded interrupt flags for ${spellInterruptFlags.size} spells`);
       }
+    } catch (err) {
+      console.warn(`  Warning: Failed to parse ${file}: ${err}`);
     }
-  } catch (err) {
-    console.warn(`  Warning: Failed to fetch SpellInterrupts: ${err}`);
   }
+  console.log(`  Loaded ${mdtInterruptibleSpellIds.size} MDT interruptible spell IDs (trash fallback)`);
 }
 
 function getSpellTags(spellId: number): string[] {
@@ -350,9 +362,14 @@ function getSpellTags(spellId: number): string[] {
     const tag = DISPEL_TYPE_MAP[dispelType];
     if (tag) tags.push(tag);
   }
-  const interruptFlags = spellInterruptFlags.get(spellId);
-  // Bit 0x04 = can be interrupted by interrupt abilities (Kick, Counterspell, etc.)
-  if (interruptFlags != null && interruptFlags & 0x04) {
+  // Interruptibility — prefer Blizzard's Encounter Journal (authoritative for
+  // bosses), fall back to MDT's hand-curated list for trash mobs that don't
+  // have a JournalEncounterSection entry. The raw SpellInterrupts.InterruptFlags
+  // DBC column is shared across kickable and non-kickable spells, so unusable.
+  const journalFlags = spellJournalIconFlags.get(spellId);
+  const journalInterruptible = journalFlags != null && (journalFlags & 64) !== 0;
+  const journalHasEntry = journalFlags != null;
+  if (journalInterruptible || (!journalHasEntry && mdtInterruptibleSpellIds.has(spellId))) {
     tags.push('interruptible');
   }
   return tags;

@@ -62,6 +62,9 @@ export default function MdtRoutePage() {
   const [savedMdtString, setSavedMdtString] = useState<string | null>(null);
   const [picking, setPicking] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
+  const [exportString, setExportString] = useState('');
+  const [exportCopied, setExportCopied] = useState(false);
   // Bumped each time the sidebar selects a pull, so the map zooms to fit it.
   const [focusPull, setFocusPull] = useState<FocusPullRequest | null>(null);
   // Spawn whose detail panel is currently shown (shift-click).
@@ -192,6 +195,28 @@ export default function MdtRoutePage() {
       mdtString,
     });
     setSavedMdtString(mdtString);
+  }
+
+  function handleOpenExport() {
+    if (!rawRoute) return;
+    setExportString(encodeMdtRoute(rawRoute));
+    setExportCopied(false);
+    setExportOpen(true);
+  }
+
+  function handleCloseExport() {
+    setExportOpen(false);
+    setExportCopied(false);
+  }
+
+  async function handleCopyExport() {
+    try {
+      await navigator.clipboard.writeText(exportString);
+      setExportCopied(true);
+    } catch {
+      // Clipboard API can fail in non-secure contexts; the textarea is
+      // selectable so the user can still copy manually.
+    }
   }
 
   function handleLoadSaved(saved: SavedMdtRoute) {
@@ -451,6 +476,7 @@ export default function MdtRoutePage() {
             route={route}
             isSaved={currentIsSaved}
             onSave={handleSave}
+            onExport={handleOpenExport}
             onClose={handleCloseRoute}
             onRename={handleRename}
           />
@@ -561,6 +587,34 @@ export default function MdtRoutePage() {
             {error.message}
           </div>
         )}
+      </Modal>
+
+      <Modal
+        title="Export MDT route"
+        open={exportOpen}
+        onCancel={handleCloseExport}
+        footer={null}
+        width={560}
+        destroyOnHidden
+        style={{ top: 304 }}
+      >
+        <p className="text-sm text-wow-text-secondary mt-0 mb-3">
+          Copy this string and paste it into the MDT addon's <span className="text-wow-text">Share</span> &rarr; <span className="text-wow-text">Import</span> dialog.
+        </p>
+        <textarea
+          value={exportString}
+          readOnly
+          rows={4}
+          onFocus={(e) => e.currentTarget.select()}
+          className="w-full rounded-lg border border-wow-border bg-wow-bg-elevated px-3 py-2 text-xs font-mono text-wow-text focus:outline-none focus:border-wow-gold-muted"
+          spellCheck={false}
+        />
+        <div className="mt-3 flex items-center flex-wrap gap-3">
+          <Button type="primary" onClick={handleCopyExport}>
+            {exportCopied ? 'Copied!' : 'Copy to clipboard'}
+          </Button>
+          <Button onClick={handleCloseExport}>Close</Button>
+        </div>
       </Modal>
     </div>
   );

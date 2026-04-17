@@ -3,6 +3,7 @@ import {
   ArrowLeftOutlined,
   SaveOutlined,
   CheckOutlined,
+  ExportOutlined,
 } from '@ant-design/icons';
 import type { ParsedMdtRoute } from '../../lib/mdt/types';
 
@@ -10,6 +11,7 @@ interface RouteEditorHeaderProps {
   route: ParsedMdtRoute;
   isSaved: boolean;
   onSave: () => void;
+  onExport: () => void;
   onClose: () => void;
   onRename: (title: string) => void;
 }
@@ -22,6 +24,7 @@ export default function RouteEditorHeader({
   route,
   isSaved,
   onSave,
+  onExport,
   onClose,
   onRename,
 }: RouteEditorHeaderProps) {
@@ -58,6 +61,13 @@ export default function RouteEditorHeader({
           {route.dungeon.displayName}
         </span>
         <div className="ml-auto flex items-center gap-2">
+          <Button
+            size="small"
+            onClick={onExport}
+            icon={<ExportOutlined />}
+          >
+            Export
+          </Button>
           <Button
             size="small"
             type={isSaved ? 'default' : 'primary'}

@@ -38,6 +38,7 @@ export default function EncounterPage() {
         <OverviewTab
           overviewSection={overviewSection}
           description={encounter.description}
+          allSections={encounter.sections}
         />
       ),
     },

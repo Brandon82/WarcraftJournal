@@ -2,12 +2,14 @@ import { useState, useRef, useEffect } from 'react';
 import { ThunderboltOutlined, DownOutlined } from '@ant-design/icons';
 import type { JournalSection } from '../../types';
 import type { ExpandTrigger } from './SectionTree';
+import { renderWithSpellLinks, type SpellInfo } from './spellLinks';
 
 interface SectionNodeProps {
   section: JournalSection;
   depth: number;
   modes?: Array<{ name: string; type: string }>;
   expandTrigger?: ExpandTrigger;
+  spells?: Map<string, SpellInfo>;
 }
 
 const MODE_TYPE_RANK: Record<string, number> = {
@@ -79,7 +81,7 @@ const TAG_LABELS: Record<string, string> = {
   deadly: 'Deadly',
 };
 
-export default function SectionNode({ section, depth, modes, expandTrigger }: SectionNodeProps) {
+export default function SectionNode({ section, depth, modes, expandTrigger, spells }: SectionNodeProps) {
   const hasChildren = section.sections && section.sections.length > 0;
   const isTopLevel = depth === 0;
   const isCollapsible = hasChildren || !!section.bodyText;
@@ -179,7 +181,7 @@ export default function SectionNode({ section, depth, modes, expandTrigger }: Se
           </div>
           {!isCollapsible && section.bodyText && (
             <p className="text-zinc-300 text-[17px] leading-relaxed m-0 mt-0.5">
-              {section.bodyText}
+              {spells ? renderWithSpellLinks(section.bodyText, spells) : section.bodyText}
             </p>
           )}
         </div>
@@ -196,14 +198,14 @@ export default function SectionNode({ section, depth, modes, expandTrigger }: Se
             <div className="pb-1">
               {section.bodyText && (
                 <p className="text-zinc-300 text-[17px] leading-relaxed m-0 ml-6 sm:ml-[40px] pr-4">
-                  {section.bodyText}
+                  {spells ? renderWithSpellLinks(section.bodyText, spells) : section.bodyText}
                 </p>
               )}
 
               {hasChildren && (
                 <div className="mt-2">
                   {section.sections!.map((child) => (
-                    <SectionNode key={child.id} section={child} depth={depth + 1} modes={modes} expandTrigger={expandTrigger} />
+                    <SectionNode key={child.id} section={child} depth={depth + 1} modes={modes} expandTrigger={expandTrigger} spells={spells} />
                   ))}
                 </div>
               )}

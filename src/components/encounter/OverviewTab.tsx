@@ -1,8 +1,11 @@
+import { useMemo } from 'react';
 import type { JournalSection } from '../../types';
+import { collectSpells, renderWithSpellLinks, type SpellInfo } from '../sections/spellLinks';
 
 interface OverviewTabProps {
   overviewSection?: JournalSection;
   description: string;
+  allSections?: JournalSection[];
 }
 
 function TankIcon({ color }: { color: string }) {
@@ -68,28 +71,29 @@ const ROLE_CONFIG: Record<string, { icon: (color: string) => React.ReactNode; co
   },
 };
 
-function formatBodyText(text: string): React.ReactNode[] {
+function formatBodyText(text: string, spells: Map<string, SpellInfo>): React.ReactNode[] {
   const lines = text.split(/\r?\n/).filter((l) => l.trim());
   return lines.map((line, i) => {
     const cleaned = line.replace(/\$bullet;?\s*/g, '').trim();
     const isBullet = line.trimStart().startsWith('$bullet');
+    const content = renderWithSpellLinks(cleaned, spells);
     if (isBullet) {
       return (
         <li key={i} className="text-wow-text-secondary text-sm leading-relaxed">
-          {cleaned}
+          {content}
         </li>
       );
     }
     return (
       <p key={i} className="text-wow-text-secondary text-sm leading-relaxed m-0">
-        {cleaned}
+        {content}
       </p>
     );
   });
 }
 
-function FormattedBody({ text }: { text: string }) {
-  const nodes = formatBodyText(text);
+function FormattedBody({ text, spells }: { text: string; spells: Map<string, SpellInfo> }) {
+  const nodes = formatBodyText(text, spells);
   const hasBullets = text.includes('$bullet');
   if (hasBullets) {
     return (
@@ -101,9 +105,14 @@ function FormattedBody({ text }: { text: string }) {
   return <>{nodes}</>;
 }
 
-export default function OverviewTab({ overviewSection, description }: OverviewTabProps) {
+export default function OverviewTab({ overviewSection, description, allSections }: OverviewTabProps) {
   const roleAlerts = overviewSection?.sections?.filter(
     (s) => s.title in ROLE_CONFIG,
+  );
+
+  const spellLookup = useMemo<Map<string, SpellInfo>>(
+    () => collectSpells(allSections),
+    [allSections],
   );
 
   return (
@@ -114,7 +123,7 @@ export default function OverviewTab({ overviewSection, description }: OverviewTa
 
       {overviewSection?.bodyText && (
         <div className="mb-6">
-          <FormattedBody text={overviewSection.bodyText} />
+          <FormattedBody text={overviewSection.bodyText} spells={spellLookup} />
         </div>
       )}
 
@@ -138,7 +147,7 @@ export default function OverviewTab({ overviewSection, description }: OverviewTa
                 </div>
                 {alert.bodyText && (
                   <div className="ml-4 sm:ml-[26px]">
-                    <FormattedBody text={alert.bodyText} />
+                    <FormattedBody text={alert.bodyText} spells={spellLookup} />
                   </div>
                 )}
               </div>

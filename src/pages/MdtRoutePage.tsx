@@ -81,7 +81,7 @@ export default function MdtRoutePage() {
   const [focusPull, setFocusPull] = useState<FocusPullRequest | null>(null);
   // Spawn whose detail panel is currently shown (shift-click).
   const [mobInfoSpawn, setMobInfoSpawn] = useState<MdtSpawnMarker | null>(null);
-  const [abilityListMode, setAbilityListMode] = useState<AbilityListMode>('current');
+  const [abilityListMode, setAbilityListMode] = useState<AbilityListMode>('all-pulls');
   const { routes: savedRoutes, save, remove, isSaved } = useSavedMdtRoutes();
 
   const route: ParsedMdtRoute | null = useMemo(() => {

@@ -11,7 +11,7 @@ export interface MapLayers {
 export const DEFAULT_LAYERS: MapLayers = {
   outlines: true,
   labels: true,
-  lines: true,
+  lines: false,
   patrols: false,
   trash: true,
 };

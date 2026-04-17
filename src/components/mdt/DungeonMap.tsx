@@ -369,11 +369,10 @@ export default function DungeonMap({
                 positions={h.hull as LatLngExpression[]}
                 pathOptions={{
                   color: `#${h.color}`,
-                  weight: 2,
-                  opacity: 0.75,
+                  weight: 4,
+                  opacity: 0.85,
                   fillColor: `#${h.color}`,
-                  fillOpacity: 0.1,
-                  dashArray: '4 4',
+                  fillOpacity: 0.3,
                   className: 'pointer-events-none',
                 }}
               />
@@ -389,7 +388,7 @@ export default function DungeonMap({
                   weight: 4,
                   opacity: 1,
                   fillColor: `#${h.color}`,
-                  fillOpacity: 0.2,
+                  fillOpacity: 0.3,
                   className: 'pointer-events-none mdt-pull-hull--selected',
                 }}
               />
@@ -473,6 +472,7 @@ export default function DungeonMap({
               icon={buildPullBadge(h.pullIndex, h.color, h.pullIndex === selectedPullIndex)}
               interactive={false}
               keyboard={false}
+              zIndexOffset={10000}
             />
           ))}
 
@@ -806,7 +806,7 @@ function buildIcon(spawn: MdtSpawnMarker, selected: boolean) {
 
   const ringColor = inPull && spawn.pullColor ? `#${spawn.pullColor}` : '#4b5563';
   const ringWidth = spawn.isBoss ? (selected ? 4 : 3) : selected ? 3 : 2;
-  const opacity = inPull ? 1 : 0.55;
+  const opacity = 1;
   const grayscale = inPull ? 0 : 0.6;
   const portraitUrl = `/npc_portraits/${spawn.npcId}.png`;
 
@@ -865,7 +865,7 @@ function buildNoteIcon(text: string) {
 
 /** Builds the small numeric badge placed at a pull's centroid. */
 function buildPullBadge(pullIndex: number, color: string, selected: boolean) {
-  const size = selected ? 30 : 24;
+  const size = selected ? 40 : 34;
   const classes = [
     'mdt-pull-badge',
     selected ? 'mdt-pull-badge--selected' : '',
@@ -929,8 +929,8 @@ function ResetView({
   return null;
 }
 
-/** Zoom-to-pull: when the parent bumps focusPull.nonce, fit to the pull's
- *  spawn bounds with a comfortable padding. */
+/** Pan-to-pull: when the parent bumps focusPull.nonce, pan the map to the
+ *  pull's centroid without changing zoom — users pick their own zoom level. */
 function FocusPullView({
   spawns,
   request,
@@ -945,15 +945,8 @@ function FocusPullView({
       .filter((s) => s.pullIndex === request.pullIndex)
       .map((s) => s.pos);
     if (points.length === 0) return;
-    if (points.length === 1) {
-      map.setView(points[0] as LatLngExpression, Math.max(map.getZoom(), 3.5));
-      return;
-    }
-    map.fitBounds(points as LatLngBoundsExpression, {
-      padding: [80, 80],
-      maxZoom: 4.5,
-      animate: true,
-    });
+    const center = centroidOf(points);
+    map.panTo(center as LatLngExpression, { animate: true });
     // Intentionally only watch nonce — pullIndex alone shouldn't retrigger
     // on unrelated re-renders.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -984,8 +977,8 @@ function ZoomScaleTracker() {
   useEffect(() => {
     function update() {
       const zoom = map.getZoom();
-      // Dampened power-of-2 scale: at native zoom 2 → 1×, zoom 3 → ~1.5×, etc.
-      const scale = Math.pow(2, (zoom - 2) * 0.6);
+      // Dampened power-of-2 scale: at native zoom 2 → 1×, zoom 3 → ~1.27×, etc.
+      const scale = Math.pow(2, (zoom - 2) * 0.35);
       map.getContainer().style.setProperty('--zoom-scale', String(scale));
     }
     update();

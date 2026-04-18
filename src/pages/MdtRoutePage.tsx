@@ -891,15 +891,24 @@ function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailP
         </h4>
       )}
       <div>
-        {pull.enemies.map((enemy) => {
-          const existing = npcsById.get(enemy.npcId);
-          const npc: ZoneNpc = existing ?? {
-            id: enemy.npcId,
-            name: enemy.name,
-            classification: enemy.isBoss ? 3 : 1,
-            spells: [],
-          };
-          return (
+        {[...pull.enemies]
+          .map((enemy) => {
+            const existing = npcsById.get(enemy.npcId);
+            const npc: ZoneNpc = existing ?? {
+              id: enemy.npcId,
+              name: enemy.name,
+              classification: enemy.isBoss ? 3 : 1,
+              spells: [],
+            };
+            return { enemy, npc };
+          })
+          .sort((a, b) => {
+            const rankA = getNpcTierRank(a.npc, a.enemy.isBoss, instanceSlug);
+            const rankB = getNpcTierRank(b.npc, b.enemy.isBoss, instanceSlug);
+            if (rankA !== rankB) return rankA - rankB;
+            return a.npc.name.localeCompare(b.npc.name);
+          })
+          .map(({ enemy, npc }) => (
             <NpcGroup
               key={`${pull.index}-${enemy.npcId}`}
               npc={npc}
@@ -907,13 +916,12 @@ function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailP
               instanceSlug={instanceSlug}
               countBadge={enemy.cloneCount}
               fallbackNote={
-                existing
+                npcsById.has(enemy.npcId)
                   ? undefined
                   : 'No abilities recorded for this NPC in WarcraftJournal.'
               }
             />
-          );
-        })}
+          ))}
       </div>
     </div>
   );

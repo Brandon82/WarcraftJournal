@@ -114,22 +114,18 @@ body {
   background: var(--color-wow-bg-hover);
 }
 
-/* Page transition: subtle fade + slide-up on route change */
+/* Page transition: subtle fade on route change.
+   Intentionally opacity-only: a transform on this wrapper creates a
+   containing block that traps `position: fixed` descendants — tooltips
+   and the DungeonMap fullscreen overlay would then position relative to
+   this element instead of the viewport, which shows up as a hover-stutter
+   when the page is scrolled. */
 @keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .page-enter {
-  /* No `both` fill-mode: a lingering transform after the animation would
-     trap `position: fixed` descendants (like the DungeonMap fullscreen
-     overlay) inside this wrapper's containing block. */
   animation: page-enter 220ms ease-out;
 }
 

@@ -94,19 +94,19 @@ export default function SavedRouteCard({
         <div
           className={`relative ${
             hasImage
-              ? 'flex flex-col justify-end h-full p-3'
-              : 'bg-wow-bg-surface px-3 py-2.5'
+              ? 'flex flex-col justify-end h-full p-2'
+              : 'bg-wow-bg-surface px-2 py-2'
           }`}
         >
           <div
-            className={`font-semibold text-sm truncate ${
+            className={`font-semibold text-xs truncate ${
               hasImage ? 'text-white' : 'text-wow-gold'
             }`}
           >
             {saved.name}
           </div>
           <div
-            className={`text-xs truncate ${
+            className={`text-[11px] truncate ${
               hasImage ? 'text-zinc-300' : 'text-wow-text-secondary'
             }`}
           >
@@ -114,23 +114,12 @@ export default function SavedRouteCard({
           </div>
           {meta && (
             <div
-              className={`mt-1.5 flex items-center gap-2 text-[11px] font-mono ${
+              className={`mt-1 flex items-center gap-1.5 text-[10px] font-mono ${
                 hasImage ? 'text-zinc-300' : 'text-wow-text-dim'
               }`}
             >
               <span className="shrink-0">
                 {meta.pullCount} {meta.pullCount === 1 ? 'pull' : 'pulls'}
-              </span>
-              <span
-                className={`w-14 h-1 rounded-full overflow-hidden shrink-0 ${
-                  hasImage ? 'bg-white/20' : 'bg-wow-bg-raised'
-                }`}
-                aria-hidden
-              >
-                <span
-                  className="block h-full bg-wow-gold"
-                  style={{ width: `${meta.percent}%` }}
-                />
               </span>
               <span className="shrink-0">{meta.percent.toFixed(1)}%</span>
             </div>

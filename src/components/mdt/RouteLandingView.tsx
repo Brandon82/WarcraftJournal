@@ -100,7 +100,7 @@ export default function RouteLandingView({
             </p>
           </div>
         ) : (
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {savedRoutes.map((saved) => (
               <SavedRouteCard
                 key={saved.id}

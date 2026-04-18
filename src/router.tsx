@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import SeasonPage from './pages/SeasonPage';
 import ToolsPage from './pages/ToolsPage';
 import MdtRoutePage from './pages/MdtRoutePage';
+import ChangelogPage from './pages/ChangelogPage';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: 'season/:instanceSlug/:bossSlug', element: <EncounterPage /> },
       { path: 'tools', element: <ToolsPage /> },
       { path: 'tools/mdt-route', element: <MdtRoutePage /> },
+      { path: 'changelog', element: <ChangelogPage /> },
       { path: ':expansionSlug', element: <ExpansionPage /> },
       { path: ':expansionSlug/:instanceSlug', element: <InstancePage /> },
       { path: ':expansionSlug/:instanceSlug/:bossSlug', element: <EncounterPage /> },

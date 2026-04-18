@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router';
-import { RightOutlined, NodeIndexOutlined, ToolOutlined } from '@ant-design/icons';
+import { RightOutlined, NodeIndexOutlined, ToolOutlined, FileTextOutlined } from '@ant-design/icons';
 import { currentSeason } from '../../data/currentSeason';
 
 interface ExpansionMenuProps {
@@ -133,6 +133,17 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
         >
           <ToolOutlined className="text-[12px]" />
           <span className="truncate">Useful Tools</span>
+        </button>
+        <button
+          onClick={() => go('/changelog')}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+            location.pathname === '/changelog'
+              ? 'bg-wow-bg-raised text-wow-gold font-medium'
+              : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
+          }`}
+        >
+          <FileTextOutlined className="text-[12px]" />
+          <span className="truncate">Changelog</span>
         </button>
       </div>
     </nav>

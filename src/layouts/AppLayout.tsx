@@ -6,6 +6,7 @@ import JournalIcon from '../components/JournalIcon';
 import ExpansionMenu from '../components/navigation/ExpansionMenu';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SearchBar from '../components/navigation/SearchBar';
+import NameplateColorsSettings from '../components/NameplateColorsSettings';
 import { JournalProvider } from '../context/JournalContext';
 import { LayoutProvider, useLayout } from '../context/LayoutContext';
 import { useTheme } from '../context/ThemeContext';
@@ -162,6 +163,7 @@ function AppLayoutInner() {
             >
               <CodeOutlined />
             </button>
+            <NameplateColorsSettings />
             <button
               onClick={toggleTheme}
               className="bg-transparent border border-wow-border rounded-xl cursor-pointer text-wow-text-secondary text-sm p-2.5 sm:p-2 flex items-center hover:text-wow-text hover:bg-wow-bg-elevated transition-all duration-150"

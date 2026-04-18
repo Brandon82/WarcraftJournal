@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { DownOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import type { ZoneNpc, ZoneSpell, InstanceCategory } from '../../types';
+import { getMdtEnemyByNpcId } from '../../lib/mdt/dungeons';
+import { useNameplateColors, type NpcTier } from '../../context/NameplateColorsContext';
 
 const SCHOOL_TAGS: Record<number, { label: string; style: string }> = {
   1: { label: 'Physical', style: 'bg-amber-500/20 text-amber-400' },
@@ -36,6 +38,48 @@ const CLASSIFICATION_LABELS: Record<number, { label: string; style: string }> = 
   2: { label: 'Rare Elite', style: 'bg-blue-500/20 text-blue-400' },
   3: { label: 'Boss', style: 'bg-red-500/20 text-red-400' },
 };
+
+// Sort priority matches tier importance: Boss > Miniboss > Caster > Elite > Trivial.
+const TIER_SORT_RANK: Record<NpcTier, number> = {
+  boss: 0,
+  miniboss: 1,
+  caster: 2,
+  elite: 3,
+  trivial: 4,
+};
+
+// Tier resolution uses the vendored MDT dungeon tables rather than Wowhead's
+// NPC classification, since `UnitClassification()`-equivalent data treats every
+// dungeon boss/miniboss/elite as "Elite" and can't separate them. MDT's
+// community-curated `scale` and `count` fields match the visual tiers
+// players recognize in Plater:
+//   - scale >= 1.5 (or count >= 10) → oversized, named trash → Miniboss
+//   - count === 0 non-boss          → weak adds/summons       → Trivial
+//   - otherwise with interruptible  → Caster
+//   - otherwise                     → Elite
+// Bosses still resolve via the Adventure Guide bossNames match (or an
+// explicit classification=3 override in the fetch pipeline).
+const MINIBOSS_COUNT_THRESHOLD = 10;
+const MINIBOSS_SCALE_THRESHOLD = 1.5;
+
+export function getNpcTier(npc: ZoneNpc, isBoss: boolean, instanceSlug: string): NpcTier {
+  if (isBoss || npc.classification === 3) return 'boss';
+  const mdt = instanceSlug ? getMdtEnemyByNpcId(instanceSlug, npc.id) : undefined;
+  if (mdt && !mdt.isBoss) {
+    const scale = typeof mdt.scale === 'number' ? mdt.scale : 1;
+    if (scale >= MINIBOSS_SCALE_THRESHOLD || mdt.count >= MINIBOSS_COUNT_THRESHOLD) {
+      return 'miniboss';
+    }
+    if (mdt.count === 0) return 'trivial';
+  }
+  if (npc.classification === 2 || npc.classification === 4) return 'miniboss';
+  if (npc.spells.some((s) => s.tags?.includes('interruptible'))) return 'caster';
+  return 'elite';
+}
+
+export function getNpcTierRank(npc: ZoneNpc, isBoss: boolean, instanceSlug: string): number {
+  return TIER_SORT_RANK[getNpcTier(npc, isBoss, instanceSlug)];
+}
 
 function SpellRow({ spell }: { spell: ZoneSpell }) {
   const schoolTag = getSchoolTag(spell.schools);
@@ -91,18 +135,22 @@ function SpellRow({ spell }: { spell: ZoneSpell }) {
 interface NpcGroupProps {
   npc: ZoneNpc;
   isBoss: boolean;
+  /** Instance slug used to look up MDT enemy-forces data for tier coloring. */
+  instanceSlug?: string;
   /** Optional "× N" badge (e.g. clone count in an MDT pull). */
   countBadge?: number;
   /** Body shown when the NPC has no spells recorded. */
   fallbackNote?: string;
 }
 
-export function NpcGroup({ npc, isBoss, countBadge, fallbackNote }: NpcGroupProps) {
+export function NpcGroup({ npc, isBoss, instanceSlug, countBadge, fallbackNote }: NpcGroupProps) {
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const classification = isBoss
     ? CLASSIFICATION_LABELS[3]
     : CLASSIFICATION_LABELS[npc.classification];
+  const { colors } = useNameplateColors();
+  const nameColor = colors[getNpcTier(npc, isBoss, instanceSlug ?? '')];
   const hasSpells = npc.spells.length > 0;
 
   return (
@@ -119,7 +167,7 @@ export function NpcGroup({ npc, isBoss, countBadge, fallbackNote }: NpcGroupProp
         </span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[15px] font-semibold text-wow-text">{npc.name}</span>
+            <span className="text-[15px] font-semibold" style={{ color: nameColor }}>{npc.name}</span>
             {countBadge != null && countBadge > 1 && (
               <span className="text-xs text-wow-text-secondary font-mono">× {countBadge}</span>
             )}
@@ -162,15 +210,16 @@ interface ZoneSpellSectionProps {
   npcs: ZoneNpc[];
   bossNames: Set<string>;
   category: InstanceCategory;
+  instanceSlug?: string;
 }
 
-export default function ZoneSpellSection({ npcs, bossNames, category }: ZoneSpellSectionProps) {
+export default function ZoneSpellSection({ npcs, bossNames, category, instanceSlug }: ZoneSpellSectionProps) {
   const isBoss = (npc: ZoneNpc) => bossNames.has(npc.name) || npc.classification === 3;
+  const slug = instanceSlug ?? '';
   const sortedNpcs = [...npcs].sort((a, b) => {
-    // Priority: boss (0) > elite/rare-elite (1) > other (2)
-    const tierA = isBoss(a) ? 0 : a.classification >= 1 ? 1 : 2;
-    const tierB = isBoss(b) ? 0 : b.classification >= 1 ? 1 : 2;
-    if (tierA !== tierB) return tierA - tierB;
+    const rankA = getNpcTierRank(a, isBoss(a), slug);
+    const rankB = getNpcTierRank(b, isBoss(b), slug);
+    if (rankA !== rankB) return rankA - rankB;
     return a.name.localeCompare(b.name);
   });
 
@@ -181,7 +230,7 @@ export default function ZoneSpellSection({ npcs, bossNames, category }: ZoneSpel
       </h3>
       <div>
         {sortedNpcs.map((npc) => (
-          <NpcGroup key={npc.id} npc={npc} isBoss={isBoss(npc)} />
+          <NpcGroup key={npc.id} npc={npc} isBoss={isBoss(npc)} instanceSlug={instanceSlug} />
         ))}
       </div>
     </div>

@@ -32,7 +32,7 @@ import {
   zoneSpellsByInstanceSlug,
   type RaiderIORoute,
 } from '../data';
-import { NpcGroup } from '../components/zone-spells/ZoneSpellSection';
+import { NpcGroup, getNpcTierRank } from '../components/zone-spells/ZoneSpellSection';
 import DungeonMap, { type FocusPullRequest } from '../components/mdt/DungeonMap';
 import DungeonPicker from '../components/mdt/DungeonPicker';
 import RouteBuilderControls from '../components/mdt/RouteBuilderControls';
@@ -639,6 +639,7 @@ export default function MdtRoutePage() {
                 spawn={liveMobInfoSpawn}
                 enemy={enemyByNpcId.get(liveMobInfoSpawn.npcId)}
                 npcsById={npcsById}
+                instanceSlug={route.dungeon.instanceSlug}
                 onClose={() => setMobInfoSpawn(null)}
               />
             </section>
@@ -681,7 +682,7 @@ export default function MdtRoutePage() {
                       {selectedPull.index} / {route.pulls.length}
                     </span>
                   </div>
-                  <PullDetail pull={selectedPull} npcsById={npcsById} />
+                  <PullDetail pull={selectedPull} npcsById={npcsById} instanceSlug={route.dungeon.instanceSlug} />
                 </>
               ) : (
                 <p className="text-sm text-wow-text-secondary">
@@ -703,6 +704,7 @@ export default function MdtRoutePage() {
                       key={pull.index}
                       pull={pull}
                       npcsById={npcsById}
+                      instanceSlug={route.dungeon.instanceSlug}
                       onHeaderClick={() => handleAbilityPullClick(pull.index)}
                     />
                   ))}
@@ -711,7 +713,11 @@ export default function MdtRoutePage() {
             )}
             {abilityListMode === 'dungeon' && (
               zoneSpells && zoneSpells.npcs.length > 0 ? (
-                <DungeonAbilityList npcs={zoneSpells.npcs} bossNames={bossNames} />
+                <DungeonAbilityList
+                  npcs={zoneSpells.npcs}
+                  bossNames={bossNames}
+                  instanceSlug={route.dungeon.instanceSlug}
+                />
               ) : (
                 <p className="text-sm text-wow-text-secondary">
                   No dungeon abilities recorded for this instance.
@@ -820,26 +826,27 @@ export default function MdtRoutePage() {
 interface DungeonAbilityListProps {
   npcs: ZoneNpc[];
   bossNames: Set<string>;
+  instanceSlug: string;
 }
 
 // Mirrors ZoneSpellSection's sort (boss > elite/rare-elite > other, then name)
 // but without the outer "Dungeon Abilities" heading since the page already
 // has its own Abilities header and mode selector.
-function DungeonAbilityList({ npcs, bossNames }: DungeonAbilityListProps) {
+function DungeonAbilityList({ npcs, bossNames, instanceSlug }: DungeonAbilityListProps) {
   const isBoss = (npc: ZoneNpc) => bossNames.has(npc.name) || npc.classification === 3;
   const sortedNpcs = useMemo(() => {
     return [...npcs].sort((a, b) => {
-      const tierA = isBoss(a) ? 0 : a.classification >= 1 ? 1 : 2;
-      const tierB = isBoss(b) ? 0 : b.classification >= 1 ? 1 : 2;
-      if (tierA !== tierB) return tierA - tierB;
+      const rankA = getNpcTierRank(a, isBoss(a), instanceSlug);
+      const rankB = getNpcTierRank(b, isBoss(b), instanceSlug);
+      if (rankA !== rankB) return rankA - rankB;
       return a.name.localeCompare(b.name);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [npcs, bossNames]);
+  }, [npcs, bossNames, instanceSlug]);
   return (
     <div>
       {sortedNpcs.map((npc) => (
-        <NpcGroup key={npc.id} npc={npc} isBoss={isBoss(npc)} />
+        <NpcGroup key={npc.id} npc={npc} isBoss={isBoss(npc)} instanceSlug={instanceSlug} />
       ))}
     </div>
   );
@@ -848,10 +855,11 @@ function DungeonAbilityList({ npcs, bossNames }: DungeonAbilityListProps) {
 interface PullDetailProps {
   pull: { index: number; forces: number; enemies: MdtPullEnemy[] };
   npcsById: Map<number, ZoneNpc>;
+  instanceSlug: string;
   onHeaderClick?: () => void;
 }
 
-function PullDetail({ pull, npcsById, onHeaderClick }: PullDetailProps) {
+function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailProps) {
   if (pull.enemies.length === 0) {
     const emptyText = `Pull ${pull.index} has no enemies yet.`;
     return onHeaderClick ? (
@@ -896,6 +904,7 @@ function PullDetail({ pull, npcsById, onHeaderClick }: PullDetailProps) {
               key={`${pull.index}-${enemy.npcId}`}
               npc={npc}
               isBoss={enemy.isBoss}
+              instanceSlug={instanceSlug}
               countBadge={enemy.cloneCount}
               fallbackNote={
                 existing

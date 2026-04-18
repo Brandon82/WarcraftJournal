@@ -3,6 +3,7 @@ import { RouterProvider } from 'react-router';
 import { darkTheme, lightTheme } from './theme';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { DevModeProvider } from './context/DevModeContext';
+import { NameplateColorsProvider } from './context/NameplateColorsContext';
 import { router } from './router';
 
 function AppInner() {
@@ -18,7 +19,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <DevModeProvider>
-        <AppInner />
+        <NameplateColorsProvider>
+          <AppInner />
+        </NameplateColorsProvider>
       </DevModeProvider>
     </ThemeProvider>
   );

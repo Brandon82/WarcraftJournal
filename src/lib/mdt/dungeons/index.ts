@@ -57,7 +57,26 @@ export const MDT_DUNGEONS: MdtDungeonTable[] = [
 const BY_MDT_INDEX = new Map<number, MdtDungeonTable>();
 for (const d of MDT_DUNGEONS) BY_MDT_INDEX.set(d.dungeonIndex, d);
 
+const ENEMIES_BY_SLUG = new Map<string, Map<number, MdtDungeonEnemy>>();
+for (const d of MDT_DUNGEONS) {
+  const byId = new Map<number, MdtDungeonEnemy>();
+  for (const e of d.enemies) {
+    // Prefer the first entry with non-zero count so duplicate (summoned-copy)
+    // rows with count=0 don't shadow the real dungeon-forces entry.
+    const existing = byId.get(e.id);
+    if (!existing || (existing.count === 0 && e.count > 0)) byId.set(e.id, e);
+  }
+  ENEMIES_BY_SLUG.set(d.instanceSlug, byId);
+}
+
 export function findDungeonByMdtIdx(idx: number | undefined): MdtDungeonTable | undefined {
   if (idx == null) return undefined;
   return BY_MDT_INDEX.get(idx);
+}
+
+export function getMdtEnemyByNpcId(
+  instanceSlug: string,
+  npcId: number,
+): MdtDungeonEnemy | undefined {
+  return ENEMIES_BY_SLUG.get(instanceSlug)?.get(npcId);
 }

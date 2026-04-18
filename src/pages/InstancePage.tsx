@@ -138,7 +138,12 @@ export default function InstancePage() {
       {devMode && <DevInfoPanel instanceId={instance.id} />}
 
       {zoneSpells && zoneSpells.npcs.length > 0 && (
-        <ZoneSpellSection npcs={zoneSpells.npcs} bossNames={bossNames} category={instance.category} />
+        <ZoneSpellSection
+          npcs={zoneSpells.npcs}
+          bossNames={bossNames}
+          category={instance.category}
+          instanceSlug={instanceSlug ?? ''}
+        />
       )}
     </div>
   );

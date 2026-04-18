@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Button, Input, Modal, Select } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { decodeMdtString } from '../lib/mdt/decodeRoute';
 import { parseMdtRoute } from '../lib/mdt/parseRoute';
 import { encodeMdtRoute } from '../lib/mdt/encodeRoute';
@@ -633,7 +634,30 @@ export default function MdtRoutePage() {
             </div>
             {abilityListMode === 'current' && (
               selectedPull ? (
-                <PullDetail pull={selectedPull} npcsById={npcsById} />
+                <>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Button
+                      size="small"
+                      icon={<LeftOutlined />}
+                      onClick={() => handleSidebarSelectPull(selectedPull.index - 1)}
+                      disabled={selectedPull.index <= 1}
+                    >
+                      Prev
+                    </Button>
+                    <Button
+                      size="small"
+                      onClick={() => handleSidebarSelectPull(selectedPull.index + 1)}
+                      disabled={selectedPull.index >= route.pulls.length}
+                    >
+                      Next
+                      <RightOutlined />
+                    </Button>
+                    <span className="text-xs text-wow-text-dim ml-1">
+                      {selectedPull.index} / {route.pulls.length}
+                    </span>
+                  </div>
+                  <PullDetail pull={selectedPull} npcsById={npcsById} />
+                </>
               ) : (
                 <p className="text-sm text-wow-text-secondary">
                   {route.pulls.length === 0

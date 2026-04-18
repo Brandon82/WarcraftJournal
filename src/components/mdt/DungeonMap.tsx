@@ -287,14 +287,14 @@ export default function DungeonMap({
       <div
         className={
           overlayActive
-            ? `fixed inset-4 z-50 rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface flex${
+            ? `fixed inset-4 z-50 rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface flex mdt-map-layout${
                 animating ? (expanded ? ' mdt-map-expanding' : ' mdt-map-collapsing') : ''
               }`
-            : 'relative rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface mdt-map-container flex'
+            : 'relative rounded-xl overflow-hidden border border-wow-border bg-wow-bg-surface mdt-map-container mdt-map-layout flex'
         }
         onAnimationEnd={(e) => { if (e.target === e.currentTarget) setAnimating(false); }}
       >
-        <div className="relative flex-1 min-w-0">
+        <div className="relative flex-1 min-w-0 mdt-map-viewport">
         <button
           type="button"
           onClick={() => setResetTrigger((n) => n + 1)}
@@ -515,7 +515,7 @@ export default function DungeonMap({
         </div>
         {sidebar && (
           <aside
-            className="border-l border-wow-border bg-wow-bg-elevated overflow-y-auto p-3 shrink-0"
+            className="mdt-map-sidebar border-l border-wow-border bg-wow-bg-elevated overflow-y-auto p-3 shrink-0"
             style={{ width: sidebarWidth }}
           >
             {sidebar}

@@ -11,10 +11,30 @@
   max-height: 760px;
 }
 
-@media (max-width: 640px) {
+/* Stack the pulls sidebar below the map on narrow viewports. Applied to
+   both the inline layout and the fullscreen overlay via .mdt-map-layout so
+   behavior stays consistent in either state. */
+@media (max-width: 768px) {
+  .mdt-map-layout {
+    flex-direction: column;
+  }
+
   .mdt-map-container {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .mdt-map-container .mdt-map-viewport {
     height: 55vh;
     min-height: 360px;
+  }
+
+  .mdt-map-sidebar {
+    width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid var(--color-wow-border);
+    max-height: 40vh;
   }
 }
 

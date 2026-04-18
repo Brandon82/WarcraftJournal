@@ -14,6 +14,18 @@ export const instances = instancesData as JournalInstance[];
 export const encounters = encountersData as JournalEncounter[];
 export const zoneSpells = zoneSpellsData as ZoneSpellData[];
 
+export interface RaiderIOPlayer {
+  name: string;
+  className: string;
+  classSlug: string;
+  specName: string;
+  specSlug: string;
+  role: string;
+  realm: string;
+  region: string;
+  profileUrl: string | null;
+}
+
 export interface RaiderIORouteSource {
   rank: number;
   keystoneRunId: number;
@@ -23,12 +35,15 @@ export interface RaiderIORouteSource {
   clearTimeMs: number;
   keystoneTimeMs: number;
   timeRemainingMs: number;
+  numChests: number;
   completedAt: string;
   score: number;
+  faction: string | null;
   rioSlug: string;
   dungeonName: string;
   runUrl: string;
   keystoneGuruUrl: string;
+  players: RaiderIOPlayer[];
 }
 
 export interface RaiderIORoute {
@@ -37,10 +52,12 @@ export interface RaiderIORoute {
   scrapedAt: string;
 }
 
-/** Top timed Mythic+ route per dungeon, scraped from raider.io / keystone.guru
- *  at build time. Keyed by our internal instance slug. May be empty if no
- *  dungeons yielded a usable route (or if the scraper has not been run). */
-export const raiderioRoutes = raiderioRoutesData as Record<string, RaiderIORoute>;
+/** Top 3 timed Mythic+ runs with attached routes per dungeon, scraped from
+ *  raider.io / keystone.guru at build time. Keyed by our internal instance
+ *  slug. Each value is ordered by raider.io rank (best run first). May be
+ *  empty if no dungeons yielded a usable route (or if the scraper has not
+ *  been run). */
+export const raiderioRoutes = raiderioRoutesData as Record<string, RaiderIORoute[]>;
 
 // Most recent fetch timestamp across zone-spell entries — reflects the latest
 // data refresh (zone-spells are written on every full run and on --only-zone-spells runs).

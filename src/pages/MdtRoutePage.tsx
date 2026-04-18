@@ -92,14 +92,13 @@ export default function MdtRoutePage() {
   const { routes: savedRoutes, save, remove, isSaved } = useSavedMdtRoutes();
   const isMobile = useIsMobile();
 
-  // Pre-scraped top raider.io routes, one per current-season dungeon. Keyed
-  // by our internal instance slug — see scripts/fetch-raiderio-routes.ts.
+  // Pre-scraped top raider.io routes — up to 3 per current-season dungeon.
+  // Keyed by our internal instance slug — see scripts/fetch-raiderio-routes.ts.
   const featuredRoutes = useMemo(
     () =>
-      Object.entries(raiderioRoutes).map(([instanceSlug, route]) => ({
-        instanceSlug,
-        route,
-      })),
+      Object.entries(raiderioRoutes).flatMap(([instanceSlug, routes]) =>
+        routes.map((route) => ({ instanceSlug, route })),
+      ),
     [],
   );
 

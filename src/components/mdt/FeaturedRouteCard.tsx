@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { decodeMdtString } from '../../lib/mdt/decodeRoute';
 import { parseMdtRoute } from '../../lib/mdt/parseRoute';
-import { instanceBySlug, type RaiderIORoute } from '../../data';
+import { instanceBySlug, type RaiderIORoute, type RaiderIOPlayer } from '../../data';
 
 interface FeaturedRouteCardProps {
   instanceSlug: string;
@@ -10,10 +10,29 @@ interface FeaturedRouteCardProps {
   onLoad: (route: RaiderIORoute) => void;
 }
 
+// Standard WoW class colors, keyed by raider.io class slug.
+const CLASS_COLORS: Record<string, string> = {
+  'death-knight': '#C41E3A',
+  'demon-hunter': '#A330C9',
+  druid: '#FF7C0A',
+  evoker: '#33937F',
+  hunter: '#AAD372',
+  mage: '#3FC7EB',
+  monk: '#00FF98',
+  paladin: '#F48CBA',
+  priest: '#FFFFFF',
+  rogue: '#FFF468',
+  shaman: '#0070DD',
+  warlock: '#8788EE',
+  warrior: '#C69B6D',
+};
+
+const ROLE_RANK: Record<string, number> = { tank: 0, healer: 1, dps: 2 };
+
 /** Landing-page card for a top raider.io/keystone.guru route. Visually
  *  mirrors SavedRouteCard (dungeon image, gradient overlay) but surfaces
- *  the source run's key level + clear time instead of pull count, and
- *  carries a small badge making the origin obvious. */
+ *  the source run's key level, clear time, completion date, and roster so
+ *  users can pick a run from a known team. */
 export default function FeaturedRouteCard({
   instanceSlug,
   route,
@@ -37,6 +56,17 @@ export default function FeaturedRouteCard({
   const hasImage = !!backgroundImage;
   const dungeonName = instance?.name ?? route.source.dungeonName;
   const clearTime = formatMs(route.source.clearTimeMs);
+  const completedAt = formatDate(route.source.completedAt);
+  const players = useMemo<RaiderIOPlayer[]>(
+    () =>
+      [...route.source.players].sort(
+        (a, b) => (ROLE_RANK[a.role] ?? 9) - (ROLE_RANK[b.role] ?? 9),
+      ),
+    [route.source.players],
+  );
+  const playerTitle = players
+    .map((p) => `${p.name} — ${p.specName} ${p.className} (${p.role})`)
+    .join('\n');
 
   return (
     <div
@@ -54,6 +84,7 @@ export default function FeaturedRouteCard({
         type="button"
         onClick={() => onLoad(route)}
         className="block w-full h-full text-left cursor-pointer p-0 m-0 border-0 bg-transparent"
+        title={playerTitle || undefined}
       >
         {hasImage && (
           <>
@@ -116,7 +147,25 @@ export default function FeaturedRouteCard({
                 </span>
               </>
             )}
+            {completedAt && (
+              <>
+                <span className="opacity-40">·</span>
+                <span className="shrink-0">{completedAt}</span>
+              </>
+            )}
           </div>
+          {players.length > 0 && (
+            <div className="mt-1 flex items-center gap-1">
+              {players.map((p, i) => (
+                <span
+                  key={`${p.name}-${i}`}
+                  className="h-1.5 w-4 rounded-sm ring-1 ring-black/40"
+                  style={{ backgroundColor: CLASS_COLORS[p.classSlug] ?? '#888' }}
+                  aria-label={`${p.name} (${p.className})`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </button>
     </div>
@@ -128,4 +177,10 @@ function formatMs(ms: number): string {
   const m = Math.floor(totalSeconds / 60);
   const s = totalSeconds % 60;
   return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function formatDate(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
 }

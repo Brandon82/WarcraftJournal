@@ -1,6 +1,7 @@
 /**
- * Builds src/data/generated/raiderio-routes.json: the top timed Mythic+ route
- * (as an MDT import string) for each dungeon in the current season.
+ * Builds src/data/generated/raiderio-routes.json: up to the top 3 timed
+ * Mythic+ runs *with an attached route* for each dungeon in the current
+ * season, as MDT import strings plus roster/run metadata.
  *
  * Usage: npx tsx scripts/fetch-raiderio-routes.ts
  *
@@ -9,14 +10,14 @@
  * for a given route_key. So the scrape is just three chained HTTP calls:
  *
  *   1. GET raider.io/api/v1/mythic-plus/runs?... → ranked runs, each with a
- *      logged_run_id when an attached route exists.
+ *      logged_run_id when an attached route exists, plus roster info.
  *   2. GET raider.io/api/mythic-plus/runs/<season>/<id>-<lvl>-<slug> →
  *      run details, which expose keystoneRun.logged_details.route_key and
  *      showing_route_authorized.
  *   3. GET keystone.guru/ajax/<route_key>/mdtExport → { mdt_string, warnings }.
  *
  * We validate each captured string with our own decoder and fall through to
- * the next ranked run on any failure.
+ * the next ranked run on any failure, stopping once we have TOP_N_PER_DUNGEON.
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -43,11 +44,27 @@ const DUNGEONS: { ourSlug: string; rioSlug: string }[] = [
 ];
 
 // How many top-ranked runs to try before giving up on a dungeon.
-const MAX_CANDIDATES_PER_DUNGEON = 10;
+const MAX_CANDIDATES_PER_DUNGEON = 20;
+
+// How many valid MDT-backed runs to capture per dungeon.
+const TOP_N_PER_DUNGEON = 3;
 
 // Shared browser-ish headers so raider.io / keystone.guru don't 403 us.
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+
+interface RioRosterEntry {
+  character: {
+    name: string;
+    class: { name: string; slug: string };
+    spec: { name: string; slug: string };
+    realm: { name: string; slug: string };
+    region: { name: string; slug: string; short_name: string };
+    faction: string;
+    path?: string;
+  };
+  role: string;
+}
 
 interface RioRunRanking {
   rank: number;
@@ -62,7 +79,21 @@ interface RioRunRanking {
     time_remaining_ms: number;
     logged_run_id: number | null;
     dungeon: { slug: string; name: string };
+    roster?: RioRosterEntry[];
+    faction?: string;
   };
+}
+
+interface RaiderIOPlayer {
+  name: string;
+  className: string;
+  classSlug: string;
+  specName: string;
+  specSlug: string;
+  role: string;
+  realm: string;
+  region: string;
+  profileUrl: string | null;
 }
 
 interface RaiderIORouteEntry {
@@ -76,12 +107,15 @@ interface RaiderIORouteEntry {
     clearTimeMs: number;
     keystoneTimeMs: number;
     timeRemainingMs: number;
+    numChests: number;
     completedAt: string;
     score: number;
+    faction: string | null;
     rioSlug: string;
     dungeonName: string;
     runUrl: string;
     keystoneGuruUrl: string;
+    players: RaiderIOPlayer[];
   };
   scrapedAt: string;
 }
@@ -151,25 +185,46 @@ function validateMdtString(mdt: string): boolean {
   }
 }
 
+function extractPlayers(roster: RioRosterEntry[] | undefined): RaiderIOPlayer[] {
+  if (!roster) return [];
+  return roster.map((member) => {
+    const c = member.character;
+    const profileUrl = c.path ? `https://raider.io${c.path}` : null;
+    return {
+      name: c.name,
+      className: c.class?.name ?? '',
+      classSlug: c.class?.slug ?? '',
+      specName: c.spec?.name ?? '',
+      specSlug: c.spec?.slug ?? '',
+      role: member.role,
+      realm: c.realm?.name ?? '',
+      region: c.region?.short_name ?? c.region?.slug ?? '',
+      profileUrl,
+    };
+  });
+}
+
 async function scrapeDungeon(
   dungeon: { ourSlug: string; rioSlug: string },
-): Promise<RaiderIORouteEntry | null> {
+): Promise<RaiderIORouteEntry[]> {
   console.log(`\n[${dungeon.ourSlug}]`);
   let rankings: RioRunRanking[];
   try {
     rankings = await fetchTopRuns(dungeon.rioSlug);
   } catch (err) {
     console.log(`  failed to fetch rankings: ${(err as Error).message}`);
-    return null;
+    return [];
   }
   const candidates = rankings
     .filter((r) => r.run.logged_run_id != null && r.run.time_remaining_ms > 0)
     .slice(0, MAX_CANDIDATES_PER_DUNGEON);
   console.log(
-    `  ${rankings.length} rankings, ${candidates.length} timed + logged candidates`,
+    `  ${rankings.length} rankings, ${candidates.length} timed + logged candidates (want top ${TOP_N_PER_DUNGEON})`,
   );
 
+  const captured: RaiderIORouteEntry[] = [];
   for (const ranking of candidates) {
+    if (captured.length >= TOP_N_PER_DUNGEON) break;
     const { run } = ranking;
     console.log(`  rank ${ranking.rank}: +${run.mythic_level} run=${run.keystone_run_id}`);
     let routeKey: string | null = null;
@@ -194,7 +249,7 @@ async function scrapeDungeon(
       continue;
     }
     console.log(`    ✓ captured valid MDT string (${mdt.length} chars)`);
-    return {
+    captured.push({
       mdtString: mdt,
       source: {
         rank: ranking.rank,
@@ -205,34 +260,49 @@ async function scrapeDungeon(
         clearTimeMs: run.clear_time_ms,
         keystoneTimeMs: run.keystone_time_ms,
         timeRemainingMs: run.time_remaining_ms,
+        numChests: run.num_chests,
         completedAt: run.completed_at,
         score: ranking.score,
+        faction: run.faction ?? null,
         rioSlug: dungeon.rioSlug,
         dungeonName: run.dungeon.name,
         runUrl: `https://raider.io/mythic-plus-runs/${SEASON}/${run.keystone_run_id}-${run.mythic_level}-${dungeon.rioSlug}`,
         keystoneGuruUrl: `https://keystone.guru/route/${dungeon.rioSlug}/${routeKey}/${dungeon.rioSlug}`,
+        players: extractPlayers(run.roster),
       },
       scrapedAt: new Date().toISOString(),
-    };
+    });
   }
-  console.log('  gave up — no candidate yielded a usable MDT string');
-  return null;
+  if (captured.length === 0) {
+    console.log('  gave up — no candidate yielded a usable MDT string');
+  } else if (captured.length < TOP_N_PER_DUNGEON) {
+    console.log(
+      `  captured ${captured.length}/${TOP_N_PER_DUNGEON} — ran out of candidates`,
+    );
+  } else {
+    console.log(`  captured ${captured.length}/${TOP_N_PER_DUNGEON} ✓`);
+  }
+  return captured;
 }
 
 async function main() {
   console.log(`Fetching top raider.io routes for ${SEASON}`);
   console.log(`Output: ${OUT_FILE}`);
 
-  const results: Record<string, RaiderIORouteEntry> = {};
+  const results: Record<string, RaiderIORouteEntry[]> = {};
+  let totalRoutes = 0;
   for (const dungeon of DUNGEONS) {
-    const entry = await scrapeDungeon(dungeon);
-    if (entry) results[dungeon.ourSlug] = entry;
+    const entries = await scrapeDungeon(dungeon);
+    if (entries.length > 0) {
+      results[dungeon.ourSlug] = entries;
+      totalRoutes += entries.length;
+    }
   }
 
   mkdirSync(dirname(OUT_FILE), { recursive: true });
   writeFileSync(OUT_FILE, JSON.stringify(results, null, 2) + '\n');
   console.log(
-    `\nDone. Wrote ${Object.keys(results).length}/${DUNGEONS.length} routes to ${OUT_FILE}`,
+    `\nDone. Wrote ${totalRoutes} routes across ${Object.keys(results).length}/${DUNGEONS.length} dungeons to ${OUT_FILE}`,
   );
 }
 

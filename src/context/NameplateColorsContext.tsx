@@ -1,24 +1,22 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 
-export type NpcTier = 'boss' | 'miniboss' | 'caster' | 'elite' | 'trivial';
+export type NpcTier = 'boss' | 'miniboss' | 'elite' | 'trivial';
 
 export const DEFAULT_NAMEPLATE_COLORS: Record<NpcTier, string> = {
   boss: '#9400D3',
   miniboss: '#EE82EE',
-  caster: '#00BFFF',
-  elite: '#E2808C',
+  elite: '#9B5059',
   trivial: '#F0D656',
 };
 
 export const NAMEPLATE_TIER_LABELS: Record<NpcTier, string> = {
   boss: 'Boss',
   miniboss: 'Miniboss',
-  caster: 'Caster',
   elite: 'Elite',
   trivial: 'Trivial',
 };
 
-export const NAMEPLATE_TIER_ORDER: NpcTier[] = ['boss', 'miniboss', 'caster', 'elite', 'trivial'];
+export const NAMEPLATE_TIER_ORDER: NpcTier[] = ['boss', 'miniboss', 'elite', 'trivial'];
 
 interface NameplateColorsContextValue {
   colors: Record<NpcTier, string>;

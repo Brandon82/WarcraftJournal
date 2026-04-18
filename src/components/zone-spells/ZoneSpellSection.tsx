@@ -39,26 +39,18 @@ const CLASSIFICATION_LABELS: Record<number, { label: string; style: string }> = 
   3: { label: 'Boss', style: 'bg-red-500/20 text-red-400' },
 };
 
-// Sort priority matches tier importance: Boss > Miniboss > Caster > Elite > Trivial.
+// Sort priority matches tier importance: Boss > Miniboss > Elite > Trivial.
 const TIER_SORT_RANK: Record<NpcTier, number> = {
   boss: 0,
   miniboss: 1,
-  caster: 2,
-  elite: 3,
-  trivial: 4,
+  elite: 2,
+  trivial: 3,
 };
 
-// Tier resolution uses the vendored MDT dungeon tables rather than Wowhead's
-// NPC classification, since `UnitClassification()`-equivalent data treats every
-// dungeon boss/miniboss/elite as "Elite" and can't separate them. MDT's
-// community-curated `scale` and `count` fields match the visual tiers
-// players recognize in Plater:
-//   - scale >= 1.5 (or count >= 10) → oversized, named trash → Miniboss
-//   - count === 0 non-boss          → weak adds/summons       → Trivial
-//   - otherwise with interruptible  → Caster
-//   - otherwise                     → Elite
-// Bosses still resolve via the Adventure Guide bossNames match (or an
-// explicit classification=3 override in the fetch pipeline).
+// MDT's community-curated `scale` and `count` fields promote oversized named
+// trash to Miniboss (matching what Plater users visually recognize), since
+// Wowhead's classification alone can't distinguish those from regular elites.
+// Trivial is everything Wowhead considers non-elite/non-boss (classification 0).
 const MINIBOSS_COUNT_THRESHOLD = 10;
 const MINIBOSS_SCALE_THRESHOLD = 1.5;
 
@@ -70,11 +62,10 @@ export function getNpcTier(npc: ZoneNpc, isBoss: boolean, instanceSlug: string):
     if (scale >= MINIBOSS_SCALE_THRESHOLD || mdt.count >= MINIBOSS_COUNT_THRESHOLD) {
       return 'miniboss';
     }
-    if (mdt.count === 0) return 'trivial';
   }
   if (npc.classification === 2 || npc.classification === 4) return 'miniboss';
-  if (npc.spells.some((s) => s.tags?.includes('interruptible'))) return 'caster';
-  return 'elite';
+  if (npc.classification === 1) return 'elite';
+  return 'trivial';
 }
 
 export function getNpcTierRank(npc: ZoneNpc, isBoss: boolean, instanceSlug: string): number {
@@ -135,7 +126,7 @@ function SpellRow({ spell }: { spell: ZoneSpell }) {
 interface NpcGroupProps {
   npc: ZoneNpc;
   isBoss: boolean;
-  /** Instance slug used to look up MDT enemy-forces data for tier coloring. */
+  /** Instance slug used to look up MDT enemy-forces data for miniboss tier detection. */
   instanceSlug?: string;
   /** Optional "× N" badge (e.g. clone count in an MDT pull). */
   countBadge?: number;

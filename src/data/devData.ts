@@ -136,6 +136,18 @@ export const ZONE_NPC_OVERRIDES: Record<number, DevNpcOverride[]> = {
       { id: 1264453, name: 'Lumbering Fixation', schools: 1 },
     ] },
   ],
+  // Magister's Terrace
+  1300: [
+    { id: 231861, name: 'Arcanotron Custos', classification: 3 },
+    { id: 232369, name: 'Arcane Magister', classification: 1, spells: [
+      { id: 468962, name: 'Arcane Bolt', schools: 64 },
+      { id: 468966, name: 'Polymorph', schools: 64 },
+      { id: 1245046, name: 'Blink', schools: 1 },
+    ] },
+    { id: 234089, name: 'Animated Codex', classification: 1, spells: [
+      { id: 1244985, name: 'Arcane Volley', schools: 64 },
+    ] },
+  ],
   // Algeth'ar Academy
   1201: [
     { id: 196798, name: 'Corrupted Manafiend', classification: 1, spells: [

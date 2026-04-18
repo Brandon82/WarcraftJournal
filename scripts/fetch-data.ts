@@ -655,12 +655,14 @@ interface WowheadNpc {
 // If `spells` is provided, the Wowhead ability fetch is skipped for that NPC (icons/tooltips are still fetched).
 // If `spells` is omitted, abilities are fetched from Wowhead as normal.
 // If `additionalSpells` is provided, those spells are merged into the NPC's fetched abilities (not replaced).
-// classification: 1=elite, 2=rare-elite, 3=boss, 4=rare
+// classification: optional — omit to inherit the Wowhead zone listing's
+// value (0=normal/trivial, 1=elite, 2=rare-elite/miniboss, 3=boss, 4=rare).
+// Only set explicitly to force a tier Wowhead doesn't capture.
 // schools bitmask: 1=Physical, 2=Holy, 4=Fire, 8=Nature, 16=Frost, 32=Shadow, 64=Arcane
 interface NpcOverride {
   id: number;
   name: string;
-  classification: number;
+  classification?: number;
   spells?: { id: number; name: string; schools: number }[];
   additionalSpells?: { id: number; name: string; schools: number }[];
 }
@@ -668,75 +670,75 @@ interface NpcOverride {
 const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
   // Windrunner Spire
   1299: [
-    { id: 232119, name: 'Swiftshot Archer', classification: 1, spells: [
+    { id: 232119, name: 'Swiftshot Archer', spells: [
       { id: 1216419, name: 'Shoot', schools: 1 },
       { id: 1216454, name: 'Arrow Rain', schools: 1 },
     ] },
-    { id: 232447, name: 'Spectral Axethrower', classification: 1, spells: [
+    { id: 232447, name: 'Spectral Axethrower', spells: [
       { id: 1217094, name: 'Throw Axe', schools: 1 },
     ] },
-    { id: 232232, name: 'Zealous Reaver', classification: 1, spells: [
+    { id: 232232, name: 'Zealous Reaver', spells: [
       { id: 473640, name: 'Fierce Slash', schools: 1 },
     ] },
-    { id: 232171, name: 'Ardent Cutthroat', classification: 1, spells: [
+    { id: 232171, name: 'Ardent Cutthroat', spells: [
       { id: 473794, name: 'Poison Blades', schools: 8 },
       { id: 473868, name: 'Shadowrive', schools: 1 },
     ] },
-    { id: 232116, name: 'Windrunner Soldier', classification: 1, spells: [
+    { id: 232116, name: 'Windrunner Soldier', spells: [
       { id: 1216462, name: 'Precise Cut', schools: 1 },
     ] },
-    { id: 232173, name: 'Fervent Apothecary', classification: 1, spells: [
+    { id: 232173, name: 'Fervent Apothecary', spells: [
       { id: 473647, name: 'Phial Toss', schools: 8 },
     ] },
-    { id: 232070, name: 'Restless Steward', classification: 1, spells: [
+    { id: 232070, name: 'Restless Steward', spells: [
       { id: 1216135, name: 'Spirit Bolt', schools: 32 },
       { id: 1216298, name: 'Soul Torment', schools: 32 },
     ] },
-    { id: 258868, name: 'Haunting Grunt', classification: 1, spells: [
+    { id: 258868, name: 'Haunting Grunt', spells: [
       { id: 467815, name: 'Intercepting Charge', schools: 1 },
     ] },
-    { id: 232121, name: 'Phalanx Breaker', classification: 1, spells: [
+    { id: 232121, name: 'Phalanx Breaker', spells: [
       { id: 471648, name: 'Break Ranks', schools: 1 },
       { id: 471643, name: 'Interrupting Screech', schools: 1 },
     ] },
-    { id: 232283, name: 'Loyal Worg', classification: 1, spells: [
+    { id: 232283, name: 'Loyal Worg', spells: [
       { id: 1253739, name: 'Shred Flesh', schools: 1 },
     ] },
-    { id: 232067, name: 'Creeping Spindleweb', classification: 1, spells: [
+    { id: 232067, name: 'Creeping Spindleweb', spells: [
       { id: 1216834, name: 'Acidic Demise', schools: 8 },
       { id: 1216822, name: 'Poison Spray', schools: 8 },
     ] },
-    { id: 232147, name: 'Lingering Marauder', classification: 1, spells: [
+    { id: 232147, name: 'Lingering Marauder', spells: [
       { id: 1216643, name: 'Gore Whirl', schools: 1 },
     ] },
-    { id: 238049, name: 'Scouting Trapper', classification: 1, spells: [
+    { id: 238049, name: 'Scouting Trapper', spells: [
       { id: 1219224, name: 'Freezing Trap', schools: 16 },
     ] },
-    { id: 234061, name: 'Phantasmal Mystic', classification: 1, spells: [
+    { id: 234061, name: 'Phantasmal Mystic', spells: [
       { id: 1216592, name: 'Chain Lightning', schools: 8 },
       { id: 1216459, name: 'Ephemeral Bloodlust', schools: 1 },
     ] },
-    { id: 232063, name: 'Apex Lynx', classification: 1, spells: [
+    { id: 232063, name: 'Apex Lynx', spells: [
       { id: 1216985, name: 'Puncturing Bite', schools: 1 },
       { id: 1217010, name: 'Ferocious Pounce', schools: 1 },
     ] },
-    { id: 232176, name: 'Flesh Behemoth', classification: 1, spells: [
+    { id: 232176, name: 'Flesh Behemoth', spells: [
       { id: 473776, name: 'Fetid Spew', schools: 8 },
       { id: 1277799, name: 'Brutal Chop', schools: 1 },
     ] },
-    { id: 236894, name: 'Bloated Lasher', classification: 1, spells: [
+    { id: 236894, name: 'Bloated Lasher', spells: [
       { id: 1216819, name: 'Fungal Bolt', schools: 8 },
       { id: 1216963, name: 'Spore Dispersal', schools: 8 },
     ] },
-    { id: 232113, name: 'Spellguard Magus', classification: 1, spells: [
+    { id: 232113, name: 'Spellguard Magus', spells: [
       { id: 1216250, name: 'Arcane Salvo', schools: 64 },
       { id: 1253683, name: "Spellguard's Protection", schools: 64 },
     ] },
-    { id: 232175, name: 'Devoted Woebringer', classification: 1, spells: [
+    { id: 232175, name: 'Devoted Woebringer', spells: [
       { id: 473657, name: 'Shadow Bolt', schools: 32 },
       { id: 473668, name: 'Pulsing Shriek', schools: 32 },
     ] },
-    { id: 232056, name: 'Territorial Dragonhawk', classification: 1, spells: [
+    { id: 232056, name: 'Territorial Dragonhawk', spells: [
       { id: 1216848, name: 'Fire Spit', schools: 4 },
       { id: 1216860, name: 'Bolstering Flames', schools: 4 },
     ] },
@@ -750,71 +752,79 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 1257509, name: 'Corespark Detonation', schools: 64 },
       { id: 1264048, name: 'Flux Collapse', schools: 1 },
     ] },
-    { id: 241644, name: 'Corewright Arcanist', classification: 1, spells: [
+    { id: 241644, name: 'Corewright Arcanist', spells: [
       { id: 1250553, name: 'Arcane Zap', schools: 64 },
       { id: 1249815, name: 'Transference', schools: 64 },
       { id: 1285445, name: 'Arcane Explosion', schools: 64 },
     ] },
-    { id: 241642, name: 'Lingering Image', classification: 1 },
-    { id: 248502, name: 'Null Sentinel', classification: 1, spells: [
+    { id: 241642, name: 'Lingering Image' },
+    { id: 248502, name: 'Null Sentinel', spells: [
       { id: 1252414, name: 'Nullwark Blast', schools: 1 },
       { id: 1252406, name: 'Dreadbellow', schools: 32 },
     ] },
-    { id: 254932, name: 'Radiant Swarm', classification: 1 },
-    { id: 241647, name: 'Flux Engineer', classification: 1 },
-    { id: 241660, name: 'Duskfright Herald', classification: 1, spells: [
+    { id: 254932, name: 'Radiant Swarm' },
+    { id: 241647, name: 'Flux Engineer' },
+    { id: 241660, name: 'Duskfright Herald', spells: [
       { id: 1252062, name: 'Entropic Leech', schools: 32 },
       { id: 1252076, name: 'Dark Beckoning', schools: 1 },
     ] },
-    { id: 241645, name: 'Hollowsoul Scrounger', classification: 1, spells: [
+    { id: 241645, name: 'Hollowsoul Scrounger', spells: [
       { id: 1227020, name: 'Dimensional Shred', schools: 32 },
       { id: 1252204, name: 'Leech Veil', schools: 1 },
     ] },
-    { id: 248706, name: 'Cursed Voidcaller', classification: 1, spells: [
+    { id: 248706, name: 'Cursed Voidcaller', spells: [
       { id: 1281636, name: 'Creeping Void', schools: 32 },
     ] },
-    { id: 254926, name: 'Lightwrought', classification: 1 },
-    { id: 248373, name: 'Circuit Seer', classification: 1 },
-    { id: 248708, name: 'Nexus Adept', classification: 1 },
-    { id: 252825, name: 'Mana Battery', classification: 1, spells: [
+    { id: 254926, name: 'Lightwrought' },
+    { id: 248373, name: 'Circuit Seer' },
+    { id: 248708, name: 'Nexus Adept' },
+    { id: 252825, name: 'Mana Battery', spells: [
       { id: 1257126, name: 'Corespark Overload', schools: 64 },
     ] },
-    { id: 248769, name: 'Smudge', classification: 1, spells: [
+    { id: 248769, name: 'Smudge', spells: [
       { id: 1257268, name: 'Forfeit Essence', schools: 1 },
     ] },
   ],
   // Pit of Saron
   278: [
-    { id: 36476, name: 'Ick', classification: 1, additionalSpells: [
+    { id: 36476, name: 'Ick', additionalSpells: [
       { id: 1264453, name: 'Lumbering Fixation', schools: 1 },
     ] },
   ],
   // Magister's Terrace
   1300: [
     { id: 231861, name: 'Arcanotron Custos', classification: 3 },
+    { id: 232369, name: 'Arcane Magister', spells: [
+      { id: 468962, name: 'Arcane Bolt', schools: 64 },
+      { id: 468966, name: 'Polymorph', schools: 64 },
+      { id: 1245046, name: 'Blink', schools: 1 },
+    ] },
+    { id: 234089, name: 'Animated Codex', spells: [
+      { id: 1244985, name: 'Arcane Volley', schools: 64 },
+    ] },
   ],
   // Algeth'ar Academy
   1201: [
-    { id: 196798, name: 'Corrupted Manafiend', classification: 1, spells: [
+    { id: 196798, name: 'Corrupted Manafiend', spells: [
       { id: 388863, name: 'Mana Void', schools: 64 },
       { id: 388862, name: 'Surge', schools: 64 },
     ] },
-    { id: 197904, name: 'Spellbound Battleaxe', classification: 1 },
+    { id: 197904, name: 'Spellbound Battleaxe' },
   ],
   // Maisara Caverns
   1315: [
-    { id: 249002, name: 'Warding Mask', classification: 1, spells: [
+    { id: 249002, name: 'Warding Mask', spells: [
       { id: 1257328, name: 'Sear', schools: 4 },
     ] },
-    { id: 248678, name: 'Hulking Juggernaut', classification: 1, spells: [
+    { id: 248678, name: 'Hulking Juggernaut', spells: [
       { id: 1256047, name: 'Deafening Roar', schools: 1 },
       { id: 1256059, name: 'Rending Gore', schools: 1 },
     ] },
-    { id: 253701, name: "Death's Grasp", classification: 1, spells: [
+    { id: 253701, name: "Death's Grasp", spells: [
       { id: 1259794, name: 'Ritual Sacrifice', schools: 32 },
     ] },
     // Override existing Rokh'zal (254233) to add Invoke Shadow from second Rokh'zal NPC (253683)
-    { id: 254233, name: "Rokh'zal", classification: 1, spells: [
+    { id: 254233, name: "Rokh'zal", spells: [
       { id: 1259777, name: 'Umbral Vortex', schools: 32 },
       { id: 1262241, name: 'Invoke Shadow', schools: 32 },
     ] },
@@ -942,37 +952,58 @@ async function fetchZoneSpellsForInstance(
     BLACKLISTED_SPELL_IDS.add(id);
   }
 
-  // Filter: hostile/elite NPCs (bosses + trash), excluding rare-elites
-  // classification: 0=normal, 1=elite, 2=rare-elite, 3=boss, 4=rare
-  // react: [alliance, horde] — negative = hostile, missing = assume hostile for elites
+  // Filter: drop friendly/ignored NPCs but keep every classification tier.
+  // The UI needs the real Wowhead classification (0=normal/trivial,
+  // 1=elite, 2=rare-elite/miniboss, 3=boss, 4=rare) to mirror Plater's
+  // name-plate tiers, so we no longer prune tiers here.
+  // react: [alliance, horde] — positive on both = friendly; negative or
+  // missing = hostile.
   const filteredNpcs = npcs.filter((npc) => {
-    if (npc.classification < 1) return false;
-    if (npc.classification === 2) return false; // rare-elite — not standard dungeon trash
     if (IGNORED_NPC_NAMES.has(npc.name)) return false;
-    // If react data exists, check hostility; if missing, assume hostile for elite+ mobs
     const isFriendly = npc.react && npc.react[0] > 0 && npc.react[1] > 0;
     return !isFriendly;
   });
 
-  // Merge in override NPCs (skip hostility filter since they're manually curated)
+  // Merge in override NPCs (skip hostility filter since they're manually curated).
+  // When an override omits `classification`, inherit it from Wowhead's zone
+  // listing so overrides don't flatten real Plater tiers (e.g. trivial=0,
+  // miniboss=2) into elite=1.
   const overrides = ZONE_NPC_OVERRIDES[instance.id] ?? [];
   if (overrides.length > 0) {
     console.log(`  Adding ${overrides.length} override NPCs`);
   }
+  const wowheadById = new Map<number, WowheadNpc>();
+  for (const npc of npcs) wowheadById.set(npc.id, npc);
   const overrideNpcs: WowheadNpc[] = overrides.map((o) => ({
     id: o.id,
     name: o.name,
-    classification: o.classification,
+    classification: o.classification ?? wowheadById.get(o.id)?.classification ?? 1,
     react: [-1, -1],
   }));
   const allNpcs = [...filteredNpcs, ...overrideNpcs];
 
-  // Deduplicate NPCs by name — Wowhead often lists multiple IDs for the same mob.
-  // Keep the one with the highest classification, breaking ties by highest ID (newest).
+  // Deduplicate NPCs by name — Wowhead often lists multiple IDs for the same
+  // mob. Prefer the entry whose ID matches an override (so the override spell
+  // data lines up), then fall back to the highest classification, breaking
+  // final ties by highest ID (newest).
+  const overrideIds = new Set(overrides.map((o) => o.id));
   const npcByName = new Map<string, WowheadNpc>();
   for (const npc of allNpcs) {
     const existing = npcByName.get(npc.name);
-    if (!existing || npc.classification > existing.classification || (npc.classification === existing.classification && npc.id > existing.id)) {
+    if (!existing) {
+      npcByName.set(npc.name, npc);
+      continue;
+    }
+    const npcMatchesOverride = overrideIds.has(npc.id);
+    const existingMatchesOverride = overrideIds.has(existing.id);
+    if (npcMatchesOverride && !existingMatchesOverride) {
+      npcByName.set(npc.name, npc);
+    } else if (!npcMatchesOverride && existingMatchesOverride) {
+      continue;
+    } else if (
+      npc.classification > existing.classification ||
+      (npc.classification === existing.classification && npc.id > existing.id)
+    ) {
       npcByName.set(npc.name, npc);
     }
   }

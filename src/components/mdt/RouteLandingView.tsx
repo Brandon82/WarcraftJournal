@@ -1,16 +1,25 @@
 import { Button } from 'antd';
 import { PlusOutlined, ImportOutlined } from '@ant-design/icons';
 import SavedRouteCard from './SavedRouteCard';
+import FeaturedRouteCard from './FeaturedRouteCard';
 import type { SavedMdtRoute } from '../../hooks/useSavedMdtRoutes';
+import type { RaiderIORoute } from '../../data';
+
+interface FeaturedRoute {
+  instanceSlug: string;
+  route: RaiderIORoute;
+}
 
 interface RouteLandingViewProps {
   savedRoutes: SavedMdtRoute[];
+  featuredRoutes: FeaturedRoute[];
   /** mdtString of the currently-loaded route, used to highlight its card.
    *  In the landing view this is usually null, but kept for symmetry. */
   currentMdtString: string | null;
   onCreate: () => void;
   onImport: () => void;
   onLoadSaved: (saved: SavedMdtRoute) => void;
+  onLoadFeatured: (route: RaiderIORoute) => void;
   onRemoveSaved: (id: string) => void;
 }
 
@@ -19,10 +28,12 @@ interface RouteLandingViewProps {
  *  user lands on their library, not on an empty textarea. */
 export default function RouteLandingView({
   savedRoutes,
+  featuredRoutes,
   currentMdtString,
   onCreate,
   onImport,
   onLoadSaved,
+  onLoadFeatured,
   onRemoveSaved,
 }: RouteLandingViewProps) {
   return (
@@ -42,6 +53,30 @@ export default function RouteLandingView({
           Import from MDT
         </Button>
       </div>
+
+      {featuredRoutes.length > 0 && (
+        <div className="mb-6">
+          <div className="flex items-baseline justify-between mb-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-wow-text-secondary m-0">
+              Top raider.io routes
+            </h4>
+            <span className="text-xs text-wow-text-dim font-mono">
+              {featuredRoutes.length} dungeons
+            </span>
+          </div>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredRoutes.map(({ instanceSlug, route }) => (
+              <FeaturedRouteCard
+                key={instanceSlug}
+                instanceSlug={instanceSlug}
+                route={route}
+                isCurrent={currentMdtString === route.mdtString}
+                onLoad={onLoadFeatured}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
       <div>
         <div className="flex items-baseline justify-between mb-2">

@@ -73,12 +73,12 @@ export default function FeaturedRouteCard({
         <div
           className={`relative ${
             hasImage
-              ? 'flex flex-col justify-end h-full p-3'
-              : 'bg-wow-bg-surface px-3 py-2.5'
+              ? 'flex flex-col justify-end h-full p-2'
+              : 'bg-wow-bg-surface px-2 py-2'
           }`}
         >
           <div
-            className={`inline-flex items-center gap-1.5 self-start rounded-md px-1.5 py-0.5 mb-1.5 text-[10px] font-semibold uppercase tracking-wider ${
+            className={`inline-flex items-center gap-1 self-start rounded px-1 py-0.5 mb-1 text-[9px] font-semibold uppercase tracking-wider ${
               hasImage
                 ? 'bg-black/40 text-wow-gold'
                 : 'bg-wow-bg-raised text-wow-gold'
@@ -89,21 +89,21 @@ export default function FeaturedRouteCard({
             <span>#{route.source.rank}</span>
           </div>
           <div
-            className={`font-semibold text-sm truncate ${
+            className={`font-semibold text-xs truncate ${
               hasImage ? 'text-white' : 'text-wow-gold'
             }`}
           >
             {dungeonName}
           </div>
           <div
-            className={`text-xs truncate ${
+            className={`text-[11px] truncate ${
               hasImage ? 'text-zinc-300' : 'text-wow-text-secondary'
             }`}
           >
             Top raider.io route
           </div>
           <div
-            className={`mt-1.5 flex items-center gap-2 text-[11px] font-mono ${
+            className={`mt-1 flex items-center gap-1.5 text-[10px] font-mono ${
               hasImage ? 'text-zinc-300' : 'text-wow-text-dim'
             }`}
           >

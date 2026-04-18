@@ -742,6 +742,13 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 1216848, name: 'Fire Spit', schools: 4 },
       { id: 1216860, name: 'Bolstering Flames', schools: 4 },
     ] },
+    { id: 232071, name: 'Dutiful Groundskeeper' },
+    { id: 234673, name: 'Spindleweb Hatchling', spells: [
+      { id: 1216834, name: 'Acidic Demise', schools: 8 },
+    ] },
+    { id: 238099, name: 'Pesty Lashling', spells: [
+      { id: 1277761, name: 'Sporecharged', schools: 8 },
+    ] },
   ],
   // Nexus-point Xenas
   1316: [
@@ -784,11 +791,19 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     { id: 248769, name: 'Smudge', spells: [
       { id: 1257268, name: 'Forfeit Essence', schools: 1 },
     ] },
+    { id: 241643, name: 'Shadowguard Defender', spells: [
+      { id: 1249645, name: 'Null Sunder', schools: 32 },
+    ] },
+    { id: 254928, name: 'Flarebat' },
   ],
   // Pit of Saron
   278: [
     { id: 36476, name: 'Ick', additionalSpells: [
       { id: 1264453, name: 'Lumbering Fixation', schools: 1 },
+    ] },
+    { id: 252561, name: 'Quarry Tormentor', spells: [
+      { id: 1258433, name: 'Tormenting Blade', schools: 32 },
+      { id: 1258434, name: 'Curse of Torment', schools: 32 },
     ] },
   ],
   // Magister's Terrace
@@ -802,6 +817,8 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     { id: 234089, name: 'Animated Codex', spells: [
       { id: 1244985, name: 'Arcane Volley', schools: 64 },
     ] },
+    { id: 262171, name: 'Hollowsoul Shredder' },
+    { id: 234069, name: 'Voidling' },
   ],
   // Algeth'ar Academy
   1201: [
@@ -827,6 +844,10 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     { id: 254233, name: "Rokh'zal", spells: [
       { id: 1259777, name: 'Umbral Vortex', schools: 32 },
       { id: 1262241, name: 'Invoke Shadow', schools: 32 },
+    ] },
+    { id: 248693, name: 'Mire Laborer' },
+    { id: 248690, name: 'Grim Skirmisher', spells: [
+      { id: 1270079, name: 'Grim Ward', schools: 32 },
     ] },
   ],
 };
@@ -1027,6 +1048,7 @@ async function fetchZoneSpellsForInstance(
   const npcResults = [];
 
   for (const npc of dungeonNpcs) {
+    const isOverride = overrideIds.has(npc.id);
     // Use pre-populated spells from overrides if available, skip Wowhead fetch
     const prePopulated = overrideSpellsByNpcId.get(npc.id);
     if (prePopulated) {
@@ -1036,7 +1058,6 @@ async function fetchZoneSpellsForInstance(
           uniqueSpellIds.add(s.id);
           return { id: s.id, name: s.name, schools: s.schools };
         });
-      if (spells.length === 0) continue;
       npcResults.push({
         id: npc.id,
         name: npc.name,
@@ -1050,7 +1071,6 @@ async function fetchZoneSpellsForInstance(
     await sleep(1000);
     try {
       const abilities = await fetchNpcAbilities(npc.id);
-      if (abilities.length === 0) continue;
 
       // Deduplicate spells by name — Wowhead lists multiple ranks/versions of the same ability.
       // Keep the highest spell ID (newest version) for each name.
@@ -1062,7 +1082,6 @@ async function fetchZoneSpellsForInstance(
           spellByName.set(a.name, a);
         }
       }
-      if (spellByName.size === 0) continue;
       const spells = [...spellByName.values()].map((a) => {
         uniqueSpellIds.add(a.id);
         return {
@@ -1071,6 +1090,10 @@ async function fetchZoneSpellsForInstance(
           schools: a.schools ?? 1,
         };
       });
+      // Override NPCs are kept even without abilities (manually curated).
+      // Non-override NPCs without abilities are almost certainly non-dungeon
+      // noise (filler mobs Wowhead hasn't tagged) and are skipped.
+      if (spells.length === 0 && !isOverride) continue;
 
       npcResults.push({
         id: npc.id,
@@ -1078,7 +1101,7 @@ async function fetchZoneSpellsForInstance(
         classification: npc.classification,
         spells,
       });
-      console.log(`    ${npc.name}: ${spells.length} abilities`);
+      console.log(`    ${npc.name}: ${spells.length} abilities${isOverride && spells.length === 0 ? ' (override, no abilities found)' : ''}`);
     } catch (err) {
       console.warn(`    Failed to fetch abilities for ${npc.name}: ${err}`);
     }
@@ -1162,13 +1185,13 @@ function removeSharedSpells(allZoneSpells: Record<string, unknown>[]): void {
     console.log(`\nRemoving ${sharedSpellIds.size} spells shared across multiple instances`);
   }
 
-  // Filter out shared spells and remove NPCs left with no spells
+  // Filter out shared spells. NPCs left with no spells are kept — the UI
+  // displays "No abilities recorded" for them.
   for (const entry of allZoneSpells) {
     const npcs = entry.npcs as Array<{ name: string; spells: Array<{ id: number }> }>;
     for (const npc of npcs) {
       npc.spells = npc.spells.filter((s) => !sharedSpellIds.has(s.id));
     }
-    entry.npcs = npcs.filter((npc) => npc.spells.length > 0);
   }
 }
 

@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "fetch-data": "npx tsx scripts/fetch-data.ts",
     "fetch-data:all": "npx tsx scripts/fetch-data.ts --all",
-    "fetch-data:zone-spells": "npx tsx scripts/fetch-data.ts --only-zone-spells"
+    "fetch-data:zone-spells": "npx tsx scripts/fetch-data.ts --only-zone-spells",
+    "fetch-raiderio-routes": "npx tsx scripts/fetch-raiderio-routes.ts"
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.1",

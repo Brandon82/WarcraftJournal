@@ -44,7 +44,7 @@ export default function BreadcrumbNav() {
     if (pathname === '/tools/mdt-route') {
       crumbs.push({
         key: 'mdt-route',
-        node: <span className={CRUMB_TEXT}>M+ Route Helper</span>,
+        node: <span className={CRUMB_TEXT}>M+ Routes</span>,
       });
     }
   } else if (isSeason) {

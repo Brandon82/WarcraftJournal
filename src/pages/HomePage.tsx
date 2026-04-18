@@ -128,7 +128,7 @@ export default function HomePage() {
             <NodeIndexOutlined className="text-wow-gold text-xl" />
             <div>
               <h3 className="text-base font-semibold m-0 text-wow-gold group-hover:text-wow-gold-bright transition-colors duration-150">
-                M+ Route Helper
+                M+ Routes
               </h3>
               <p className="text-xs m-0 text-wow-text-secondary">
                 Visualize imported MDT routes

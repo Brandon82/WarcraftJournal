@@ -121,7 +121,7 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
           }`}
         >
           <NodeIndexOutlined className="text-[12px]" />
-          <span className="truncate">M+ Route Helper</span>
+          <span className="truncate">M+ Routes</span>
         </button>
         <button
           onClick={() => go('/tools')}

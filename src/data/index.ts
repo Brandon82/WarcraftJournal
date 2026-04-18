@@ -52,7 +52,7 @@ export interface RaiderIORoute {
   scrapedAt: string;
 }
 
-/** Top 3 timed Mythic+ runs with attached routes per dungeon, scraped from
+/** Top 5 timed Mythic+ runs with attached routes per dungeon, scraped from
  *  raider.io / keystone.guru at build time. Keyed by our internal instance
  *  slug. Each value is ordered by raider.io rank (best run first). May be
  *  empty if no dungeons yielded a usable route (or if the scraper has not

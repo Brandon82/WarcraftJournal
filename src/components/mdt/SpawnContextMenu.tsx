@@ -10,6 +10,9 @@ interface Props {
   onClose: () => void;
   onMoveToPull: (pullIndex: number) => void;
   onRemove?: () => void;
+  /** Optional "View details" action — exposed here so touch users (who can't
+   *  shift-click) still have a path to the mob info panel. */
+  onShowDetails?: () => void;
 }
 
 /** Right-click context menu shown next to a spawn. Portaled to <body> so it
@@ -23,6 +26,7 @@ export default function SpawnContextMenu({
   onClose,
   onMoveToPull,
   onRemove,
+  onShowDetails,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -84,6 +88,24 @@ export default function SpawnContextMenu({
       >
         {spawn.name}
       </div>
+
+      {onShowDetails && (
+        <>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={onShowDetails}
+            style={menuItemStyle(false)}
+            onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(251, 191, 36, 0.12)')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+          >
+            View details
+          </button>
+          {pulls.length > 0 && (
+            <div style={{ height: 1, background: 'rgba(255, 255, 255, 0.06)', margin: '4px 0' }} />
+          )}
+        </>
+      )}
 
       {pulls.length === 0 ? (
         <div style={{ padding: '8px 12px', color: '#9ca3af' }}>No pulls yet.</div>

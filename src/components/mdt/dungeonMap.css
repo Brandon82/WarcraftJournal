@@ -202,6 +202,11 @@
   transform-origin: center;
   transition: transform 0.1s ease-out, box-shadow 0.15s ease;
   cursor: pointer;
+  /* Suppress iOS Safari's long-press callout/magnifier so Leaflet's
+     long-press → contextmenu can fire cleanly on touch devices. */
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .mdt-mob-icon img {

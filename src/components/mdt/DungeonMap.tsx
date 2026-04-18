@@ -542,6 +542,14 @@ export default function DungeonMap({
                 }
               : undefined
           }
+          onShowDetails={
+            onShowMobInfo
+              ? () => {
+                  onShowMobInfo(contextMenu.spawn);
+                  setContextMenu(null);
+                }
+              : undefined
+          }
         />
       )}
 

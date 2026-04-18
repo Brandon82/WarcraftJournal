@@ -538,7 +538,7 @@ export default function MdtRoutePage() {
       {!route && (
         <>
           <h2 className="text-xl sm:text-2xl font-semibold text-wow-gold mb-2 tracking-wide">
-            M+ Route Helper
+            M+ Routes
           </h2>
           <p className="text-wow-text-secondary mb-6 max-w-2xl">
             Build a Mythic+ pull plan from scratch or import a route exported
@@ -639,14 +639,14 @@ export default function MdtRoutePage() {
                     <Button
                       size="small"
                       icon={<LeftOutlined />}
-                      onClick={() => handleSidebarSelectPull(selectedPull.index - 1)}
+                      onClick={() => setSelectedPullIndex(selectedPull.index - 1)}
                       disabled={selectedPull.index <= 1}
                     >
                       Prev
                     </Button>
                     <Button
                       size="small"
-                      onClick={() => handleSidebarSelectPull(selectedPull.index + 1)}
+                      onClick={() => setSelectedPullIndex(selectedPull.index + 1)}
                       disabled={selectedPull.index >= route.pulls.length}
                     >
                       Next

@@ -499,6 +499,14 @@ export default function MdtRoutePage() {
     setFocusPull({ pullIndex, nonce: focusNonceRef.current });
   }
 
+  // Clicking a pull header in the abilities list: select + focus the pull
+  // on the map, then scroll the map into view so the user doesn't lose
+  // context when the abilities list is long.
+  function handleAbilityPullClick(pullIndex: number) {
+    handleSidebarSelectPull(pullIndex);
+    window.scrollTo(0, 0);
+  }
+
   // Keyboard shortcut: delete-active-pull (with no confirmation since undo
   // is one keystroke away).
   const handleDeleteActivePull = useCallback(() => {
@@ -646,6 +654,7 @@ export default function MdtRoutePage() {
                       key={pull.index}
                       pull={pull}
                       npcsById={npcsById}
+                      onHeaderClick={() => handleAbilityPullClick(pull.index)}
                     />
                   ))}
                 </div>
@@ -787,21 +796,40 @@ function DungeonAbilityList({ npcs, bossNames }: DungeonAbilityListProps) {
 interface PullDetailProps {
   pull: { index: number; forces: number; enemies: MdtPullEnemy[] };
   npcsById: Map<number, ZoneNpc>;
+  onHeaderClick?: () => void;
 }
 
-function PullDetail({ pull, npcsById }: PullDetailProps) {
+function PullDetail({ pull, npcsById, onHeaderClick }: PullDetailProps) {
   if (pull.enemies.length === 0) {
-    return (
-      <p className="text-sm text-wow-text-secondary">
-        Pull {pull.index} has no enemies yet.
-      </p>
+    const emptyText = `Pull ${pull.index} has no enemies yet.`;
+    return onHeaderClick ? (
+      <button
+        type="button"
+        onClick={onHeaderClick}
+        className="block text-left text-sm text-wow-text-secondary mb-3 bg-transparent border-0 p-0 cursor-pointer hover:text-wow-gold transition-colors"
+      >
+        {emptyText}
+      </button>
+    ) : (
+      <p className="text-sm text-wow-text-secondary">{emptyText}</p>
     );
   }
+  const headerLabel = `Pull ${pull.index}`;
   return (
     <div>
-      <h4 className="text-xs font-semibold uppercase tracking-wider text-wow-text-secondary mb-3">
-        Pull {pull.index}
-      </h4>
+      {onHeaderClick ? (
+        <button
+          type="button"
+          onClick={onHeaderClick}
+          className="text-xs font-semibold uppercase tracking-wider text-wow-text-secondary mb-3 bg-transparent border-0 p-0 cursor-pointer hover:text-wow-gold transition-colors"
+        >
+          {headerLabel}
+        </button>
+      ) : (
+        <h4 className="text-xs font-semibold uppercase tracking-wider text-wow-text-secondary mb-3">
+          {headerLabel}
+        </h4>
+      )}
       <div>
         {pull.enemies.map((enemy) => {
           const existing = npcsById.get(enemy.npcId);

@@ -39,12 +39,13 @@ const CLASSIFICATION_LABELS: Record<number, { label: string; style: string }> = 
   3: { label: 'Boss', style: 'bg-red-500/20 text-red-400' },
 };
 
-// Sort priority matches tier importance: Boss > Miniboss > Elite > Trivial.
+// Sort priority matches tier importance: Boss > Miniboss > Caster > Elite > Trivial.
 const TIER_SORT_RANK: Record<NpcTier, number> = {
   boss: 0,
   miniboss: 1,
-  elite: 2,
-  trivial: 3,
+  caster: 2,
+  elite: 3,
+  trivial: 4,
 };
 
 // MDT's community-curated `scale` and `count` fields promote oversized named
@@ -64,7 +65,10 @@ export function getNpcTier(npc: ZoneNpc, isBoss: boolean, instanceSlug: string):
     }
   }
   if (npc.classification === 2 || npc.classification === 4) return 'miniboss';
-  if (npc.classification === 1) return 'elite';
+  if (npc.classification === 1) {
+    if (npc.spells.some((s) => s.tags?.includes('interruptible'))) return 'caster';
+    return 'elite';
+  }
   return 'trivial';
 }
 

@@ -26,7 +26,12 @@ import {
   type ParsedMdtRoute,
   type RawMdtRoute,
 } from '../lib/mdt/types';
-import { getEncountersForInstance, zoneSpellsByInstanceSlug } from '../data';
+import {
+  getEncountersForInstance,
+  raiderioRoutes,
+  zoneSpellsByInstanceSlug,
+  type RaiderIORoute,
+} from '../data';
 import { NpcGroup } from '../components/zone-spells/ZoneSpellSection';
 import DungeonMap, { type FocusPullRequest } from '../components/mdt/DungeonMap';
 import DungeonPicker from '../components/mdt/DungeonPicker';
@@ -36,6 +41,7 @@ import RouteEditorHeader from '../components/mdt/RouteEditorHeader';
 import MobInfoPanel from '../components/mdt/MobInfoPanel';
 import { useSavedMdtRoutes, type SavedMdtRoute } from '../hooks/useSavedMdtRoutes';
 import { useMdtKeybindings } from '../hooks/useMdtKeybindings';
+import { useIsMobile } from '../hooks/useIsMobile';
 import { useLayout } from '../context/LayoutContext';
 import type { ZoneNpc } from '../types';
 
@@ -84,6 +90,7 @@ export default function MdtRoutePage() {
   const [mobInfoSpawn, setMobInfoSpawn] = useState<MdtSpawnMarker | null>(null);
   const [abilityListMode, setAbilityListMode] = useState<AbilityListMode>('all-pulls');
   const { routes: savedRoutes, save, remove, isSaved } = useSavedMdtRoutes();
+  const isMobile = useIsMobile();
 
   const route: ParsedMdtRoute | null = useMemo(() => {
     if (!rawRoute) return null;
@@ -702,12 +709,14 @@ export default function MdtRoutePage() {
         open={importOpen}
         onCancel={handleCloseImport}
         footer={null}
-        width={560}
+        width={isMobile ? '92vw' : 560}
         destroyOnHidden
-        // Aligned roughly with the "Saved routes" heading on the landing
-        // page so the modal feels anchored to the same vertical region the
-        // user was already looking at.
-        style={{ top: 304 }}
+        // On desktop, anchor the modal roughly at the "Saved routes" heading
+        // so it feels tied to the vertical region the user was looking at.
+        // On mobile, center it so the on-screen keyboard doesn't push it
+        // out of view.
+        centered={isMobile}
+        style={isMobile ? undefined : { top: 304 }}
       >
         <p className="text-sm text-wow-text-secondary mt-0 mb-3">
           Paste a route export from the MDT addon's <span className="text-wow-text">Share</span> &rarr; <span className="text-wow-text">Export</span> button.
@@ -763,9 +772,10 @@ export default function MdtRoutePage() {
         open={exportOpen}
         onCancel={handleCloseExport}
         footer={null}
-        width={560}
+        width={isMobile ? '92vw' : 560}
         destroyOnHidden
-        style={{ top: 304 }}
+        centered={isMobile}
+        style={isMobile ? undefined : { top: 304 }}
       >
         <p className="text-sm text-wow-text-secondary mt-0 mb-3">
           Copy this string and paste it into the MDT addon's <span className="text-wow-text">Share</span> &rarr; <span className="text-wow-text">Import</span> dialog.

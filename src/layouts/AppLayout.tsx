@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router';
 import { Drawer } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, CodeOutlined } from '@ant-design/icons';
@@ -10,19 +10,7 @@ import { JournalProvider } from '../context/JournalContext';
 import { LayoutProvider, useLayout } from '../context/LayoutContext';
 import { useTheme } from '../context/ThemeContext';
 import { useDevMode } from '../context/DevModeContext';
-
-const mql = window.matchMedia('(max-width: 768px)');
-function subscribeMql(cb: () => void) {
-  mql.addEventListener('change', cb);
-  return () => mql.removeEventListener('change', cb);
-}
-function getIsMobile() {
-  return mql.matches;
-}
-
-function useIsMobile() {
-  return useSyncExternalStore(subscribeMql, getIsMobile);
-}
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function AppLayout() {
   return (

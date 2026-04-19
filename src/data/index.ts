@@ -8,6 +8,7 @@ import instancesData from './generated/instances.json';
 import encountersData from './generated/encounters.json';
 import zoneSpellsData from './generated/zone-spells.json';
 import raiderioRoutesData from './generated/raiderio-routes.json';
+import warcraftlogsRunsData from './generated/warcraftlogs-runs.json';
 
 export const expansions = expansionsData as JournalExpansion[];
 export const instances = instancesData as JournalInstance[];
@@ -58,6 +59,41 @@ export interface RaiderIORoute {
  *  empty if no dungeons yielded a usable route (or if the scraper has not
  *  been run). */
 export const raiderioRoutes = raiderioRoutesData as Record<string, RaiderIORoute[]>;
+
+export interface WarcraftLogsPlayer {
+  name: string;
+  className: string;
+  classSlug: string;
+  specName: string;
+  role: 'tank' | 'healer' | 'dps';
+  server: string;
+  region: string;
+}
+
+export interface WarcraftLogsRunSource {
+  rank: number;
+  reportCode: string;
+  fightId: number;
+  mythicLevel: number;
+  durationMs: number;
+  score: number;
+  affixes: string[];
+  startedAt: string;
+  deaths: number;
+  reportUrl: string;
+  dungeonName: string;
+  players: WarcraftLogsPlayer[];
+}
+
+export interface WarcraftLogsRun {
+  source: WarcraftLogsRunSource;
+  scrapedAt: string;
+}
+
+/** Top 5 Mythic+ runs per dungeon from Warcraft Logs (ranked by "execution"),
+ *  fetched at build time. Keyed by our internal instance slug. Each entry is
+ *  a link out to the WCL report — WCL doesn't provide an importable route. */
+export const warcraftlogsRuns = warcraftlogsRunsData as Record<string, WarcraftLogsRun[]>;
 
 // Most recent fetch timestamp across zone-spell entries — reflects the latest
 // data refresh (zone-spells are written on every full run and on --only-zone-spells runs).

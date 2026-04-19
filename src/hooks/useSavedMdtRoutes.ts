@@ -59,6 +59,8 @@ export interface UseSavedMdtRoutes {
   save: (args: { name: string; dungeonName: string; mdtString: string }) => string;
   /** Delete a saved route by id. */
   remove: (id: string) => void;
+  /** Delete every saved route. */
+  clearAll: () => void;
   /** Rename a saved route. No-op if the id doesn't exist. */
   rename: (id: string, name: string) => void;
   /** True if a route matching this MDT string is already saved. */
@@ -123,6 +125,13 @@ export function useSavedMdtRoutes(): UseSavedMdtRoutes {
     });
   }, []);
 
+  const clearAll = useCallback<UseSavedMdtRoutes['clearAll']>(() => {
+    setRoutes(() => {
+      writeStorage([]);
+      return [];
+    });
+  }, []);
+
   const rename = useCallback<UseSavedMdtRoutes['rename']>((id, name) => {
     setRoutes((prev) => {
       const next = prev.map((r) => (r.id === id ? { ...r, name } : r));
@@ -136,5 +145,5 @@ export function useSavedMdtRoutes(): UseSavedMdtRoutes {
     [routes],
   );
 
-  return { routes, save, remove, rename, isSaved };
+  return { routes, save, remove, clearAll, rename, isSaved };
 }

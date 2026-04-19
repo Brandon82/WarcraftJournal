@@ -1,0 +1,50 @@
+name: Update Warcraft Logs top runs
+
+on:
+  schedule:
+    # Daily at 06:15 UTC — staggered 15 min after raider.io refresh so the
+    # two jobs don't race on the same ref. Gives WCL time to ingest the
+    # prior day's reports into its rankings.
+    - cron: '15 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-warcraftlogs-runs
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Warcraft Logs scraper
+        env:
+          WARCRAFTLOGS_CLIENT_ID: ${{ secrets.WARCRAFTLOGS_CLIENT_ID }}
+          WARCRAFTLOGS_CLIENT_SECRET: ${{ secrets.WARCRAFTLOGS_CLIENT_SECRET }}
+        run: npx tsx scripts/fetch-warcraftlogs-runs.ts
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- src/data/generated/warcraftlogs-runs.json; then
+            echo "No changes; skipping commit."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/generated/warcraftlogs-runs.json
+          git commit -m "Update Warcraft Logs top runs ($(date -u +%Y-%m-%d))"
+          git push

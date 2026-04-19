@@ -93,7 +93,7 @@ export default function MdtRoutePage() {
   const { routes: savedRoutes, save, remove, clearAll, isSaved } = useSavedMdtRoutes();
   const isMobile = useIsMobile();
 
-  // Pre-scraped top raider.io routes — up to 5 per current-season dungeon.
+  // Pre-scraped top raider.io routes — up to 10 per current-season dungeon.
   // Keyed by our internal instance slug — see scripts/fetch-raiderio-routes.ts.
   const featuredRoutes = useMemo(
     () =>
@@ -103,7 +103,7 @@ export default function MdtRoutePage() {
     [],
   );
 
-  // Pre-fetched top Warcraft Logs runs — up to 5 per current-season dungeon.
+  // Pre-fetched top Warcraft Logs runs — up to 10 per current-season dungeon.
   // See scripts/fetch-warcraftlogs-runs.ts. These are outbound links only,
   // since WCL doesn't provide importable route strings.
   const warcraftLogsRunsList = useMemo(

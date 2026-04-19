@@ -1,5 +1,5 @@
 /**
- * Builds src/data/generated/warcraftlogs-runs.json: up to the top 5 Mythic+
+ * Builds src/data/generated/warcraftlogs-runs.json: up to the top 10 Mythic+
  * runs from Warcraft Logs for each current-season dungeon, as report-link
  * metadata.
  *
@@ -59,7 +59,7 @@ const CURRENT_DUNGEON_SLUGS = [
   'algethar-academy',
 ];
 
-const TOP_N_PER_DUNGEON = 5;
+const TOP_N_PER_DUNGEON = 10;
 const WCL_OAUTH_URL = 'https://www.warcraftlogs.com/oauth/token';
 const WCL_GRAPHQL_URL = 'https://www.warcraftlogs.com/api/v2/client';
 

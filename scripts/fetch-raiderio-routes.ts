@@ -1,5 +1,5 @@
 /**
- * Builds src/data/generated/raiderio-routes.json: up to the top 5 timed
+ * Builds src/data/generated/raiderio-routes.json: up to the top 10 timed
  * Mythic+ runs *with an attached route* for each dungeon in the current
  * season, as MDT import strings plus roster/run metadata.
  *
@@ -44,10 +44,10 @@ const DUNGEONS: { ourSlug: string; rioSlug: string }[] = [
 ];
 
 // How many top-ranked runs to try before giving up on a dungeon.
-const MAX_CANDIDATES_PER_DUNGEON = 20;
+const MAX_CANDIDATES_PER_DUNGEON = 40;
 
 // How many valid MDT-backed runs to capture per dungeon.
-const TOP_N_PER_DUNGEON = 5;
+const TOP_N_PER_DUNGEON = 10;
 
 // Shared browser-ish headers so raider.io / keystone.guru don't 403 us.
 const UA =

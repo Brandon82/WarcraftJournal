@@ -53,7 +53,7 @@ export interface RaiderIORoute {
   scrapedAt: string;
 }
 
-/** Top 5 timed Mythic+ runs with attached routes per dungeon, scraped from
+/** Top 10 timed Mythic+ runs with attached routes per dungeon, scraped from
  *  raider.io / keystone.guru at build time. Keyed by our internal instance
  *  slug. Each value is ordered by raider.io rank (best run first). May be
  *  empty if no dungeons yielded a usable route (or if the scraper has not
@@ -90,9 +90,9 @@ export interface WarcraftLogsRun {
   scrapedAt: string;
 }
 
-/** Top 5 Mythic+ runs per dungeon from Warcraft Logs (ranked by "execution"),
- *  fetched at build time. Keyed by our internal instance slug. Each entry is
- *  a link out to the WCL report — WCL doesn't provide an importable route. */
+/** Top 10 Mythic+ runs per dungeon from Warcraft Logs, fetched at build
+ *  time. Keyed by our internal instance slug. Each entry is a link out to
+ *  the WCL report — WCL doesn't provide an importable route. */
 export const warcraftlogsRuns = warcraftlogsRunsData as Record<string, WarcraftLogsRun[]>;
 
 // Most recent fetch timestamp across zone-spell entries — reflects the latest

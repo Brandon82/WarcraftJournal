@@ -675,7 +675,10 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 1216454, name: 'Arrow Rain', schools: 1 },
     ] },
     { id: 232447, name: 'Spectral Axethrower', spells: [
-      { id: 1217094, name: 'Throw Axe', schools: 1 },
+      { id: 468659, name: 'Throw Axe', schools: 1 },
+    ] },
+    { id: 232148, name: 'Spectral Axethrower', spells: [
+      { id: 468659, name: 'Throw Axe', schools: 1 },
     ] },
     { id: 232232, name: 'Zealous Reaver', spells: [
       { id: 473640, name: 'Fierce Slash', schools: 1 },
@@ -717,6 +720,12 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     { id: 234061, name: 'Phantasmal Mystic', spells: [
       { id: 1216592, name: 'Chain Lightning', schools: 8 },
       { id: 1216459, name: 'Ephemeral Bloodlust', schools: 1 },
+      { id: 1270620, name: 'Flame Nova', schools: 4 },
+    ] },
+    { id: 232146, name: 'Phantasmal Mystic', spells: [
+      { id: 1216592, name: 'Chain Lightning', schools: 8 },
+      { id: 1216459, name: 'Ephemeral Bloodlust', schools: 1 },
+      { id: 1270620, name: 'Flame Nova', schools: 4 },
     ] },
     { id: 232063, name: 'Apex Lynx', spells: [
       { id: 1216985, name: 'Puncturing Bite', schools: 1 },
@@ -742,7 +751,9 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 1216848, name: 'Fire Spit', schools: 4 },
       { id: 1216860, name: 'Bolstering Flames', schools: 4 },
     ] },
-    { id: 232071, name: 'Dutiful Groundskeeper' },
+    { id: 232071, name: 'Dutiful Groundskeeper', spells: [
+      { id: 1216132, name: 'Armor Shearer', schools: 1 },
+    ] },
     { id: 234673, name: 'Spindleweb Hatchling', spells: [
       { id: 1216834, name: 'Acidic Demise', schools: 8 },
     ] },
@@ -805,6 +816,16 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 1258433, name: 'Tormenting Blade', schools: 32 },
       { id: 1258434, name: 'Curse of Torment', schools: 32 },
     ] },
+    { id: 252558, name: 'Rotting Ghoul', spells: [
+      { id: 1258459, name: 'Rotting Strikes', schools: 1 },
+    ] },
+    { id: 252606, name: 'Plungetalon Gargoyle', spells: [
+      { id: 1258997, name: 'Plungegrip', schools: 1 },
+    ] },
+    { id: 257190, name: 'Iceborn Proto-Drake', spells: [
+      { id: 1271009, name: 'Icy Strikes', schools: 16 },
+      { id: 1278986, name: 'Frost Breath', schools: 16 },
+    ] },
   ],
   // Magister's Terrace
   1300: [
@@ -826,7 +847,14 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
       { id: 388863, name: 'Mana Void', schools: 64 },
       { id: 388862, name: 'Surge', schools: 64 },
     ] },
+    { id: 196045, name: 'Corrupted Manafiend', spells: [
+      { id: 388863, name: 'Mana Void', schools: 64 },
+      { id: 388862, name: 'Surge', schools: 64 },
+    ] },
     { id: 197904, name: 'Spellbound Battleaxe' },
+    { id: 196577, name: 'Spellbound Battleaxe', spells: [
+      { id: 1270098, name: 'Spellbound Weapon', schools: 64 },
+    ] },
   ],
   // Maisara Caverns
   1315: [
@@ -842,6 +870,10 @@ const ZONE_NPC_OVERRIDES: Record<number, NpcOverride[]> = {
     ] },
     // Override existing Rokh'zal (254233) to add Invoke Shadow from second Rokh'zal NPC (253683)
     { id: 254233, name: "Rokh'zal", spells: [
+      { id: 1259777, name: 'Umbral Vortex', schools: 32 },
+      { id: 1262241, name: 'Invoke Shadow', schools: 32 },
+    ] },
+    { id: 253683, name: "Rokh'zal", spells: [
       { id: 1259777, name: 'Umbral Vortex', schools: 32 },
       { id: 1262241, name: 'Invoke Shadow', schools: 32 },
     ] },
@@ -973,14 +1005,16 @@ async function fetchZoneSpellsForInstance(
     BLACKLISTED_SPELL_IDS.add(id);
   }
 
-  // Filter: drop friendly/ignored NPCs but keep every classification tier.
-  // The UI needs the real Wowhead classification (0=normal/trivial,
-  // 1=elite, 2=rare-elite/miniboss, 3=boss, 4=rare) to mirror Plater's
-  // name-plate tiers, so we no longer prune tiers here.
+  // Filter: drop friendly/ignored NPCs and rare elites.
+  // Classification tiers (0=normal/trivial, 1=elite, 2=rare-elite,
+  // 3=boss, 4=rare). We keep the rest so the UI can mirror Plater's
+  // name-plate tiers. Rare elites (2) are open-world mobs and never
+  // show up as dungeon trash, so they're pruned here.
   // react: [alliance, horde] — positive on both = friendly; negative or
   // missing = hostile.
   const filteredNpcs = npcs.filter((npc) => {
     if (IGNORED_NPC_NAMES.has(npc.name)) return false;
+    if (npc.classification === 2) return false;
     const isFriendly = npc.react && npc.react[0] > 0 && npc.react[1] > 0;
     return !isFriendly;
   });

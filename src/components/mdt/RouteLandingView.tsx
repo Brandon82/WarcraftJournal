@@ -3,8 +3,13 @@ import { Button, Pagination, Popconfirm } from 'antd';
 import { PlusOutlined, ImportOutlined, DeleteOutlined } from '@ant-design/icons';
 import SavedRouteCard from './SavedRouteCard';
 import FeaturedRouteCard from './FeaturedRouteCard';
+import WarcraftLogsRunCard from './WarcraftLogsRunCard';
 import type { SavedMdtRoute } from '../../hooks/useSavedMdtRoutes';
-import { instanceBySlug, type RaiderIORoute } from '../../data';
+import {
+  instanceBySlug,
+  type RaiderIORoute,
+  type WarcraftLogsRun,
+} from '../../data';
 import { decodeMdtString } from '../../lib/mdt/decodeRoute';
 import { parseMdtRoute } from '../../lib/mdt/parseRoute';
 
@@ -13,9 +18,17 @@ interface FeaturedRoute {
   route: RaiderIORoute;
 }
 
+interface WarcraftLogsRunEntry {
+  instanceSlug: string;
+  run: WarcraftLogsRun;
+}
+
+type FeaturedSource = 'raiderio' | 'warcraftlogs';
+
 interface RouteLandingViewProps {
   savedRoutes: SavedMdtRoute[];
   featuredRoutes: FeaturedRoute[];
+  warcraftLogsRuns: WarcraftLogsRunEntry[];
   /** mdtString of the currently-loaded route, used to highlight its card.
    *  In the landing view this is usually null, but kept for symmetry. */
   currentMdtString: string | null;
@@ -33,6 +46,7 @@ interface RouteLandingViewProps {
 export default function RouteLandingView({
   savedRoutes,
   featuredRoutes,
+  warcraftLogsRuns,
   currentMdtString,
   onCreate,
   onImport,
@@ -43,6 +57,10 @@ export default function RouteLandingView({
 }: RouteLandingViewProps) {
   // `null` = show every run. Otherwise filter to the selected dungeon.
   const [dungeonFilter, setDungeonFilter] = useState<string | null>(null);
+  // Which top-runs source is active in the tabbed section. Defaults to
+  // raider.io since those cards load into the editor; WCL cards are
+  // outbound links.
+  const [featuredSource, setFeaturedSource] = useState<FeaturedSource>('raiderio');
 
   // Decode each saved route once to recover its instance slug — the saved
   // payload only carries the raw MDT string + display name, but filtering
@@ -61,10 +79,10 @@ export default function RouteLandingView({
     return m;
   }, [savedRoutes]);
 
-  // Chips include any dungeon with a featured run OR a saved route, so the
-  // filter can narrow saved routes even when no featured run exists for that
-  // dungeon. Featured-route order wins (raider.io rank); saved-only dungeons
-  // are appended in the order they appear in the saved list.
+  // Chips include any dungeon with a featured run (either source) OR a saved
+  // route, so the filter can narrow saved routes even when no featured run
+  // exists for that dungeon. Raider.io order wins first (rank), then WCL
+  // slugs not yet seen, then saved-only dungeons.
   const dungeonChips = useMemo(() => {
     const seen = new Set<string>();
     const chips: { slug: string; name: string; backgroundImage?: string }[] = [];
@@ -75,6 +93,16 @@ export default function RouteLandingView({
       chips.push({
         slug: instanceSlug,
         name: instance?.name ?? route.source.dungeonName,
+        backgroundImage: instance?.backgroundImage,
+      });
+    }
+    for (const { instanceSlug, run } of warcraftLogsRuns) {
+      if (seen.has(instanceSlug)) continue;
+      seen.add(instanceSlug);
+      const instance = instanceBySlug.get(instanceSlug);
+      chips.push({
+        slug: instanceSlug,
+        name: instance?.name ?? run.source.dungeonName,
         backgroundImage: instance?.backgroundImage,
       });
     }
@@ -90,12 +118,17 @@ export default function RouteLandingView({
       });
     }
     return chips;
-  }, [featuredRoutes, savedRoutes, savedInstanceSlugs]);
+  }, [featuredRoutes, warcraftLogsRuns, savedRoutes, savedInstanceSlugs]);
 
   const visibleFeaturedRoutes = useMemo(() => {
     if (!dungeonFilter) return featuredRoutes;
     return featuredRoutes.filter((r) => r.instanceSlug === dungeonFilter);
   }, [featuredRoutes, dungeonFilter]);
+
+  const visibleWarcraftLogsRuns = useMemo(() => {
+    if (!dungeonFilter) return warcraftLogsRuns;
+    return warcraftLogsRuns.filter((r) => r.instanceSlug === dungeonFilter);
+  }, [warcraftLogsRuns, dungeonFilter]);
 
   const visibleSavedRoutes = useMemo(() => {
     if (!dungeonFilter) return savedRoutes;
@@ -112,16 +145,31 @@ export default function RouteLandingView({
   const [featuredPage, setFeaturedPage] = useState(1);
   const [savedPage, setSavedPage] = useState(1);
 
-  // Filter swap or page-size shrink can leave the active page empty; reset
-  // back to 1 so the user always sees content.
+  // Filter swap, tab swap, or page-size shrink can leave the active page
+  // empty; reset back to 1 so the user always sees content.
   useEffect(() => {
     setFeaturedPage(1);
     setSavedPage(1);
-  }, [dungeonFilter, pageSize]);
+  }, [dungeonFilter, pageSize, featuredSource]);
+
+  const hasRaiderio = featuredRoutes.length > 0;
+  const hasWarcraftLogs = warcraftLogsRuns.length > 0;
+  const showFeaturedSection = hasRaiderio || hasWarcraftLogs;
+
+  // If only WCL data exists, surface it by default instead of a hidden tab.
+  useEffect(() => {
+    if (!hasRaiderio && hasWarcraftLogs) setFeaturedSource('warcraftlogs');
+    else if (hasRaiderio && !hasWarcraftLogs) setFeaturedSource('raiderio');
+  }, [hasRaiderio, hasWarcraftLogs]);
+
+  const activeFeaturedCount =
+    featuredSource === 'raiderio'
+      ? visibleFeaturedRoutes.length
+      : visibleWarcraftLogsRuns.length;
 
   const featuredTotalPages = Math.max(
     1,
-    Math.ceil(visibleFeaturedRoutes.length / pageSize),
+    Math.ceil(activeFeaturedCount / pageSize),
   );
   const savedTotalPages = Math.max(
     1,
@@ -144,6 +192,14 @@ export default function RouteLandingView({
         featuredPage * pageSize,
       ),
     [visibleFeaturedRoutes, featuredPage, pageSize],
+  );
+  const pagedWarcraftLogsRuns = useMemo(
+    () =>
+      visibleWarcraftLogsRuns.slice(
+        (featuredPage - 1) * pageSize,
+        featuredPage * pageSize,
+      ),
+    [visibleWarcraftLogsRuns, featuredPage, pageSize],
   );
   const pagedSavedRoutes = useMemo(
     () =>
@@ -172,23 +228,35 @@ export default function RouteLandingView({
         </Button>
       </div>
 
-      {featuredRoutes.length > 0 && (
+      {showFeaturedSection && (
         <div className="mb-6">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-wow-text-secondary m-0">
-              Top raider.io routes
-              {dungeonFilter && (
-                <>
-                  {' '}
-                  <span className="text-wow-gold-muted normal-case tracking-normal">
-                    · {instanceBySlug.get(dungeonFilter)?.name ?? ''}
-                  </span>
-                </>
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div className="flex items-center gap-1">
+              {hasRaiderio && (
+                <FeaturedTab
+                  active={featuredSource === 'raiderio'}
+                  onClick={() => setFeaturedSource('raiderio')}
+                >
+                  Raider.IO
+                </FeaturedTab>
               )}
-            </h4>
+              {hasWarcraftLogs && (
+                <FeaturedTab
+                  active={featuredSource === 'warcraftlogs'}
+                  onClick={() => setFeaturedSource('warcraftlogs')}
+                >
+                  Warcraft Logs
+                </FeaturedTab>
+              )}
+              {dungeonFilter && (
+                <span className="ml-1 text-xs text-wow-gold-muted normal-case tracking-normal">
+                  · {instanceBySlug.get(dungeonFilter)?.name ?? ''}
+                </span>
+              )}
+            </div>
             <span className="text-xs text-wow-text-dim font-mono">
-              {visibleFeaturedRoutes.length}{' '}
-              {visibleFeaturedRoutes.length === 1 ? 'run' : 'runs'}
+              {activeFeaturedCount}{' '}
+              {activeFeaturedCount === 1 ? 'run' : 'runs'}
             </span>
           </div>
 
@@ -199,31 +267,59 @@ export default function RouteLandingView({
           />
 
           <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
-            {pagedFeaturedRoutes.map(({ instanceSlug, route }) => (
-              <FeaturedRouteCard
-                key={`${instanceSlug}:${route.source.keystoneRunId}`}
-                instanceSlug={instanceSlug}
-                route={route}
-                isCurrent={currentMdtString === route.mdtString}
-                onLoad={onLoadFeatured}
-              />
-            ))}
+            {featuredSource === 'raiderio' &&
+              pagedFeaturedRoutes.map(({ instanceSlug, route }) => (
+                <FeaturedRouteCard
+                  key={`${instanceSlug}:${route.source.keystoneRunId}`}
+                  instanceSlug={instanceSlug}
+                  route={route}
+                  isCurrent={currentMdtString === route.mdtString}
+                  onLoad={onLoadFeatured}
+                />
+              ))}
+            {featuredSource === 'warcraftlogs' &&
+              pagedWarcraftLogsRuns.map(({ instanceSlug, run }) => (
+                <WarcraftLogsRunCard
+                  key={`${instanceSlug}:${run.source.reportCode}:${run.source.fightId}`}
+                  instanceSlug={instanceSlug}
+                  run={run}
+                />
+              ))}
             {/* Pad short pages so the grid stays exactly 3 rows tall and the
              *  pagination control underneath it doesn't jump vertically when
              *  the user lands on the last (partially-filled) page. Only pads
              *  when pagination is actually active. */}
-            {visibleFeaturedRoutes.length > pageSize &&
-              Array.from({ length: pageSize - pagedFeaturedRoutes.length }).map(
-                (_, i) => <GridFiller key={`featured-filler-${i}`} />,
-              )}
+            {activeFeaturedCount > pageSize &&
+              Array.from({
+                length:
+                  pageSize -
+                  (featuredSource === 'raiderio'
+                    ? pagedFeaturedRoutes.length
+                    : pagedWarcraftLogsRuns.length),
+              }).map((_, i) => <GridFiller key={`featured-filler-${i}`} />)}
           </div>
-          {visibleFeaturedRoutes.length > pageSize && (
+          {activeFeaturedCount === 0 && (
+            <div className="rounded-lg border border-dashed border-wow-border bg-wow-bg-surface/60 px-4 py-8 text-center">
+              <p className="text-sm text-wow-text-secondary m-0">
+                No {featuredSource === 'raiderio' ? 'raider.io routes' : 'Warcraft Logs runs'}{' '}
+                for{' '}
+                <span className="text-wow-gold-muted">
+                  {instanceBySlug.get(dungeonFilter ?? '')?.name ?? 'this dungeon'}
+                </span>
+                .
+              </p>
+              <p className="text-xs text-wow-text-dim mt-1 mb-0">
+                Clear the dungeon filter or switch tabs.
+              </p>
+            </div>
+          )}
+          {activeFeaturedCount > pageSize && (
             <div className="flex justify-center mt-3">
               <Pagination
                 size="small"
                 current={featuredPage}
                 pageSize={pageSize}
-                total={visibleFeaturedRoutes.length}
+                total={activeFeaturedCount}
                 onChange={setFeaturedPage}
                 showSizeChanger={false}
               />
@@ -235,7 +331,7 @@ export default function RouteLandingView({
       {/* When there are no featured routes the chip bar didn't render above,
        *  but saved routes still need a way to be filtered, so render it here
        *  on its own. */}
-      {featuredRoutes.length === 0 && dungeonChips.length > 0 && (
+      {!showFeaturedSection && dungeonChips.length > 0 && (
         <DungeonFilterBar
           chips={dungeonChips}
           active={dungeonFilter}
@@ -336,6 +432,33 @@ export default function RouteLandingView({
         )}
       </div>
     </div>
+  );
+}
+
+interface FeaturedTabProps {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+/** Section-heading-style button used to switch between the two top-runs
+ *  sources (Raider.IO / Warcraft Logs). Matches the uppercase-tracking
+ *  visual of the neighbouring "Saved routes" heading so the tabs feel like
+ *  labels, not buttons. */
+function FeaturedTab({ active, onClick, children }: FeaturedTabProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={`px-2 py-1 rounded border text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
+        active
+          ? 'border-wow-gold-muted bg-wow-bg-raised text-wow-gold'
+          : 'border-transparent text-wow-text-secondary hover:text-wow-gold'
+      }`}
+    >
+      {children}
+    </button>
   );
 }
 

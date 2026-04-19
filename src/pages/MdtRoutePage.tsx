@@ -29,6 +29,7 @@ import {
 import {
   getEncountersForInstance,
   raiderioRoutes,
+  warcraftlogsRuns,
   zoneSpellsByInstanceSlug,
   type RaiderIORoute,
 } from '../data';
@@ -92,12 +93,23 @@ export default function MdtRoutePage() {
   const { routes: savedRoutes, save, remove, clearAll, isSaved } = useSavedMdtRoutes();
   const isMobile = useIsMobile();
 
-  // Pre-scraped top raider.io routes — up to 3 per current-season dungeon.
+  // Pre-scraped top raider.io routes — up to 5 per current-season dungeon.
   // Keyed by our internal instance slug — see scripts/fetch-raiderio-routes.ts.
   const featuredRoutes = useMemo(
     () =>
       Object.entries(raiderioRoutes).flatMap(([instanceSlug, routes]) =>
         routes.map((route) => ({ instanceSlug, route })),
+      ),
+    [],
+  );
+
+  // Pre-fetched top Warcraft Logs runs — up to 5 per current-season dungeon.
+  // See scripts/fetch-warcraftlogs-runs.ts. These are outbound links only,
+  // since WCL doesn't provide importable route strings.
+  const warcraftLogsRunsList = useMemo(
+    () =>
+      Object.entries(warcraftlogsRuns).flatMap(([instanceSlug, runs]) =>
+        runs.map((run) => ({ instanceSlug, run })),
       ),
     [],
   );
@@ -584,6 +596,7 @@ export default function MdtRoutePage() {
             <RouteLandingView
               savedRoutes={savedRoutes}
               featuredRoutes={featuredRoutes}
+              warcraftLogsRuns={warcraftLogsRunsList}
               currentMdtString={savedMdtString}
               onCreate={handleStartPicker}
               onImport={handleOpenImport}

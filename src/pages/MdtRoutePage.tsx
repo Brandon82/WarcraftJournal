@@ -145,10 +145,20 @@ export default function MdtRoutePage() {
     [route],
   );
 
-  const npcsById = useMemo(() => {
-    const map = new Map<number, ZoneNpc>();
-    if (zoneSpells) for (const npc of zoneSpells.npcs) map.set(npc.id, npc);
-    return map;
+  // NPCs are matched by ID first, then by name as a fallback. MDT's NPC IDs
+  // sometimes differ from the Wowhead IDs used by zone-spells data (e.g.
+  // Skyreach's Rukhran is 76143 in MDT but 76379 on Wowhead), so the name
+  // match keeps bosses from showing "no abilities recorded" in those cases.
+  const { npcsById, npcsByName } = useMemo(() => {
+    const byId = new Map<number, ZoneNpc>();
+    const byName = new Map<string, ZoneNpc>();
+    if (zoneSpells) {
+      for (const npc of zoneSpells.npcs) {
+        byId.set(npc.id, npc);
+        byName.set(npc.name, npc);
+      }
+    }
+    return { npcsById: byId, npcsByName: byName };
   }, [zoneSpells]);
 
   // Used by the "All mobs in dungeon" ability list mode so NPCs that appear
@@ -638,6 +648,7 @@ export default function MdtRoutePage() {
                 spawn={liveMobInfoSpawn}
                 enemy={enemyByNpcId.get(liveMobInfoSpawn.npcId)}
                 npcsById={npcsById}
+                npcsByName={npcsByName}
                 instanceSlug={route.dungeon.instanceSlug}
                 onClose={() => setMobInfoSpawn(null)}
               />
@@ -681,7 +692,7 @@ export default function MdtRoutePage() {
                       {selectedPull.index} / {route.pulls.length}
                     </span>
                   </div>
-                  <PullDetail pull={selectedPull} npcsById={npcsById} instanceSlug={route.dungeon.instanceSlug} />
+                  <PullDetail pull={selectedPull} npcsById={npcsById} npcsByName={npcsByName} instanceSlug={route.dungeon.instanceSlug} />
                 </>
               ) : (
                 <p className="text-sm text-wow-text-secondary">
@@ -703,6 +714,7 @@ export default function MdtRoutePage() {
                       key={pull.index}
                       pull={pull}
                       npcsById={npcsById}
+                      npcsByName={npcsByName}
                       instanceSlug={route.dungeon.instanceSlug}
                       onHeaderClick={() => handleAbilityPullClick(pull.index)}
                     />
@@ -854,11 +866,12 @@ function DungeonAbilityList({ npcs, bossNames, instanceSlug }: DungeonAbilityLis
 interface PullDetailProps {
   pull: { index: number; forces: number; enemies: MdtPullEnemy[] };
   npcsById: Map<number, ZoneNpc>;
+  npcsByName: Map<string, ZoneNpc>;
   instanceSlug: string;
   onHeaderClick?: () => void;
 }
 
-function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailProps) {
+function PullDetail({ pull, npcsById, npcsByName, instanceSlug, onHeaderClick }: PullDetailProps) {
   if (pull.enemies.length === 0) {
     const emptyText = `Pull ${pull.index} has no enemies yet.`;
     return onHeaderClick ? (
@@ -892,14 +905,14 @@ function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailP
       <div>
         {[...pull.enemies]
           .map((enemy) => {
-            const existing = npcsById.get(enemy.npcId);
-            const npc: ZoneNpc = existing ?? {
+            const resolved = npcsById.get(enemy.npcId) ?? npcsByName.get(enemy.name);
+            const npc: ZoneNpc = resolved ?? {
               id: enemy.npcId,
               name: enemy.name,
               classification: enemy.isBoss ? 3 : 1,
               spells: [],
             };
-            return { enemy, npc };
+            return { enemy, npc, resolved: resolved !== undefined };
           })
           .sort((a, b) => {
             const rankA = getNpcTierRank(a.npc, a.enemy.isBoss, instanceSlug);
@@ -907,7 +920,7 @@ function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailP
             if (rankA !== rankB) return rankA - rankB;
             return a.npc.name.localeCompare(b.npc.name);
           })
-          .map(({ enemy, npc }) => (
+          .map(({ enemy, npc, resolved }) => (
             <NpcGroup
               key={`${pull.index}-${enemy.npcId}`}
               npc={npc}
@@ -915,7 +928,7 @@ function PullDetail({ pull, npcsById, instanceSlug, onHeaderClick }: PullDetailP
               instanceSlug={instanceSlug}
               countBadge={enemy.cloneCount}
               fallbackNote={
-                npcsById.has(enemy.npcId)
+                resolved
                   ? undefined
                   : 'No abilities recorded for this NPC in WarcraftJournal.'
               }

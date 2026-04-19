@@ -8,6 +8,7 @@ interface Props {
   spawn: MdtSpawnMarker;
   enemy: MdtDungeonEnemy | undefined;
   npcsById: Map<number, ZoneNpc>;
+  npcsByName: Map<string, ZoneNpc>;
   instanceSlug: string;
   onClose: () => void;
 }
@@ -15,7 +16,7 @@ interface Props {
 /** Detail panel rendered when the user shift-clicks a mob on the map.
  *  Reuses NpcGroup for the abilities table so styling stays consistent
  *  with the per-pull detail view. */
-export default function MobInfoPanel({ spawn, enemy, npcsById, instanceSlug, onClose }: Props) {
+export default function MobInfoPanel({ spawn, enemy, npcsById, npcsByName, instanceSlug, onClose }: Props) {
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
       if (e.key === 'Escape') onClose();
@@ -24,7 +25,7 @@ export default function MobInfoPanel({ spawn, enemy, npcsById, instanceSlug, onC
     return () => document.removeEventListener('keydown', handleKey);
   }, [onClose]);
 
-  const existing = npcsById.get(spawn.npcId);
+  const existing = npcsById.get(spawn.npcId) ?? npcsByName.get(spawn.name);
   const npc: ZoneNpc = existing ?? {
     id: spawn.npcId,
     name: spawn.name,

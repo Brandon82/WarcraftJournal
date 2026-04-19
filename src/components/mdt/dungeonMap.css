@@ -356,25 +356,6 @@
   cursor: pointer;
 }
 
-/* ── Cursor coordinate readout ───────────────────────────────────────── */
-
-.mdt-coords-readout {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  z-index: 1000;
-  padding: 4px 8px;
-  background-color: rgba(30, 30, 34, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  color: #d4d4d8;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  pointer-events: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
 /* ── Pull list drag-and-drop drop target ─────────────────────────────── */
 
 .mdt-pull-drop-target > button {

@@ -348,7 +348,6 @@ export default function DungeonMap({
           <ZoomScaleTracker />
           <PackHoverHighlighter group={hoveredGroup} />
           <FocusPullView spawns={safeSpawns} request={focusPull ?? null} />
-          <CursorCoordsReadout />
           <TooltipAutoCloser onClose={() => setHoverTooltip(null)} />
           <MapLayersControl layers={layers} onChange={setLayers} />
           {onAddNote && (
@@ -994,24 +993,6 @@ function ZoomScaleTracker() {
     return () => { map.off('zoom', update); };
   }, [map]);
   return null;
-}
-
-/** Live cursor coordinate readout in the bottom-left of the map. Useful for
- *  debugging routes and matches threechest's overlay. The DOM node is
- *  mutated directly so cursor moves don't re-render the React tree. */
-function CursorCoordsReadout() {
-  const ref = useRef<HTMLDivElement>(null);
-  useMapEvents({
-    mousemove: (e) => {
-      if (!ref.current) return;
-      ref.current.textContent = `${e.latlng.lat.toFixed(1)}, ${e.latlng.lng.toFixed(1)}`;
-    },
-    mouseout: () => {
-      if (!ref.current) return;
-      ref.current.textContent = '';
-    },
-  });
-  return <div ref={ref} className="mdt-coords-readout" />;
 }
 
 /** Andrew's monotone chain convex-hull, for outlining a pull. */

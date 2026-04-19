@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { DownOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import type { ZoneNpc, ZoneSpell, InstanceCategory } from '../../types';
-import { getMdtEnemyByNpcId } from '../../lib/mdt/dungeons';
+import { getMdtEnemyByNpcId, getBaselineMdtScale } from '../../lib/mdt/dungeons';
 import { useNameplateColors, type NpcTier } from '../../context/NameplateColorsContext';
 
 const SCHOOL_TAGS: Record<number, { label: string; style: string }> = {
@@ -53,14 +53,19 @@ const TIER_SORT_RANK: Record<NpcTier, number> = {
 // Wowhead's classification alone can't distinguish those from regular elites.
 // Trivial is everything Wowhead considers non-elite/non-boss (classification 0).
 const MINIBOSS_COUNT_THRESHOLD = 10;
-const MINIBOSS_SCALE_THRESHOLD = 1.5;
+// Scale is compared relative to each dungeon's median non-boss scale rather
+// than an absolute value, because MDT's `scale` values aren't comparable
+// across dungeons — each dungeon has its own baseline, so an absolute
+// threshold would mis-flag baseline mobs in dungeons with larger defaults.
+const MINIBOSS_SCALE_RATIO = 1.3;
 
 export function getNpcTier(npc: ZoneNpc, isBoss: boolean, instanceSlug: string): NpcTier {
   if (isBoss || npc.classification === 3) return 'boss';
   const mdt = instanceSlug ? getMdtEnemyByNpcId(instanceSlug, npc.id) : undefined;
   if (mdt && !mdt.isBoss) {
     const scale = typeof mdt.scale === 'number' ? mdt.scale : 1;
-    if (scale >= MINIBOSS_SCALE_THRESHOLD || mdt.count >= MINIBOSS_COUNT_THRESHOLD) {
+    const baseline = getBaselineMdtScale(instanceSlug);
+    if (scale >= baseline * MINIBOSS_SCALE_RATIO || mdt.count >= MINIBOSS_COUNT_THRESHOLD) {
       return 'miniboss';
     }
   }
@@ -163,9 +168,6 @@ export function NpcGroup({ npc, isBoss, instanceSlug, countBadge, fallbackNote }
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-[15px] font-semibold" style={{ color: nameColor }}>{npc.name}</span>
-            {countBadge != null && countBadge > 1 && (
-              <span className="text-xs text-wow-text-secondary font-mono">× {countBadge}</span>
-            )}
             {classification && (
               <span className={`px-2 py-0.5 text-xs rounded-md font-medium ${classification.style}`}>
                 {classification.label}
@@ -178,6 +180,11 @@ export function NpcGroup({ npc, isBoss, instanceSlug, countBadge, fallbackNote }
             </span>
           </div>
         </div>
+        {countBadge != null && countBadge > 1 && (
+          <span className="text-xs font-semibold text-wow-gold-muted shrink-0 ml-2">
+            {countBadge} in this pull
+          </span>
+        )}
       </div>
 
       <div

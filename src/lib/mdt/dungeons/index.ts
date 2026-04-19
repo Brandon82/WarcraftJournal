@@ -69,6 +69,19 @@ for (const d of MDT_DUNGEONS) {
   ENEMIES_BY_SLUG.set(d.instanceSlug, byId);
 }
 
+// Median non-boss scale per dungeon. MDT's scale values aren't comparable across
+// dungeons — Skyreach's data uses 1.8 as the baseline while most dungeons sit
+// around 1.0 — so miniboss detection compares against this per-dungeon baseline.
+const BASELINE_SCALE_BY_SLUG = new Map<string, number>();
+for (const d of MDT_DUNGEONS) {
+  const scales = d.enemies
+    .filter((e) => !e.isBoss && e.count > 0)
+    .map((e) => (typeof e.scale === 'number' ? e.scale : 1))
+    .sort((a, b) => a - b);
+  const baseline = scales.length > 0 ? scales[Math.floor(scales.length / 2)] : 1;
+  BASELINE_SCALE_BY_SLUG.set(d.instanceSlug, baseline);
+}
+
 export function findDungeonByMdtIdx(idx: number | undefined): MdtDungeonTable | undefined {
   if (idx == null) return undefined;
   return BY_MDT_INDEX.get(idx);
@@ -79,4 +92,10 @@ export function getMdtEnemyByNpcId(
   npcId: number,
 ): MdtDungeonEnemy | undefined {
   return ENEMIES_BY_SLUG.get(instanceSlug)?.get(npcId);
+}
+
+/** Median non-boss mob scale in the given dungeon, or 1 if unknown. Use this as
+ *  the baseline when deciding whether a mob is oversized relative to its peers. */
+export function getBaselineMdtScale(instanceSlug: string): number {
+  return BASELINE_SCALE_BY_SLUG.get(instanceSlug) ?? 1;
 }

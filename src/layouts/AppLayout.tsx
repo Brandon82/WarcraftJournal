@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router';
+import { Link, Outlet, useLocation } from 'react-router';
 import { Drawer } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined, SunOutlined, MoonOutlined, SearchOutlined, CodeOutlined } from '@ant-design/icons';
 import JournalIcon from '../components/JournalIcon';
@@ -31,7 +31,6 @@ function AppLayoutInner() {
   const { devMode, toggleDevMode } = useDevMode();
   const { wide, hideHeader } = useLayout();
   const isMobile = useIsMobile();
-  const navigate = useNavigate();
   const location = useLocation();
 
   const handleNavigate = useCallback(() => {
@@ -57,15 +56,16 @@ function AppLayoutInner() {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       <div className="px-4 py-4 border-b border-wow-border flex items-center gap-2.5 rounded-t-2xl">
-        <button
-          onClick={() => { navigate('/'); handleNavigate(); }}
-          className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer p-0"
+        <Link
+          to="/"
+          onClick={handleNavigate}
+          className="flex items-center gap-2.5 no-underline p-0"
         >
           <JournalIcon className="text-wow-gold text-2xl" />
           <h4 className="text-wow-gold font-semibold text-lg m-0 whitespace-nowrap">
             WarcraftJournal
           </h4>
-        </button>
+        </Link>
         <div className="flex-1" />
         {!isMobile && (
           <button

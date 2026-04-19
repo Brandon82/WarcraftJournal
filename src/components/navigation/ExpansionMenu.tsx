@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router';
+import { Link, useParams, useLocation } from 'react-router';
 import { RightOutlined, NodeIndexOutlined, ToolOutlined, FileTextOutlined } from '@ant-design/icons';
 import { currentSeason } from '../../data/currentSeason';
 
@@ -13,7 +13,6 @@ interface NavInstance {
 }
 
 export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
-  const navigate = useNavigate();
   const { instanceSlug } = useParams();
   const location = useLocation();
 
@@ -42,11 +41,6 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
     setExpandedCategories((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const go = (path: string) => {
-    navigate(path);
-    onNavigate?.();
-  };
-
   if (!currentSeason) return null;
 
   const isSeasonRoute = pathParts[0] === 'season';
@@ -57,17 +51,18 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
       const isSelected = isSeasonRoute && instanceSlug === inst.slug;
 
       return (
-        <button
+        <Link
           key={inst.slug}
-          onClick={() => go(`/${instKey}`)}
-          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+          to={`/${instKey}`}
+          onClick={() => onNavigate?.()}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 text-[13px] transition-all duration-150 rounded-md mx-0 no-underline ${
             isSelected
               ? 'bg-wow-bg-raised text-wow-gold font-medium'
               : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
           }`}
         >
           <span className="truncate">{inst.name}</span>
-        </button>
+        </Link>
       );
     });
 
@@ -112,9 +107,10 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
           </div>
         )}
         <div className="my-2 mx-3 border-t border-wow-border" />
-        <button
-          onClick={() => go('/tools/mdt-route')}
-          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+        <Link
+          to="/tools/mdt-route"
+          onClick={() => onNavigate?.()}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 text-[13px] transition-all duration-150 rounded-md mx-0 no-underline ${
             location.pathname === '/tools/mdt-route'
               ? 'bg-wow-bg-raised text-wow-gold font-medium'
               : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
@@ -122,10 +118,11 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
         >
           <NodeIndexOutlined className="text-[12px]" />
           <span className="truncate">M+ Routes</span>
-        </button>
-        <button
-          onClick={() => go('/tools')}
-          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+        </Link>
+        <Link
+          to="/tools"
+          onClick={() => onNavigate?.()}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 text-[13px] transition-all duration-150 rounded-md mx-0 no-underline ${
             location.pathname === '/tools'
               ? 'bg-wow-bg-raised text-wow-gold font-medium'
               : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
@@ -133,10 +130,11 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
         >
           <ToolOutlined className="text-[12px]" />
           <span className="truncate">Useful Tools</span>
-        </button>
-        <button
-          onClick={() => go('/changelog')}
-          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 border-none cursor-pointer text-[13px] transition-all duration-150 rounded-md mx-0 ${
+        </Link>
+        <Link
+          to="/changelog"
+          onClick={() => onNavigate?.()}
+          className={`w-full flex items-center gap-2 pl-7 pr-3 py-1.5 text-[13px] transition-all duration-150 rounded-md mx-0 no-underline ${
             location.pathname === '/changelog'
               ? 'bg-wow-bg-raised text-wow-gold font-medium'
               : 'bg-transparent text-wow-text-secondary hover:text-wow-text hover:bg-wow-bg-elevated'
@@ -144,7 +142,7 @@ export default function ExpansionMenu({ onNavigate }: ExpansionMenuProps) {
         >
           <FileTextOutlined className="text-[12px]" />
           <span className="truncate">Changelog</span>
-        </button>
+        </Link>
       </div>
     </nav>
   );

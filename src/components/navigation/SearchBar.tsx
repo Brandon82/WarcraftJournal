@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { SearchOutlined } from '@ant-design/icons';
 import { expansions, instances, encounters } from '../../data';
 import { expansionById } from '../../data';
@@ -125,16 +125,14 @@ export default function SearchBar({ onClose }: SearchBarProps) {
         {results.length > 0 && (
           <div className="max-h-[300px] overflow-y-auto py-2">
             {results.map((result, i) => (
-              <button
+              <Link
                 key={result.path}
-                className={`w-full text-left px-4 py-2.5 flex items-center gap-3 cursor-pointer border-none transition-colors duration-100 ${
+                to={result.path}
+                className={`w-full text-left px-4 py-2.5 flex items-center gap-3 no-underline transition-colors duration-100 ${
                   i === selectedIndex ? 'bg-wow-bg-elevated' : 'bg-transparent'
                 }`}
                 onMouseEnter={() => setSelectedIndex(i)}
-                onClick={() => {
-                  navigate(result.path);
-                  onClose();
-                }}
+                onClick={onClose}
               >
                 <span className={`text-[10px] font-semibold uppercase tracking-wider w-16 shrink-0 ${typeColors[result.type]}`}>
                   {typeLabels[result.type]}
@@ -149,7 +147,7 @@ export default function SearchBar({ onClose }: SearchBarProps) {
                     </span>
                   )}
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
         )}

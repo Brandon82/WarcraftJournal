@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Button, Pagination, Popconfirm } from 'antd';
+import { Button, Pagination, Popconfirm, Select } from 'antd';
 import { PlusOutlined, ImportOutlined, DeleteOutlined } from '@ant-design/icons';
 import SavedRouteCard from './SavedRouteCard';
 import FeaturedRouteCard from './FeaturedRouteCard';
-import WarcraftLogsRunCard from './WarcraftLogsRunCard';
+import WarcraftLogsRunCard, { type WarcraftLogsMode } from './WarcraftLogsRunCard';
 import type { SavedMdtRoute } from '../../hooks/useSavedMdtRoutes';
 import {
   instanceBySlug,
@@ -24,6 +24,8 @@ interface WarcraftLogsRunEntry {
 }
 
 type FeaturedSource = 'raiderio' | 'warcraftlogs';
+
+const WCL_MODE_STORAGE_KEY = 'mdt:wclMode';
 
 interface RouteLandingViewProps {
   savedRoutes: SavedMdtRoute[];
@@ -61,6 +63,27 @@ export default function RouteLandingView({
   // raider.io since those cards load into the editor; WCL cards are
   // outbound links.
   const [featuredSource, setFeaturedSource] = useState<FeaturedSource>('raiderio');
+  // WCL viewing mode. "Learning" surfaces a picker with companion WCL
+  // views (enemy auras, enemy casts, damage taken, player debuffs) so the
+  // user can study the pull from multiple angles. Persisted to localStorage
+  // because the preference is sticky across sessions — someone studying a
+  // dungeon doesn't want to re-select Learning every visit.
+  const [wclMode, setWclMode] = useState<WarcraftLogsMode>(() => {
+    try {
+      const raw = localStorage.getItem(WCL_MODE_STORAGE_KEY);
+      return raw === 'learning' ? 'learning' : 'normal';
+    } catch {
+      return 'normal';
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem(WCL_MODE_STORAGE_KEY, wclMode);
+    } catch {
+      // Storage can throw in private mode / quota-exceeded; the mode still
+      // works for the current session, just won't persist.
+    }
+  }, [wclMode]);
 
   // Decode each saved route once to recover its instance slug — the saved
   // payload only carries the raw MDT string + display name, but filtering
@@ -254,10 +277,25 @@ export default function RouteLandingView({
                 </span>
               )}
             </div>
-            <span className="text-xs text-wow-text-dim font-mono">
-              {activeFeaturedCount}{' '}
-              {activeFeaturedCount === 1 ? 'run' : 'runs'}
-            </span>
+            <div className="flex items-center gap-2">
+              {featuredSource === 'warcraftlogs' && (
+                <Select
+                  size="small"
+                  value={wclMode}
+                  onChange={(v) => setWclMode(v)}
+                  style={{ width: 120 }}
+                  options={[
+                    { value: 'normal', label: 'Normal' },
+                    { value: 'learning', label: 'Learning' },
+                  ]}
+                  aria-label="Warcraft Logs mode"
+                />
+              )}
+              <span className="text-xs text-wow-text-dim font-mono">
+                {activeFeaturedCount}{' '}
+                {activeFeaturedCount === 1 ? 'run' : 'runs'}
+              </span>
+            </div>
           </div>
 
           <DungeonFilterBar
@@ -283,6 +321,7 @@ export default function RouteLandingView({
                   key={`${instanceSlug}:${run.source.reportCode}:${run.source.fightId}`}
                   instanceSlug={instanceSlug}
                   run={run}
+                  mode={wclMode}
                 />
               ))}
             {/* Pad short pages so the grid stays exactly 3 rows tall and the

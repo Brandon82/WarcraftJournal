@@ -3,6 +3,73 @@
     {
       "source": {
         "rank": 1,
+        "reportCode": "MPvaXGT1LxCktJAw",
+        "fightId": 7,
+        "mythicLevel": 22,
+        "durationMs": 2025655,
+        "score": 515.26369485294,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T14:08:59.035Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/MPvaXGT1LxCktJAw#fight=7",
+        "dungeonName": "Magisters' Terrace",
+        "players": [
+          {
+            "name": "丶将息",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "牛天师",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "风为龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "我真的好低迷",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Anniedevour",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
+    },
+    {
+      "source": {
+        "rank": 2,
         "reportCode": "rYjzGKtNfpBXqh2L",
         "fightId": 8,
         "mythicLevel": 21,
@@ -65,11 +132,279 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
     },
     {
       "source": {
-        "rank": 2,
+        "rank": 3,
+        "reportCode": "2C8ynjFhcZNPYbD4",
+        "fightId": 41,
+        "mythicLevel": 21,
+        "durationMs": 1840151,
+        "score": 503.67369485294,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T14:53:22.474Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/2C8ynjFhcZNPYbD4#fight=41",
+        "dungeonName": "Magisters' Terrace",
+        "players": [
+          {
+            "name": "一般不吃人",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Feral",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "雾峪伞",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Xiaosedk",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "核子危机高手",
+            "className": "Warrior",
+            "classSlug": "warrior",
+            "specName": "Arms",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Imne",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
+    },
+    {
+      "source": {
+        "rank": 4,
+        "reportCode": "aykDwrpYTnxXMZz7",
+        "fightId": 9,
+        "mythicLevel": 21,
+        "durationMs": 1883722,
+        "score": 502.87275735294,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T09:32:10.256Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/aykDwrpYTnxXMZz7#fight=9",
+        "dungeonName": "Magisters' Terrace",
+        "players": [
+          {
+            "name": "荷晚洛",
+            "className": "Hunter",
+            "classSlug": "hunter",
+            "specName": "Survival",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "遵义巫妖王",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "你又没了是吧",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "翻滚大山雀",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "花钱看训练吗",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
+    },
+    {
+      "source": {
+        "rank": 5,
+        "reportCode": "RAn3GDqw8y1FKcPN",
+        "fightId": 1,
+        "mythicLevel": 21,
+        "durationMs": 1883820,
+        "score": 502.87095588235,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T07:30:30.480Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/RAn3GDqw8y1FKcPN#fight=1",
+        "dungeonName": "Magisters' Terrace",
+        "players": [
+          {
+            "name": "Rainons",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Shawrus",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Lexiuwu",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zepherousdk",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Nocte",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
+    },
+    {
+      "source": {
+        "rank": 6,
+        "reportCode": "hwQHnWy34XcpBzkT",
+        "fightId": 18,
+        "mythicLevel": 21,
+        "durationMs": 1904478,
+        "score": 502.49121323529,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T21:10:03.774Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/hwQHnWy34XcpBzkT#fight=18",
+        "dungeonName": "Magisters' Terrace",
+        "players": [
+          {
+            "name": "Reversible",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Jisoodc",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Shoxpig",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Nihaobaobao",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Uglybaby",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
+    },
+    {
+      "source": {
+        "rank": 7,
         "reportCode": "kz2ZJgMXFrQ7vh6L",
         "fightId": 10,
         "mythicLevel": 21,
@@ -132,11 +467,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
     },
     {
       "source": {
-        "rank": 3,
+        "rank": 8,
         "reportCode": "aMWp3j6BZ2VdQ1nv",
         "fightId": 3,
         "mythicLevel": 21,
@@ -199,11 +534,78 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
     },
     {
       "source": {
-        "rank": 4,
+        "rank": 9,
+        "reportCode": "j83mBGd1qX9zQYHp",
+        "fightId": 7,
+        "mythicLevel": 21,
+        "durationMs": 1927600,
+        "score": 502.06617647059,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T18:58:00.395Z",
+        "deaths": 5,
+        "reportUrl": "https://www.warcraftlogs.com/reports/j83mBGd1qX9zQYHp#fight=7",
+        "dungeonName": "Magisters' Terrace",
+        "players": [
+          {
+            "name": "Vitalitie",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Chum",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Brewbtian",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Procapproved",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Jabuka",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
+    },
+    {
+      "source": {
+        "rank": 10,
         "reportCode": "LcPkR2FBr3Dh9Qyj",
         "fightId": 1,
         "mythicLevel": 21,
@@ -266,409 +668,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
-    },
-    {
-      "source": {
-        "rank": 5,
-        "reportCode": "dW3QbPvK1RVjT29A",
-        "fightId": 3,
-        "mythicLevel": 21,
-        "durationMs": 1932686,
-        "score": 501.97268382353,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-16T13:23:18.316Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/dW3QbPvK1RVjT29A#fight=3",
-        "dungeonName": "Magisters' Terrace",
-        "players": [
-          {
-            "name": "丶将息",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "牛天师",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "风为龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "我真的好低迷",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Anniedevour",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
-    },
-    {
-      "source": {
-        "rank": 6,
-        "reportCode": "DG8QyM9TRmFVXAZh",
-        "fightId": 3,
-        "mythicLevel": 21,
-        "durationMs": 1938735,
-        "score": 501.86148897059,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-24T16:22:02.446Z",
-        "deaths": 4,
-        "reportUrl": "https://www.warcraftlogs.com/reports/DG8QyM9TRmFVXAZh#fight=3",
-        "dungeonName": "Magisters' Terrace",
-        "players": [
-          {
-            "name": "Xhanon",
-            "className": "Shaman",
-            "classSlug": "shaman",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Monksea",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Farover",
-            "className": "Warrior",
-            "classSlug": "warrior",
-            "specName": "Arms",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Turbogronil",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Feral",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Tomelvis",
-            "className": "Rogue",
-            "classSlug": "rogue",
-            "specName": "Outlaw",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
-    },
-    {
-      "source": {
-        "rank": 7,
-        "reportCode": "c2HBzPXhdxnYQbwf",
-        "fightId": 10,
-        "mythicLevel": 21,
-        "durationMs": 1954431,
-        "score": 501.57295955882,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-24T06:58:22.665Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/c2HBzPXhdxnYQbwf#fight=10",
-        "dungeonName": "Magisters' Terrace",
-        "players": [
-          {
-            "name": "Purgedoctor",
-            "className": "Shaman",
-            "classSlug": "shaman",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Deepps",
-            "className": "Warrior",
-            "classSlug": "warrior",
-            "specName": "Arms",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Grimshunter",
-            "className": "Hunter",
-            "classSlug": "hunter",
-            "specName": "Survival",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Skollcat",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Feral",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Ddmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
-    },
-    {
-      "source": {
-        "rank": 8,
-        "reportCode": "qjFnhQkL3TpBWYX2",
-        "fightId": 1,
-        "mythicLevel": 21,
-        "durationMs": 1964133,
-        "score": 501.39461397059,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-22T08:32:18.747Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/qjFnhQkL3TpBWYX2#fight=1",
-        "dungeonName": "Magisters' Terrace",
-        "players": [
-          {
-            "name": "兀木速台",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "时钟机关之术",
-            "className": "Warlock",
-            "classSlug": "warlock",
-            "specName": "Demonology",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小熊灵",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Tianheimonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "月光龙神丸",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "4x6FzN2T7yZMC9bY",
-        "fightId": 3,
-        "mythicLevel": 21,
-        "durationMs": 1965920,
-        "score": 501.36176470588,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-21T06:50:39.495Z",
-        "deaths": 4,
-        "reportUrl": "https://www.warcraftlogs.com/reports/4x6FzN2T7yZMC9bY#fight=3",
-        "dungeonName": "Magisters' Terrace",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dragonscjq",
-            "className": "Paladin",
-            "classSlug": "paladin",
-            "specName": "Retribution",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "w6YrmNybVLJqxDGn",
-        "fightId": 5,
-        "mythicLevel": 21,
-        "durationMs": 1969017,
-        "score": 501.30483455882,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-20T06:53:37.335Z",
-        "deaths": 4,
-        "reportUrl": "https://www.warcraftlogs.com/reports/w6YrmNybVLJqxDGn#fight=5",
-        "dungeonName": "Magisters' Terrace",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dylanwells",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.570Z"
+      "scrapedAt": "2026-04-26T06:56:45.055Z"
     }
   ],
   "maisara-caverns": [
@@ -737,7 +737,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
     },
     {
       "source": {
@@ -804,11 +804,145 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
     },
     {
       "source": {
         "rank": 3,
+        "reportCode": "W7vVznqPb2Hk6Z9f",
+        "fightId": 1,
+        "mythicLevel": 21,
+        "durationMs": 1777117,
+        "score": 503.84248106061,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-26T05:16:58.840Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/W7vVznqPb2Hk6Z9f#fight=1",
+        "dungeonName": "Maisara Caverns",
+        "players": [
+          {
+            "name": "Mageroysong",
+            "className": "Mage",
+            "classSlug": "mage",
+            "specName": "Frost",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "冷如秋秋",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "末诚灬",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zimengmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
+    },
+    {
+      "source": {
+        "rank": 4,
+        "reportCode": "jv1akbVDc2pZfXT7",
+        "fightId": 17,
+        "mythicLevel": 21,
+        "durationMs": 1783182,
+        "score": 503.72761363636,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T09:13:20.040Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/jv1akbVDc2pZfXT7#fight=17",
+        "dungeonName": "Maisara Caverns",
+        "players": [
+          {
+            "name": "清雨幽兰",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "末诚灬",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zimengmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "超界第一術士",
+            "className": "Warlock",
+            "classSlug": "warlock",
+            "specName": "Demonology",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
+    },
+    {
+      "source": {
+        "rank": 5,
         "reportCode": "Tpkmx7zVQHMj1fNR",
         "fightId": 4,
         "mythicLevel": 21,
@@ -871,11 +1005,145 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
     },
     {
       "source": {
-        "rank": 4,
+        "rank": 6,
+        "reportCode": "znmw38aJcbYy9dVK",
+        "fightId": 31,
+        "mythicLevel": 21,
+        "durationMs": 1852959,
+        "score": 502.40607954545,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T12:36:04.023Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/znmw38aJcbYy9dVK#fight=31",
+        "dungeonName": "Maisara Caverns",
+        "players": [
+          {
+            "name": "三星塔塔",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "执念神",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Holyfish",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "海虎爆破拳丶",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "月朔宝宝",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
+    },
+    {
+      "source": {
+        "rank": 7,
+        "reportCode": "YMGyxwpQjvPWn4Nm",
+        "fightId": 5,
+        "mythicLevel": 21,
+        "durationMs": 1854043,
+        "score": 502.38554924242,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T22:23:00.396Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/YMGyxwpQjvPWn4Nm#fight=5",
+        "dungeonName": "Maisara Caverns",
+        "players": [
+          {
+            "name": "Shamrocked",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Shadarek",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Trellbrew",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Melee",
+            "className": "Paladin",
+            "classSlug": "paladin",
+            "specName": "Retribution",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Lizzimcguire",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
+    },
+    {
+      "source": {
+        "rank": 8,
         "reportCode": "HzXFV4xN9q1knRdv",
         "fightId": 24,
         "mythicLevel": 21,
@@ -938,11 +1206,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
     },
     {
       "source": {
-        "rank": 5,
+        "rank": 9,
         "reportCode": "KLVx3RYM8QazGXgJ",
         "fightId": 6,
         "mythicLevel": 21,
@@ -1005,11 +1273,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
     },
     {
       "source": {
-        "rank": 6,
+        "rank": 10,
         "reportCode": "2FfjXLHtVh6bTAQ7",
         "fightId": 15,
         "mythicLevel": 21,
@@ -1072,275 +1340,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
-    },
-    {
-      "source": {
-        "rank": 7,
-        "reportCode": "V1LZANfjMXQ8Wmq9",
-        "fightId": 5,
-        "mythicLevel": 21,
-        "durationMs": 1887339,
-        "score": 501.75494318182,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-15T13:10:23.182Z",
-        "deaths": 4,
-        "reportUrl": "https://www.warcraftlogs.com/reports/V1LZANfjMXQ8Wmq9#fight=5",
-        "dungeonName": "Maisara Caverns",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dylanwells",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
-    },
-    {
-      "source": {
-        "rank": 8,
-        "reportCode": "1XDB73jdJ4ptArch",
-        "fightId": 17,
-        "mythicLevel": 21,
-        "durationMs": 1887671,
-        "score": 501.74865530303,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-22T15:53:47.845Z",
-        "deaths": 4,
-        "reportUrl": "https://www.warcraftlogs.com/reports/1XDB73jdJ4ptArch#fight=17",
-        "dungeonName": "Maisara Caverns",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "熱心",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Planbee",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "L8hDPK7YvMyfwBJt",
-        "fightId": 4,
-        "mythicLevel": 21,
-        "durationMs": 1888263,
-        "score": 501.73744318182,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-25T06:08:58.371Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/L8hDPK7YvMyfwBJt#fight=4",
-        "dungeonName": "Maisara Caverns",
-        "players": [
-          {
-            "name": "逆旅饱饱",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Teledruid",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "青灯伴我眠",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "驰是小驰的驰",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "梅溪湖小关羽",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "4x6FzN2T7yZMC9bY",
-        "fightId": 5,
-        "mythicLevel": 21,
-        "durationMs": 1888305,
-        "score": 501.73664772727,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-21T08:07:55.359Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/4x6FzN2T7yZMC9bY#fight=5",
-        "dungeonName": "Maisara Caverns",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dragonscjq",
-            "className": "Paladin",
-            "classSlug": "paladin",
-            "specName": "Retribution",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "熱心",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.750Z"
+      "scrapedAt": "2026-04-26T06:56:45.251Z"
     }
   ],
   "nexus-point-xenas": [
@@ -1409,7 +1409,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
     },
     {
       "source": {
@@ -1476,7 +1476,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
     },
     {
       "source": {
@@ -1543,11 +1543,413 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
     },
     {
       "source": {
         "rank": 4,
+        "reportCode": "XA1qV9hJvbwmY6tH",
+        "fightId": 2,
+        "mythicLevel": 21,
+        "durationMs": 1669025,
+        "score": 502.72864583333,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T19:01:48.665Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/XA1qV9hJvbwmY6tH#fight=2",
+        "dungeonName": "Nexus-Point Xenas",
+        "players": [
+          {
+            "name": "Xhanon",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Monksea",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Farover",
+            "className": "Warrior",
+            "classSlug": "warrior",
+            "specName": "Arms",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Turbogronil",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Feral",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Tomelvis",
+            "className": "Rogue",
+            "classSlug": "rogue",
+            "specName": "Outlaw",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
+    },
+    {
+      "source": {
+        "rank": 5,
+        "reportCode": "C2PYxrVaDcm7FQz8",
+        "fightId": 10,
+        "mythicLevel": 21,
+        "durationMs": 1699206,
+        "score": 502.099875,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T16:22:29.258Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/C2PYxrVaDcm7FQz8#fight=10",
+        "dungeonName": "Nexus-Point Xenas",
+        "players": [
+          {
+            "name": "丶将息",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "牛天师",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "风为龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "我真的好低迷",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Anniedevour",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
+    },
+    {
+      "source": {
+        "rank": 6,
+        "reportCode": "32cT87jmdP1bgktv",
+        "fightId": 2,
+        "mythicLevel": 21,
+        "durationMs": 1704170,
+        "score": 501.99645833333,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T14:57:31.609Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/32cT87jmdP1bgktv#fight=2",
+        "dungeonName": "Nexus-Point Xenas",
+        "players": [
+          {
+            "name": "Xmdw",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Preacherman",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "把腿伸过来",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "变形阿马",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "夜雨小梦",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
+    },
+    {
+      "source": {
+        "rank": 7,
+        "reportCode": "W7vVznqPb2Hk6Z9f",
+        "fightId": 4,
+        "mythicLevel": 21,
+        "durationMs": 1710732,
+        "score": 501.85975,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-26T06:22:49.208Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/W7vVznqPb2Hk6Z9f#fight=4",
+        "dungeonName": "Nexus-Point Xenas",
+        "players": [
+          {
+            "name": "Mageroysong",
+            "className": "Mage",
+            "classSlug": "mage",
+            "specName": "Frost",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "冷如秋秋",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "末诚灬",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zimengmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
+    },
+    {
+      "source": {
+        "rank": 8,
+        "reportCode": "nNPqcg694GYz7KHx",
+        "fightId": 27,
+        "mythicLevel": 21,
+        "durationMs": 1727418,
+        "score": 501.512125,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T23:22:24.519Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/nNPqcg694GYz7KHx#fight=27",
+        "dungeonName": "Nexus-Point Xenas",
+        "players": [
+          {
+            "name": "Myzouth",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Kyomã",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Ynmyrt",
+            "className": "Warlock",
+            "classSlug": "warlock",
+            "specName": "Demonology",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Rafliskoev",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Vicentiusbot",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
+    },
+    {
+      "source": {
+        "rank": 9,
+        "reportCode": "gMtxGqRfLVv2b4CJ",
+        "fightId": 1,
+        "mythicLevel": 21,
+        "durationMs": 1730088,
+        "score": 501.4565,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-26T05:15:57.160Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/gMtxGqRfLVv2b4CJ#fight=1",
+        "dungeonName": "Nexus-Point Xenas",
+        "players": [
+          {
+            "name": "我嘞个豆阿",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Ikunbrew",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "鲜血大王子",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "愿闻将军之志",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Selong",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
+    },
+    {
+      "source": {
+        "rank": 10,
         "reportCode": "1XDB73jdJ4ptArch",
         "fightId": 25,
         "mythicLevel": 21,
@@ -1610,415 +2012,80 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
-    },
-    {
-      "source": {
-        "rank": 5,
-        "reportCode": "3TPnLX8zV2NWgqfw",
-        "fightId": 26,
-        "mythicLevel": 21,
-        "durationMs": 1738440,
-        "score": 501.2825,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-23T13:27:00.798Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/3TPnLX8zV2NWgqfw#fight=26",
-        "dungeonName": "Nexus-Point Xenas",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dylanwells",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
-    },
-    {
-      "source": {
-        "rank": 6,
-        "reportCode": "JPqR1L9BTjrZpdGg",
-        "fightId": 6,
-        "mythicLevel": 21,
-        "durationMs": 1739927,
-        "score": 501.25152083333,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-21T14:33:49.799Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/JPqR1L9BTjrZpdGg#fight=6",
-        "dungeonName": "Nexus-Point Xenas",
-        "players": [
-          {
-            "name": "戰临",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "奶球蓄力了",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "芙芙喷气了",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小软饱饱",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "妈妈丶",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
-    },
-    {
-      "source": {
-        "rank": 7,
-        "reportCode": "CXkR1zwmbZPfVYJ7",
-        "fightId": 15,
-        "mythicLevel": 21,
-        "durationMs": 1757313,
-        "score": 500.8893125,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-16T15:24:18.541Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/CXkR1zwmbZPfVYJ7#fight=15",
-        "dungeonName": "Nexus-Point Xenas",
-        "players": [
-          {
-            "name": "東洋雪莲",
-            "className": "Warlock",
-            "classSlug": "warlock",
-            "specName": "Demonology",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "大废止者晚星",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Ikunbrew",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "鲜血大王子",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Selong",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
-    },
-    {
-      "source": {
-        "rank": 8,
-        "reportCode": "Y2rbFK6dBVfHL1yq",
-        "fightId": 10,
-        "mythicLevel": 21,
-        "durationMs": 1759004,
-        "score": 500.85408333333,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-13T08:19:52.183Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/Y2rbFK6dBVfHL1yq#fight=10",
-        "dungeonName": "Nexus-Point Xenas",
-        "players": [
-          {
-            "name": "阿诺武僧",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "阿布夏会变身",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "孤独龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "鲜血大王子",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "愿闻将军之志",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "RpD9AGVhrfqCa7HP",
-        "fightId": 5,
-        "mythicLevel": 21,
-        "durationMs": 1766963,
-        "score": 500.68827083333,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-23T14:32:05.710Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/RpD9AGVhrfqCa7HP#fight=5",
-        "dungeonName": "Nexus-Point Xenas",
-        "players": [
-          {
-            "name": "丶将息",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "牛天师",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "风为龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "我真的好低迷",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Anniedevour",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "CdM9PLRj8T4Af3BF",
-        "fightId": 35,
-        "mythicLevel": 21,
-        "durationMs": 1779663,
-        "score": 500.4236875,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-22T16:10:42.269Z",
-        "deaths": 5,
-        "reportUrl": "https://www.warcraftlogs.com/reports/CdM9PLRj8T4Af3BF#fight=35",
-        "dungeonName": "Nexus-Point Xenas",
-        "players": [
-          {
-            "name": "Lota",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小凋零大王",
-            "className": "Warlock",
-            "classSlug": "warlock",
-            "specName": "Demonology",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Shunmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "心碎小莓",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:04.914Z"
+      "scrapedAt": "2026-04-26T06:56:45.448Z"
     }
   ],
   "windrunner-spire": [
     {
       "source": {
         "rank": 1,
+        "reportCode": "32cT87jmdP1bgktv",
+        "fightId": 5,
+        "mythicLevel": 21,
+        "durationMs": 1800286,
+        "score": 503.40367424242,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T17:12:31.569Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/32cT87jmdP1bgktv#fight=5",
+        "dungeonName": "Windrunner Spire",
+        "players": [
+          {
+            "name": "Xmdw",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Preacherman",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "把腿伸过来",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "变形阿马",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "夜雨小梦",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
+    },
+    {
+      "source": {
+        "rank": 2,
         "reportCode": "ZLMmrt1vKgz39Q4p",
         "fightId": 9,
         "mythicLevel": 21,
@@ -2081,11 +2148,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 2,
+        "rank": 3,
         "reportCode": "9C6YRdgKjfZmbwM2",
         "fightId": 4,
         "mythicLevel": 21,
@@ -2148,11 +2215,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 3,
+        "rank": 4,
         "reportCode": "WVbQKTYDga6xhRXA",
         "fightId": 5,
         "mythicLevel": 21,
@@ -2215,11 +2282,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 4,
+        "rank": 5,
         "reportCode": "jXCDK4F9QpaMhrBG",
         "fightId": 17,
         "mythicLevel": 21,
@@ -2282,11 +2349,78 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 5,
+        "rank": 6,
+        "reportCode": "ptkGrwvZj1CFxH8J",
+        "fightId": 2,
+        "mythicLevel": 21,
+        "durationMs": 1922700,
+        "score": 501.08522727273,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T19:27:32.490Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/ptkGrwvZj1CFxH8J#fight=2",
+        "dungeonName": "Windrunner Spire",
+        "players": [
+          {
+            "name": "Tartesia",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Теомаатрр",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Midnaj",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Loonyxdd",
+            "className": "Warlock",
+            "classSlug": "warlock",
+            "specName": "Demonology",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Chlenojuy",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
+    },
+    {
+      "source": {
+        "rank": 7,
         "reportCode": "PWcMh2JyH8vZpqGD",
         "fightId": 54,
         "mythicLevel": 21,
@@ -2349,11 +2483,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 6,
+        "rank": 8,
         "reportCode": "fABCZ2QWKMvj38Ty",
         "fightId": 7,
         "mythicLevel": 21,
@@ -2416,11 +2550,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 7,
+        "rank": 9,
         "reportCode": "z42ZYPaxd6pjhn9V",
         "fightId": 4,
         "mythicLevel": 21,
@@ -2483,55 +2617,37 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
     },
     {
       "source": {
-        "rank": 8,
-        "reportCode": "GP9XmFBRNKckjWJ8",
-        "fightId": 2,
+        "rank": 10,
+        "reportCode": "YMGyxwpQjvPWn4Nm",
+        "fightId": 4,
         "mythicLevel": 21,
-        "durationMs": 1944476,
-        "score": 500.6728030303,
+        "durationMs": 1936749,
+        "score": 500.81914772727,
         "affixes": [
           "9",
           "10",
           "147"
         ],
-        "startedAt": "2026-04-22T15:53:02.607Z",
-        "deaths": 3,
-        "reportUrl": "https://www.warcraftlogs.com/reports/GP9XmFBRNKckjWJ8#fight=2",
+        "startedAt": "2026-04-25T21:21:02.075Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/YMGyxwpQjvPWn4Nm#fight=4",
         "dungeonName": "Windrunner Spire",
         "players": [
           {
-            "name": "Themolished",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Mistweaver",
+            "name": "Shamrocked",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
             "role": "healer",
             "server": "",
             "region": ""
           },
           {
-            "name": "Fountastic",
-            "className": "Warlock",
-            "classSlug": "warlock",
-            "specName": "Demonology",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Gnomerender",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Guardian",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Tshockdh",
+            "name": "Shadarek",
             "className": "DemonHunter",
             "classSlug": "demon-hunter",
             "specName": "Devourer",
@@ -2540,38 +2656,7 @@
             "region": ""
           },
           {
-            "name": "Navvaldrag",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "WMG7B91vqdKgVLYF",
-        "fightId": 70,
-        "mythicLevel": 21,
-        "durationMs": 1970210,
-        "score": 500.18541666667,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-23T07:58:43.760Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/WMG7B91vqdKgVLYF#fight=70",
-        "dungeonName": "Windrunner Spire",
-        "players": [
-          {
-            "name": "Poah",
+            "name": "Trellbrew",
             "className": "Monk",
             "classSlug": "monk",
             "specName": "Brewmaster",
@@ -2580,7 +2665,7 @@
             "region": ""
           },
           {
-            "name": "Yodafotm",
+            "name": "Melee",
             "className": "Paladin",
             "classSlug": "paladin",
             "specName": "Retribution",
@@ -2589,74 +2674,40 @@
             "region": ""
           },
           {
-            "name": "Deepps",
-            "className": "Warrior",
-            "classSlug": "warrior",
-            "specName": "Arms",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Morthunt",
-            "className": "Hunter",
-            "classSlug": "hunter",
-            "specName": "Survival",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Rainx",
-            "className": "Shaman",
-            "classSlug": "shaman",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "d28FWLQgxV9XCNB3",
-        "fightId": 3,
-        "mythicLevel": 21,
-        "durationMs": 1970714,
-        "score": 500.17587121212,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-23T21:47:34.903Z",
-        "deaths": 3,
-        "reportUrl": "https://www.warcraftlogs.com/reports/d28FWLQgxV9XCNB3#fight=3",
-        "dungeonName": "Windrunner Spire",
-        "players": [
-          {
-            "name": "Nqhover",
+            "name": "Lizzimcguire",
             "className": "Evoker",
             "classSlug": "evoker",
             "specName": "Augmentation",
             "role": "dps",
             "server": "",
             "region": ""
-          },
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.632Z"
+    }
+  ],
+  "pit-of-saron": [
+    {
+      "source": {
+        "rank": 1,
+        "reportCode": "32cT87jmdP1bgktv",
+        "fightId": 6,
+        "mythicLevel": 22,
+        "durationMs": 1786119,
+        "score": 515.2891875,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T17:46:14.575Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/32cT87jmdP1bgktv#fight=6",
+        "dungeonName": "Pit of Saron",
+        "players": [
           {
-            "name": "Зуджадах",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Элслэйерх",
+            "name": "Xmdw",
             "className": "DeathKnight",
             "classSlug": "death-knight",
             "specName": "Unholy",
@@ -2665,7 +2716,16 @@
             "region": ""
           },
           {
-            "name": "Maitaimonk",
+            "name": "Preacherman",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "把腿伸过来",
             "className": "Monk",
             "classSlug": "monk",
             "specName": "Brewmaster",
@@ -2674,7 +2734,16 @@
             "region": ""
           },
           {
-            "name": "Трикснамету",
+            "name": "变形阿马",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "夜雨小梦",
             "className": "DemonHunter",
             "classSlug": "demon-hunter",
             "specName": "Devourer",
@@ -2684,13 +2753,78 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.085Z"
-    }
-  ],
-  "pit-of-saron": [
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
     {
       "source": {
-        "rank": 1,
+        "rank": 2,
+        "reportCode": "XA1qV9hJvbwmY6tH",
+        "fightId": 12,
+        "mythicLevel": 22,
+        "durationMs": 1792298,
+        "score": 515.16045833333,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T21:48:56.636Z",
+        "deaths": 0,
+        "reportUrl": "https://www.warcraftlogs.com/reports/XA1qV9hJvbwmY6tH#fight=12",
+        "dungeonName": "Pit of Saron",
+        "players": [
+          {
+            "name": "Xhanon",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Monksea",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Farover",
+            "className": "Warrior",
+            "classSlug": "warrior",
+            "specName": "Arms",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Turbogronil",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Feral",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Tomelvis",
+            "className": "Rogue",
+            "classSlug": "rogue",
+            "specName": "Outlaw",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
+    {
+      "source": {
+        "rank": 3,
         "reportCode": "RA6Zbt4QJwdMYyxp",
         "fightId": 4,
         "mythicLevel": 21,
@@ -2753,11 +2887,212 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
     },
     {
       "source": {
-        "rank": 2,
+        "rank": 4,
+        "reportCode": "rC2RdDgV9KqvmkJX",
+        "fightId": 4,
+        "mythicLevel": 21,
+        "durationMs": 1662649,
+        "score": 502.86147916667,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T17:25:23.058Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/rC2RdDgV9KqvmkJX#fight=4",
+        "dungeonName": "Pit of Saron",
+        "players": [
+          {
+            "name": "戰临",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "奶球蓄力了",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "芙芙喷气了",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小软饱饱",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "人間中毒丶",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
+    {
+      "source": {
+        "rank": 5,
+        "reportCode": "YdgLQhAafcpm6NrV",
+        "fightId": 1,
+        "mythicLevel": 21,
+        "durationMs": 1672126,
+        "score": 502.66404166667,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T16:52:08.039Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/YdgLQhAafcpm6NrV#fight=1",
+        "dungeonName": "Pit of Saron",
+        "players": [
+          {
+            "name": "Bigmistake",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Vilabrewzy",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Sipdk",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Specithick",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Pve",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
+    {
+      "source": {
+        "rank": 6,
+        "reportCode": "RAn3GDqw8y1FKcPN",
+        "fightId": 2,
+        "mythicLevel": 21,
+        "durationMs": 1675308,
+        "score": 502.59775,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T08:32:46.136Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/RAn3GDqw8y1FKcPN#fight=2",
+        "dungeonName": "Pit of Saron",
+        "players": [
+          {
+            "name": "Rainons",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Shawrus",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Lexiuwu",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zepherousdk",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Nocte",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
+    {
+      "source": {
+        "rank": 7,
         "reportCode": "VjM7zYf3vLtAgh8K",
         "fightId": 12,
         "mythicLevel": 21,
@@ -2820,11 +3155,145 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
     },
     {
       "source": {
-        "rank": 3,
+        "rank": 8,
+        "reportCode": "jv1akbVDc2pZfXT7",
+        "fightId": 30,
+        "mythicLevel": 21,
+        "durationMs": 1694313,
+        "score": 502.2018125,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T14:07:14.137Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/jv1akbVDc2pZfXT7#fight=30",
+        "dungeonName": "Pit of Saron",
+        "players": [
+          {
+            "name": "冷如秋秋",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "末诚灬",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zimengmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "超界第一術士",
+            "className": "Warlock",
+            "classSlug": "warlock",
+            "specName": "Demonology",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
+    {
+      "source": {
+        "rank": 9,
+        "reportCode": "9ntykhCzcJ3pMWAY",
+        "fightId": 1,
+        "mythicLevel": 21,
+        "durationMs": 1699599,
+        "score": 502.0916875,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T12:40:17.258Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/9ntykhCzcJ3pMWAY#fight=1",
+        "dungeonName": "Pit of Saron",
+        "players": [
+          {
+            "name": "昂小热丶",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "黑锋二酱",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "橙小北",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Supremedh",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    },
+    {
+      "source": {
+        "rank": 10,
         "reportCode": "KPpT7M6DanHbJxB4",
         "fightId": 3,
         "mythicLevel": 21,
@@ -2887,165 +3356,42 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    },
+      "scrapedAt": "2026-04-26T06:56:45.828Z"
+    }
+  ],
+  "skyreach": [
     {
       "source": {
-        "rank": 4,
-        "reportCode": "jXCDK4F9QpaMhrBG",
-        "fightId": 16,
+        "rank": 1,
+        "reportCode": "QwdWXJKGYamb73xk",
+        "fightId": 1,
         "mythicLevel": 21,
-        "durationMs": 1723173,
-        "score": 501.6005625,
+        "durationMs": 1510650,
+        "score": 503.78013392857,
         "affixes": [
           "9",
           "10",
           "147"
         ],
-        "startedAt": "2026-04-21T11:47:55.776Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/jXCDK4F9QpaMhrBG#fight=16",
-        "dungeonName": "Pit of Saron",
-        "players": [
-          {
-            "name": "人艰不拆死骑",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Lota",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小凋零大王",
-            "className": "Warlock",
-            "classSlug": "warlock",
-            "specName": "Demonology",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Shunmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "月朔宝宝",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    },
-    {
-      "source": {
-        "rank": 5,
-        "reportCode": "3TPnLX8zV2NWgqfw",
-        "fightId": 34,
-        "mythicLevel": 21,
-        "durationMs": 1732470,
-        "score": 501.406875,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-23T20:36:27.118Z",
+        "startedAt": "2026-04-26T05:32:10.356Z",
         "deaths": 0,
-        "reportUrl": "https://www.warcraftlogs.com/reports/3TPnLX8zV2NWgqfw#fight=34",
-        "dungeonName": "Pit of Saron",
-        "players": [
-          {
-            "name": "网红镇",
-            "className": "Priest",
-            "classSlug": "priest",
-            "specName": "Discipline",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "三星塔塔",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "执念神",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Wusengzz",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    },
-    {
-      "source": {
-        "rank": 6,
-        "reportCode": "rX8CFxmAG6nZkfwa",
-        "fightId": 33,
-        "mythicLevel": 21,
-        "durationMs": 1733022,
-        "score": 501.395375,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-20T14:04:03.681Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/rX8CFxmAG6nZkfwa#fight=33",
-        "dungeonName": "Pit of Saron",
+        "reportUrl": "https://www.warcraftlogs.com/reports/QwdWXJKGYamb73xk#fight=1",
+        "dungeonName": "Skyreach",
         "players": [
           {
             "name": "Xmdw",
             "className": "DeathKnight",
             "classSlug": "death-knight",
             "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Preacherman",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
             "role": "dps",
             "server": "",
             "region": ""
@@ -3060,15 +3406,6 @@
             "region": ""
           },
           {
-            "name": "变形阿马",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
             "name": "夜雨小梦",
             "className": "DemonHunter",
             "classSlug": "demon-hunter",
@@ -3078,291 +3415,21 @@
             "region": ""
           },
           {
-            "name": "八千代",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    },
-    {
-      "source": {
-        "rank": 7,
-        "reportCode": "aMWp3j6BZ2VdQ1nv",
-        "fightId": 4,
-        "mythicLevel": 21,
-        "durationMs": 1737143,
-        "score": 501.30952083333,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-25T00:59:34.721Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/aMWp3j6BZ2VdQ1nv#fight=4",
-        "dungeonName": "Pit of Saron",
-        "players": [
-          {
-            "name": "Kiinbote",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Jdotbres",
+            "name": "橙橙月光",
             "className": "Druid",
             "classSlug": "druid",
             "specName": "Restoration",
             "role": "healer",
             "server": "",
             "region": ""
-          },
-          {
-            "name": "Lizzimcguire",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Yodahope",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Chainbeamm",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
     },
     {
       "source": {
-        "rank": 8,
-        "reportCode": "pdt9gFK3jNvnw2R1",
-        "fightId": 1,
-        "mythicLevel": 21,
-        "durationMs": 1743543,
-        "score": 501.1761875,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-09T18:12:45.317Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/pdt9gFK3jNvnw2R1#fight=1",
-        "dungeonName": "Pit of Saron",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Supremedh",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "CnWtBhTFad3cxNXp",
-        "fightId": 13,
-        "mythicLevel": 21,
-        "durationMs": 1748892,
-        "score": 501.06475,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-24T21:43:10.954Z",
-        "deaths": 3,
-        "reportUrl": "https://www.warcraftlogs.com/reports/CnWtBhTFad3cxNXp#fight=13",
-        "dungeonName": "Pit of Saron",
-        "players": [
-          {
-            "name": "Qrva",
-            "className": "Paladin",
-            "classSlug": "paladin",
-            "specName": "Retribution",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Alfamonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Critcake",
-            "className": "Warrior",
-            "classSlug": "warrior",
-            "specName": "Arms",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Qldurtms",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Laren",
-            "className": "Shaman",
-            "classSlug": "shaman",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "hzgtmPLT9B4AVcf7",
-        "fightId": 4,
-        "mythicLevel": 21,
-        "durationMs": 1752409,
-        "score": 500.99147916667,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-23T17:42:08.597Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/hzgtmPLT9B4AVcf7#fight=4",
-        "dungeonName": "Pit of Saron",
-        "players": [
-          {
-            "name": "Anniecpt",
-            "className": "Hunter",
-            "classSlug": "hunter",
-            "specName": "BeastMastery",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "丶将息",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "牛天师",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "风为龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "我真的好低迷",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.263Z"
-    }
-  ],
-  "skyreach": [
-    {
-      "source": {
-        "rank": 1,
+        "rank": 2,
         "reportCode": "CdM9PLRj8T4Af3BF",
         "fightId": 36,
         "mythicLevel": 21,
@@ -3425,11 +3492,78 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
     },
     {
       "source": {
-        "rank": 2,
+        "rank": 3,
+        "reportCode": "ac87v9t1Yzk4mnPR",
+        "fightId": 44,
+        "mythicLevel": 21,
+        "durationMs": 1584251,
+        "score": 502.13725446429,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T23:01:51.399Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/ac87v9t1Yzk4mnPR#fight=44",
+        "dungeonName": "Skyreach",
+        "players": [
+          {
+            "name": "Bigmistake",
+            "className": "Shaman",
+            "classSlug": "shaman",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Vilabrewzy",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Sipdk",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Specithick",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Pve",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
+    },
+    {
+      "source": {
+        "rank": 4,
         "reportCode": "PWcMh2JyH8vZpqGD",
         "fightId": 53,
         "mythicLevel": 21,
@@ -3492,11 +3626,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
     },
     {
       "source": {
-        "rank": 3,
+        "rank": 5,
         "reportCode": "1XDB73jdJ4ptArch",
         "fightId": 14,
         "mythicLevel": 21,
@@ -3559,11 +3693,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
     },
     {
       "source": {
-        "rank": 4,
+        "rank": 6,
         "reportCode": "xN4FCkVQzKLXqPh3",
         "fightId": 36,
         "mythicLevel": 21,
@@ -3626,11 +3760,212 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
     },
     {
       "source": {
-        "rank": 5,
+        "rank": 7,
+        "reportCode": "NW2g94dzkGMP37fq",
+        "fightId": 4,
+        "mythicLevel": 21,
+        "durationMs": 1639466,
+        "score": 500.90477678571,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T18:44:16.544Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/NW2g94dzkGMP37fq#fight=4",
+        "dungeonName": "Skyreach",
+        "players": [
+          {
+            "name": "丶将息",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "牛天师",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "风为龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "我真的好低迷",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Eerliyy",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
+    },
+    {
+      "source": {
+        "rank": 8,
+        "reportCode": "jv1akbVDc2pZfXT7",
+        "fightId": 32,
+        "mythicLevel": 21,
+        "durationMs": 1651366,
+        "score": 500.63915178571,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T14:51:18.839Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/jv1akbVDc2pZfXT7#fight=32",
+        "dungeonName": "Skyreach",
+        "players": [
+          {
+            "name": "冷如秋秋",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "末诚灬",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zimengmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "超界第一術士",
+            "className": "Warlock",
+            "classSlug": "warlock",
+            "specName": "Demonology",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
+    },
+    {
+      "source": {
+        "rank": 9,
+        "reportCode": "C2PYxrVaDcm7FQz8",
+        "fightId": 14,
+        "mythicLevel": 21,
+        "durationMs": 1660446,
+        "score": 500.43647321429,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T17:11:26.091Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/C2PYxrVaDcm7FQz8#fight=14",
+        "dungeonName": "Skyreach",
+        "players": [
+          {
+            "name": "丶将息",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "愿闻将军之志",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "风为龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "我真的好低迷",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Anniedevour",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
+    },
+    {
+      "source": {
+        "rank": 10,
         "reportCode": "fABCZ2QWKMvj38Ty",
         "fightId": 5,
         "mythicLevel": 21,
@@ -3693,342 +4028,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
-    },
-    {
-      "source": {
-        "rank": 6,
-        "reportCode": "BNh6LKj1pVD7Fc9k",
-        "fightId": 8,
-        "mythicLevel": 20,
-        "durationMs": 1407771,
-        "score": 491.07654017857,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-22T14:04:17.299Z",
-        "deaths": 0,
-        "reportUrl": "https://www.warcraftlogs.com/reports/BNh6LKj1pVD7Fc9k#fight=8",
-        "dungeonName": "Skyreach",
-        "players": [
-          {
-            "name": "阿诺武僧",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "阿布夏会变身",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "孤独龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "愿闻将军之志",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "迷你幸运转盘",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
-    },
-    {
-      "source": {
-        "rank": 7,
-        "reportCode": "1XDB73jdJ4ptArch",
-        "fightId": 12,
-        "mythicLevel": 20,
-        "durationMs": 1431292,
-        "score": 490.55151785714,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-22T13:08:33.437Z",
-        "deaths": 3,
-        "reportUrl": "https://www.warcraftlogs.com/reports/1XDB73jdJ4ptArch#fight=12",
-        "dungeonName": "Skyreach",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Supremedh",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
-    },
-    {
-      "source": {
-        "rank": 8,
-        "reportCode": "FWwcgnNVZX8TyDzh",
-        "fightId": 26,
-        "mythicLevel": 20,
-        "durationMs": 1438064,
-        "score": 490.40035714286,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-21T17:19:50.842Z",
-        "deaths": 0,
-        "reportUrl": "https://www.warcraftlogs.com/reports/FWwcgnNVZX8TyDzh#fight=26",
-        "dungeonName": "Skyreach",
-        "players": [
-          {
-            "name": "東洋雪莲",
-            "className": "Warlock",
-            "classSlug": "warlock",
-            "specName": "Demonology",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "大废止者晚星",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Ikunbrew",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "鲜血大王子",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Selong",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "Mmr7vJnPWbxtqf82",
-        "fightId": 26,
-        "mythicLevel": 20,
-        "durationMs": 1439391,
-        "score": 490.37073660714,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-22T21:21:40.866Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/Mmr7vJnPWbxtqf82#fight=26",
-        "dungeonName": "Skyreach",
-        "players": [
-          {
-            "name": "Xhanon",
-            "className": "Shaman",
-            "classSlug": "shaman",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Monksea",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Farover",
-            "className": "Warrior",
-            "classSlug": "warrior",
-            "specName": "Arms",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Turbogronil",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Feral",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Tomelvis",
-            "className": "Rogue",
-            "classSlug": "rogue",
-            "specName": "Outlaw",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "jb6fCqAMpgNVaHYn",
-        "fightId": 8,
-        "mythicLevel": 20,
-        "durationMs": 1449607,
-        "score": 490.14270089286,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-19T07:53:12.484Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/jb6fCqAMpgNVaHYn#fight=8",
-        "dungeonName": "Skyreach",
-        "players": [
-          {
-            "name": "阿诺武僧",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "邂逅",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "超级月光",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "阿布夏会变身",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "孤独龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.439Z"
+      "scrapedAt": "2026-04-26T06:56:46.011Z"
     }
   ],
   "seat-of-the-triumvirate": [
@@ -4097,11 +4097,212 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     },
     {
       "source": {
         "rank": 2,
+        "reportCode": "32cT87jmdP1bgktv",
+        "fightId": 1,
+        "mythicLevel": 21,
+        "durationMs": 1958941,
+        "score": 501.49005514706,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T14:19:21.720Z",
+        "deaths": 5,
+        "reportUrl": "https://www.warcraftlogs.com/reports/32cT87jmdP1bgktv#fight=1",
+        "dungeonName": "Seat of the Triumvirate",
+        "players": [
+          {
+            "name": "Xmdw",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Preacherman",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "把腿伸过来",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "变形阿马",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "夜雨小梦",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
+    },
+    {
+      "source": {
+        "rank": 3,
+        "reportCode": "jv1akbVDc2pZfXT7",
+        "fightId": 14,
+        "mythicLevel": 21,
+        "durationMs": 1971162,
+        "score": 501.26540441176,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T07:58:09.698Z",
+        "deaths": 3,
+        "reportUrl": "https://www.warcraftlogs.com/reports/jv1akbVDc2pZfXT7#fight=14",
+        "dungeonName": "Seat of the Triumvirate",
+        "players": [
+          {
+            "name": "清雨幽兰",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小奈龙龙",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "末诚灬",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Zimengmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "超界第一術士",
+            "className": "Warlock",
+            "classSlug": "warlock",
+            "specName": "Demonology",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
+    },
+    {
+      "source": {
+        "rank": 4,
+        "reportCode": "bNYLcrad3qMGhx4B",
+        "fightId": 5,
+        "mythicLevel": 21,
+        "durationMs": 1989748,
+        "score": 500.92375,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T17:57:05.065Z",
+        "deaths": 2,
+        "reportUrl": "https://www.warcraftlogs.com/reports/bNYLcrad3qMGhx4B#fight=5",
+        "dungeonName": "Seat of the Triumvirate",
+        "players": [
+          {
+            "name": "戰临",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "奶球蓄力了",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "芙芙喷气了",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "小软饱饱",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "人間中毒丶",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
+    },
+    {
+      "source": {
+        "rank": 5,
         "reportCode": "xfhLDnrJQW6K7pzk",
         "fightId": 2,
         "mythicLevel": 21,
@@ -4164,11 +4365,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     },
     {
       "source": {
-        "rank": 3,
+        "rank": 6,
         "reportCode": "XFRaNbvpq37GhrnW",
         "fightId": 2,
         "mythicLevel": 21,
@@ -4231,11 +4432,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     },
     {
       "source": {
-        "rank": 4,
+        "rank": 7,
         "reportCode": "v4mrTqwCkRW3yBhj",
         "fightId": 12,
         "mythicLevel": 21,
@@ -4298,11 +4499,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     },
     {
       "source": {
-        "rank": 5,
+        "rank": 8,
         "reportCode": "1kBZ8qJmhzHMgnpA",
         "fightId": 7,
         "mythicLevel": 20,
@@ -4365,11 +4566,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     },
     {
       "source": {
-        "rank": 6,
+        "rank": 9,
         "reportCode": "7hqcJGMHTFCrkpA3",
         "fightId": 19,
         "mythicLevel": 20,
@@ -4432,11 +4633,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     },
     {
       "source": {
-        "rank": 7,
+        "rank": 10,
         "reportCode": "nNwhAbg91rQJMVWF",
         "fightId": 1,
         "mythicLevel": 20,
@@ -4499,214 +4700,80 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
-    },
-    {
-      "source": {
-        "rank": 8,
-        "reportCode": "WVbQKTYDga6xhRXA",
-        "fightId": 10,
-        "mythicLevel": 20,
-        "durationMs": 1754733,
-        "score": 490.24387867647,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-24T20:48:28.308Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/WVbQKTYDga6xhRXA#fight=10",
-        "dungeonName": "Seat of the Triumvirate",
-        "players": [
-          {
-            "name": "Vitalitie",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Chum",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Brewbtian",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Procapproved",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Jabuka",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "w6YrmNybVLJqxDGn",
-        "fightId": 1,
-        "mythicLevel": 20,
-        "durationMs": 1789653,
-        "score": 489.60196691176,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-20T06:15:28.694Z",
-        "deaths": 2,
-        "reportUrl": "https://www.warcraftlogs.com/reports/w6YrmNybVLJqxDGn#fight=1",
-        "dungeonName": "Seat of the Triumvirate",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dylanwells",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "4x6FzN2T7yZMC9bY",
-        "fightId": 13,
-        "mythicLevel": 20,
-        "durationMs": 1796331,
-        "score": 489.47920955882,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-21T10:40:49.934Z",
-        "deaths": 0,
-        "reportUrl": "https://www.warcraftlogs.com/reports/4x6FzN2T7yZMC9bY#fight=13",
-        "dungeonName": "Seat of the Triumvirate",
-        "players": [
-          {
-            "name": "冷如秋秋",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Dragonscjq",
-            "className": "Paladin",
-            "classSlug": "paladin",
-            "specName": "Retribution",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "小奈龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "末诚灬",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Zimengmonk",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.607Z"
+      "scrapedAt": "2026-04-26T06:56:46.209Z"
     }
   ],
   "algethar-academy": [
     {
       "source": {
         "rank": 1,
+        "reportCode": "32cT87jmdP1bgktv",
+        "fightId": 3,
+        "mythicLevel": 21,
+        "durationMs": 1749658,
+        "score": 501.04879166667,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T15:33:03.113Z",
+        "deaths": 1,
+        "reportUrl": "https://www.warcraftlogs.com/reports/32cT87jmdP1bgktv#fight=3",
+        "dungeonName": "Algeth'ar Academy",
+        "players": [
+          {
+            "name": "Xmdw",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Preacherman",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "把腿伸过来",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "变形阿马",
+            "className": "Druid",
+            "classSlug": "druid",
+            "specName": "Restoration",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "夜雨小梦",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
+    },
+    {
+      "source": {
+        "rank": 2,
         "reportCode": "vyhLd2K4P9XZjcQR",
         "fightId": 3,
         "mythicLevel": 21,
@@ -4769,11 +4836,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 2,
+        "rank": 3,
         "reportCode": "6bTmpGg1LNV8rxZz",
         "fightId": 1,
         "mythicLevel": 21,
@@ -4836,11 +4903,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 3,
+        "rank": 4,
         "reportCode": "1XDB73jdJ4ptArch",
         "fightId": 9,
         "mythicLevel": 21,
@@ -4903,11 +4970,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 4,
+        "rank": 5,
         "reportCode": "ZLMmrt1vKgz39Q4p",
         "fightId": 13,
         "mythicLevel": 20,
@@ -4970,11 +5037,78 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 5,
+        "rank": 6,
+        "reportCode": "K96GTDBtQL4ZvCqw",
+        "fightId": 16,
+        "mythicLevel": 20,
+        "durationMs": 1652079,
+        "score": 488.0816875,
+        "affixes": [
+          "9",
+          "10",
+          "147"
+        ],
+        "startedAt": "2026-04-25T15:14:44.370Z",
+        "deaths": 0,
+        "reportUrl": "https://www.warcraftlogs.com/reports/K96GTDBtQL4ZvCqw#fight=16",
+        "dungeonName": "Algeth'ar Academy",
+        "players": [
+          {
+            "name": "Tartesia",
+            "className": "Evoker",
+            "classSlug": "evoker",
+            "specName": "Augmentation",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Rataucigasa",
+            "className": "DemonHunter",
+            "classSlug": "demon-hunter",
+            "specName": "Devourer",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Morós",
+            "className": "DeathKnight",
+            "classSlug": "death-knight",
+            "specName": "Unholy",
+            "role": "dps",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Freezixmonk",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Brewmaster",
+            "role": "tank",
+            "server": "",
+            "region": ""
+          },
+          {
+            "name": "Spingg",
+            "className": "Monk",
+            "classSlug": "monk",
+            "specName": "Mistweaver",
+            "role": "healer",
+            "server": "",
+            "region": ""
+          }
+        ]
+      },
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
+    },
+    {
+      "source": {
+        "rank": 7,
         "reportCode": "BNh6LKj1pVD7Fc9k",
         "fightId": 9,
         "mythicLevel": 20,
@@ -5037,11 +5171,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 6,
+        "rank": 8,
         "reportCode": "Y2rbFK6dBVfHL1yq",
         "fightId": 33,
         "mythicLevel": 20,
@@ -5104,11 +5238,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 7,
+        "rank": 9,
         "reportCode": "9MT7h31HkaNmBCcZ",
         "fightId": 4,
         "mythicLevel": 20,
@@ -5171,11 +5305,11 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     },
     {
       "source": {
-        "rank": 8,
+        "rank": 10,
         "reportCode": "Cz4G9rJNy2A1bhZB",
         "fightId": 8,
         "mythicLevel": 20,
@@ -5238,141 +5372,7 @@
           }
         ]
       },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
-    },
-    {
-      "source": {
-        "rank": 9,
-        "reportCode": "8GfYVR1XwjhJATBk",
-        "fightId": 1,
-        "mythicLevel": 20,
-        "durationMs": 1675716,
-        "score": 487.58925,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-19T13:14:49.148Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/8GfYVR1XwjhJATBk#fight=1",
-        "dungeonName": "Algeth'ar Academy",
-        "players": [
-          {
-            "name": "超级月光",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "繁星夜垂丷",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "貓貓家的糖糖",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Sumiree",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "裂风大王",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
-    },
-    {
-      "source": {
-        "rank": 10,
-        "reportCode": "GTxVHLnKB9wzcqh1",
-        "fightId": 11,
-        "mythicLevel": 20,
-        "durationMs": 1677626,
-        "score": 487.54945833333,
-        "affixes": [
-          "9",
-          "10",
-          "147"
-        ],
-        "startedAt": "2026-04-17T08:50:35.055Z",
-        "deaths": 1,
-        "reportUrl": "https://www.warcraftlogs.com/reports/GTxVHLnKB9wzcqh1#fight=11",
-        "dungeonName": "Algeth'ar Academy",
-        "players": [
-          {
-            "name": "丶将息",
-            "className": "Monk",
-            "classSlug": "monk",
-            "specName": "Brewmaster",
-            "role": "tank",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "牛天师",
-            "className": "Druid",
-            "classSlug": "druid",
-            "specName": "Restoration",
-            "role": "healer",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "风为龙龙",
-            "className": "Evoker",
-            "classSlug": "evoker",
-            "specName": "Augmentation",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "我真的好低迷",
-            "className": "DeathKnight",
-            "classSlug": "death-knight",
-            "specName": "Unholy",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          },
-          {
-            "name": "Anniedevour",
-            "className": "DemonHunter",
-            "classSlug": "demon-hunter",
-            "specName": "Devourer",
-            "role": "dps",
-            "server": "",
-            "region": ""
-          }
-        ]
-      },
-      "scrapedAt": "2026-04-25T06:47:05.787Z"
+      "scrapedAt": "2026-04-26T06:56:46.398Z"
     }
   ]
 }
